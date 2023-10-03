@@ -36,8 +36,8 @@ export default function Navbar() {
                         <a className="mainNavLinks" href="/products">storage</a>
                         <a className="mainNavLinks" href="/products">display</a>
                         <a className="mainNavLinks" href="/products">peripherals</a>
-                        <a className="mainNavLinks" href="/products">Refubrished</a>
-                        <a className="mainNavLinks" href="/products">Special</a>
+                        <a className="mainNavLinks text-secondaryColor" href="/products">Refubrished</a>
+                        <a className="mainNavLinks text-secondaryColor" href="/products">Special</a>
                         <a className="mainNavLinks text-3xl" href=""><Icon icon="mdi:cart-outline"  /></a>
                     </div>
                 </div>

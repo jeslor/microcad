@@ -12,7 +12,7 @@ const config: Config = {
         primayColor: '#15155D',
         primarymedium: '#4C4987',
         primaryLight: '#656496',
-        secondary: '#F06829',
+        secondaryColor: '#F06829',
         "dark-1": "#000000",
         "dark-2": "#121417",
         "dark-3": "#101012",

@@ -30,14 +30,13 @@ export default function Navbar() {
                         <Image src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={50} />
                     </Link>
                     <div className="subLinks flex">
-                        <a className="mainNavLinks" href="/products">systems</a>
-                        <a className="mainNavLinks" href="/products">hardware</a>
-                        <a className="mainNavLinks" href="/products">network</a>
-                        <a className="mainNavLinks" href="/products">storage</a>
-                        <a className="mainNavLinks" href="/products">display</a>
-                        <a className="mainNavLinks" href="/products">peripherals</a>
-                        <a className="mainNavLinks text-secondaryColor" href="/products">Refubrished</a>
-                        <a className="mainNavLinks text-secondaryColor" href="/products">Special</a>
+                        <a className="mainNavLinks" href="/products">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks" href="/products">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks" href="/products">network <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks" href="/products">storage <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks" href="/products">peripherals <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks text-secondaryColor" href="/products">Refubrished <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
+                        <a className="mainNavLinks text-secondaryColor" href="/products">Special <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
                         <a className="mainNavLinks text-3xl" href=""><Icon icon="mdi:cart-outline"  /></a>
                     </div>
                 </div>

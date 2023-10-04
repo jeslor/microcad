@@ -6,6 +6,12 @@
   width: 200px;
   padding: 0.5rem 0.3rem;
 } */
+.mainNavLinks svg {
+  transition: all 0.3s ease-in-out;
+}
+.mainNavLinks:hover svg {
+  transform: rotate(180deg);
+}
 
 @layer components {
   .navContent {
@@ -13,7 +19,10 @@
   }
 
   .mainNavLinks {
-    @apply flex items-center justify-center me-1 px-3 font-bold pb-2 text-primarymedium cursor-pointer;
+    @apply flex items-end justify-center mx-3 pr-2 font-bold pb-2 text-primarymedium cursor-pointer relative;
+  }
+  .mainNavLinksIcon {
+    @apply absolute -right-1.5  text-xs bottom-3 font-extrabold;
   }
 
   .subNav {

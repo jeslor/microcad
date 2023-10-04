@@ -1,9 +1,13 @@
 'use client';
+import {useState} from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from '@iconify/react';
 
 export default function Navbar() {
+    const [isLinkOpen, setIsLinkOpen] = useState(false);
+    const toggleLink = () => setIsLinkOpen(!isLinkOpen);
+
     return (
         <div className="navbar">
             <div className="mainNav bg-primaryColor">  

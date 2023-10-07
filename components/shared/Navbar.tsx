@@ -1,17 +1,16 @@
 'use client';
 import {useState} from 'react';
-import Image from "next/image";
-import Link from "next/link";
 import { Icon } from '@iconify/react';
+import MainNav from './segments/mainNavBar/mainNav';
 
 export default function Navbar() {
     const [isLinkOpen, setIsLinkOpen] = useState(false);
     const toggleLink = () => setIsLinkOpen(!isLinkOpen);
 
     return (
-        <div className="navbar">
+        <div className="navbar ">
             <div className="mainNav bg-primaryColor">  
-                <div className="navContent justify-end">
+                <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         <a className="navbarLinks" href="/">
                         <Icon className="text-lg pe-1" icon="mdi:account" />
@@ -29,11 +28,13 @@ export default function Navbar() {
                 
             </div>
             <div className="subNav">
-                <div className="navContent justify-between items-end">
-                    <Link href='/' className="flex items-center pt-3 pb-2">
-                        <Image src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={50} />
-                    </Link>
+                <MainNav />
+
+           
+                {/* <div className="navContent justify-between items-end">
+                   
                     <div className="subLinks flex">
+            
                         <a className="mainNavLinks" href="/products">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
                         <a className="mainNavLinks" href="/products">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
                         <a className="mainNavLinks" href="/products">network <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
@@ -43,7 +44,7 @@ export default function Navbar() {
                         <a className="mainNavLinks text-secondaryColor" href="/products">Special <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
                         <a className="mainNavLinks text-3xl" href=""><Icon icon="mdi:cart-outline"  /></a>
                     </div>
-                </div>
+                </div> */}
             </div>  
         </div>
     )

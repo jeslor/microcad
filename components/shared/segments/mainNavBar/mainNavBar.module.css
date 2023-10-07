@@ -1,0 +1,87 @@
+.mainNav {
+  position: relative;
+}
+
+.logo {
+  padding-top: 1rem;
+}
+
+.mainNavLinks {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.mainNavLinks svg {
+  transition: all 0.3s ease-in-out;
+}
+.mainNavLinks:hover svg {
+  transform: rotate(180deg);
+}
+
+.innerMainNavLink {
+  position: relative;
+  padding-right: 1rem;
+  padding-left: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.25rem;
+  display: flex;
+  border-radius: 4px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1;
+}
+.innerMainNavLink svg {
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.7rem;
+}
+
+.mainNavLinksSubMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 400;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+}
+
+.mainNavLinks:hover .mainNavLinksSubMenu {
+  display: block;
+  animation: mainNavLinksSubMenu 0.35s ease-in-out forwards;
+}
+
+@keyframes mainNavLinksSubMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.mainNavLinksSubMenu ul {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 2rem;
+  border-radius: 0px 0px 15px 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.navbarCart {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}

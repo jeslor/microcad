@@ -43,32 +43,19 @@
 }
 
 .mainNavLinksSubMenu {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
   z-index: 400;
   width: 100%;
   left: 0;
-  opacity: 0;
 }
 
 .mainNavLinks:hover .mainNavLinksSubMenu {
-  display: block;
-  animation: mainNavLinksSubMenu 0.35s ease-in-out forwards;
+  animation: mainNavLinksSubMenu 0.3s ease-in-out forwards;
 }
 
-@keyframes mainNavLinksSubMenu {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-.mainNavLinksSubMenu ul {
+.mainNavLinksSubMenuList {
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -77,6 +64,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.mainNavLinks:hover .mainNavLinksSubMenuList {
+  animation: mainNavLinksSubMenuList height 6s ease-in-out forwards;
+}
+
+@keyframes mainNavLinksSubMenu {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 200px;
+  }
+}
+
+.mainNavLinksSubMenu ul {
 }
 
 .navbarCart {

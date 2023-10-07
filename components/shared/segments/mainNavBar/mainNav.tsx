@@ -11,7 +11,7 @@ function MainNav() {
                 <Image src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={20} />
             </Link>
 
-            <ul className='flex'>
+            <ul className='flex text-primayColor'>
                 <li className={styles.mainNavLinks}>
                     <a className={`${styles.innerMainNavLink} `} href="#">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>
                     <div className={styles.mainNavLinksSubMenu}>
@@ -24,7 +24,15 @@ function MainNav() {
                     </div>
                 </li>
                 <li className={styles.mainNavLinks}>
-                    <a className={styles.innerMainNavLink} href="#">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>     
+                    <a className={styles.innerMainNavLink} href="#">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
+                    <div className={styles.mainNavLinksSubMenu}>
+                        <ul className={`${styles.mainNavLinksSubMenuList} bg-slate-100`}>
+                            <li className="mainNavLinksSubMenuListItems"><a href="#">desktops</a></li>
+                            <li className="mainNavLinksSubMenuListItems"><a href="#">laptops</a></li>
+                            <li className="mainNavLinksSubMenuListItems"><a href="#">servers</a></li>
+                            <li className="mainNavLinksSubMenuListItems"><a href="#">workstations</a></li>
+                        </ul>
+                    </div>   
                 </li>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">network <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>

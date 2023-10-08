@@ -5,9 +5,9 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main >
-     <section className="slider">
+     {/* <section className="slider">
      <HeroSlider />
-     </section>
+     </section> */}
     <div className="Herobarner flex-col items-center justify-between p-24 bg-primayColor">
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
         <div className="left flex flex-col text-light-2">

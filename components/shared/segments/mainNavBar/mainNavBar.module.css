@@ -34,7 +34,7 @@
   font-size: 0.7rem;
 }
 
-.mainNavLinks:hover svg {
+.mainNavLinks:hover .innerMainNavLink svg {
   transform: rotate(180deg);
 }
 
@@ -49,13 +49,33 @@
   width: 100%;
   padding: 2rem 1.5rem;
   padding-left: 6rem;
+  padding-top: 3rem;
   border-radius: 0px 0px 15px 15px;
   transition: all 0.3s ease-in-out;
+  perspective: 2000px;
+  animation: rotateMenu 400ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.mainNavLinks:hover .mainLinkMenu {
+  visibility: visible;
+}
+
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }
 .mainLinkMenu::after {
-  content: "";
   position: absolute;
-  top: 100%;
+  content: "";
+  top: 0;
   left: 0;
   width: 100%;
   height: 10px;
@@ -68,8 +88,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   opacity: 0;
+  transform: translateX(-5%);
   animation: slideOutLeft 0.3s ease-in-out forwards;
 }
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-5%);
@@ -91,11 +113,29 @@
   }
 }
 
-.mainNavLinks:hover .mainLinkMenu {
-  visibility: visible;
-}
 .mainNavLinks:hover .mainLinkMenu ul {
   animation: slideInLeft 0.3s ease-in-out forwards;
+}
+
+.mainLinkMenu ul li a {
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: #4b5563;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.mainLinkMenu ul li a:hover {
+  color: #f06829;
+}
+
+.mainLinkMenu ul li a svg {
+  margin-right: 0.8rem;
+  font-size: 1.7rem;
 }
 
 .navbarCart {

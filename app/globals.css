@@ -13,7 +13,7 @@
 
 @layer components {
   .navContent {
-    @apply max-w-screen-2xl mx-auto flex items-end !relative justify-between px-6;
+    @apply max-w-screen-2xl mx-auto flex items-end !relative  px-6;
   }
 
   /* .mainNavItemHolder {

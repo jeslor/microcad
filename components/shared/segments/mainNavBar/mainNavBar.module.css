@@ -6,6 +6,10 @@
   padding-top: 1rem;
 }
 
+.mainNavLinksHolder {
+  margin-left: auto;
+}
+
 .mainNavLinks {
   padding-top: 1rem;
   padding-left: 0.5rem;
@@ -39,26 +43,29 @@
 }
 
 .mainLinkMenu {
-  min-height: 400px;
-  max-height: 500px;
+  min-height: 40vh;
+  max-height: 50vh;
   overflow-y: scroll;
   position: absolute;
   left: 0;
   top: 100%;
-  visibility: hidden;
+  visibility: visible;
   width: 100%;
-  padding: 2rem 1.5rem;
-  padding-left: 6rem;
-  padding-top: 3rem;
   border-radius: 0px 0px 15px 15px;
   transition: all 0.3s ease-in-out;
-  /* perspective: 2000px;
-  animation: rotateMenu 400ms ease-in-out forwards; */
-  transform-origin: top center;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+  -webkit-transform-origin: 50% 0;
+  -webkit-transition: 350ms;
+  -moz-transition: 350ms;
+  -o-transition: 350ms;
+  transition: 350ms;
 }
 
-.mainNavLinks:hover .mainLinkMenu {
-  visibility: visible;
+.mainNavLinksHolder:hover .mainLinkMenu {
+  max-height: 1000px;
+  -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
 }
 
 @keyframes rotateMenu {
@@ -83,13 +90,23 @@
   border-radius: 15px 15px 0px 0px;
 }
 
-.mainLinkMenu ul {
-  display: grid;
+.mainNavLinks ul {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   opacity: 0;
+  padding: 2rem 1.5rem;
+  padding-left: 6rem;
+  padding-top: 3rem;
   transform: translateX(-5%);
   animation: slideOutLeft 0.3s ease-in-out forwards;
+}
+.mainNavLinks:hover ul {
+  display: grid;
+  animation: slideInLeft 0.3s ease-in-out forwards;
 }
 
 @keyframes slideInLeft {
@@ -113,11 +130,7 @@
   }
 }
 
-.mainNavLinks:hover .mainLinkMenu ul {
-  animation: slideInLeft 0.3s ease-in-out forwards;
-}
-
-.mainLinkMenu ul li a {
+.mainNavLinks ul li a {
   list-style: none;
   font-size: 15px;
   font-weight: 500;
@@ -129,18 +142,21 @@
   align-items: center;
   padding-bottom: 1rem;
 }
-.mainLinkMenu ul li a:hover {
+.mainNavLinks ul li a:hover {
   color: #f06829;
 }
 
-.mainLinkMenu ul li a svg {
+.mainNavLinks ul li a svg {
   margin-right: 0.8rem;
   font-size: 1.7rem;
+}
+.extraMainMenu {
+  display: flex;
 }
 
 .navbarCart {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding-left: 0.5rem;
 }

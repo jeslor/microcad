@@ -12,10 +12,9 @@ function MainNav() {
             </Link>
 
             <ul className={`${styles.mainNavLinksHolder} flex text-primayColor`}>
-                <div className={styles.mainLinkMenu}></div>
+                <div className={`${styles.mainLinkMenu} bg-slate-100`}></div>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
-                   {/* <div className={`${styles.mainLinkMenu} bg-slate-100`}> */}
                     <ul>
                         <li className='hover:text-primayColor'><a href="#"><Icon icon="clarity:thin-client-line" />Terminals/Thin Clients</a></li>
                         <li className='hover:text-primayColor'><a href="#"><Icon icon="radix-icons:desktop" /> desktop computers</a></li>
@@ -31,12 +30,10 @@ function MainNav() {
                         <li className='hover:text-primayColor'><a href="#">scanners</a></li>
                         <li className='hover:text-primayColor'><a href="#">projectors</a></li>
                     </ul>
-                   {/* </div> */}
                 </li>
 
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
-                    <div className={`${styles.mainLinkMenu} bg-slate-100`}>
                     <ul>
                         <li><a href="#">cpu</a></li>
                         <li><a href="#">memory</a></li>
@@ -56,26 +53,21 @@ function MainNav() {
                         <li><a href="#">chassis</a></li>
                         <li><a href="#">cooling</a></li>
                         <li><a href="#">accessories</a></li>
-
-                        </ul>
-                     </div>
+                    </ul>
                 </li>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">network <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>  
-                    <div className={`${styles.mainLinkMenu} bg-slate-100`}>
-                        <ul>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="clarity:thin-client-line" />Terminals/Thin Clients</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="radix-icons:desktop" /> desktop computers</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="teenyicons:servers-outline" /> Workstations</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="iconoir:laptop" />laptops</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="tdesign:system-log" />systems</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="bi:pc-display-horizontal" />servers</a></li>
-                            <li className='hover:text-primayColor'><a href="#"><Icon icon="simple-icons:pcgamingwiki" />extreme series</a></li>
-                            <li className='hover:text-primayColor'><a href="#">rugged</a></li>
-                            <li className='hover:text-primayColor'><a href="#">all in ones</a></li>
-                        </ul>
-                    </div>
-                   
+                    <ul>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="clarity:thin-client-line" />Terminals/Thin Clients</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="radix-icons:desktop" /> desktop computers</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="teenyicons:servers-outline" /> Workstations</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="iconoir:laptop" />laptops</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="tdesign:system-log" />systems</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="bi:pc-display-horizontal" />servers</a></li>
+                        <li className='hover:text-primayColor'><a href="#"><Icon icon="simple-icons:pcgamingwiki" />extreme series</a></li>
+                        <li className='hover:text-primayColor'><a href="#">rugged</a></li>
+                        <li className='hover:text-primayColor'><a href="#">all in ones</a></li>
+                    </ul>
                 </li>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">storage <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
@@ -85,15 +77,17 @@ function MainNav() {
                 </li>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">peripherals <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
-                </li>
-                <li className={`${styles.mainNavLinks} text-secondaryColor`}>
+                </li>    
+            </ul>
+            <ul className={styles.extraMainMenu}>
+            <li className={`${styles.mainNavLinks} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="#">refubrished </a>
                 </li>
                 <li className={`${styles.mainNavLinks} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="#">special </a>
                 </li>
-                <li className={`pb-1 ${styles.navbarCart}`}><a href="#"><Icon icon="mdi:cart-outline"  /></a></li>
-                <li className={`pb-1 ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="mdi:cart-outline"  /></a></li>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
             </ul>
         </div>
 

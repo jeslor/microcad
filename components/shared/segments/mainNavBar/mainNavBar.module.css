@@ -277,6 +277,9 @@
     padding-left: 1rem;
     max-height: fit-content;
   }
+  .mainNavLinks ul li a svg {
+    font-size: 1.3rem;
+  }
   .extraMainMenu {
     display: none;
   }
@@ -335,5 +338,8 @@
 @media (max-width: 575.98px) {
   .mainNavLinks ul {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .mainNavLinks ul li a svg {
+    font-size: 1.1rem;
   }
 }

@@ -5,7 +5,8 @@ import styles from './mainNavBar.module.css'
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 function MainNav() {
-    const [showMenu, setShowMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState(false);
+    const [showSubMenu, setShowSubMenu] = useState(false);
     const showMenuHandler = () => {
         setShowMenu(!showMenu)
     }
@@ -140,9 +141,9 @@ function MainNav() {
                     </ul>
                 </li> 
                 <li className={styles.iconsMobileMenu}>
-                    <a className={styles.innerMainNavLink} href="#"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className=''>Login</span> </a>
-                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className=''>Register</span> </a>
-                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className=''>forgot password</span> </a>
+                    <a className={styles.innerMainNavLink} href="#"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-sm'>Login</span> </a>
+                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-sm'>Register</span> </a>
+                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-sm'>forgot password</span> </a>
 
 
                 </li>

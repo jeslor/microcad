@@ -1,17 +1,40 @@
 
 import Link from 'next/link'
+import { useState } from 'react'
 import styles from './mainNavBar.module.css'
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 function MainNav() {
+    const [showMenu, setShowMenu] = useState(false)
+    const showMenuHandler = () => {
+        setShowMenu(!showMenu)
+    }
+
+    const mainNavLinkHolder = showMenu ? `${styles.mainNavLinksHolder} ${styles.mainNavLinksHolderActive}` : `${styles.mainNavLinksHolder}`
+    const mobileMenuIcon = showMenu ? `${styles.mobileMenuIcon} ${styles.mobileMenuIconActive}` : `${styles.mobileMenuIcon}`
+
   return (
     <div className={`${styles.mainNav}`}>
-        <div className="navContent">
-        <Link href='/' className="block pt-3 pb-2 ">
+        <div className={`${styles.navContent} navContent`}>
+            <div className={styles.mobileMenu} onClick={showMenuHandler}>
+                <div className={mobileMenuIcon} >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+            </div>
+            <Link href='/' className="block pt-3 pb-2 ">
                 <Image src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={20} />
             </Link>
+            <div className={`${styles.mobileCart}`}>
+                <ul>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="mdi:cart-outline"  /></a></li>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
+                </ul>
 
-            <ul className={`${styles.mainNavLinksHolder} flex text-primayColor`}>
+            </div>
+
+            <ul className={`${mainNavLinkHolder} flex text-primayColor`}>
                 <div className={`${styles.mainLinkMenu} bg-slate-100`}></div>
                 <li className={styles.mainNavLinks}>
                     <a className={styles.innerMainNavLink} href="#">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  

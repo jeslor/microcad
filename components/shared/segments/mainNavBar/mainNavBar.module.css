@@ -171,3 +171,107 @@
 .navbarCart:hover {
   background-color: rgba(23, 16, 94, 0.135);
 }
+
+.mobileCart {
+  display: none;
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .mainNavLinksHolder {
+    padding-left: 1rem;
+  }
+  .mainNavLinks {
+    padding-left: 0rem;
+  }
+  .navbarCart {
+    font-size: 1.4rem;
+    margin: 0.2rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .mobileMenu {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .mobileMenu:hover {
+    background-color: rgba(23, 16, 94, 0.135);
+  }
+  .mobileMenuIcon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #16105e;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobileMenuIconActive span:nth-of-type(1) {
+    transform: rotate(45deg) translate(5px, 4px);
+  }
+  .mobileMenuIconActive span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .mobileMenuIconActive span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .mainNavLinksHolder {
+    padding-top: 1rem;
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    width: 100%;
+    background-color: rgb(241, 245, 249);
+    left: -100%;
+    transition: all 0.25s cubic-bezier(0.18, 0.66, 0.78, 0.71);
+  }
+  .mainNavLinksHolderActive {
+    left: 0;
+    padding-right: 1rem;
+  }
+
+  .mainNavLinksHolder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(23, 16, 94, 0.135);
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .innerMainNavLink svg {
+    font-size: 1.1rem;
+  }
+  .extraMainMenu {
+    display: none;
+  }
+  .navContent {
+    justify-content: space-between;
+    align-items: center !important;
+  }
+  .mobileCart {
+    display: block;
+  }
+  .mobileCart ul {
+    margin-left: auto;
+    display: flex;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}

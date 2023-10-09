@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <div className="navbar ">
-            <div className="mainNav bg-primaryColor">  
+            <div className="mainNav bg-primaryColor hidden sm:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         <a className="navbarLinks" href="/">

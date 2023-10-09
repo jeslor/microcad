@@ -8,7 +8,7 @@ export default function Home() {
      {/* <section className="slider">
      <HeroSlider />
      </section> */}
-    <div className="Herobarner flex-col items-center justify-between p-24 bg-primayColor">
+    {/* <div className="Herobarner flex-col items-center justify-between p-24 bg-primayColor">
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
         <div className="left flex flex-col text-light-2">
           <h1 className="text-7xl font-bold">Microcad</h1>
@@ -18,7 +18,7 @@ export default function Home() {
           <Image src="/media/hero1.webp" alt="hero" width={500} height={500} />
         </div>
       </div>
-    </div>
+    </div> */}
     </main>
   )
 }

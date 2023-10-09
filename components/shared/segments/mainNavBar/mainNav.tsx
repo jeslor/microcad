@@ -121,10 +121,37 @@ function MainNav() {
                     <li><a href="#"><Icon icon="ri:webcam-line" /> Webcams </a></li>
                     <li><a href="#"><Icon icon="game-icons:game-console" /> gaming console </a></li>
                     </ul>
-                </li>    
+                </li> 
+                <div className={styles.onlyMobile}>
+                <li className={`${styles.mainNavLinks} text-secondaryColor`}>
+                        <a className={styles.innerMainNavLink} href="#">refubrished </a>
+                    </li>
+                    <li className={`${styles.mainNavLinks} text-secondaryColor`}>
+                        <a className={styles.innerMainNavLink} href="#">special </a>
+                    </li>  
+                    <li className={styles.mainNavLinks}>
+                    <a className={styles.innerMainNavLink} href="#">More <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
+                    <ul>
+                    <li><a href="#">services </a></li>
+                    <li><a href="#">partners </a></li>
+                    <li><a href="#">policies </a></li>
+                    <li><a href="#">About </a></li>
+                    <li><a href="#">Awards </a></li>    
+                    </ul>
+                </li> 
+                <li className={styles.iconsMobileMenu}>
+                    <a className={styles.innerMainNavLink} href="#"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className=''>Login</span> </a>
+                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className=''>Register</span> </a>
+                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className=''>forgot password</span> </a>
+
+
+                </li>
+
+                </div>
+           
             </ul>
             <ul className={styles.extraMainMenu}>
-            <li className={`${styles.mainNavLinks} text-secondaryColor`}>
+                <li className={`${styles.mainNavLinks} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="#">refubrished </a>
                 </li>
                 <li className={`${styles.mainNavLinks} text-secondaryColor`}>

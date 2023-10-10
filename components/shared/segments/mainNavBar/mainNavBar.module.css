@@ -1,6 +1,10 @@
 .mainNav {
   position: relative;
 }
+.navContent {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 
 .logo {
   padding-top: 1rem;
@@ -200,6 +204,15 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+  .navContent {
+    justify-content: space-between;
+    align-items: center !important;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+  .navLogo {
+    width: 150px;
+  }
   .mobileMenu {
     padding: 0.5rem;
     cursor: pointer;
@@ -283,10 +296,7 @@
   .extraMainMenu {
     display: none;
   }
-  .navContent {
-    justify-content: space-between;
-    align-items: center !important;
-  }
+
   .mobileCart {
     display: block;
   }

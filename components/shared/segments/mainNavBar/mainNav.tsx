@@ -25,8 +25,8 @@ function MainNav() {
                         <span></span>
                 </div>
             </div>
-            <Link href='/' className="block pt-3 pb-2 ">
-                <Image src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={20} />
+            <Link href='/' className="block pt-3 pb-2">
+                <Image className={styles.navLogo} src="/media/microcad_logo.png" alt="Microcad Logo" width={200} height={20} />
             </Link>
             <div className={`${styles.mobileCart}`}>
                 <ul>

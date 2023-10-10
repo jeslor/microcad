@@ -19,7 +19,7 @@
     display: grid;
     animation: slideInLeft 0.3s ease-in-out forwards;
   }
-  .openNavLinkMenu.active a svg {
+  .openNavLinkMenu.active > a svg {
     transform: rotate(180deg);
   }
   @keyframes slideInLeft {

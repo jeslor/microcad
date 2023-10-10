@@ -9,5 +9,6 @@ navLinks.forEach((navLink) => {
         !isActive? navLink.classList.add('active')
         :navLink.classList.remove('active') 
         
+        
     })
 })

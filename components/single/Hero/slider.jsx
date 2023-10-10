@@ -1,8 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { navigation,autoplay, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Autoplay,loop, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import { sliderContnet } from '@/constants/slider';
 import styles from './slider.module.css'
+
 
 
 
@@ -12,7 +16,8 @@ export default function HeroSlider() {
     className={styles.hersSlider}
     spaceBetween={40}
     slidesPerView={3}
-
+    pagination={{ clickable: true }}
+    autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true, }}
     onSlideChange={() => console.log('slide change')}
     onSwiper={(swiper) => console.log(swiper)}
   >

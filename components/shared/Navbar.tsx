@@ -8,8 +8,8 @@ export default function Navbar() {
     const toggleLink = () => setIsLinkOpen(!isLinkOpen);
 
     return (
-        <div className="navbar fixed w-full">
-            <div className="mainNav bg-primaryColor hidden sm:block">  
+        <div className="navbar fixed w-full z-50">
+            <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         <a className="navbarLinks" href="/">
@@ -22,6 +22,7 @@ export default function Navbar() {
                         <a className="navbarLinks" href="/products">partners</a>
                         <a className="navbarLinks" href="/products">policies</a>
                         <a className="navbarLinks" href="/products">About</a>
+                        <a className="navbarLinks" href="/products">Awards</a>
                         <a className="navbarLinks" href="/products">Contact</a>
                     </div>
                 </div>   

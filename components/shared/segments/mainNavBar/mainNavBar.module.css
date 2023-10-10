@@ -64,6 +64,7 @@
   -moz-transition: 350ms;
   -o-transition: 350ms;
   transition: 350ms;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .mainNavLinksHolder:hover .mainLinkMenu {
@@ -254,7 +255,6 @@
     height: calc(100vh - 80px);
     overflow-y: scroll;
     overflow-x: hidden;
-    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   }
 
   .mainNavLinksHolder:hover .mainLinkMenu {
@@ -271,6 +271,7 @@
   .mainNavLinksHolderActive {
     left: 0;
     height: calc(100vh - 80px);
+    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   }
 
   .mainNavLinksHolder::before {

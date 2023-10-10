@@ -1,12 +1,10 @@
 "use client";
-import HeroSlider from '@/components/single/slider/slider'
-import Image from 'next/image'
+import LandingPage from '@/components/single/Hero/hero';
 
 export default function Home() {
   return (
     <main >
-     <HeroSlider />
-
+     <LandingPage />
     </main>
   )
 }

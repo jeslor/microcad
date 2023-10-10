@@ -139,6 +139,7 @@ function MainNav() {
                     <li><a href="#">policies </a></li>
                     <li><a href="#">About </a></li>
                     <li><a href="#">Awards </a></li>    
+                    <li><a href="#">Contact us </a></li>    
                     </ul>
                 </li> 
                 <li className={styles.iconsMobileMenu}>

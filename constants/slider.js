@@ -1,4 +1,4 @@
-import heroImage1 from '@/public/hero1.webp';
+
 export const sliderContnet = [
     {
       title: "Vulputate Mollis Ultricies Fermentum Parturient",
@@ -17,6 +17,15 @@ export const sliderContnet = [
       image: "https://i.imgur.com/DCdBXcq.jpg",
       user: "Erich Behrens",
       userProfile: "https://i.imgur.com/0Clfnu7.png"
+    },
+    {
+      title: "Phasellus volutpat metus",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      button: "Buy now",
+      image: "https://i.imgur.com/DvmN8Hx.jpg",
+      user: "Bruno Vizovskyy",
+      userProfile: "https://i.imgur.com/4KeKvtH.png"
     },
     {
       title: "Phasellus volutpat metus",

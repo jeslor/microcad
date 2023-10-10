@@ -38,10 +38,13 @@
   .navContent {
     @apply max-w-screen-2xl mx-auto flex items-end !relative;
   }
+  .customwidth {
+    @apply max-w-screen-2xl mx-auto;
+  }
 
-  /* .mainNavItemHolder {
-    @apply relative;
-  } */
+  .microcadBtn {
+    @apply bg-primarymedium hover:bg-primayColor text-gray-300  px-6 py-2 rounded-xl text-base font-bold cursor-pointer ease-in-out duration-300;
+  }
 
   .mainNavLinks {
     @apply text-primarymedium hover:bg-secondaryMedium hover:text-light-2 focus:shadow-violet7  flex select-none items-center justify-between gap-[2px] mb-1 rounded-[4px] px-3 py-2 text-[15px] leading-none outline-none focus:shadow-[0_0_0_2px] font-bold capitalize;

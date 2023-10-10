@@ -42,10 +42,6 @@
   font-size: 0.7rem;
 }
 
-.mainNavLinks:hover .innerMainNavLink svg {
-  transform: rotate(180deg);
-}
-
 .mainLinkMenu {
   min-height: 40vh;
   max-height: 50vh;
@@ -121,11 +117,6 @@
   }
 }
 
-.mainNavLinks:hover ul {
-  display: grid;
-  animation: slideInLeft 0.3s ease-in-out forwards;
-}
-
 @keyframes slideInLeft {
   from {
     transform: translateX(-5%);
@@ -195,6 +186,15 @@
   .navbarCart {
     font-size: 1.4rem;
     margin: 0.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .mainNavLinks:hover ul {
+    display: grid;
+    animation: slideInLeft 0.3s ease-in-out forwards;
+  }
+  .mainNavLinks:hover .innerMainNavLink svg {
+    transform: rotate(180deg);
   }
 }
 

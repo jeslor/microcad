@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import styles from './mainNavBar.module.css'
 import Image from 'next/image'
+import Script from 'next/script'
 import { Icon } from '@iconify/react/dist/iconify.js'
 function MainNav() {
     const [showMenu, setShowMenu] = useState(false);
-    const [showSubMenu, setShowSubMenu] = useState(false);
     const showMenuHandler = () => {
         setShowMenu(!showMenu)
     }
@@ -16,6 +16,7 @@ function MainNav() {
 
   return (
     <div className={`${styles.mainNav}`}>
+        <Script src='/static/js/mainNav.js'/>
         <div className={`${styles.navContent} navContent`}>
             <div className={styles.mobileMenu} onClick={showMenuHandler}>
                 <div className={mobileMenuIcon} >
@@ -36,8 +37,8 @@ function MainNav() {
             </div>
 
             <ul className={`${mainNavLinkHolder} flex text-primayColor`}>
-                <div className={`${styles.mainLinkMenu} bg-slate-100`}></div>
-                <li className={styles.mainNavLinks}>
+                <div className={`${styles.mainLinkMenu} bg-slate-100` }></div>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
                     <ul>
                         <li className='hover:text-primayColor'><a href="#"><Icon icon="clarity:thin-client-line" />Terminals/Thin Clients</a></li>
@@ -51,7 +52,7 @@ function MainNav() {
                     </ul>
                 </li>
 
-                <li className={styles.mainNavLinks}>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">hardware <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
                     <ul>
                         <li ><a href="#"> <Icon icon="streamline:computer-connection-usb-cable-cables-cable-device-cord-computer-electronics-cords-usb" />cables</a></li>
@@ -68,7 +69,7 @@ function MainNav() {
                         <li><a href="#"> <Icon icon="mdi:car-turbocharger" />accessories</a></li>
                     </ul>
                 </li>
-                <li className={styles.mainNavLinks}>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">network <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>  
                     <ul>
                         <li><a href="#"> <Icon icon="mdi:network-pos" />Network Interface Cards</a></li>
@@ -85,7 +86,7 @@ function MainNav() {
                      
                     </ul>
                 </li>
-                <li className={styles.mainNavLinks}>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">storage <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
                     <li><a href="#"><Icon icon="clarity:ssd-line" /> Solid State Drives </a></li>
@@ -100,7 +101,7 @@ function MainNav() {
                     <li><a href="#"><Icon icon="fluent-mdl2:merge-duplicate" /> hard drive duplicators </a></li>
                     </ul>
                 </li>
-                <li className={styles.mainNavLinks}>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">display <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
                     <li><a href="#"><Icon icon="bi:display" /> Monitors </a></li>
@@ -110,7 +111,7 @@ function MainNav() {
                     <li><a href="#"><Icon icon="streamline:shopping-store-signage-2-sign-store-shop-shops-signage-stores-pole" /> Digital signage </a></li>    
                     </ul>
                 </li>
-                <li className={styles.mainNavLinks}>
+                <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">peripherals <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
                     <li><a href="#"><Icon icon="carbon:keyboard" /> Keyboards </a></li>
@@ -130,7 +131,7 @@ function MainNav() {
                     <li className={`${styles.mainNavLinks} text-secondaryColor`}>
                         <a className={styles.innerMainNavLink} href="#">special </a>
                     </li>  
-                    <li className={styles.mainNavLinks}>
+                    <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">More <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
                     <li><a href="#">services </a></li>

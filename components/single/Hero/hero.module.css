@@ -6,6 +6,7 @@
   padding-top: 160px;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .sliderDesign {
@@ -35,7 +36,6 @@
 
 .sliderContainer {
   padding: 3rem 1rem;
-  position: absolute;
   z-index: 2;
   width: 100%;
 }

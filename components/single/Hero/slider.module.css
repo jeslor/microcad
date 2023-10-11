@@ -1,6 +1,6 @@
 .heroSlider {
   padding-top: 6rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 .eachSlide {
   border-radius: 15px;
@@ -8,21 +8,53 @@
   position: relative;
   min-height: 400px;
   padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slideContent {
+  position: absolute;
+  top: 0;
+  padding: 1.5rem;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+}
+
+.slideButton {
+  position: absolute;
+  top: 60%;
+  left: 1.5rem;
+  z-index: 2;
+  text-transform: capitalize;
 }
 
 .imageHolder {
   position: absolute;
-  height: 100%;
+  height: 50%;
   width: 100%;
   left: 0;
   display: flex;
   align-items: flex-end;
+  z-index: 1;
+  top: 50%;
+}
+.imageHolder::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .imageHolder img {
   border-radius: 0px 0px 15px 15px;
   width: 100%;
-  height: 50%;
+  height: 100%;
   object-fit: cover;
   bottom: 0;
 }

@@ -4,9 +4,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './slider.module.css'
 import './slider.css'
-import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
+import { Autoplay, Pagination,Scrollbar, EffectCoverflow } from 'swiper/modules';
 
 import { sliderContnet } from '@/constants/slider';
+import Link from 'next/link';
 
 
 
@@ -18,8 +19,8 @@ export default function HeroSlider() {
     className={`${styles.heroSlider} heroSlider`}
     spaceBetween={30}
     loop={true}
-    autoplay={{delay:2000}}
-    slidesPerView={3}           // added
+    autoplay={{delay:3000}}
+    slidesPerView={1}           // added
     speed={3000}  
     pagination={{
       clickable: true
@@ -57,13 +58,18 @@ export default function HeroSlider() {
       <SwiperSlide key={index}>
         <div className={`${styles.eachSlide} bg-slate-100`}>
           <div className={styles.imageHolder}> 
-          <img src={item.image} alt="slider" />
+            <img src={item.image} alt="slider" />
           </div>
-          <h5>
-            <span className="text-primaryLight font-bold">{item.user}</span>
-          </h5>
-          <h3 className="text-primaryColor pt-2 pb-3 text-2xl font-bold">{item.title}</h3>
-          <p className="text-primarymedium text-sm text-start">{item.description}</p>
+          <div className={styles.slideContent}>
+            <h5>
+              <span className="text-primaryLight font-bold">{item.user}</span>
+            </h5>
+            <h3 className="text-primaryColor pt-2 pb-3 text-2xl font-bold">{item.title}</h3>
+            <p className="text-primarymedium text-sm text-start">{item.description}</p>
+          </div>
+          <Link className={`${styles.slideButton} microcadBtn`} href={`${item.link}`}>
+          {item.button}
+          </Link>
         </div>
       </SwiperSlide>
     ))}

@@ -1,5 +1,6 @@
-.hersSlider {
+.heroSlider {
   padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 .eachSlide {
   border-radius: 15px;
@@ -24,4 +25,8 @@
   height: 50%;
   object-fit: cover;
   bottom: 0;
+}
+
+.heroSlider .swiper-pagination-bullet {
+  background-color: green;
 }

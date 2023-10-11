@@ -1,0 +1,10 @@
+.heroSlider .swiper-pagination {
+  padding-top: 2rem;
+}
+
+.heroSlider .swiper-pagination-bullet {
+  background-color: #f06829;
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid #656496;
+}

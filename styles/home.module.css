@@ -13,9 +13,10 @@
   justify-content: center;
 }
 
-.leftContent h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.leftContent h2,
+.trusted h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -44,46 +45,180 @@
   position: relative;
   width: 60%;
 }
+.leveUpIcons,
+.leveUpIcons * {
+  display: flex;
+}
+
 .leveUpIcons {
-  position: absolute;
-  right: 2rem;
-  top: 0;
+  list-style: none;
+  flex: 1;
   height: 100%;
+  width: 100%;
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-.windows11,
-.office1,
-.office2 {
-  background-color: skyblue;
-  padding: 0.5rem;
-  width: fit-content;
-  border-radius: 10px;
-  color: whitesmoke;
-  font-size: 1.2rem;
-  font-weight: 600;
-  display: flex;
+.leveUpIcons li {
+  width: 60px;
+  height: 60px;
+  margin: 30px 50px;
+  position: relative;
+  justify-content: center;
+}
+
+.leveUpIcons div {
+  text-decoration: none;
+  background: #ebebeb;
+  flex: 1;
+  height: 100%;
+  justify-content: center;
   align-items: center;
   position: relative;
-  padding-left: 2rem;
-  margin: 0.5rem;
-  box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+  transform: perspective(1000px) rotate(-30deg) skew(30deg) translate(0, 0);
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s;
+  border-radius: 0px 10px 0px 0px;
 }
-.office1,
-.office2 {
-  background-color: #f68a5a;
 
-  display: flex;
-}
-.windows11 svg,
-.office1 svg,
-.office2 svg {
-  margin-right: 0.5rem;
+.leveUpIcons div:before,
+.leveUpIcons div:after {
   position: absolute;
-  left: 0.5rem;
+  content: "";
+  background: #ccc;
 }
 
-.imageHolder {
+.leveUpIcons div:before {
+  width: 20px;
+  height: 100%;
+  left: -20px;
+  top: 10px;
+  transform: skewY(-45deg);
+  border-radius: 10px 0px 0px 0px;
+}
+
+.leveUpIcons div:after {
+  width: 100%;
+  height: 20px;
+  left: -11px;
+  bottom: -20px;
+  transform: skewX(-45deg);
+}
+
+.leveUpIcons div:hover {
+  transform: perspective(1000px) rotate(-30deg) skew(30deg)
+    translate(25px, -25px);
+  box-shadow: -30px 30px 10px rgba(0, 0, 0, 0.3);
+}
+
+.leveUpIcons li span {
+  top: 140%;
+  position: absolute;
+  color: #444;
+  font-size: 0.9em;
+  text-transform: capitalize;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  z-index: 1;
+  display: inline-block;
+}
+
+.leveUpIcons svg {
+  font-size: 2em;
+  color: #222;
+  height: 20px;
+}
+.leveUpIcons li:nth-of-type(1) svg {
+  color: skyblue;
+}
+.leveUpIcons li:nth-of-type(2) svg {
+  color: #e75b1f;
+}
+.leveUpIcons li:nth-of-type(3) svg {
+  color: #e75b1f;
+}
+
+.trusted {
+  padding: 5rem 0rem;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(226, 226, 244, 0.9878326330532213) 19%,
+    rgba(250, 242, 255, 1) 69%,
+    rgba(233, 233, 249, 1) 100%
+  );
+}
+.partnerLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 15px;
+}
+.partnerLogos div {
+  background-color: rgb(255, 255, 255);
+  color: rgb(25, 25, 25);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 6px;
+  border-width: 4px 4px 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  transition: 0.2s ease;
+}
+.partnerLogos div:hover {
+  border-color: #656496;
+  border-width: 4px 4px 2px;
+  border-style: solid;
+  border-image: initial;
+}
+.partnerLogos img {
+  width: 170px;
+  height: 100px;
+  object-fit: contain;
+  /* filter: grayscale(100%); */
+  transition: all 0.3s ease-in-out;
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+@media (min-width: 992px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .leveup {
+    flex-direction: column;
+    padding: 3rem 1rem;
+  }
+  .leftContent,
+  .rightContent {
+    width: 100%;
+    padding: 2rem 0rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
 }

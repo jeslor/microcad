@@ -1,0 +1,40 @@
+.bottomBar {
+  background: rgb(0, 0, 0);
+  padding-bottom: 6rem;
+  width: 100%;
+}
+
+.bottomContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  padding-top: 3rem;
+  /* margin: 8rem 11.2rem auto; */
+  background-color: #0f0f11;
+  border: 2px solid #16105e;
+  padding: 3rem 1.5rem;
+  border-radius: 17px;
+}
+.bottomContent div li {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 2.2rem;
+  letter-spacing: -0.001rem;
+  padding-right: 3.2rem;
+  transition: color 0.3s ease-in-out;
+  text-transform: capitalize;
+}
+.bottomContent div li:hover {
+  color: #656496;
+}
+.bottomContent div:nth-of-type(3) li {
+  color: inherit;
+}
+.bottomContent div h3 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.001rem;
+  padding-right: 3.2rem;
+  text-transform: uppercase;
+}

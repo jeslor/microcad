@@ -346,7 +346,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .mainNavLinksHolderActive {
-    height: calc(100vh - 72px);
+    height: calc(100vh - 60px);
   }
 }
 

@@ -87,6 +87,17 @@
   cursor: pointer;
 }
 
+.copyright {
+  color: #656496;
+  font-size: 0.9rem;
+  line-height: 2.2rem;
+  letter-spacing: -0.001rem;
+  padding-right: 3.2rem;
+  text-transform: capitalize;
+  margin-top: 2rem;
+  text-align: end;
+}
+
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   .bottomContent {
@@ -111,5 +122,8 @@
   .socialMedia,
   .awards {
     justify-content: center;
+  }
+  .copyright {
+    text-align: center;
   }
 }

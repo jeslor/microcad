@@ -75,6 +75,9 @@ const Bottombar = () => {
           </div>
         </div>
       </div>
+      <div className={`${styles.copyright} customwidth mx-auto px-4 pt-8`}>
+        <p className="text-gray-400 text-sm ">© 2021 Microcad Computer Corporation. All Rights Reserved.</p>
+      </div>
     </footer>
   )
 }

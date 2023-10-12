@@ -1,3 +1,5 @@
+"use client"
+import { Icon } from '@iconify/react/dist/iconify.js'
 import styles from './bottombar.module.css'
 
 const Bottombar = () => {
@@ -46,11 +48,37 @@ const Bottombar = () => {
           </ul>
         </div>
       </div>
-      <div>
-
+      <div className={`${styles.social} customwidth mx-auto`}>
+        <div className={styles.socialMedia}>
+          <div>
+          <Icon icon="simple-icons:x" />
+          </div>
+          <div>
+          <Icon icon="lucide:facebook" />
+          </div>
+          <div>
+          <Icon icon="icon-park-outline:instagram" />
+          </div>
+        </div>
+        <div className={styles.awards}>
+          <div className={styles.award}>
+            <img src="/static/media/images/awards/award1.jpg" alt="award" />
+          </div>
+          <div className={styles.award}>
+            <img src="/static/media/images/awards/award2.png" alt="award" />
+          </div>
+          <div className={styles.award}>
+            <img src="/static/media/images/awards/award3.gif" alt="award" />
+          </div>
+          <div className={styles.award}>
+            <img src="/static/media/images/awards/award4.png" alt="award" />
+          </div>
+        </div>
       </div>
     </footer>
   )
 }
 
 export default Bottombar
+
+

@@ -216,6 +216,14 @@
   .leveUpIcons {
     height: 90%;
   }
+  .partnerLogos img {
+    width: 100px;
+    height: 60px;
+  }
+  .leftContent h2,
+  .trusted h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -226,5 +234,13 @@
 @media (max-width: 575.98px) {
   .leftContent p {
     font-size: 1rem;
+  }
+  .partnerLogos img {
+    width: 70px;
+    height: 40px;
+  }
+  .leftContent h2,
+  .trusted h2 {
+    font-size: 1.6rem;
   }
 }

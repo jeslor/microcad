@@ -345,6 +345,9 @@
   .mainNavLinks ul {
     grid-template-columns: repeat(2, 1fr);
   }
+  .mainNavLinksHolderActive {
+    height: calc(100vh - 72px);
+  }
 }
 
 /* X-Small devices (portrait phones, less than 576px) */

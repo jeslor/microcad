@@ -22,7 +22,6 @@ export default function Navbar() {
                         <a className="navbarLinks" href="/products">partners</a>
                         <a className="navbarLinks" href="/products">policies</a>
                         <a className="navbarLinks" href="/products">About</a>
-                        <a className="navbarLinks" href="/products">Awards</a>
                         <a className="navbarLinks" href="/products">Contact</a>
                     </div>
                 </div>   

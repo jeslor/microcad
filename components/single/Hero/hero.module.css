@@ -45,3 +45,27 @@
   text-align: center;
   padding-top: 4rem;
 }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .heroSlider {
+    padding-top: 100px;
+  }
+  .sliderContent {
+    padding-top: 1rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .sliderContent {
+    max-width: 100%;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .sliderContent h1 {
+    font-size: 2rem;
+  }
+}

@@ -91,19 +91,19 @@
 }
 
 .leveUpIcons div:before {
-  width: 20px;
+  width: 13px;
   height: 100%;
-  left: -20px;
-  top: 10px;
+  left: -12px;
+  top: 6px;
   transform: skewY(-45deg);
   border-radius: 10px 0px 0px 0px;
 }
 
 .leveUpIcons div:after {
   width: 100%;
-  height: 20px;
-  left: -11px;
-  bottom: -20px;
+  height: 13px;
+  left: -6px;
+  bottom: -12px;
   transform: skewX(-45deg);
 }
 
@@ -213,6 +213,9 @@
     width: 100%;
     padding: 2rem 0rem;
   }
+  .leveUpIcons {
+    height: 90%;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -221,4 +224,7 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .leftContent p {
+    font-size: 1rem;
+  }
 }

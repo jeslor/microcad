@@ -1,96 +1,85 @@
-
+// import office365 from "/static/media/images/office365webp.webp";
 export const sliderContnet = [
     {
-      title: "Vulputate Mollis Ultricies Fermentum Parturient",
+      title: "Microcad Refurbrishing",
       description:
-        "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.",
+        "The purpose of refurbishing is to make computers look and work as if they were new. To achieve high-quality refurbishing, the computer goes through six steps.",
       button: "about us",
-      image: "@/public/static/hero1.webp",
+      image:  "/static/media/images/refurbrishing.webp",
       link:"/about us",
-      user: "Luan Gjokaj",
-      userProfile: "https://i.imgur.com/JSW6mEk.png"
+      note: "Microsoft authorised refurbisher",
     },
     {
-      title: "Tortor Dapibus Commodo Aenean Quam",
+      title: "Serving since 1991",
       description:
-        "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+        "Microcad's business philosophy is to establish long-term, win-win relationships between Microcad, vendors, resellers, and ultimately, the end-users of the products.",
       button: "view video",
-      image: "https://i.imgur.com/DCdBXcq.jpg",
+      image: "/static/media/images/microcadslide.webp",
       link:"/about us",
-      user: "Erich Behrens",
-      userProfile: "https://i.imgur.com/0Clfnu7.png"
+      note: "100% Canadian owned",
     },
     
     {
-      title: "Phasellus volutpat metus",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      title: "Microsoft Office 365",
+      description:"By using Microsoft 365, you create an optimal online workplace for your colleagues . They can communicate quickly and work easily.",
       button: "learn more",
-      image: "https://i.imgur.com/DvmN8Hx.jpg",
+      image:  "/static/media/images/office365.webp",
       link:"/about us",
-      user: "Bruno Vizovskyy",
-      userProfile: "https://i.imgur.com/4KeKvtH.png"
+      note: "Computer software",
     },
     {
-      title: "Vulputate Mollis Ultricies Fermentum Parturient",
+      title: "Microcad Refurbrishing",
       description:
-        "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.",
+        "The purpose of refurbishing is to make computers look and work as if they were new. To achieve high-quality refurbishing, the computer goes through six steps.",
       button: "about us",
-      image: "@/hero1.webp",
+      image:  "/static/media/images/refurbrishing.webp",
       link:"/about us",
-      user: "Luan Gjokaj",
-      userProfile: "https://i.imgur.com/JSW6mEk.png"
+      note: "Microsoft authorised refurbisher",
     },
     {
-      title: "Tortor Dapibus Commodo Aenean Quam",
+      title: "Serving since 1991",
       description:
-        "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+        "Microcad's business philosophy is to establish long-term, win-win relationships between Microcad, vendors, resellers, and ultimately, the end-users of the products.",
       button: "view video",
-      image: "https://i.imgur.com/DCdBXcq.jpg",
-      user: "Erich Behrens",
-      userProfile: "https://i.imgur.com/0Clfnu7.png"
+      image: "/static/media/images/microcadslide.webp",
+      link:"/about us",
+      note: "100% Canadian owned",
     },
     
     {
-      title: "Phasellus volutpat metus",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      title: "Microsoft Office 365",
+      description:"By using Microsoft 365, you create an optimal online workplace for your colleagues . They can communicate quickly and work easily.",
       button: "learn more",
-      image: "https://i.imgur.com/DvmN8Hx.jpg",
+      image:  "/static/media/images/office365.webp",
       link:"/about us",
-      user: "Bruno Vizovskyy",
-      userProfile: "https://i.imgur.com/4KeKvtH.png"
+      note: "Computer software",
     },
     {
-      title: "Vulputate Mollis Ultricies Fermentum Parturient",
+      title: "Microcad Refurbrishing",
       description:
-        "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.",
+        "The purpose of refurbishing is to make computers look and work as if they were new. To achieve high-quality refurbishing, the computer goes through six steps.",
       button: "about us",
-      image: "@/hero1.webp",
+      image:  "/static/media/images/refurbrishing.webp",
       link:"/about us",
-      user: "Luan Gjokaj",
-      userProfile: "https://i.imgur.com/JSW6mEk.png"
+      note: "Microsoft authorised refurbisher",
     },
     {
-      title: "Tortor Dapibus Commodo Aenean Quam",
+      title: "Serving since 1991",
       description:
-        "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+        "Microcad's business philosophy is to establish long-term, win-win relationships between Microcad, vendors, resellers, and ultimately, the end-users of the products.",
       button: "view video",
-      image: "https://i.imgur.com/DCdBXcq.jpg",
+      image: "/static/media/images/microcadslide.webp",
       link:"/about us",
-      user: "Erich Behrens",
-      userProfile: "https://i.imgur.com/0Clfnu7.png"
+      note: "100% Canadian owned",
     },
     
     {
-      title: "Phasellus volutpat metus",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      title: "Microsoft Office 365",
+      description:"By using Microsoft 365, you create an optimal online workplace for your colleagues . They can communicate quickly and work easily.",
       button: "learn more",
-      image: "https://i.imgur.com/DvmN8Hx.jpg",
+      image:  "/static/media/images/office365.webp",
       link:"/about us",
-      user: "Bruno Vizovskyy",
-      userProfile: "https://i.imgur.com/4KeKvtH.png"
+      note: "Computer software",
     },
 
   ];

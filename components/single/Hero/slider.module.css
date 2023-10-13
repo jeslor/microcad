@@ -25,6 +25,9 @@
   top: 60%;
   left: 1.5rem;
   z-index: 2;
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  font-weight: 400;
   text-transform: capitalize;
 }
 

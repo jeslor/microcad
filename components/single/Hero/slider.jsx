@@ -19,7 +19,9 @@ export default function HeroSlider() {
     className={`${styles.heroSlider} heroSlider`}
     spaceBetween={30}
     loop={true}
-    autoplay={{delay:3000}}
+    autoplay={{delay:3000,
+
+    }}
     slidesPerView={1}           // added
     speed={3000}  
     pagination={{
@@ -31,11 +33,11 @@ export default function HeroSlider() {
       rotate: 50,
       stretch: 0,
       depth: 100,
-      modifier: 1,
+      modifier: 0.5,
       slideShadows: true,
     }}
 
-    modules={[Autoplay, Pagination, EffectCoverflow]}
+    modules={[Autoplay, Pagination, EffectCoverflow, Scrollbar]}
     breakpoints={{
       640: {
         slidesPerView: 1,
@@ -58,11 +60,11 @@ export default function HeroSlider() {
       <SwiperSlide key={index}>
         <div className={`${styles.eachSlide} bg-slate-100`}>
           <div className={styles.imageHolder}> 
-            <img src={item.image} alt="slider" />
+            <img src={`${item.image}`} alt="slider" />
           </div>
           <div className={styles.slideContent}>
             <h5>
-              <span className="text-primaryLight font-bold">{item.user}</span>
+              <span className="text-primaryLight font-bold">{item.note}</span>
             </h5>
             <h3 className="text-primaryColor pt-2 pb-3 text-2xl font-bold">{item.title}</h3>
             <p className="text-primarymedium text-sm text-start">{item.description}</p>

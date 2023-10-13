@@ -1,8 +1,11 @@
 "use client"
 import { Icon } from '@iconify/react/dist/iconify.js'
 import styles from './bottombar.module.css'
+import Script from 'next/script'
 
 const Bottombar = () => {
+  let date: Date = new Date();
+  let year: number = date.getFullYear();
   return (
     <footer className={styles.bottomBar}>
       <div className={`${styles.bottomContent} customwidth mx-auto`}>
@@ -76,7 +79,7 @@ const Bottombar = () => {
         </div>
       </div>
       <div className={`${styles.copyright} customwidth mx-auto px-4 pt-8`}>
-        <p className="text-gray-400 text-sm ">© 2021 Microcad Computer Corporation. All Rights Reserved.</p>
+        <p className="text-gray-400 text-sm ">© 1991 - {year}  Microcad Computer Corporation. All Rights Reserved.</p>
       </div>
     </footer>
   )

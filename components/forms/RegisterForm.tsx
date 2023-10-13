@@ -76,11 +76,11 @@ const RegisterForm = () => {
                 </SelectTrigger>
                 </FormControl>
                 <SelectContent className=' border-transparent bg-slate-200'>
-                        <SelectItem className='capitalize' value="retail">retail</SelectItem>
-                        <SelectItem className='capitalize' value="reseller">reseller</SelectItem>
-                        <SelectItem className='capitalize' value="corporate">corporate</SelectItem>
-                        <SelectItem className='capitalize' value="educational">educational</SelectItem>
-                        <SelectItem className='capitalize' value="government">government</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="retail">retail</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="reseller">reseller</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="corporate">corporate</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="educational">educational</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="government">government</SelectItem>
                     </SelectContent>
                 </Select>
             
@@ -274,8 +274,8 @@ const RegisterForm = () => {
                 </SelectTrigger>
                 </FormControl>
                 <SelectContent className=' border-transparent bg-slate-200'>
-                        <SelectItem className='capitalize' value="unitedstates">United states🇺🇸</SelectItem>
-                        <SelectItem className='capitalize' value="canada">Canada🇨🇦</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="unitedstates">United states 🇺🇸</SelectItem>
+                        <SelectItem className='capitalize hover:bg-slate-300' value="canada">Canada 🇨🇦</SelectItem>
                     </SelectContent>
                 </Select>
             

@@ -6,7 +6,7 @@ import RegisterForm from '@/components/forms/RegisterForm'
 const Page = () => {
   return (
     <div className={`${styles.login} customwidth mx-aut`}>
-        <h2>Register</h2>
+        <h2 className="text-primayColor">Register</h2>
     <div className={styles.loginWrapper}>
       <div className={styles.userInputs}>
       <h6 className='font-bold text-primarymedium pb-3'>Account Information</h6>

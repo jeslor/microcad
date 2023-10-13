@@ -14,12 +14,12 @@ export default function Navbar() {
             <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
-                        <a className="navbarLinks" href="/">
+                        <a className="navbarLinks" href="/register">
                         <Icon className="text-lg pe-1" icon="mdi:account" />
                             register
                         </a>
-                        <a className="navbarLinks" href="/contact"><Icon className="text-lg pe-1" icon="mdi:login" />Login</a>
-                        <a className="navbarLinks" href="/about"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</a>
+                        <a className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</a>
+                        <a className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</a>
                         <a className="navbarLinks" href="/products">services</a>
                         <a className="navbarLinks" href="/products">partners</a>
                         <a className="navbarLinks" href="/products">policies</a>

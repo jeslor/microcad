@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <section className={styles.pageHeight}>
+    <section className={`${styles.pageHeight} bg-slate-100`}>
         {children}
     </section>
   )

@@ -28,7 +28,7 @@ function MainNav() {
     const mobileMenuIcon = showMenu ? `${styles.mobileMenuIcon} ${styles.mobileMenuIconActive}` : `${styles.mobileMenuIcon}`
 
   return (
-    <div className={`${styles.mainNav}`}>
+    <div className={`${styles.mainNav} shadow-sm`}>
         <Script src='/static/js/mainNav.js'/>
         <div className={`${styles.navContent} navContent`}>
             <div className={styles.mobileMenu} onClick={showMenuHandler}>

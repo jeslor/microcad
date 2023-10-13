@@ -1,36 +1,30 @@
 import React from 'react'
 import styles from "@/styles/auth.module.css"
+import RegisterForm from '@/components/forms/RegisterForm'
 
-const page = () => {
+
+const Page = () => {
   return (
-    <div className={`${styles.login} customwidth mx-auto`}>
-        <div className="loginCard">
-          <div className="loginHeader">
-            <h2>Sign in</h2>
-            <p>to continue to Microcad</p>
-          </div>
-          <form className="loginForm">
-            <div className="formGroup">
-              <label htmlFor="email">Email or phone</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" id="password" />
-            </div>
-            <div className="formGroup">
-              <button className="microcadBtn">Sign in</button>
-            </div>
-            <div className="formGroup">
-              <a href="/auth/forgot-password">Forgot password?</a>
-            </div>
-          </form>
-          <div className="loginFooter">
-            <p>Don't have an account? <a href="/auth/register">Create account</a></p>
-          </div>
-        </div>
+    <div className={`${styles.login} customwidth mx-aut`}>
+    
+      <div className={styles.userInputs}>
+      <RegisterForm />
+      </div>
+      <div className={styles.information}>
+      <h3>Register</h3>
+      <h6>The Microcad Account Advantage</h6>
+        <h6>Account Information</h6>
+        <ul>
+          <li>Instant customer and technical service is only a phone call away.</li>
+          <li>When Microcad has a deal you can rest assured its always priced below competitors.</li>
+          <li>Microcad isn't just a computer distributor but a full authorized service depot.</li>
+          The Microcad 'Price Match Guarantee' ensures you always get the lowest price.
+        </ul>
+      </div>
+       
+
     </div>
   )
 }
 
-export default page
+export default Page

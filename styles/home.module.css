@@ -144,7 +144,7 @@
 .trusted {
   padding: 5rem 0rem;
   text-align: center;
-  background-color: rgba(233, 233, 249, 1) 100%;
+  background-color: rgb(241, 245, 249);
   background-image: url("/static/media/backgrounds/pagebackground.png");
 
   /* background: rgb(255, 255, 255);

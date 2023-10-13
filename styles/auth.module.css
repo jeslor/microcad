@@ -7,7 +7,7 @@
 
 .login {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   padding: 2rem 0rem;
   margin-right: auto;
@@ -20,7 +20,22 @@
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: start;
+  padding-left: 1.5rem;
+}
+
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"],
+.login button {
+  height: 45px;
+  min-width: 45px;
+  border-radius: 0.25rem;
+}
+.login input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 .loginWrapper {
@@ -56,6 +71,45 @@
   content: "•";
   font-size: 1.2rem;
   margin-right: 0.5rem;
-  color: #ff0000;
+  color: #f68a5a;
   font-weight: bold;
+}
+
+.imageWraper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 0px 0px 15px;
+}
+.imageWraper img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.otherWays {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 0.7rem;
+}
+.otherWays a {
+  text-decoration: none;
+  color: #656496;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #4c4987;
+  padding: 0rem 1rem;
+  border-radius: 15px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.otherWays a svg {
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }

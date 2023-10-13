@@ -2,6 +2,7 @@
 import {useState} from 'react';
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [isLinkOpen, setIsLinkOpen] = useState(false);
@@ -14,17 +15,15 @@ export default function Navbar() {
             <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
-                        <a className="navbarLinks" href="/register">
-                        <Icon className="text-lg pe-1" icon="mdi:account" />
-                            register
-                        </a>
-                        <a className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</a>
-                        <a className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</a>
-                        <a className="navbarLinks" href="/products">services</a>
-                        <a className="navbarLinks" href="/products">partners</a>
-                        <a className="navbarLinks" href="/products">policies</a>
-                        <a className="navbarLinks" href="/products">About</a>
-                        <a className="navbarLinks" href="/products">Contact</a>
+                    <Link  className="navbarLinks" href="/register"><Icon className="text-lg pe-1" icon="mdi:account" />register</Link>
+
+                        <Link className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</Link>
+                        <Link className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</Link>
+                        <Link className="navbarLinks" href="/products">services</Link>
+                        <Link className="navbarLinks" href="/products">partners</Link>
+                        <Link className="navbarLinks" href="/products">policies</Link>
+                        <Link className="navbarLinks" href="/products">About</Link>
+                        <Link className="navbarLinks" href="/products">Contact</Link>
                     </div>
                 </div>   
                 

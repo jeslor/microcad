@@ -1,29 +1,128 @@
-import React from 'react'
+"use client"
+import { useForm } from 'react-hook-form';
 import styles from "@/styles/auth.module.css"
-import RegisterForm from '@/components/forms/RegisterForm'
+import * as z from 'zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 
 const Page = () => {
+
+  const loginSchema = z.object({
+    email: z.string().email(),
+    password: z.string().min(6),
+  });
+
+  const form = useForm({
+    resolver:zodResolver(loginSchema),
+      defaultValues:{
+        email:"",
+        password:""
+      }
+    })
+
+    const onSubmit = (values:z.infer<typeof loginSchema >) => {
+      console.log(values)
+    }
+  
+
   return (
     <div className={`${styles.login} customwidth mx-aut`}>
-        <h2 className="text-primayColor">Register</h2>
+    <h2 className="text-primayColor">Login</h2>
     <div className={styles.loginWrapper}>
       <div className={styles.userInputs}>
-      <h6 className='font-bold text-primarymedium pb-3'>Account Information</h6>
-        <RegisterForm />
+        <h6 className='font-bold text-primarymedium pb-3'>Enter details</h6>
+        <Form {...form}>
+          <form
+          onSubmit={form.handleSubmit(onSubmit)} 
+          className="flex flex-col justify-start gap-7">   
+           <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className='flex flex-col items-start  gap-1 w-full'>
+                  <FormLabel className='text-base-semibold text-gray-400'>
+                    Email
+                  </FormLabel>
+                  <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                    <Input 
+                    autoComplete='off'
+                      type='email'
+                      {...field}
+                      className='account-form no-focus'
+                    />
+                  </FormControl>
+                  <FormMessage className="text-red-500 text-xs" />
+                </FormItem>
+              )}
+            /> 
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem className='flex flex-col items-start  gap-1 w-full'>
+                  <FormLabel className='text-base-semibold text-gray-400'>
+                    Password
+                  </FormLabel>
+                  <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                    <Input 
+                    autoComplete='off'
+                      type='password'
+                      {...field}
+                      className='account-form no-focus'
+                    />
+                  </FormControl>
+                  <FormMessage className="text-red-500 text-xs" />
+                </FormItem>
+              )}
+            />
+            <div className="flex flex-col items-start justify-start">
+              <Button
+                type="submit"
+                className=" microcadBtn px-9"
+              >
+                Login
+              </Button>
+              <a href="/reset-password" className="pt-4 text-sm text-base-semibold text-primaryLight hover:text-primayColor">Forgot password?</a>
+              <p className='pt-4 text-sm text-base-semibold'>don't have an account? <a href="/register" className=" text-primaryLight hover:text-primayColor">Register</a></p>
+            </div>
+          </form>
+        </Form>
+        <h6 className='pt-8 font-bold text-primarymedium pb-3'>Other ways to sign in</h6>
+        <div className={styles.otherWays}>
+          <a
+            type="submit"
+            className=""
+          >
+            <Icon icon="devicon:google" />
+            Login with Google
+          </a>
+          <a
+            type="submit"
+            className=""
+          >
+            <Icon icon="logos:facebook" />
+            Login with Facebook
+          </a>
         </div>
-        <div className={styles.information}>
-        <h6 className='pb-3 text-primayColor font-semibold'> The Microcad Account Advantage</h6>
-          <ul>
-            <li>Instant customer and technical service is only a phone call away.</li>
-            <li>When Microcad has a deal you can rest assured its always priced below competitors.</li>
-            <li>Microcad isn't just a computer distributor but a full authorized service depot.</li>
-            <li>The Microcad 'Price Match Guarantee' ensures you always get the lowest price.</li>
-          </ul>
+      </div>
+      <div className={styles.information}>
+        <div className={styles.imageWraper}>
+          <img src='/static/media/microcad_logo.png' alt="logo"/>
         </div>
-
       </div>
     </div>
+</div>
   )
 }
 

@@ -62,7 +62,7 @@ const RegisterForm = () => {
     <Form {...form}>
     <form
     onSubmit={form.handleSubmit(onSubmit)} 
-    className="flex flex-col justify-start gap-10">    
+    className="flex flex-col justify-start gap-7">    
         <FormField
             control={form.control}
             name="accountType"

@@ -156,8 +156,8 @@ function MainNav() {
                     </ul>
                 </li> 
                 <li className={styles.iconsMobileMenu}>
-                    <a className={styles.innerMainNavLink} href="#"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-xs font-light'>Login</span> </a>
-                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-xs font-light'>Register</span> </a>
+                    <a className={styles.innerMainNavLink} href="/login"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-xs font-light'>Login</span> </a>
+                    <a className={styles.innerMainNavLink} href="/register"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-xs font-light'>Register</span> </a>
                     <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-xs font-light'>forgot password</span> </a>
 
 

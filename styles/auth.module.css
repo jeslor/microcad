@@ -7,7 +7,7 @@
 
 .login {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   padding: 2rem 0rem;
   margin-right: auto;
@@ -15,6 +15,7 @@
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .login h2 {
   font-size: 1.7rem;
@@ -107,9 +108,61 @@
   height: 45px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: 60%;
+}
+.otherWays a:hover {
+  color: #fff;
+  background-color: #4c4987;
 }
 
 .otherWays a svg {
   margin-right: 0.5rem;
   font-size: 1rem;
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .login {
+    max-width: 800px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .pageHeight {
+    padding: 1rem;
+    padding-top: 100px;
+  }
+  .userInputs {
+    padding-left: 1rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .pageHeight {
+    padding-top: 65px;
+  }
+  .loginWrapper {
+    flex-direction: column-reverse;
+  }
+  .login h2 {
+    margin-bottom: 1rem;
+  }
+  .userInputs,
+  .information {
+    width: 100%;
+    border-left: none;
+  }
+  .otherWays a {
+    width: 80%;
+  }
+}
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .otherWays a {
+    justify-content: center;
+    width: 100%;
+  }
 }

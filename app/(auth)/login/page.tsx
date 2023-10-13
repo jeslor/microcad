@@ -116,7 +116,7 @@ const Page = () => {
           </a>
         </div>
       </div>
-      <div className={styles.information}>
+      <div className={`${styles.information} hidden md:block`}>
         <div className={styles.imageWraper}>
           <img src='/static/media/microcad_logo.png' alt="logo"/>
         </div>

@@ -9,13 +9,22 @@
   width: 100%;
   max-width: 900px;
   margin-left: auto;
-  display: flex;
   padding: 2rem 0rem;
   margin-right: auto;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-top: 3rem;
+}
+.login h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.loginWrapper {
+  display: flex;
 }
 
 .userInputs {
@@ -24,13 +33,29 @@
   padding-left: 2rem;
 }
 
+.userInputs button.microcadBtn {
+  width: fit-content;
+}
+
 .information {
   width: 40%;
   border-left: 1px solid #e0e0e0;
   padding: 1rem;
+  height: fit-content;
 }
 .information ul {
   list-style: none;
   padding: 0;
   font-size: 0.8rem;
+}
+.information ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+.information ul li::before {
+  content: "•";
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #ff0000;
+  font-weight: bold;
 }

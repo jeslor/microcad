@@ -1,5 +1,6 @@
 "use client"
 import { useForm } from 'react-hook-form';
+import styles from "@/styles/auth.module.css"
 import * as z from 'zod';
 import {
     Form,
@@ -377,7 +378,7 @@ const RegisterForm = () => {
     />
 
     
-    <Button type="submit" className='microcadBtn'>Register</Button>
+    <Button type="submit" className={`${styles.microcadBtn} microcadBtn`}>Register</Button>
     </form>
   </Form>
   )

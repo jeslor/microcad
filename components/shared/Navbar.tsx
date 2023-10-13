@@ -5,7 +5,9 @@ import MainNav from './segments/mainNavBar/mainNav';
 
 export default function Navbar() {
     const [isLinkOpen, setIsLinkOpen] = useState(false);
-    const toggleLink = () => setIsLinkOpen(!isLinkOpen);
+    const toggleLink = () => {
+        setIsLinkOpen(!isLinkOpen);
+    }
 
     return (
         <div className="navbar fixed w-full z-50">

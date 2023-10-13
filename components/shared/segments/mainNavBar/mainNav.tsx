@@ -8,7 +8,20 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 function MainNav() {
     const [showMenu, setShowMenu] = useState(false);
     const showMenuHandler = () => {
-        setShowMenu(!showMenu)
+        let originalHeight: string = '';
+        if (showMenu) {
+            let div =  document.getElementsByTagName('body');
+           div[0].style.overflow = 'auto';
+            div[0].style.height = originalHeight;
+            setShowMenu(false);
+        }
+        if (!showMenu) {
+            let div =  document.getElementsByTagName('body');
+            originalHeight =  `${div[0].clientHeight}px`;
+            div[0].style.height = "100vh";
+            div[0].style.overflow = 'hidden';
+            setShowMenu(true);
+         }
     }
 
     const mainNavLinkHolder = showMenu ? `${styles.mainNavLinksHolder} ${styles.mainNavLinksHolderActive}` : `${styles.mainNavLinksHolder}`

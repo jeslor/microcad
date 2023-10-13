@@ -53,7 +53,6 @@ export default function HeroSlider() {
       },
 
     }}
-    onSlideChange={() => console.log('slide change')}
 
   >
     {sliderContnet.map((item, index) => (

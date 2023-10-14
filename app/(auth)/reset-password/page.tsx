@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import '@dotlottie/player-component';
+import  '@dotlottie/player-component'; // import the dotlottie-player component 
 
 
 const Page = () => {
@@ -35,7 +35,7 @@ const Page = () => {
     }
 
   return (
-    <div className={`${styles.login} customwidth mx-aut`}>
+    <div className={`${styles.login} customwidth mx-auto`}>
         <div className="passwordResetHolder">
             <h2 className="text-primayColor">Forgot password</h2>
             <div className={styles.loginWrapper}>

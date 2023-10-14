@@ -3,3 +3,47 @@
   padding-top: 160px;
   padding-bottom: 3rem;
 }
+
+.servicesHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.leftMenu {
+  max-width: 300px;
+  width: 100%;
+  margin-right: 2rem;
+}
+.leftMenu h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.leftMenu ul {
+  padding-top: 1rem;
+  list-style: none;
+  margin: 0;
+}
+.leftMenu ul li {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  border-radius: 0px 15px 15px 0px;
+  text-transform: capitalize;
+}
+.leftMenu ul li a {
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.leftMenu ul li a svg {
+  margin-left: auto;
+}
+
+.content {
+  flex-grow: 2;
+  padding: 1rem;
+}

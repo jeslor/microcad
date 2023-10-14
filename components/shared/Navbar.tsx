@@ -19,11 +19,11 @@ export default function Navbar() {
 
                         <Link className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</Link>
                         <Link className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</Link>
-                        <Link className="navbarLinks" href="/products">services</Link>
-                        <Link className="navbarLinks" href="/products">partners</Link>
-                        <Link className="navbarLinks" href="/products">policies</Link>
-                        <Link className="navbarLinks" href="/products">About</Link>
-                        <Link className="navbarLinks" href="/products">Contact</Link>
+                        <Link className="navbarLinks" href="/services">services</Link>
+                        <Link className="navbarLinks" href="/partners">partners</Link>
+                        <Link className="navbarLinks" href="/policies">policies</Link>
+                        <Link className="navbarLinks" href="/about">About</Link>
+                        <Link className="navbarLinks" href="/contact">Contact</Link>
                     </div>
                 </div>   
                 

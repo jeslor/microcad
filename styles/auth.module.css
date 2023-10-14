@@ -1,5 +1,5 @@
 .pageHeight {
-  min-height: 100vh;
+  min-height: 50vh;
   padding-top: 160px;
   padding-bottom: 3rem;
   background-image: url("/static/media/backgrounds/pagebackground.png");

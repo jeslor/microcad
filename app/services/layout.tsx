@@ -78,7 +78,7 @@ export default function RootLayout({
                 <h2 className="text-primaryLight">Services</h2>
                 <ul>
                     {services.map((service, index) => (
-                        <li key={index} className="bg-slate-200 hover:bg-slate-300">
+                        <li key={index} className="bg-slate-200 hover:bg-slate-300 text-primayColor">
                             <Link href={service.link}>
                                 <span className="block">{service.title}</span>
                                 <Icon icon="la:angle-right" />

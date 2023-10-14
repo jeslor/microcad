@@ -6,21 +6,21 @@
 
 .servicesHolder {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
   margin-top: 2rem;
 }
 
 .leftMenu {
-  max-width: 300px;
-  width: 100%;
+  min-width: 320px;
   margin-right: 2rem;
+  flex-grow: 1;
+  position: sticky;
+  top: 160px;
 }
 .leftMenu h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  padding-left: 1rem;
   text-transform: uppercase;
 }
 .leftMenu ul {
@@ -44,6 +44,73 @@
 }
 
 .content {
-  flex-grow: 2;
   padding: 1rem;
+  flex-grow: 2;
+  font-size: 0.9rems;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.intro h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.intro .leftContent {
+  width: 40%;
+}
+
+.intro .rightContent {
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.listDivs {
+  padding: 3rem 0rem;
+  padding-top: 4rem;
+}
+.listDivs h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.listDivs ul {
+  padding-left: 0rem;
+  list-style: none;
+}
+
+.listDivs ul li {
+  padding: 0.5rem 0rem;
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  margin-bottom: 0.9rem;
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  border-radius: 10px;
+  position: relative;
+  padding-left: 3rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.listDivs ul li span {
+  display: block;
+}
+
+.listDivs ul li svg {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #f06829;
+  display: block;
+  margin-right: 1rem;
+  left: 1rem;
 }

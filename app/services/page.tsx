@@ -23,7 +23,7 @@ const Services = () => {
         </div>
     </section>
     <section className={styles.listDivs}>
-        <h2 className="text-primaryLight">Keep your IT healthy through our Managed Services Program.</h2>
+        <h2 className="text-primaryLight ">Keep your IT healthy through our Managed Services Program.</h2>
         <ul className="text-primarymedium">
             <li>
                 <Icon icon="ant-design:setting-outlined" />
@@ -60,6 +60,67 @@ const Services = () => {
            </li>
         </ul>
 
+    </section>
+    <section className={styles.serviceDetail}>
+       <div className={`${styles.mantainance} ${styles.category}`}>
+            <h3 className="text-primarymedium"> Monitoring and Mantainance</h3>
+            <div>
+                <article>
+                    <h4 className="text-slate-100">Remote Monitorign and system Health</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Antivirus, Anti Malware & Security solutions</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Cloud Services</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Backup solutions</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Patch management</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Business Continunity Planning</h4>
+                </article>
+            </div>
+       </div>
+       <div className={`${styles.helpDesk} ${styles.category}`}>
+            <h3 className="text-primarymedium"> Help Desk and Support</h3>
+            <div>
+                <article>
+                    <h4 className="text-slate-100">custom Service Levels</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">800 Help Desk Support</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Support Ticketing System</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Remote and Onsite Support</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Training</h4>
+                </article>
+            </div>
+       </div>
+       <div className={`${styles.helpDesk} ${styles.category}`}>
+            <h3 className="text-primarymedium"> Your IT Department</h3>
+            <div>
+                <article>
+                    <h4 className="text-slate-100">Each account is assigned a Senior IT Consultant.
+                        Our senior consultants work closely with vour business on planning, asset management and risk mitigation.</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Microcad IT Support is Your IT Department with Remote Support and or Onsite Support Options.</h4>
+                </article>
+                <article>
+                    <h4 className="text-slate-100">Proactive Monitoring, Maintenance and Support for all Systems.</h4>
+                </article>
+
+            </div>
+       </div>
     </section>
    </div>
   )

@@ -142,12 +142,36 @@
 }
 
 .category article {
+  font-size: 0.85rem;
   display: flex;
-  align-items: center;
-  border-radius: 15px;
+  align-items: flex-start;
+  border-radius: 10px;
   width: 250px;
   padding: 1.2rem 0.8rem;
-  background: linear-gradient(to bottom, #656496 40%, #4c4987 80%);
+  background-color: #656496;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 0.5rem 1rem;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.category article:hover {
+  transform: scale(1.01);
+  border: 1px solid #656496;
+}
+.category article svg {
+  position: absolute;
+  font-size: 1rem;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.networkSystem h2 {
+  padding-bottom: 0rem;
+}
+
+.networkSystem ul li {
+  background-color: #4c4987;
 }

@@ -23,7 +23,7 @@ const Services = () => {
         </div>
     </section>
     <section className={styles.listDivs}>
-        <h2 className="text-primaryLight ">Keep your IT healthy through our Managed Services Program.</h2>
+        <h2 className="text-primayColor ">Keep your IT healthy through our Managed Services Program.</h2>
         <ul className="text-primarymedium">
             <li>
                 <Icon icon="ant-design:setting-outlined" />
@@ -61,66 +61,135 @@ const Services = () => {
         </ul>
 
     </section>
-    <section className={styles.serviceDetail}>
+    <section className={`${styles.serviceDetail} text-slate-50`}>
        <div className={`${styles.mantainance} ${styles.category}`}>
-            <h3 className="text-primarymedium"> Monitoring and Mantainance</h3>
+            <h3 className="text-primayColor"> Monitoring and Mantainance</h3>
             <div>
                 <article>
-                    <h4 className="text-slate-100">Remote Monitorign and system Health</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Remote Monitorign and system Health</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Antivirus, Anti Malware & Security solutions</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Antivirus, Anti Malware & Security solutions</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Cloud Services</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Cloud Services</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Backup solutions</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Backup solutions</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Patch management</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Patch management</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Business Continunity Planning</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Business Continunity Planning</h4>
+                </article>
+            </div>
+       </div>
+       <div className={`${styles.helpDesk} ${styles.category} `}>
+            <h3 className="text-primayColor"> Help Desk and Support</h3>
+            <div>
+                <article>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >custom Service Levels</h4>
+                </article>
+                <article>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >800 Help Desk Support</h4>
+                </article>
+                <article>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Support Ticketing System</h4>
+                </article>
+                <article>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Remote and Onsite Support</h4>
+                </article>
+                <article>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Training</h4>
                 </article>
             </div>
        </div>
        <div className={`${styles.helpDesk} ${styles.category}`}>
-            <h3 className="text-primarymedium"> Help Desk and Support</h3>
+            <h3 className="text-primayColor"> Your IT Department</h3>
             <div>
                 <article>
-                    <h4 className="text-slate-100">custom Service Levels</h4>
-                </article>
-                <article>
-                    <h4 className="text-slate-100">800 Help Desk Support</h4>
-                </article>
-                <article>
-                    <h4 className="text-slate-100">Support Ticketing System</h4>
-                </article>
-                <article>
-                    <h4 className="text-slate-100">Remote and Onsite Support</h4>
-                </article>
-                <article>
-                    <h4 className="text-slate-100">Training</h4>
-                </article>
-            </div>
-       </div>
-       <div className={`${styles.helpDesk} ${styles.category}`}>
-            <h3 className="text-primarymedium"> Your IT Department</h3>
-            <div>
-                <article>
-                    <h4 className="text-slate-100">Each account is assigned a Senior IT Consultant.
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Each account is assigned a Senior IT Consultant.
                         Our senior consultants work closely with vour business on planning, asset management and risk mitigation.</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Microcad IT Support is Your IT Department with Remote Support and or Onsite Support Options.</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Microcad IT Support is Your IT Department with Remote Support and or Onsite Support Options.</h4>
                 </article>
                 <article>
-                    <h4 className="text-slate-100">Proactive Monitoring, Maintenance and Support for all Systems.</h4>
+                    <Icon icon="carbon:cloud-services" />
+                    <h4 >Proactive Monitoring, Maintenance and Support for all Systems.</h4>
                 </article>
 
             </div>
        </div>
+    </section>
+    <section className={`${styles.listDivs} ${styles.networkSystem}`}>
+        <h2 className="text-primayColor pb-1 mb-1">Computer and Network Support
+            Specialists IT Managed Service
+            Provider (MSP).
+        </h2>
+        <h5 className="uppercase text-secondaryColor font-bold text-sm pb-4">London's largest technology provider.</h5>
+        <ul className="text-slate-200">
+            <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+            <span>
+            On-site and remote support available.
+            </span>
+            </li>
+            <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+                <span>
+                    Best rates in South Western Ontario starting at
+                    $85 per hour.
+                </span>
+            </li>
+            <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+                <span>
+                    Proactive systems monitoring in the Microcad
+                    Network Operations Centre (NOC).
+                </span>
+            </li>
+            <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+                <span>
+                    Large global online distributer with 20,000 sq ft
+                    facility in London including: retail and tech centre.
+                </span>
+            </li>
+           <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+            <span>
+                Sales, service and installation of: voice and data infrastructure, Windows, Apple & Android products.
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+            <span>
+            Microcad builds 35,000 systems every 12 months.
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
+            <span>
+            Dozens of local business references in all verticals.
+            </span>
+           </li>
+        </ul>
+
     </section>
    </div>
   )

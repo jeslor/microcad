@@ -85,10 +85,10 @@ export default function RootLayout({
                 <ul>
                     {services.map((service, index) => (
                         <li key={index} className={`${service.link ===pathname?'bg-primayColor text-slate-100':'bg-slate-200'} hover:bg-slate-300 text-primayColor`}>
-                            <Link href={service.link}>
+                            <a href={service.link}>
                                 <span className="block">{service.title}</span>
                                 {service.link ===pathname &&  <Icon icon="la:angle-right" />}                             
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>

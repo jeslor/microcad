@@ -12,6 +12,7 @@
 
 .leftMenu {
   min-width: 320px;
+  width: 320px;
   margin-right: 2rem;
   flex-grow: 1;
   position: sticky;
@@ -37,6 +38,7 @@
   margin-bottom: 0.2rem;
   border-radius: 0px 15px 15px 0px;
   text-transform: capitalize;
+  transition: background-color 0.15s ease-in;
 }
 .leftMenu ul li a {
   padding: 0.6rem 1rem;
@@ -101,7 +103,7 @@
   margin-bottom: 0.9rem;
   padding: 1rem 1.5rem;
   font-size: 0.85rem;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  width: fit-content;
   border-radius: 10px;
   position: relative;
   padding-left: 3rem;

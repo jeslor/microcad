@@ -27,7 +27,7 @@ const Page = () => {
     </section>
     <section className={`${styles.serviceDetail} text-slate-50`}>
        <div className={`${styles.listDivs} ${styles.category} !pt-0`}>
-            <h3 className="text-primayColor"> Ready to make changes? </h3>
+            <h3 className="text-primayColor"> What are the benefits of cloud computing? </h3>
 
             <ul className="text-primarymedium">
             <li>

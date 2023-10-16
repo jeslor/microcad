@@ -177,3 +177,28 @@
 .networkSystem ul li {
   background-color: #4c4987;
 }
+
+.prices {
+  background-color: #4c4987;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.priceInfo {
+  flex-grow: 2;
+  width: 70%;
+}
+.prices p {
+  color: #fff;
+  margin-right: 1.5rem;
+}
+
+.cloudPrices {
+  background-color: #fff;
+  height: 150px;
+  width: 150px;
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+}

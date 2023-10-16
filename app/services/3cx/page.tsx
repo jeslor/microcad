@@ -14,7 +14,7 @@ const Page = () => {
         <div className={styles.rightContent}>
 
             <div className={styles.imageHolder}>
-                <img src="/static/media/images/cx.webp" alt="services" />
+                <img src="/static/media/images/cx.webp" alt="3cx services" />
             </div>
         </div>
     </section>

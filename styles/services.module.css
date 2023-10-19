@@ -206,3 +206,33 @@
 .ComputerRepair {
   padding-top: 1rem;
 }
+
+.signageTypes {
+  padding-top: 3rem;
+}
+
+.signageTypes h3 {
+  padding-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.signageTypes div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.signageTypes div article {
+  border-radius: 15px;
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+.signageTypes div h6 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.signageTypes article img {
+  justify-self: flex-end;
+}

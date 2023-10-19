@@ -22,22 +22,22 @@ const Page = () => {
         <h2 className="text-primayColor ">Why busineses love It?</h2>
         <ul className="text-primarymedium">
             <li>
-                <Icon icon="ant-design:setting-outlined" />
-            <span>
-              You control your message.
-            </span>
+              <Icon icon="carbon:screen" />            
+              <span>
+                You control your message.
+              </span>
             </li>
             <li>
-                <Icon icon="ant-design:setting-outlined" />
-                <span>
-                  Digital Signage is all about getting the right message to the right people at the right place and time                
-                </span>
+              <Icon icon="carbon:screen" />                
+              <span>
+                Digital Signage is all about getting the right message to the right people at the right place and time                
+              </span>
             </li>
             <li>
-                <Icon icon="ant-design:setting-outlined" />
-                <span>
-                  It is 52% more memorable compared to other forms of advertisement like Magazines, TV, Radio, and Newspapers.
-                </span>
+              <Icon icon="carbon:screen" />                
+              <span>
+                It is 52% more memorable compared to other forms of advertisement like Magazines, TV, Radio, and Newspapers.
+              </span>
             </li>
         </ul>
     </section>

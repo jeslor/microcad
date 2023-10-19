@@ -39,7 +39,7 @@ const  services = [
     },
     {
         title: "gaming PCs (Extreme series)",
-        link: "/services/gaming-pcs-extreme-series"
+        link: "https://www.mxggaming.com"
     },
     {
         title: "managed services (Onsite)",

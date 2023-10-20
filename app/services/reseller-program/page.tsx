@@ -1,6 +1,5 @@
 "use client";
 import styles from "@/styles/services.module.css"
-import { Icon } from "@iconify/react/dist/iconify.js"
 
 const Page = () => {
   return (

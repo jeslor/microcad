@@ -25,18 +25,18 @@ const Page = () => {
     </section>
     <section className={`${styles.serviceDetail} text-slate-50`}>
        <div className={`mt-7 pb-7 ${styles.category}`}>
-            <h3 className="pb-1 text-primayColor">Printer Repair</h3>
+            <h3 className="!pb-1 text-primayColor">Printer Repair</h3>
             <p className="text-primarymedium">
               Printers and other external devices can cause more problems than the computers they're connected to. If your printer jams and leaks, your scanner garbles your documents, or your external hard drive is making a suspicious ticking sound, it's time to call Microcad.
             </p>
        </div>
        <div className={`pb-7 ${styles.category}`}>
-            <h3 className="pb-1 text-primayColor">Business Services</h3>
+            <h3 className="!pb-1 text-primayColor">Business Services</h3>
             <p className="text-primarymedium">
             Computers are the heart of modern business, so every moment they're down you're losing time and money. Microcad charges the same low rates for business customers as for residential and we can have a tech on site within 24 hours of your call, helping you get some of that time and money back.            </p>
        </div>
        <div className={`pb-7 ${styles.category}`}>
-            <h3 className="pb-1 text-primayColor">Notebook Repair</h3>
+            <h3 className="!pb-1 text-primayColor">Notebook Repair</h3>
             <p className="text-primarymedium">
               At Microcad we are experts in providing replacement for damaged Laptop LCD Screens. We provide best quality, brand new A+++ replacement LCD for all major Laptop Brands.
             </p>

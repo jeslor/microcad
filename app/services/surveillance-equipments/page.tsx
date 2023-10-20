@@ -105,7 +105,6 @@ const Page = () => {
           </article>
         </div>
       </div>
-
     </section>
 
 

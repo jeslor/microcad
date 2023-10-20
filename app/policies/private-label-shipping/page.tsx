@@ -62,8 +62,8 @@ const page = () => {
             Absolutely not! Enrollment in the Private Label Delivery Program is FREE along with customizing your company logo to fit the packing slip and shipping label.
             </p>
        </div>
-       <div className={`!pb-1 ${styles.category}`}>
-            <h3 className="pb-1 text-primayColor">How to Sign up for Private Label Delivery</h3>
+       <div className={`pb-7 ${styles.category}`}>
+            <h3 className="!pb-1 text-primayColor">How to Sign up for Private Label Delivery</h3>
             <p className="text-primarymedium">
                 To take advantage of the new Private Label Delivery capabilities available from Microcad. Submit your company logo, address, and all related shipping information and Microcad will do the rest.
             </p>

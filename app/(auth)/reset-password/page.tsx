@@ -14,8 +14,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import  '@dotlottie/player-component'; // import the dotlottie-player component 
-
+import { DotLottiePlayer, Controls } from '@dotlottie/react-player';
 
 const Page = () => {
 
@@ -30,7 +29,7 @@ const Page = () => {
       }
     })
 
-    const onSubmit = (values) => {
+    const onSubmit = (values: z.infer<typeof loginSchema>) => {
       console.log(values)
     }
 
@@ -69,16 +68,17 @@ const Page = () => {
                             <Button className="microcadBtn">Submit</Button>
                         </form>
                     </Form>
-                    <a className="mt-8 flex items-center pointer text-sm text-primaryLight hover:text-secondaryColor" href="/login"><Icon className='mr-2' icon="ic:round-arrow-back" /> Back to login</a>
+                    <a className="pt-8 flex items-center pointer text-sm text-primaryLight hover:text-secondaryColor" href="/login"><Icon className='mr-2' icon="ic:round-arrow-back" /> Back to login</a>
                 </div>
                 <div className={styles.information}>
                     <div className={styles.imageWraper}>
-                    <dotlottie-player
+                    <DotLottiePlayer
                         src="/static/media/lotties/passwordResetAnimation"
                         autoplay
                         loop
                         style={{ height: '100%', width: '100%' }}
-                    />
+                    >
+                    </DotLottiePlayer>
                     </div>
                 </div>
             </div>

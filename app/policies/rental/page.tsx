@@ -9,7 +9,7 @@ const page = () => {
             <h1 className="!pb-0">Rental policy</h1>
     </section>
 
-    <section className={styles.listDivs}>
+    <section className={`${styles.listDivs} !pt-1`}>
         <h2 className="text-primayColor ">Microcad LCD Projector Rentals</h2>
         <ul className="text-primarymedium">
             <li>

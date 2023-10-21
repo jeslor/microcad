@@ -255,6 +255,7 @@
   width: 100%;
   margin-bottom: 5rem;
   height: 407px;
+  overflow-y: hidden;
   overflow-x: scroll !important;
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),

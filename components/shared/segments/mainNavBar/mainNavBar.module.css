@@ -262,6 +262,7 @@
   }
   .mainNavLinksHolder .onlyMobile {
     display: block;
+    padding-bottom: 3.5rem;
   }
 
   .mainNavLinksHolder li {

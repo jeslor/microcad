@@ -30,7 +30,7 @@ const Page = () => {
       }
     })
 
-    const onSubmit = (values:z.infer<typeof loginSchema >) => {
+    const onSubmit = (values) => {
       console.log(values)
     }
 

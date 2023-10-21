@@ -147,18 +147,18 @@ function MainNav() {
                     <li className={`${styles.mainNavLinks} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">More <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
-                    <li><a href="#">services </a></li>
-                    <li><a href="#">partners </a></li>
-                    <li><a href="#">policies </a></li>
-                    <li><a href="#">About </a></li>
-                    <li><a href="#">Awards </a></li>    
-                    <li><a href="#">Contact us </a></li>    
+                    <li><a href="/services">services </a></li>
+                    <li><a href="/partners">partners </a></li>
+                    <li><a href="/policies">policies </a></li>
+                    <li><a href="/about">About </a></li>
+                    <li><a href="/about/awards">Awards </a></li>
+                    <li><a href="/contact">Contact us </a></li>    
                     </ul>
                 </li> 
                 <li className={styles.iconsMobileMenu}>
                     <a className={styles.innerMainNavLink} href="/login"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-xs font-light'>Login</span> </a>
                     <a className={styles.innerMainNavLink} href="/register"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-xs font-light'>Register</span> </a>
-                    <a className={styles.innerMainNavLink} href="#"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-xs font-light'>forgot password</span> </a>
+                    <a className={styles.innerMainNavLink} href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-xs font-light'>forgot password</span> </a>
 
 
                 </li>

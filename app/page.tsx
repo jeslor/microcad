@@ -33,7 +33,7 @@ export default function Home() {
         <h2 className='text-primayColor'>Trusted by</h2>
         <div className={`${styles.partnerLogos} customwidth mx-auto`}>
           <div>
-            <img src="/static/media/images/3cx.webp" alt="partner1" />
+            <img src="/static/media/images/partnercx.webp" alt="partner1" />
           </div>
           <div>
             <img src="/static/media/images/bestBuy.png" alt="partner2" />

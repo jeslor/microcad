@@ -78,6 +78,7 @@ const Page = () => {
                         loop
                         style={{ height: '100%', width: '100%' }}
                     >
+  
                     </DotLottiePlayer>
                     </div>
                 </div>

@@ -298,8 +298,10 @@
 }
 
 .table tbody tr td {
-  padding: 0.5rem 1rem;
-  border-left: 1px solid #b4b3bd;
+  padding: 01rem;
+  padding-top: 1.3rem;
+  padding-bottom: 0.2rem;
+  border-left: 2px solid #dadee2;
 }
 .table tbody tr td:first-child {
   border-left: none;

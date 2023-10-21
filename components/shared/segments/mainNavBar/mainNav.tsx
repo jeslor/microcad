@@ -150,8 +150,8 @@ function MainNav() {
                     <li><a href="/services">services </a></li>
                     <li><a href="/partners">partners </a></li>
                     <li><a href="/policies">policies </a></li>
-                    <li><a href="/about">About </a></li>
-                    <li><a href="/about/awards">Awards </a></li>
+                    <li><a href="/company">About </a></li>
+                    <li><a href="/company/awards">Awards </a></li>
                     <li><a href="/contact">Contact us </a></li>    
                     </ul>
                 </li> 

@@ -1,6 +1,7 @@
 const navLinks = document.querySelectorAll('.openNavLinkMenu');
 navLinks.forEach((navLink) => {
-     navLink.addEventListener('click', (e) => {
+    const navLinkMenu = navLink.getElementsByTagName('a')[0];
+    navLinkMenu.addEventListener('click', (e) => {
         e.preventDefault();
         let isActive  = navLink.classList.contains('active');
         navLinks.forEach((navLink) => {

@@ -38,11 +38,11 @@
   z-index: 2;
 }
 
-.title h1 {
+.title h1,
+.contactParts h1 {
   font-weight: 500;
   font-size: 2.5rem;
   text-align: center;
-
   padding-bottom: 1rem;
 }
 
@@ -107,4 +107,62 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.contactHeader {
+  padding-top: 160px;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.secondContact {
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-start: 2;
+}
+.contactParts {
+  background-color: rgba(0, 0, 0, 0.464);
+  border-radius: 15px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contactParts h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.contactParts .imageHolder {
+  height: auto;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactParts .firstlevel {
+  text-align: start;
+}
+
+.contactParts .firstlevel li {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.contactParts .firstlevel li span {
+  font-weight: 700;
+  padding-right: 1rem;
 }

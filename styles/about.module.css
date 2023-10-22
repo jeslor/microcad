@@ -1,0 +1,83 @@
+.intro {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.intro h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.intro .leftContent {
+  width: 40%;
+}
+
+.intro .rightContent {
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.awards {
+  padding: 3rem 0rem;
+  padding-top: 2rem;
+}
+
+.awards ul {
+  padding-left: 0rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.awards ul li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.1s cubic-bezier(0.96, 0.03, 0.89, 0.71);
+  box-shadow:
+    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.awards ul li:hover {
+  transform: translateY(-4px);
+  transition: all 0.2s cubic-bezier(0.96, 0.03, 0.89, 0.71);
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+
+.awards ul li svg {
+  left: 1rem;
+  top: 1.2rem;
+  font-size: 2rem;
+  color: #f06829;
+  position: absolute;
+}
+
+.awards ul li p {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+
+.awards ul li p span {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.awards ul li p span:first-child {
+  font-size: 1rem;
+  font-weight: 900;
+}

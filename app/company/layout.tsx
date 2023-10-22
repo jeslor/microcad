@@ -45,7 +45,7 @@ export default function RootLayout({
     <section className={`${styles.pageHeight} bg-slate-100`}>
         <div className={`${styles.servicesHolder} customwidth mx-auto`}>
             <div className={styles.leftMenu}>
-                <h2 className="text-primaryLight">Services</h2>
+                <h2 className="text-primaryLight">About us</h2>
                 <ul>
                     {services.map((service, index) => (
                         <li key={index} className={`${service.link ===pathname?'bg-primayColor text-slate-100':'bg-slate-200'} hover:bg-slate-300 text-primayColor`}>

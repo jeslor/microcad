@@ -10,10 +10,10 @@ export default function Home() {
      <section className={`${styles.leveup} customwidth mx-auto`}>
       <div className={`${styles.leftContent} text-primayColor`}>
         <h2 >Level up</h2>
-        <p>
-          Unlock the full potential of your business, gaming, and social media
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eum itaque distinctio nesciunt aliquam temporibus voluptatibus facere, nulla magni impedit.
+        <p className='text-primaryLight'>
+          Unlock the full potential of your business, and education with office 365
         </p>
+        <p className='text-primaryLight'>Play the next-gen and classic games you want, at the graphics setting you want, and with the peripherals you want on a Windows 11 PC.</p>
           <button className='microcadBtn'>
             level up now
             <Icon icon="la:angle-right" />

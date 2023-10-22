@@ -65,7 +65,7 @@ export default function HeroSlider() {
             <h5>
               <span className="text-primaryLight font-bold">{item.note}</span>
             </h5>
-            <h3 className="text-primaryColor pt-2 pb-3 text-2xl font-bold">{item.title}</h3>
+            <h3 className="text-primaryColor pt-2 pb-3 text-2xl font-bold text-primayColor">{item.title}</h3>
             <p className="text-primarymedium text-sm text-start">{item.description}</p>
           </div>
           <Link className={`${styles.slideButton} microcadBtn`} href={`${item.link}`}>

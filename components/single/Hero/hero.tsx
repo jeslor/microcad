@@ -14,8 +14,8 @@ import HeroSlider from './slider'
      <div className={`${styles.sliderContainer} customwidth`}>
         <div className={`${styles.sliderContent}`}>
           <h1 className="text-5xl font-bold text-white pb-3">Microcad, a leading IT Solution in London</h1>
-          <p className="text-white text-md">Microcad Computer Corp is a nationwide distributor of computer products. Established since 1991, we have the experience and the means to provide you with the latest products and technologies to cater to all of your home/business applications.</p>
-          <button className="microcadBtn mt-4  ">Go shopping</button>
+          <p className="text-slate-500 text-md">Microcad Computer Corp is a nationwide distributor of computer products. Established since 1991, we have the experience and the means to provide you with the latest products and technologies to cater to all of your home/business applications.</p>
+          <button className="microcadBtn mt-4">Go shopping</button>
         </div>
         <HeroSlider />
      </div>

@@ -387,6 +387,7 @@
 .awards ul li p span:first-child {
   font-size: 1rem;
   font-weight: 900;
+  color: #4c4987c9;
 }
 
 .textimonials ul {
@@ -446,4 +447,52 @@
 
 .textimonials p {
   font-style: italic;
+}
+
+.careerList {
+  list-style-type: none;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+}
+
+.careerList li {
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+
+.careerList li::before {
+  content: "•";
+  position: absolute;
+  color: #e39530;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  left: 0.2rem;
+  top: -0.1rem;
+}
+
+.sendResume {
+  background-color: #656496;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  padding-left: 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #dbdee1;
+  cursor: pointer;
+}
+.sendResume svg {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.2rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.7);
+}
+
+.sendResume:hover svg {
+  margin-left: 1rem;
+  transform: scale(1);
 }

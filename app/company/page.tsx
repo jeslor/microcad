@@ -8,189 +8,114 @@ const page = () => {
     <section className={`${styles.intro} text-slate-400 bg-primayColor`}>
         <div className={styles.leftContent}>
             <h1>About us</h1>
-            <p>Microcad's IT Support & Managed Services Provider (MSP) 
-                Program is yet another feather in our cap of IT products 
-                and services. By subscribing to our MSP program your company 
-                will be able to better focus on your own business activity 
-                rather than pursuing IT related issues, we'll take care of 
-                all that.
+            <p>Microcad Computer Corporation is a nationwide distributor of computer products. Established since 1991, we have the experience and the means to provide you with the latest products and technologies to cater to all of your home and business applications. We source technology from leading computer industry manufacturers, providing our customers with excellent products, pricing and service. Here at Microcad, we are also a custom systems integrator that offers our own line of Extreme computer systems, servers and workstations to effectively meet your every need.
             </p>
         </div>
         <div className={styles.rightContent}>
             <div className={styles.imageHolder}>
-                <img src="/static/media/images/service.webp" alt="services" />
+                <img src="/static/media/images/aboutus.webp" alt="services" />
             </div>
         </div>
     </section>
     <section className={styles.listDivs}>
-        <h2 className="text-primayColor ">Keep your IT healthy through our Managed Services Program.</h2>
+        <p className="text-primarymedium pb-4">Microcad's business philosophy is to establish long-term, win-win relationships between Microcad, vendors, resellers, and ultimately, the end-users of the products. Microcad understands that having satisfied customers takes commitment, expertise, experience, and persistence. This commitment extends well beyond simply providing quality products, excellent services and competitive prices, focusing on the goal of total customer satisfaction.</p>
+        <p className="text-primarymedium pb-4">
+        Microcad serves its clients by providing an extensive array of service and support logistics. Our Microcad service centre has been voted #1 by our customers, offering efficient and reliable service. Our experienced technicians are able to offer 24 hour turnaround on repairs ensuring as little downtime as possible.
+        </p>
+        <p className="text-primarymedium pb-4">
+        At Microcad, we strive to be your distribution partner of choice. Not only do we want to help you deliver technology to market in the most efficient manner possible, we also want to help you increase your sales opportunities and profits. After all, we succeed when you succeed.
+        </p>
+        <h2 className="text-primayColor ">We consider ourselves to be your one stop shop for technology sales and service for:</h2>
         <ul className="text-primarymedium">
             <li>
-                <Icon icon="ant-design:setting-outlined" />
+            <Icon icon="carbon:ibm-content-services" />
             <span>
-            With Managed Services you simply pay a small fixed monthly fee based on 
-            the size of your IT infrastructure.  Our automated remote monitoring and 
-            management is proactive so we keep track of events before they can cause 
-            business disruptions and cost you hefty bills.
+            Electronics repair depot for: Windows, Apple and Android products
             </span>
             </li>
             <li>
-                <Icon icon="ant-design:setting-outlined" />
+                <Icon icon="carbon:ibm-content-services" />
                 <span>
-                Our MSP team offer a 30-day try-before-you-buy managed services trial so you can get a feel for the program and our support teams.
+                Custom built gaming systems
                 </span>
             </li>
             <li>
-                <Icon icon="ant-design:setting-outlined" />
+                <Icon icon="carbon:ibm-content-services" />
                 <span>
-                We will remotely fix most of the issues without bothering you and give you regular updates about the health of your system and even meet to discuss their performance and offer our expert advice.
+                Refurbished systems and parts depot
                 </span>
             </li>
             <li>
-                <Icon icon="ant-design:setting-outlined" />
+                <Icon icon="carbon:ibm-content-services" />
                 <span>
-                Our services include automated proactive monitoring and management of your entire IT infrastructure, antivirus and web protection, mobile device management, app control, managed backup for your critical data, and lots of customizable management options that we can discuss with you.
+                Industry aggressive pricing (we beat all advertised prices)
                 </span>
             </li>
            <li>
-            <Icon icon="ant-design:setting-outlined" />
+                <Icon icon="carbon:ibm-content-services" />
             <span>
-            To learn more about the MSP program please click the above image to complete the Managed Service Program Information Request form and our MSP team will reachout to you.  Alternativly you can always contact our MSP team at (519) 937-9039 msp@microcad.ca
+            IT Support and Managed Service Provider (MSP) full service onsite and remote
             </span>
            </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Networking and hardware support
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            VoIP telephone systems and integration
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Video surveillance solutions
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Digital signage (indoor and outdoor)
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Rentals & leasing
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Private label custom building (Reseller Program)
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Blind drop shipments (Reseller Program)
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            In stock orders available for pickup or delivery within hours
+            </span>
+           </li>
+           <li>
+                <Icon icon="carbon:ibm-content-services" />
+            <span>
+            Electronic waste pick-up and recycling
+            </span>
+           </li>
+
         </ul>
 
     </section>
-    <section className={`${styles.serviceDetail} text-slate-50`}>
-       <div className={`${styles.mantainance} ${styles.category}`}>
-            <h3 className="text-primayColor"> Monitoring and Mantainance</h3>
-            <div>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Remote Monitorign and system Health</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Antivirus, Anti Malware & Security solutions</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Cloud Services</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Backup solutions</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Patch management</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Business Continunity Planning</h4>
-                </article>
-            </div>
-       </div>
-       <div className={`${styles.helpDesk} ${styles.category} `}>
-            <h3 className="text-primayColor"> Help Desk and Support</h3>
-            <div>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >custom Service Levels</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >800 Help Desk Support</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Support Ticketing System</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Remote and Onsite Support</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Training</h4>
-                </article>
-            </div>
-       </div>
-       <div className={`${styles.helpDesk} ${styles.category}`}>
-            <h3 className="text-primayColor"> Your IT Department</h3>
-            <div>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Each account is assigned a Senior IT Consultant.
-                        Our senior consultants work closely with vour business on planning, asset management and risk mitigation.</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Microcad IT Support is Your IT Department with Remote Support and or Onsite Support Options.</h4>
-                </article>
-                <article>
-                    <Icon icon="carbon:cloud-services" />
-                    <h4 >Proactive Monitoring, Maintenance and Support for all Systems.</h4>
-                </article>
 
-            </div>
-       </div>
-    </section>
-    <section className={`${styles.listDivs} ${styles.networkSystem}`}>
-        <h2 className="text-primayColor pb-1 mb-1">Computer and Network Support
-            Specialists IT Managed Service
-            Provider (MSP).
-        </h2>
-        <h5 className="uppercase text-secondaryColor font-bold text-sm pb-4">London's largest technology provider.</h5>
-        <ul className="text-slate-200">
-            <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-            <span>
-            On-site and remote support available.
-            </span>
-            </li>
-            <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-                <span>
-                    Best rates in South Western Ontario starting at
-                    $85 per hour.
-                </span>
-            </li>
-            <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-                <span>
-                    Proactive systems monitoring in the Microcad
-                    Network Operations Centre (NOC).
-                </span>
-            </li>
-            <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-                <span>
-                    Large global online distributer with 20,000 sq ft
-                    facility in London including: retail and tech centre.
-                </span>
-            </li>
-           <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-            <span>
-                Sales, service and installation of: voice and data infrastructure, Windows, Apple & Android products.
-            </span>
-           </li>
-           <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-            <span>
-            Microcad builds 35,000 systems every 12 months.
-            </span>
-           </li>
-           <li>
-                <Icon icon="carbon:ibm-cloud-kubernetes-service" />
-            <span>
-            Dozens of local business references in all verticals.
-            </span>
-           </li>
-        </ul>
-
-    </section>
    </div>
   )
 }

@@ -227,24 +227,23 @@ const page = () => {
                     <span>Toronto, ON</span>
                 </div>
 
-                <h4>United States ware Warehouses <Icon icon="twemoji:flag-united-states" /></h4>
+                <h4>United States Warehouses <Icon icon="twemoji:flag-united-states" /></h4>
                 <div className={styles.place}>
-                <span>Norcross, GA</span>
-<span>Chantilly, VA</span>
-<span>Miami, FL</span>
-<span>Keasbey, NJ</span>
-<span>Grove City, OH</span>
-<span>Romeoville, IL</span>
-<span>Olive Branch, MS</span>
-<span>Richardson, TX</span>
-<span>Fremont, CA</span>
-<span>Ontario, CA</span>
-<span>Harrisburg, PA</span>
-<span>Atlanta, GA</span>
-<span>Beaverton, OR</span>
-<span>Chicago, IL </span>	
-<span>Fresno, CA</span>
-
+                    <span>Norcross, GA</span>
+                    <span>Chantilly, VA</span>
+                    <span>Miami, FL</span>
+                    <span>Keasbey, NJ</span>
+                    <span>Grove City, OH</span>
+                    <span>Romeoville, IL</span>
+                    <span>Olive Branch, MS</span>
+                    <span>Richardson, TX</span>
+                    <span>Fremont, CA</span>
+                    <span>Ontario, CA</span>
+                    <span>Harrisburg, PA</span>
+                    <span>Atlanta, GA</span>
+                    <span>Beaverton, OR</span>
+                    <span>Chicago, IL </span>	
+                    <span>Fresno, CA</span>
                 </div>
     
         </section>

@@ -532,14 +532,14 @@
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   .pageHeight {
-    padding-top: 130px;
+    padding-top: 115px;
   }
   .servicesHolder {
     position: relative;
   }
   .leftMenu {
+    transition: all 0s ease-in-out;
     position: absolute;
-    left: -100%;
   }
   .content {
     padding: 1rem 2rem;

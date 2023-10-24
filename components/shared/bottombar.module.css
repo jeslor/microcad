@@ -119,6 +119,9 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .bottomContent {
+    padding-bottom: 1rem;
+  }
   .social {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

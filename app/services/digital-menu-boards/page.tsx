@@ -86,7 +86,6 @@ const Page = () => {
         </ul>
     </section>
     <section className={`${styles.digitalMenuBoardsVideo} ${styles.category}`}>
-
     <h3 className="pb-1 text-primayColor">Sample of Digital Menu Boards</h3>
     <div className='player-wrapper rounded-md'>
       <MediaPlayer title="Digital Menu Boards" src="/static/media/videos/menuvideo.mp4">

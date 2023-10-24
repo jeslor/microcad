@@ -9,7 +9,7 @@ const page = () => {
                 {/* <img src="/static/media/backgrounds/partners.webp" alt="" /> */}
             </div>
             <div className={`${styles.contact} customwidth`}>
-                <div className={` ${styles.contactParts}`}>
+                <div className={` ${styles.contactParts} hidden lg:block`}>
                     <h1>Contact us</h1>
                     <div className={styles.imageHolder}>
                         <img src="/static/media/images/contactus.webp" alt="partners" />

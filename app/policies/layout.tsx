@@ -43,16 +43,27 @@ export default function RootLayout({
 
   return (
     <section className={`${styles.pageHeight} bg-slate-100`}>
+        <div id="leftMenuOpener" className="leftMenuOpener">
+            <div className="leftMenuContent">
+                <div className="brulMenu"> </div>
+                <div className="leftMenuInner">
+                    <button>
+                        Menu
+                    <Icon icon="la:angle-right" />
+                    </button>  
+                </div>
+            </div>
+        </div>
         <div className={`${styles.servicesHolder} customwidth mx-auto`}>
-            <div className={styles.leftMenu}>
+            <div id="leftMenu" className={styles.leftMenu}>
                 <h2 className="text-primaryLight">policies</h2>
                 <ul>
                     {policies.map((policy, index) => (
                         <li key={index} className={`${policy.link ===pathname?'bg-primayColor text-slate-100':'bg-slate-200'} hover:bg-slate-300 text-primayColor`}>
-                            <Link href={policy.link}>
+                            <a href={policy.link}>
                                 <span className="block">{policy.title}</span>
                                 {policy.link ===pathname &&  <Icon icon="la:angle-right" />}                             
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>

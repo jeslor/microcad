@@ -94,7 +94,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Email
+               Email *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -113,7 +113,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Password
+               Password *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -133,7 +133,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Confirm password
+               Confirm password *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -152,7 +152,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               First name
+               First name *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -171,7 +171,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Last name
+               Last name *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -308,7 +308,7 @@ const RegisterForm = () => {
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Phone Number
+               Phone Number *
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 

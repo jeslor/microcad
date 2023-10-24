@@ -105,6 +105,8 @@
   .bottomContent {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   .socialMedia {

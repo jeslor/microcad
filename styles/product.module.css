@@ -1,0 +1,98 @@
+.pageHeight {
+  min-height: 50vh;
+  padding-top: 160px;
+  padding-bottom: 3rem;
+  background-image: url("/static/media/backgrounds/pagebackground.png");
+}
+
+.newProduct {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  padding: 2rem;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.newProduct h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: start;
+  padding-left: 1.5rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #656496;
+}
+.form h6 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: start;
+  color: #4c4987;
+}
+
+.form .left {
+  width: 60%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.form .right {
+  width: 40%;
+  padding-left: 1rem;
+  padding-right: 0rem;
+}
+
+.segment {
+  border: 2px solid #9e9e9e34;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.formGroup {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.formChecks {
+  flex-direction: row;
+}
+.formChecks label {
+  margin-left: 1rem;
+}
+.formChecks input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #ccc;
+}
+.formChecks input:checked {
+  accent-color: #4c4987;
+}
+.formChecks input .formGroup label {
+  font-weight: 500;
+}
+.formGroup input,
+.formGroup select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  font-size: 0.85rem;
+}
+.formGroup select option {
+  font-size: 0.85rem;
+  padding-bottom: 0.3rem;
+  background-color: #fff;
+}
+
+.form .textEditor {
+  height: 300px;
+}

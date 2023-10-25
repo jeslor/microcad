@@ -14,7 +14,7 @@ const productSchema = new Schema({
         required: true,
         enum: ['systems', 'hardware', 'network', 'storage',"display","peripherals"],
     },
-    type: {
+    productType: {
         type: String,
         required: true,
     },

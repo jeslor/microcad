@@ -13,7 +13,7 @@ const Page = () => {
         </div>
         <div className={styles.rightContent}>
             <div className={styles.imageHolder}>
-                <img src="/static/media/images/officeservice.webp" alt="services" />
+                <img src="/static/media/images/officeService.webp" alt="services" />
             </div>
         </div>
     </section>

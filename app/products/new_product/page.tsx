@@ -6,6 +6,8 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css'; // Import Quill styles
 import { an } from "@vidstack/react/dist/types/vidstack.js";
 import {categories} from '@/constants/categories'
+import ProductForm from "@/components/forms/productForm";
+
 
 
 const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
@@ -77,7 +79,14 @@ const page = () => {
     const handleproductTypeChange = (e:any) => {
         console.log(e.target.value);
         const newProductTypes = categories.filter((category) => category.category === e.target.value);
-        setProductTypes(newProductTypes[0]);
+        setProductTypes(newProductTypes[0]); 
+    }
+
+    const handleProductSubmit = (e:any) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const values = Object.fromEntries(data.entries());
+        console.log(values);
         
         
     }
@@ -86,14 +95,14 @@ const page = () => {
     <div className={`${styles.pageHeight} customwidth mx-auto`}>
         <div className={styles.newProduct}>
             <h1 className="text-primayColor">Add a new Product</h1>
-            <form className={styles.form}>
+            <form onSubmit={handleProductSubmit} className={styles.form}>
                
                 <div className={styles.left}>
                     <h6>Description</h6>
                     <div className={styles.segment}>
                         <div className={styles.formGroup}>
                             <label htmlFor="name">Name</label>
-                            <input type="text" name="name" id="name" placeholder="Enter product name" />
+                            <input type="text" name="name" id="name" placeholder="Enter product name" required min={2} />
                         </div>
                         <div className={`${styles.formGroup} ${styles.textEditor}`}>
                             <label htmlFor="description">description</label>
@@ -130,8 +139,12 @@ const page = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="type">Color</label>
-                            <input type="text" name="brand" placeholder="brand name"/>
+                            <input type="text" name="color" placeholder="color"/>
                         </div>
+                    </div>
+
+                    <div className={styles.submit}>
+                    <button type="submit" className="microcadBtn">Add Product</button>
                     </div>
                     
                 </div>
@@ -158,9 +171,8 @@ const page = () => {
                             <label htmlFor="type">item weight</label>
                             <input type="text" name="brand" placeholder="weight"/>
                         </div>
-                    </div>
 
-                   
+                    </div>
 
                     <div className={`${styles.formGroup} ${styles.formChecks}`}>
                         <input type="checkbox" name="isNew" id="isFeatured" />
@@ -175,6 +187,8 @@ const page = () => {
                         <label htmlFor="isRefurbrished">Is refurbrished</label>
                     </div>
                 </div>
+
+              
             </form>
 
         </div>

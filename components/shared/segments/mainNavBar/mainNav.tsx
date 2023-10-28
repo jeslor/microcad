@@ -55,10 +55,10 @@ function MainNav() {
                     <a className={styles.innerMainNavLink} href="#">systems <Icon className="mainNavLinksIcon" icon="ep:arrow-down" /></a>  
                     <ul>
                         <li className='hover:text-primayColor'><a href="/products/systems/thin_client"><Icon icon="clarity:thin-client-line" />Terminals/Thin Clients</a></li>
-                        <li className='hover:text-primayColor'><a href="/products/systems/desktop_computer"><Icon icon="radix-icons:desktop" /> desktop computers</a></li>
+                        <li className='hover:text-primayColor'><a href="/products/systems/desktop_computers"><Icon icon="radix-icons:desktop" /> desktop computers</a></li>
                         <li className='hover:text-primayColor'><a href="/products/systems/workstations"><Icon icon="teenyicons:servers-outline" /> Workstations</a></li>
                         <li className='hover:text-primayColor'><a href="/products/systems/laptops"><Icon icon="iconoir:laptop" />laptops</a></li>
-                        <li className='hover:text-primayColor'><a href="/products/systems/systems"><Icon icon="tdesign:system-log" />systems</a></li>
+                        <li className='hover:text-primayColor'><a href="/products/systems/barebone_systems"><Icon icon="tdesign:system-log" />barebone systems</a></li>
                         <li className='hover:text-primayColor'><a href="/products/systems/servers"><Icon icon="bi:server" />servers</a></li>
                         <li className='hover:text-primayColor'><a href="/products/systems/extreme_series"><Icon icon="simple-icons:pcgamingwiki" />extreme series</a></li>
 
@@ -74,9 +74,9 @@ function MainNav() {
                         <li><a href="/products/hardware/cooling"> <Icon icon="streamline:travel-hotel-air-conditioner-heating-ac-air-hvac-cool-cooling-cold-hot-conditioning" />cooling</a></li>
                         <li><a href="/products/hardware/cases"> <Icon icon="lucide:pc-case" />cases</a></li>
                         <li><a href="/products/hardware/processors"> <Icon icon="game-icons:processor" />processors</a></li>
-                        <li><a href="/products/hardware/videocards"> <Icon icon="fluent:network-adapter-16-regular" />video cards</a></li>
-                        <li><a href="/products/hardware/networkcards"> <Icon icon="bi:pci-card-network" />network cards</a></li>
-                        <li><a href="/products/hardware/power_supply"><Icon icon="icon-park-outline:power-supply-one" />power supplies </a></li>
+                        <li><a href="/products/hardware/video_cards"> <Icon icon="fluent:network-adapter-16-regular" />video cards</a></li>
+                        <li><a href="/products/hardware/network_cards"> <Icon icon="bi:pci-card-network" />network cards</a></li>
+                        <li><a href="/products/hardware/power_supplies"><Icon icon="icon-park-outline:power-supply-one" />power supplies </a></li>
                         <li><a href="/products/hardware/optical_drives"> <Icon icon="gg:drive" />optical drives</a></li>
                         <li><a href="/products/hardware/adapters"> <Icon icon="material-symbols:ev-charger-outline-rounded" />adapters</a></li>
                         <li><a href="/products/hardware/accessories"> <Icon icon="mdi:car-turbocharger" />accessories</a></li>
@@ -108,7 +108,6 @@ function MainNav() {
                     <li><a href="/products/storage/memory_cards"><Icon icon="bx:memory-card" />Memory cards</a></li>
                     <li><a href="/products/storage/SAN_drives"><Icon icon="mdi:network-attached-storage" /> SAN Devices </a></li>
                     <li><a href="/products/storage/NAS_drives"><Icon icon="ic:twotone-storage" /> NAS Devices </a></li>
-                    <li><a href="/products/storage/optical_drives"><Icon icon="icon-park-outline:cloud-storage" /> optical drives </a></li>
                     <li><a href="/products/storage/storage_media"><Icon icon="carbon:file-storage" />storage media </a></li>
                     <li><a href="/products/storage/backup_&_mass_storage_devices"><Icon icon="material-symbols:home-storage-outline" /> backup & mass storage devices </a></li>
                     <li><a href="/products/storage/hard_drive_duplicators"><Icon icon="fluent-mdl2:merge-duplicate" /> hard drive duplicators </a></li>

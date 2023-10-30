@@ -96,3 +96,33 @@
 .form .textEditor {
   height: 300px;
 }
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.ProductListItem {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.productImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.productImage img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}

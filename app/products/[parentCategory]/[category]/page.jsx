@@ -1,7 +1,8 @@
 "use client";
 import { useParams } from "next/navigation";
-import styles from "@/styles/product.module.css";
+import styles from "@/styles/products.module.css";
 import {data} from'@/constants/data';
+import Image from "next/image";
 
 
 
@@ -26,12 +27,19 @@ export default function page() {
   return (
     <div className={`${styles.products} customwidth mx-auto`}>
         <h1 className="capitalize font-bold text-lg">{category}</h1>
-      <div className="grid grid-cols-3">
+      <div className={styles.productList}>
         {finalProducts.map((product) =>  (
-            <div className="flex flex-col items-center justify-center" key={product.description}>
-              <img src={product.imageURL} alt={product.name} className="w-full object-contain h-40" />
+            <div  className={styles.ProductListItem} key={product.description}>
+              <div className={styles.productImage}>
+                <img
+                // height={200}
+                // width={200}
+                  src={product.imageURL}
+                  alt={product.name}
+                />
+              </div>
               <h1 className="text-sm font-bold">{product.name}</h1>
-              <h1 className="text-sm font-bold">{product.description}</h1>
+              <h2 className="text-sm font-bold">{product.model}</h2>
             </div>
           )
         )}

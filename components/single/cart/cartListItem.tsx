@@ -1,5 +1,8 @@
+import { useContext } from 'react'
+import { StateContext } from '@/components/providers/stateProvider'
 import React from 'react'
 import styles from './cart.module.css'
+
 
 
 interface Props {
@@ -13,6 +16,9 @@ interface Props {
     }
 
 const CartListItem = ({item}:Props) => {
+    
+    const {handleIncreaseCartProduct, handleRemoveCartProduct} = useContext(StateContext);
+
   return (
     <li key={item.id} className={styles.cartListItem}>
         <div className={styles.cartContentItemImg}>
@@ -21,8 +27,8 @@ const CartListItem = ({item}:Props) => {
         <div className={styles.cartContentItemDetails}>
             <h4 className='text-primarymedium'>{item.name}</h4>
             <div className={styles.quantityPrice}>
-            <p className='text-primarymedium'><span className={styles.nacCartPriceTogglers}>-</span>Qty: {item.quantity} <span className={styles.nacCartPriceTogglers}>+</span></p>
-            <p className='text-secondaryColor'>${item.price}</p>
+            <p className='text-slate-500'><span onClick={()=> handleRemoveCartProduct(item)} className={styles.nacCartPriceTogglers}>-</span>Qty: {item.quantity} <span onClick={()=>handleIncreaseCartProduct(item)} className={styles.nacCartPriceTogglers}>+</span></p>
+            <p className='text-secondaryColor'>${item.price *item.quantity}</p>
             </div>
         </div>
     </li>

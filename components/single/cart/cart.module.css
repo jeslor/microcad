@@ -81,4 +81,9 @@
   border-radius: 50%;
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.nacCartPriceTogglers:hover {
+  border: 1px solid #4c4987;
 }

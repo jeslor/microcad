@@ -1,7 +1,7 @@
 "use client"
 import { useState, createContext } from "react";
 import { revalidatePath } from "next/cache";
-import { set } from "mongoose";
+
 
 export const StateContext = createContext({
     state: {},
@@ -10,6 +10,8 @@ export const StateContext = createContext({
     handleToggleCartDrawer: () => { },
     cart : [],
     setCartHandler: (newCartProduct) => { },
+    handleRemoveCartProduct: (product) => { },
+    handleIncreaseCartProduct: (product) => { },
     showMenuHandler: () => {},
     setState: (state) => { }
 });
@@ -42,7 +44,6 @@ export const StateProvider = ({ children }) => {
     const setCartHandler = (newCartProduct) => {
         let newCart = [...cart];
         let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === newCartProduct.name);
-        console.log(cartProductIndex);
         
         if (cartProductIndex === -1) {
             newCartProduct.quantity = 1;
@@ -52,7 +53,30 @@ export const StateProvider = ({ children }) => {
         }
         setCart(newCart);
         localStorage.setItem('cart', JSON.stringify(newCart));
-        console.log(newCart);
+
+    }
+
+    const handleRemoveCartProduct = (product) => {
+        let newCart = [...cart];
+        let clickedProduct  = newCart.find((cartProduct) => cartProduct.name === product.name);
+
+        if (clickedProduct.quantity > 1) {
+            newCart = newCart.map((cartProduct) => { clickedProduct.name === cartProduct.name ? cartProduct.quantity = cartProduct.quantity - 1 : cartProduct.quantity = cartProduct.quantity; return cartProduct; });
+        }else{
+            newCart = newCart.filter((cartProduct) => cartProduct.name !== clickedProduct.name);
+        }
+        setCart(newCart);
+        localStorage.setItem('cart', JSON.stringify(newCart));
+    }
+
+    const handleIncreaseCartProduct = (product) => {
+        let newCart = [...cart];
+        let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === product.name);
+        if (cartProductIndex !== -1) {
+            newCart[cartProductIndex].quantity = newCart[cartProductIndex].quantity + 1;
+        }
+        setCart(newCart);
+        localStorage.setItem('cart', JSON.stringify(newCart));
     }
 
     const handleToggleCartDrawer = () => {
@@ -75,7 +99,7 @@ export const StateProvider = ({ children }) => {
 
 
     return (
-        <StateContext.Provider value={{showCartDrawer, handleToggleCartDrawer, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
+        <StateContext.Provider value={{showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
             {children}
         </StateContext.Provider>
     );

@@ -11,7 +11,8 @@ import NavCart from '@/components/single/cart/navCart'
 function MainNav() {
 
     const {showCartDrawer, handleToggleCartDrawer,cart,showMenu, showMenuHandler} = useContext(StateContext);
-    const cartCount = cart.reduce((acc, item:any) => acc + item.quantity, 0)
+    
+    const cartCount = cart!==null && cart.reduce((acc, item:any) => acc + item.quantity, 0)
     
     
     const mainNavLinkHolder = showMenu ? `${styles.mainNavLinksHolder} ${styles.mainNavLinksHolderActive}` : `${styles.mainNavLinksHolder}`

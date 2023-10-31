@@ -16,7 +16,10 @@ export const StateContext = createContext({
     setState: (state) => { }
 });
 export const StateProvider = ({ children }) => {
-    let currentCart  = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+    let currentCart = [];
+    if(typeof window !== 'undefined') {
+        currentCart  = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+    }
     const [state, setState] = useState({});
     const [cart, setCart] = useState(currentCart);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
@@ -52,7 +55,9 @@ export const StateProvider = ({ children }) => {
             newCart[cartProductIndex].quantity = newCart[cartProductIndex].quantity + 1;
         }
         setCart(newCart);
-        localStorage.setItem('cart', JSON.stringify(newCart));
+        if(typeof window !== 'undefined'){
+            localStorage.setItem('cart', JSON.stringify(newCart));
+        }
 
     }
 
@@ -66,7 +71,9 @@ export const StateProvider = ({ children }) => {
             newCart = newCart.filter((cartProduct) => cartProduct.name !== clickedProduct.name);
         }
         setCart(newCart);
-        localStorage.setItem('cart', JSON.stringify(newCart));
+        if (typeof window !== 'undefined') {  
+            localStorage.setItem('cart', JSON.stringify(newCart));
+        }
     }
 
     const handleIncreaseCartProduct = (product) => {
@@ -76,7 +83,9 @@ export const StateProvider = ({ children }) => {
             newCart[cartProductIndex].quantity = newCart[cartProductIndex].quantity + 1;
         }
         setCart(newCart);
-        localStorage.setItem('cart', JSON.stringify(newCart));
+        if (typeof window !== 'undefined'){
+            localStorage.setItem('cart', JSON.stringify(newCart));
+        }
     }
 
     const handleToggleCartDrawer = () => {

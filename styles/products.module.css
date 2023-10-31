@@ -107,9 +107,33 @@
 .ProductListItem {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background-color: #fff;
   border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.ProductListItem:hover {
+  border: 2px solid #ccc;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.productListItemNew {
+  right: -0.5rem;
+  top: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  height: 55px;
+  width: 55px;
+  background-color: #c40000;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .productImage {
@@ -117,14 +141,34 @@
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
 }
 
 .productImage img {
-  width: 80%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
+}
+
+.productListItemBottom {
+  display: block;
+}
+
+.productListItemBottom button {
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.productListItemBottom button:hover {
+  background-color: #4c4987;
+  color: #fff;
+  border-color: #4c4987;
 }
 
 /* X-Large devices (large desktops, less than 1400px) */

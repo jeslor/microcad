@@ -1,0 +1,84 @@
+.cartContent {
+  position: absolute;
+  height: calc(100vh - 115px);
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.607);
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.cartContentHolder {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+  padding: 2rem 1.5rem;
+  padding-left: 2rem;
+  border-radius: 5px 0px 0px 25px;
+  margin-left: auto;
+}
+
+.cartContentHolder.slideInDrawer {
+  animation: slideInDrawer 0.3s ease-in-out forwards;
+}
+
+@keyframes slideInDrawer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.cartContentHeader h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #cccccc81;
+}
+
+.cartListItem {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #cccccc81;
+  margin-top: 1rem;
+}
+
+.cartContentItemDetails {
+  padding-left: 1.5rem;
+  flex-grow: 2;
+}
+
+.cartListItem h4 {
+  font-weight: 600;
+}
+
+.quantityPrice {
+  display: flex;
+  justify-content: space-between;
+}
+.quantityPrice p {
+  display: flex;
+  align-items: last baseline;
+  font-weight: 700;
+}
+
+.nacCartPriceTogglers {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #cccccc81;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  cursor: pointer;
+}

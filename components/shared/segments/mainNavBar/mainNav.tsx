@@ -1,35 +1,26 @@
 
-import Link from 'next/link'
-import { useState } from 'react'
+import {useContext } from 'react'
 import styles from './mainNavBar.module.css'
+import { StateContext } from '@/components/providers/stateProvider'
 import Image from 'next/image'
 import Script from 'next/script'
 import { Icon } from '@iconify/react/dist/iconify.js'
-function MainNav() {
-    const [showMenu, setShowMenu] = useState(false);
-    const showMenuHandler = () => {
-        let originalHeight: string = '';
-        if (showMenu) {
-            let div =  document.getElementsByTagName('body');
-           div[0].style.overflow = 'auto';
-            div[0].style.height = originalHeight;
-            setShowMenu(false);
-        }
-        if (!showMenu) {
-            let div =  document.getElementsByTagName('body');
-            originalHeight =  `${div[0].clientHeight}px`;
-            div[0].style.height = "100vh";
-            div[0].style.overflow = 'hidden';
-            setShowMenu(true);
-         }
-    }
+import NavCart from '@/components/single/cart/navCart'
 
+
+function MainNav() {
+
+    const {showCartDrawer, handleToggleCartDrawer,cart,showMenu, showMenuHandler} = useContext(StateContext);
+    const cartCount = cart.reduce((acc, item:any) => acc + item.quantity, 0)
+    
+    
     const mainNavLinkHolder = showMenu ? `${styles.mainNavLinksHolder} ${styles.mainNavLinksHolderActive}` : `${styles.mainNavLinksHolder}`
     const mobileMenuIcon = showMenu ? `${styles.mobileMenuIcon} ${styles.mobileMenuIconActive}` : `${styles.mobileMenuIcon}`
 
   return (
     <div className={`${styles.mainNav} shadow-sm`}>
         <Script src='/static/js/mainNav.js'/>
+
         <div className={`${styles.navContent} navContent`}>
             <div className={styles.mobileMenu} onClick={showMenuHandler}>
                 <div className={mobileMenuIcon} >
@@ -38,12 +29,12 @@ function MainNav() {
                         <span></span>
                 </div>
             </div>
-            <Link href='/' className="block pt-3 pb-2">
+            <a href='/' className="block pt-3 pb-2">
                 <Image className={styles.navLogo} src="/static/media/microcad_logo.png" alt="Microcad Logo" width={200} height={20} />
-            </Link>
+            </a>
             <div className={`${styles.mobileCart}`}>
                 <ul>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="mdi:cart-outline"  /></a></li>
+                <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}><div><Icon icon="mdi:cart-outline"  />{cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}</div></li>
                 <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
                 </ul>
 
@@ -172,10 +163,16 @@ function MainNav() {
                 <li className={`${styles.mainNavLinks} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="#">special </a>
                 </li>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="mdi:cart-outline"  /></a></li>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
+                <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}><div >
+                    <Icon icon="mdi:cart-outline"  />
+                    {cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}
+                </div></li>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href=""><Icon icon="clarity:search-line" /></a></li>
             </ul>
         </div>
+        {showCartDrawer && <NavCart />
+
+        }
 
     </div>
   )

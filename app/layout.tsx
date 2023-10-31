@@ -3,6 +3,7 @@
 import Navbar from '@/components/shared/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
+import {StateProvider} from '@/components/providers/stateProvider'
 import { Inter } from 'next/font/google'
 import Bottmbar from '@/components/shared/Bottombar'
 
@@ -24,11 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <StateProvider>
       <body className={inter.className}>
           <Navbar />
           {children}
         </body>
         <Bottmbar />
+    </StateProvider>
     </html>
   )
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/product.module.css";
+import styles from "@/styles/products.module.css";
 import {useState, useRef} from 'react'
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css'; // Import Quill styles

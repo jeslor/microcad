@@ -23,7 +23,8 @@
   padding-left: 0.5rem;
   padding-right: 0.2rem;
 }
-.mainNavLinks:hover {
+.mainNavLinks:hover,
+.mainNavLinksActive {
   background-color: rgba(23, 16, 94, 0.135);
 }
 
@@ -145,7 +146,8 @@
   align-items: center;
   padding-bottom: 1rem;
 }
-.mainNavLinks ul li a:hover {
+.mainNavLinks ul li a:hover,
+.mainNavLinks ul li a.activeSubMenu {
   color: #f06829;
 }
 

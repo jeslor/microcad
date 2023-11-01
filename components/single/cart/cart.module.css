@@ -3,7 +3,7 @@
   height: calc(100vh - 115px);
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.607);
+  background-color: rgb(0 0 0 / 93%);
   left: 0;
   display: flex;
   justify-content: flex-end;
@@ -47,7 +47,7 @@
   overflow-y: scroll;
   padding-right: 2rem;
   background-color: #fff;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 .cartListItem {

@@ -41,7 +41,7 @@ const NavCart = () => {
                 <h3 className='text-primayColor'>Cart</h3>
             </div>
             <div className={styles.cartContentBody}>
-                <p className='text-secondaryColor'>Your cart is empty</p>
+                <p className='text-secondaryColor text-center pt-9 font-bold'>Your cart is empty</p>
             </div>
             <div className={styles.cartContentFooter}>
                 <Link className='text-primayColor' href="/cart">

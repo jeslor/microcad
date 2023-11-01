@@ -79,7 +79,7 @@ function MainNav() {
                     <ul>
                         <li ><a className={`${category === 'cables' && styles.activeSubMenu}`}  href="/products/hardware/cables"> <Icon icon="streamline:computer-connection-usb-cable-cables-cable-device-cord-computer-electronics-cords-usb" />cables</a></li>
                         <li><a className={`${category === 'sound cards' && styles.activeSubMenu}`}  href="/products/hardware/sound_cards"><Icon icon="bi:pci-card-sound" />sound cards </a></li>
-                        <li><a className={`${category === 'motherboards' && styles.activeSubMenu}`}  href="/products/hardware/mother_boards"> <Icon icon="bi:motherboard" />motherboards</a></li>
+                        <li><a className={`${category === 'motherboards' && styles.activeSubMenu}`}  href="/products/hardware/motherboards"> <Icon icon="bi:motherboard" />motherboards</a></li>
                         <li><a className={`${category === 'cooling' && styles.activeSubMenu}`}  href="/products/hardware/cooling"> <Icon icon="streamline:travel-hotel-air-conditioner-heating-ac-air-hvac-cool-cooling-cold-hot-conditioning" />cooling</a></li>
                         <li><a className={`${category === 'cases' && styles.activeSubMenu}`}  href="/products/hardware/cases"> <Icon icon="lucide:pc-case" />cases</a></li>
                         <li><a className={`${category === 'processors' && styles.activeSubMenu}`}  href="/products/hardware/processors"> <Icon icon="game-icons:processor" />processors</a></li>

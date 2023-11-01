@@ -8,7 +8,9 @@ import { StateContext } from '@/components/providers/stateProvider'
 
 const NavCart = () => {
     const {showCartDrawer, handleToggleCartDrawer,cart} = useContext(StateContext);
-    const cartCount = cart.reduce((acc, item:any) => acc + item.quantity, 0)
+    let total  = (cart.reduce((acc, item:any) => acc + item.price * item.quantity, 0).toFixed(2))
+    total = Number(total).toLocaleString();
+    
 
 
 
@@ -25,27 +27,27 @@ const NavCart = () => {
                         <CartListItem key={item.description} item={item} />
                         ))}
                 </ul>
-                <p className='text-secondaryColor'>Total: <span className='text-primayColor'>${cart.reduce((acc, item:any) => acc + item.price * item.quantity, 0).toFixed(2)}</span></p>
             </div>
             <div className={styles.cartContentFooter}>
                 <Link href="/cart">
                    View Cart
                 </Link>
+                <p className='text-primayColor'>Total: <span className='text-secondaryColor pl-2'>${total}</span></p>
             </div>
         </div>
         :
         <div className={styles.cartContentHolder}>
             <div className={styles.cartContentHeader}>
                 <h3 className='text-primayColor'>Cart</h3>
-                <p className='text-secondaryColor'>Total: <span className='text-primayColor'>$0.00</span></p>
             </div>
             <div className={styles.cartContentBody}>
                 <p className='text-secondaryColor'>Your cart is empty</p>
             </div>
             <div className={styles.cartContentFooter}>
-                <Link href="/cart">
+                <Link className='text-primayColor' href="/cart">
                    View Cart
                 </Link>
+                <p className='text-primayColor'>Total: <span className='text-secondaryColor'>$0.00</span></p>
             </div>
         </div>
     }

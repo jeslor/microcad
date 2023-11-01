@@ -22,13 +22,13 @@ const CartListItem = ({item}:Props) => {
   return (
     <li key={item.id} className={styles.cartListItem}>
         <div className={styles.cartContentItemImg}>
-            <img src={item.imageURL} alt={item.name} width={40} height={40} />
+            <img src={item.imageURL} alt={item.name}/>
         </div>
         <div className={styles.cartContentItemDetails}>
             <h4 className='text-primarymedium'>{item.name}</h4>
             <div className={styles.quantityPrice}>
-            <p className='text-slate-500'><span onClick={()=> handleRemoveCartProduct(item)} className={styles.nacCartPriceTogglers}>-</span>Qty: {item.quantity} <span onClick={()=>handleIncreaseCartProduct(item)} className={styles.nacCartPriceTogglers}>+</span></p>
-            <p className='text-secondaryColor'>${item.price *item.quantity}</p>
+                <p className='text-slate-500'><span onClick={()=> handleRemoveCartProduct(item)} className={`${styles.navCartPriceTogglers} mr-3`}>-</span>Qty: {item.quantity} <span onClick={()=>handleIncreaseCartProduct(item)} className={`${styles.navCartPriceTogglers} ml-3`}>+</span></p>
+                <p className='text-secondaryColor'>${item.price *item.quantity}</p>
             </div>
         </div>
     </li>

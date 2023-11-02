@@ -67,6 +67,11 @@ export default function page() {
           </form>
           
         </div>
+        <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
+          <h5 className="font-bold text-primarymedium">Brand</h5>
+          
+        </div>
+        
       </div>
       <ProductList products={finalProducts} />
       </div>

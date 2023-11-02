@@ -41,13 +41,33 @@
   text-align: start;
   padding-top: 1.5rem;
   border-bottom: 1px solid #cccccc56;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.closeCart {
+  position: absolute;
+  right: 1.5rem;
+  transform: rotate(45deg);
+  height: 40px;
+  width: 40px;
+  background-color: #cccccc32;
+  display: none;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: -1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.closeCart:hover {
+  background-color: #cccccc56;
 }
 
 .cartContentBody {
   height: 82%;
   overflow-y: scroll;
   padding-right: 2rem;
-  /* background-color: #fff; */
   padding-bottom: 3rem;
 }
 
@@ -164,6 +184,9 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+  .closeCart {
+    display: block;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */

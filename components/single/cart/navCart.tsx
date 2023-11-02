@@ -19,7 +19,8 @@ const NavCart = () => {
     {cart.length > 0 ?
         <div onClick={(e)=>e.stopPropagation()} className={`${styles.cartContentHolder}  ${showCartDrawer?styles.slideInDrawer :''}`}>
         <div className={`${styles.cartContentHeader}`}>
-                <h3 className='text-primayColor font-bold mb-5'>Cart</h3>
+                <h3 className='text-primayColor font-bold mb-5'>Cart   <span onClick={handleToggleCartDrawer} className={`${styles.closeCart}`}>+</span></h3>
+              
             </div>
             <div className={styles.cartContentBody}>
                 <ul>

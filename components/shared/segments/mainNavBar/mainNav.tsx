@@ -18,9 +18,6 @@ function MainNav() {
   
     let path = usePathname();
         path = path.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
-
-
-    console.log(path, parentCategory, category);
     
 
     const {showCartDrawer, handleToggleCartDrawer,cart,showMenu, showMenuHandler} = useContext(StateContext);
@@ -140,8 +137,8 @@ function MainNav() {
                     </ul>
                 </li> 
                 <div className={styles.onlyMobile}>
-                <li className={`${styles.mainNavLinks} ${parentCategory ==="refubrished" && styles.mainNavLinksActive} text-secondaryColor`}>
-                        <a className={styles.innerMainNavLink} href="/products/refurbrished">refubrished </a>
+                <li className={`${styles.mainNavLinks} ${parentCategory ==="refurbrished" && styles.mainNavLinksActive} text-secondaryColor`}>
+                        <a className={styles.innerMainNavLink} href="/products/refurbrished">refurbrished </a>
                     </li>
                     <li className={`${styles.mainNavLinks} ${parentCategory ==="special" && styles.mainNavLinksActive} text-secondaryColor`}>
                         <a className={styles.innerMainNavLink} href="/products/special">special </a>
@@ -169,8 +166,8 @@ function MainNav() {
            
             </ul>
             <ul className={styles.extraMainMenu}>
-                <li className={`${styles.mainNavLinks} ${parentCategory ==="refubrished" && styles.mainNavLinksActive} text-secondaryColor`}>
-                    <a className={styles.innerMainNavLink} href="/products/refubrished">refubrished </a>
+                <li className={`${styles.mainNavLinks} ${parentCategory ==="refurbrished" && styles.mainNavLinksActive} text-secondaryColor`}>
+                    <a className={styles.innerMainNavLink} href="/products/refurbrished">refurbrished </a>
                 </li>
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="special" && styles.mainNavLinksActive} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="/products/special">special </a>

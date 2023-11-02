@@ -108,7 +108,7 @@
   overflow: hidden;
   height: 100px;
   width: 100%;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .priceFilters {
   display: flex;
@@ -142,6 +142,36 @@
   padding-top: 5rem;
   display: flex;
   position: relative;
+  min-height: 50vh;
+}
+
+.filterContainer {
+  top: 230px;
+  position: sticky;
+  min-width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  /* background-color: #fff; */
+}
+
+.filter {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #cccccc3a;
+}
+
+.filter input {
+  border: 1px solid #ccc;
+  width: 100px;
+  background-color: #f1f5f9;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.3rem;
+}
+.filter button {
+  border-width: 2px;
+  padding: 0.2rem 0.3rem;
+  border-radius: 5px;
 }
 
 .productList {
@@ -234,9 +264,13 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+  .productsHeader {
+    margin-top: -7px;
+  }
   .productsContainer {
     padding-top: 5rem;
   }
+
   .productList {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -281,6 +315,9 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .productsHeader {
+    margin-top: 0px;
+  }
   .productList {
     grid-template-columns: repeat(1, 1fr);
   }

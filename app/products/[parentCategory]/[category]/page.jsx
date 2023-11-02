@@ -1,23 +1,14 @@
 "use client";
-import {useContext, useState, useEffect } from 'react'
-import { StateContext } from '@/components/providers/stateProvider';
+import { useState, useEffect } from 'react'
 
 import { useParams } from "next/navigation";
 import styles from "@/styles/products.module.css";
 import {data} from'@/constants/data';
 import ProductList from '@/components/single/product/productList';
-import { Icon } from '@iconify/react/dist/iconify.js';
+
 import Script from 'next/script';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { revalidatePath } from 'next/cache';
+import ProductHeader from '@/components/single/headers/productHeader';
+
 
 export default function page() {
   let { parentCategory, category } = useParams();
@@ -31,13 +22,14 @@ export default function page() {
         }
        }
     });
+
     const handlePriceChange = (value) =>{
       setFilter(value);
       let filteredProducts = finalProducts = finalProducts.sort((a,b) => {
         return value === 'low to high' ? a.price - b.price : b.price - a.price;
       });
       setFinalProducts(filteredProducts);
-  }
+    }
     useEffect(() => {
       setFinalProducts(products[category]);
     },  [category,filter] )
@@ -50,32 +42,30 @@ export default function page() {
   return (
     <div className={`${styles.products} customwidth mx-auto px-3`}>
       <Script src="/static/js/selectOption.js" />
-      <div className={` ${styles.productsHeader} customwidth mx-auto `}>
-        <h1 className="capitalize font-bold text-lg text-primayColor">{category}</h1>
-        <div className={`${styles.priceFilters} text-primarymedium`}>
-          <Select onValueChange={handlePriceChange}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue className={styles.secetOPtion}  placeholder="sort by Price" />
-            </SelectTrigger>
-            <SelectContent className='bg-slate-200'>
-              <SelectGroup >
-                <SelectLabel>Sort by price</SelectLabel>
-                <SelectItem value="low to high">low to high</SelectItem>
-                <SelectItem value="high to low">high to low</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
-        <div className={`${styles.openFilter} font-semibold text-sm`}>open Filters: <div className={`${styles.filterIcon} bg-primarymedium`}><Icon icon="line-md:check-list-3-filled" /></div></div>
-      </div>
+      <ProductHeader category={category} handlePriceChange={handlePriceChange} />
       <div className={styles.productsContainer}>
-      <div className={`${styles.filterContainer}`}>
-        <div className={`${styles.filter} ${styles.filter1}`}>
-          <h2 className="font-bold text-primarymedium">price</h2>
-          <div className="flex justify-between">
-            <input type="text" placeholder="min" />
-            <input type="text" placeholder="max" />
-          </div>
+      <div className={`${styles.filterContainer} bg-primaryLight`}>
+        <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
+          <h5 className="font-bold text-primarymedium">price</h5>
+          <form action="" className='flex pt-3 items-end'>
+            <div className='flex-col inline-flex'>
+              <label htmlFor="min">Min</label>
+              <div className={styles.inner}>
+                $
+              <input type="number" />
+              </div>
+            </div>
+            -
+            <div className='ml-3 inline-flex flex-col'>
+              <label htmlFor="max">Max</label>
+              <div className={styles.inner}>
+                $
+              <input type="number" />
+              </div>
+            </div>
+            <button className='pt-2 text-xs text-slate-100 border-primaryLight bg-primarymedium'>filter</button>
+          </form>
+          
         </div>
       </div>
       <ProductList products={finalProducts} />

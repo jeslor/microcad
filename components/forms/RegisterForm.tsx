@@ -83,7 +83,6 @@ const RegisterForm = () => {
                         <SelectItem className='capitalize hover:bg-slate-300' value="government">government</SelectItem>
                     </SelectContent>
                 </Select>
-            
                 <FormMessage className="text-red-500 text-xs" />
             </FormItem>
             )}

@@ -119,6 +119,22 @@
   margin-right: 0.5rem;
 }
 
+.priceFilters button {
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 200px;
+}
+.priceFilters button:focus,
+.priceFilters button:active {
+  outline: none;
+  box-shadow: none;
+}
+.priceFilters button:hover {
+  background-color: #4c4987;
+  color: #f1f5f9;
+}
+
 .openFilter {
   display: none;
 }

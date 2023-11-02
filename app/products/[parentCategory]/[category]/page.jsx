@@ -8,6 +8,15 @@ import {data} from'@/constants/data';
 import ProductList from '@/components/single/product/productList';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Script from 'next/script';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function page() {
   let { parentCategory, category } = useParams();
@@ -34,17 +43,19 @@ export default function page() {
       <div className={` ${styles.productsHeader} customwidth mx-auto `}>
         <h1 className="capitalize font-bold text-lg text-primayColor">{category}</h1>
         <div className={`${styles.priceFilters} text-primarymedium`}>
-          <p className="font-semibold text-sm">sort by price:</p>
-          <select data-te-select-init>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
-            <option value="5">Five</option>
-            <option value="6">Six</option>
-            <option value="7">Seven</option>
-            <option value="8">Eight</option>
-          </select>
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue className={styles.secetOPtion}  placeholder="sort by Price" />
+            </SelectTrigger>
+            <SelectContent className='bg-slate-200'>
+              <SelectGroup >
+                <SelectLabel>Sort by price</SelectLabel>
+                <SelectItem value="low to high">low to high</SelectItem>
+                <SelectItem value="hight to low">high to low</SelectItem>
+
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
         <div className={`${styles.openFilter} font-semibold text-sm`}>open Filters: <div className={`${styles.filterIcon} bg-primarymedium`}><Icon icon="line-md:check-list-3-filled" /></div></div>
       </div>

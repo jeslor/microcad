@@ -101,9 +101,7 @@ function MainNav() {
                         <li><a className={`${category === 'router switches' && styles.activeSubMenu}`} href="/products/network/router_switches"> <Icon icon="bi:router" />Routers/Switches</a></li>
                         <li><a className={`${category === 'wireless devices' && styles.activeSubMenu}`} href="/products/network/wireless_devices"> <Icon icon="mdi:router-wireless" />Wireless Devices</a></li>
                         <li><a className={`${category === 'modems' && styles.activeSubMenu}`} href="/products/network/modems"> <Icon icon="bi:modem" />Modems</a></li>
-                        <li><a className={`${category === 'powerline network adapters' && styles.activeSubMenu}`} href="/products/network/powerline_network_adapters"> <Icon icon="tabler:network" />Powerline Network Adapters</a></li>
-                        <li><a className={`${category === 'video consoles' && styles.activeSubMenu}`} href="/products/network/video_consoles"> <Icon icon="mdi:console-network-outline" />Video Consoles/Extenders</a></li>
-                     
+                        <li><a className={`${category === 'powerline network adapters' && styles.activeSubMenu}`} href="/products/network/powerline_network_adapters"> <Icon icon="tabler:network" />Powerline Network Adapters</a></li>                     
                     </ul>
                 </li>
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="storage" && styles.mainNavLinksActive} openNavLinkMenu`}>
@@ -113,10 +111,10 @@ function MainNav() {
                     <li><a className={`${category === 'flash devices' && styles.activeSubMenu}`} href="/products/storage/flash_drives"><Icon icon="solar:flash-drive-line-duotone" /> Flash Drives </a></li>
                     <li><a className={`${category === 'hard drives' && styles.activeSubMenu}`} href="/products/storage/hard_drives"><Icon icon="mdi:harddisk" /> Hard Drives </a></li>
                     <li><a className={`${category === 'memory cards' && styles.activeSubMenu}`} href="/products/storage/memory_cards"><Icon icon="bx:memory-card" />Memory cards</a></li>
-                    <li><a className={`${category === 'SAN drives' && styles.activeSubMenu}`} href="/products/storage/SAN_drives"><Icon icon="mdi:network-attached-storage" /> SAN Devices </a></li>
-                    <li><a className={`${category === 'NAS drives' && styles.activeSubMenu}`} href="/products/storage/NAS_drives"><Icon icon="ic:twotone-storage" /> NAS Devices </a></li>
+                    <li><a className={`${category === 'san devices' && styles.activeSubMenu}`} href="/products/storage/SAN_devices"><Icon icon="mdi:network-attached-storage" /> SAN Devices </a></li>
+                    <li><a className={`${category === 'nas devices' && styles.activeSubMenu}`} href="/products/storage/NAS_devices"><Icon icon="ic:twotone-storage" /> NAS Devices </a></li>
                     <li><a className={`${category === 'storage media' && styles.activeSubMenu}`} href="/products/storage/storage_media"><Icon icon="carbon:file-storage" />storage media </a></li>
-                    <li><a className={`${category === 'mass storage devices' && styles.activeSubMenu}`} href="/products/storage/backup_&_mass_storage_devices"><Icon icon="material-symbols:home-storage-outline" /> backup & mass storage devices </a></li>
+                    <li><a className={`${category === 'backup & mass storage devices' && styles.activeSubMenu}`} href="/products/storage/backup_&_mass_storage_devices"><Icon icon="material-symbols:home-storage-outline" /> backup & mass storage devices </a></li>
                     <li><a className={`${category === 'hard drive duplicators' && styles.activeSubMenu}`} href="/products/storage/hard_drive_duplicators"><Icon icon="fluent-mdl2:merge-duplicate" /> hard drive duplicators </a></li>
                     </ul>
                 </li>

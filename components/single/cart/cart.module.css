@@ -37,26 +37,31 @@
 .cartContentHeader h3 {
   font-size: 1.7rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   text-align: start;
   padding-top: 1.5rem;
+  border-bottom: 1px solid #cccccc56;
 }
 
 .cartContentBody {
-  height: 85%;
+  height: 82%;
   overflow-y: scroll;
   padding-right: 2rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding-bottom: 3rem;
 }
 
 .cartListItem {
+  padding: 1rem 0.5rem;
+  background-color: #fff;
   display: flex;
   align-items: flex-start;
   font-size: 0.8rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #cccccc81;
   margin-top: 1rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .cartContentItemImg {

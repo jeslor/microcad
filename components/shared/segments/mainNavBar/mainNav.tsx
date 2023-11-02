@@ -135,9 +135,7 @@ function MainNav() {
                     <li><a className={`${category === 'mice' && styles.activeSubMenu}`} href="/products/peripherals/mice"><Icon icon="cil:mouse" /> Mice </a></li>
                     <li><a className={`${category === 'scanners' && styles.activeSubMenu}`} href="/products/peripherals/scanners"><Icon icon="material-symbols:scanner-outline" />scanners </a></li>
                     <li><a className={`${category === 'mouse and keyboard combo' && styles.activeSubMenu}`} href="/products/peripherals/mouse_and_keyboard_combo"><Icon icon="emojione-v1:keyboard-and-mouse" /> Mouse and Keyboard Combo </a></li>
-                    <li><a className={`${category === 'speakers' && styles.activeSubMenu}`} href="/products/peripherals/speakers"><Icon icon="cil:speaker" /> Speakers </a></li>
                     <li><a className={`${category === 'printers' && styles.activeSubMenu}`} href="/products/peripherals/printers"><Icon icon="uiw:printer" /> printers </a></li>
-                    <li><a className={`${category === 'webcams' && styles.activeSubMenu}`} href="/products/peripherals/webcams"><Icon icon="ri:webcam-line" /> Webcams </a></li>
                     <li><a className={`${category === 'gaming consoles' && styles.activeSubMenu}`} href="/products/peripherals/gaming_consoles"><Icon icon="game-icons:game-console" /> gaming consoles </a></li>
                     </ul>
                 </li> 

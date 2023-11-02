@@ -84,11 +84,9 @@ function MainNav() {
                         <li><a className={`${category === 'cases' && styles.activeSubMenu}`}  href="/products/hardware/cases"> <Icon icon="lucide:pc-case" />cases</a></li>
                         <li><a className={`${category === 'processors' && styles.activeSubMenu}`}  href="/products/hardware/processors"> <Icon icon="game-icons:processor" />processors</a></li>
                         <li><a className={`${category === 'video cards' && styles.activeSubMenu}`}  href="/products/hardware/video_cards"> <Icon icon="fluent:network-adapter-16-regular" />video cards</a></li>
-                        <li><a className={`${category === 'network cards' && styles.activeSubMenu}`}  href="/products/hardware/network_cards"> <Icon icon="bi:pci-card-network" />network cards</a></li>
                         <li><a className={`${category === 'power supplies' && styles.activeSubMenu}`}  href="/products/hardware/power_supplies"><Icon icon="icon-park-outline:power-supply-one" />power supplies </a></li>
                         <li><a className={`${category === 'optical drives' && styles.activeSubMenu}`}  href="/products/hardware/optical_drives"> <Icon icon="gg:drive" />optical drives</a></li>
                         <li><a className={`${category === 'adapters' && styles.activeSubMenu}`}  href="/products/hardware/adapters"> <Icon icon="material-symbols:ev-charger-outline-rounded" />adapters</a></li>
-                        <li><a className={`${category === 'accessories' && styles.activeSubMenu}`}  href="/products/hardware/accessories"> <Icon icon="mdi:car-turbocharger" />accessories</a></li>
                     </ul>
                 </li>
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="network" && styles.mainNavLinksActive} openNavLinkMenu`}>

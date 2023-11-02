@@ -1,5 +1,5 @@
 "use client";
-import {useContext } from 'react'
+import {useContext, useState, useEffect } from 'react'
 import { StateContext } from '@/components/providers/stateProvider';
 
 import { useParams } from "next/navigation";
@@ -17,9 +17,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { revalidatePath } from 'next/cache';
 
 export default function page() {
   let { parentCategory, category } = useParams();
+  let [finalProducts, setFinalProducts] = useState([]);
+  let [filter, setFilter] = useState('');
   category = category.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
   const products = data.find((product) =>{
        for (const key in product) {
@@ -28,11 +31,18 @@ export default function page() {
         }
        }
     });
-    const finalProducts = products[category];
+    const handlePriceChange = (value) =>{
+      setFilter(value);
+      let filteredProducts = finalProducts = finalProducts.sort((a,b) => {
+        return value === 'low to high' ? a.price - b.price : b.price - a.price;
+      });
+      setFinalProducts(filteredProducts);
+  }
+    useEffect(() => {
+      setFinalProducts(products[category]);
+    },  [category,filter] )
 
-    const handlePriceChange = (e) =>{
-      console.log(e.target.value);
-    }
+    
 
 
 
@@ -43,7 +53,7 @@ export default function page() {
       <div className={` ${styles.productsHeader} customwidth mx-auto `}>
         <h1 className="capitalize font-bold text-lg text-primayColor">{category}</h1>
         <div className={`${styles.priceFilters} text-primarymedium`}>
-          <Select>
+          <Select onValueChange={handlePriceChange}>
             <SelectTrigger className="w-[180px]">
               <SelectValue className={styles.secetOPtion}  placeholder="sort by Price" />
             </SelectTrigger>
@@ -51,8 +61,7 @@ export default function page() {
               <SelectGroup >
                 <SelectLabel>Sort by price</SelectLabel>
                 <SelectItem value="low to high">low to high</SelectItem>
-                <SelectItem value="hight to low">high to low</SelectItem>
-
+                <SelectItem value="high to low">high to low</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

@@ -27,13 +27,11 @@ function MainNav() {
     
     const mainNavLinkHolder = showMenu ? `${styles.mainNavLinksHolder} ${styles.mainNavLinksHolderActive}` : `${styles.mainNavLinksHolder}`
     const mobileMenuIcon = showMenu ? `${styles.mobileMenuIcon} ${styles.mobileMenuIconActive}` : `${styles.mobileMenuIcon}`
-
-    console.log(path.includes(`${category}`));
     
     
 
   return (
-    <div className={`${styles.mainNav} shadow-sm`}>
+    <div className={`${styles.mainNav} `}>
         <Script src='/static/js/mainNav.js'/>
 
         <div className={`${styles.navContent} navContent`}>

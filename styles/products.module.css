@@ -1,8 +1,7 @@
 .pageHeight {
   min-height: 50vh;
-  padding-top: 160px;
+  padding-top: 130px;
   padding-bottom: 3rem;
-  background-image: url("/static/media/backgrounds/pagebackground.png");
 }
 
 .newProduct {
@@ -97,6 +96,38 @@
   height: 300px;
 }
 
+.productsHeader {
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 3;
+  background-color: #f1f5f9;
+  padding: 1rem 2rem;
+  padding-bottom: 1.5rem;
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+  margin-top: -20px;
+}
+.priceFilters {
+  display: flex;
+  align-items: center;
+}
+.priceFilters p {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.openFilter {
+  display: none;
+}
+.productsContainer {
+  padding-top: 5rem;
+  display: flex;
+  position: relative;
+}
+
 .productList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -148,7 +179,7 @@
 }
 
 .productImage img {
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   height: 100%;
@@ -187,18 +218,66 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+  .productsContainer {
+    padding-top: 5rem;
+  }
   .productList {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .pageHeight {
+    padding-top: 116px;
+  }
+  .priceFilters {
+    display: none;
+  }
+
+  .openFilter {
+    display: flex;
+    align-items: center;
+  }
+  .openFilter .filterIcon {
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    background-color: #4c4987;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .openFilter .filterIcon:hover {
+    background-color: #16105e;
   }
 }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+  .pageHeight {
+    padding-top: 66px;
+  }
+  .productsContainer {
+    padding-top: 5rem;
+  }
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .productList {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .productsHeader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    background-color: #f1f5f9;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    height: 85px;
+    width: 100%;
   }
 }

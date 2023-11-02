@@ -1,6 +1,6 @@
 "use client";
 import '@/app/globals.css'
-import styles from "@/styles/services.module.css"
+import styles from "@/styles/products.module.css"
 
 
 export default function RootLayout({

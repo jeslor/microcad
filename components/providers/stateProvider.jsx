@@ -13,7 +13,9 @@ export const StateContext = createContext({
     handleRemoveCartProduct: (product) => { },
     handleIncreaseCartProduct: (product) => { },
     showMenuHandler: () => {},
-    setState: (state) => { }
+    setState: (state) => { },
+    openFilter:false,
+    handleOpenFilter: () => { },
 });
 export const StateProvider = ({ children }) => {
     let currentCart = [];
@@ -23,6 +25,7 @@ export const StateProvider = ({ children }) => {
     const [state, setState] = useState({});
     const [cart, setCart] = useState(currentCart);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
+    const [openFilter, setOpenFilter] = useState(false);
 
 
     const [showMenu, setShowMenu] = useState(false);
@@ -106,9 +109,21 @@ export const StateProvider = ({ children }) => {
             }
     }
 
+    const handleOpenFilter = () => {
+        setOpenFilter(!openFilter);
+        if (openFilter) {
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto';
+        }
+        if (!openFilter) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';    
+        }
+    }
+
 
     return (
-        <StateContext.Provider value={{showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
+        <StateContext.Provider value={{openFilter, handleOpenFilter, showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
             {children}
         </StateContext.Provider>
     );

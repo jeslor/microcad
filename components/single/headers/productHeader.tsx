@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { StateContext } from '@/components/providers/stateProvider';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import styles from "@/styles/products.module.css";
 import {
@@ -18,6 +20,11 @@ interface Props {
 }
 
 const ProductHeader = ({category, handlePriceChange}:Props) => {
+  const {handleOpenFilter} = useContext(StateContext);
+
+  
+
+
   return (
     <div className={` ${styles.productsHeader} customwidth mx-auto `}>
         <h1 className="capitalize font-bold text-lg text-primayColor">{category}</h1>
@@ -35,7 +42,7 @@ const ProductHeader = ({category, handlePriceChange}:Props) => {
             </SelectContent>
         </Select>
         </div>
-        <div className={`${styles.openFilter} font-semibold text-sm`}> <span>open Filters:</span> <div className={`${styles.filterIcon} bg-primarymedium`}><Icon icon="line-md:check-list-3-filled" /></div></div>
+        <div className={`${styles.openFilter} font-semibold text-sm`}> <span>open Filters:</span> <div className={`${styles.filterIcon} bg-primarymedium`}><Icon onClick={handleOpenFilter} icon="line-md:check-list-3-filled" /></div></div>
     </div>
   )
 }

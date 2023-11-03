@@ -1,10 +1,13 @@
 "use client";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+
+
 
 import { useParams } from "next/navigation";
 import styles from "@/styles/products.module.css";
 import {data} from'@/constants/data';
 import ProductList from '@/components/single/product/productList';
+import { StateContext } from '@/components/providers/stateProvider';
 
 import Script from 'next/script';
 import ProductHeader from '@/components/single/headers/productHeader';
@@ -14,6 +17,10 @@ export default function page() {
   let { parentCategory, category } = useParams();
   let [finalProducts, setFinalProducts] = useState([]);
   let [filter, setFilter] = useState('');
+  const {openFilter, handleOpenFilter} = useContext(StateContext);
+
+
+
   category = category.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
   const products = data.find((product) =>{
        for (const key in product) {
@@ -34,6 +41,8 @@ export default function page() {
       setFinalProducts(products[category]);
     },  [category,filter] )
 
+
+    const filterContainerClasses = openFilter ? `${styles.filterContainer} ${styles.filterContainerOpen}` : `${styles.filterContainer}`;
     
 
 
@@ -44,34 +53,35 @@ export default function page() {
       <Script src="/static/js/selectOption.js" />
       <ProductHeader category={category} handlePriceChange={handlePriceChange} />
       <div className={styles.productsContainer}>
-      <div className={`${styles.filterContainer} bg-primaryLight`}>
-        <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
-          <h5 className="font-bold text-primarymedium">price</h5>
-          <form action="" className='flex pt-3 items-end'>
-            <div className='flex-col inline-flex'>
-              <label htmlFor="min">Min</label>
-              <div className={styles.inner}>
-                $
-              <input type="number" />
+      <div onClick={handleOpenFilter} className={`${filterContainerClasses} bg-primaryLight`}>
+        <div  className={styles.filterContainerInner} onClick={(e)=>e.stopPropagation()}>
+          <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
+            <h5 className="font-bold text-primarymedium">price</h5>
+            <form action="" className='flex pt-3 items-end'>
+              <div className='flex-col inline-flex'>
+                <label htmlFor="min">Min</label>
+                <div className={styles.inner}>
+                  $
+                <input type="number" />
+                </div>
               </div>
-            </div>
-            -
-            <div className='ml-3 inline-flex flex-col'>
-              <label htmlFor="max">Max</label>
-              <div className={styles.inner}>
-                $
-              <input type="number" />
+              -
+              <div className='ml-3 inline-flex flex-col'>
+                <label htmlFor="max">Max</label>
+                <div className={styles.inner}>
+                  $
+                <input type="number" />
+                </div>
               </div>
-            </div>
-            <button className='pt-2 text-xs text-slate-100 border-primaryLight bg-primarymedium'>filter</button>
-          </form>
-          
-        </div>
-        <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
-          <h5 className="font-bold text-primarymedium">Brand</h5>
-          
-        </div>
-        
+              <button className='pt-2 text-xs text-slate-100 border-primaryLight bg-primarymedium'>filter</button>
+            </form>
+            
+          </div>
+          <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
+            <h5 className="font-bold text-primarymedium">Brand</h5>
+            
+          </div>
+        </div> 
       </div>
       <ProductList products={finalProducts} />
       </div>

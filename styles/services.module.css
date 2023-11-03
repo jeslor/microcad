@@ -10,6 +10,67 @@
   margin-top: 2rem;
 }
 
+.leftMenuOpener {
+  display: none;
+  position: fixed;
+  width: 100%;
+  z-index: 49;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.leftMenuContent {
+  position: relative;
+  height: 100%;
+  padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
+  padding-left: 1rem;
+  overflow: hidden;
+  height: 50px;
+}
+
+.brulMenu {
+  content: "";
+  height: 124%;
+  width: 100%;
+  left: 0;
+  top: -4px;
+  background-color: #f1f5f9f2;
+  position: absolute;
+  filter: blur(3px);
+  z-index: 1;
+  padding: 0rem;
+}
+
+.leftMenuInner {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+}
+
+.leftMenuInner button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #4c4987;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.leftMenuInner button:hover {
+  color: #16105e;
+}
+
+.leftMenuInner button svg {
+  margin-left: 0.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.leftMenuInner button:hover svg {
+  margin-left: 0.5rem;
+}
+
 .leftMenu {
   min-width: 320px;
   width: 320px;
@@ -537,9 +598,31 @@
   .servicesHolder {
     position: relative;
   }
+  .leftMenuOpener {
+    display: block;
+  }
   .leftMenu {
     transition: all 0s ease-in-out;
     position: absolute;
+  }
+
+  .leftMenu {
+    top: -500%;
+  }
+  .leftMenu ul {
+    width: 100%;
+    max-width: 300px;
+  }
+  .leftMenuOpen {
+    padding-top: 3rem;
+    top: 0;
+    margin-top: 165px;
+    width: 100%;
+    height: calc(100vh + 165px);
+    max-height: calc(100vh - 165px);
+    position: fixed;
+    z-index: 49;
+    background-color: #dbdee1;
   }
   .content {
     padding: 1rem 2rem;
@@ -555,6 +638,14 @@
 @media (max-width: 767.98px) {
   .pageHeight {
     padding-top: 90px;
+  }
+  .leftMenuOpener {
+    top: 64px;
+  }
+  .leftMenuOpen {
+    margin-top: 114px;
+    height: calc(100vh + 114px);
+    max-height: calc(100vh - 114px);
   }
   .content {
     padding: 1rem;

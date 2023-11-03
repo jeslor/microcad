@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import '@/app/globals.css'
 import styles from "@/styles/services.module.css"
 import { Icon } from '@iconify/react/dist/iconify.js'
@@ -73,17 +74,37 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+    const [leftMenu, setLeftMenu] = React.useState(false);
     const pathname = usePathname();
+    
+    const handleOpenLeftMenu = () => {
+        setLeftMenu(!leftMenu);
+        if (leftMenu) {
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto'; 
+        } 
+        
+        if (!leftMenu){
+            document.body.style.overflow = "hidden";
+            document.body.style.height = '100vh'; 
+   
+        }
+        
+    }
+
+    const openLeftMenuClasses = leftMenu ? `${styles.leftMenu} ${styles.leftMenuOpen}` : `${styles.leftMenu}`;
+    
     
     
 
   return (
     <section className={`${styles.pageHeight} bg-slate-100`}>
-            <div id="leftMenuOpener" className="leftMenuOpener">
-                <div className="leftMenuContent">
-                    <div className="brulMenu"> </div>
-                    <div className="leftMenuInner">
-                        <button>
+            <div  className={styles.leftMenuOpener}>
+                <div className={styles.leftMenuContent}>
+                    <div className={styles.brulMenu}> </div>
+                    <div className={styles.leftMenuInner}>
+                        <button onClick={handleOpenLeftMenu}>
                             Menu
                         <Icon icon="la:angle-right" />
                         </button>  
@@ -91,7 +112,7 @@ export default function RootLayout({
                 </div>
             </div>
         <div className={`${styles.servicesHolder} customwidth mx-auto`}>
-            <div id="leftMenu" className={styles.leftMenu}>
+            <div id="leftMenu" className={`${openLeftMenuClasses}`}>
                 <h2 className="text-primaryLight">Services</h2>
                 <ul>
                     {services.map((service, index) => (

@@ -67,8 +67,9 @@
   transition: all 0.3s ease-in-out;
 }
 
-.leftMenuInner button:hover svg {
+.leftMenuInner.activeLeftInner button svg {
   margin-left: 0.5rem;
+  transform: rotate(180deg);
 }
 
 .leftMenu {
@@ -597,6 +598,7 @@
   }
   .servicesHolder {
     position: relative;
+    margin-top: 3rem;
   }
   .leftMenuOpener {
     display: block;
@@ -614,7 +616,7 @@
     max-width: 300px;
   }
   .leftMenuOpen {
-    padding-top: 3rem;
+    padding-top: 2rem;
     top: 0;
     margin-top: 165px;
     width: 100%;
@@ -646,6 +648,9 @@
     margin-top: 114px;
     height: calc(100vh + 114px);
     max-height: calc(100vh - 114px);
+  }
+  .servicesHolder {
+    margin-top: 2rem;
   }
   .content {
     padding: 1rem;

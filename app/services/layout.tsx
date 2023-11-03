@@ -94,7 +94,7 @@ export default function RootLayout({
     }
 
     const openLeftMenuClasses = leftMenu ? `${styles.leftMenu} ${styles.leftMenuOpen}` : `${styles.leftMenu}`;
-    
+    const openLeftMenuInnerClasses = leftMenu ? `${styles.leftMenuInner} ${styles.activeLeftInner}` : `${styles.leftMenuInner}`;
     
     
 
@@ -103,7 +103,7 @@ export default function RootLayout({
             <div  className={styles.leftMenuOpener}>
                 <div className={styles.leftMenuContent}>
                     <div className={styles.brulMenu}> </div>
-                    <div className={styles.leftMenuInner}>
+                    <div className={`${openLeftMenuInnerClasses}`}>
                         <button onClick={handleOpenLeftMenu}>
                             Menu
                         <Icon icon="la:angle-right" />
@@ -112,7 +112,7 @@ export default function RootLayout({
                 </div>
             </div>
         <div className={`${styles.servicesHolder} customwidth mx-auto`}>
-            <div id="leftMenu" className={`${openLeftMenuClasses}`}>
+            <div  className={`${openLeftMenuClasses}`}>
                 <h2 className="text-primaryLight">Services</h2>
                 <ul>
                     {services.map((service, index) => (

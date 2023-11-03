@@ -1,7 +1,14 @@
 "use client";
 import { useState, useEffect, useContext } from 'react'
-
-
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { useParams } from "next/navigation";
 import styles from "@/styles/products.module.css";
@@ -75,9 +82,22 @@ export default function page() {
               </div>
               <button className='pt-2 text-xs text-slate-100 border-primaryLight bg-primarymedium'>filter</button>
             </form>
+
+            <Select  onValueChange={handlePriceChange}>
+              <SelectTrigger className={`${styles.sortWithPrice}`}>
+                <SelectValue className={styles.secetOPtion}  placeholder="sort by Price" />
+              </SelectTrigger>
+                <SelectContent className='bg-slate-200'>
+                <SelectGroup >
+                    <SelectLabel>Sort by price</SelectLabel>
+                    <SelectItem value="low to high">low to high</SelectItem>
+                    <SelectItem value="high to low">high to low</SelectItem>
+                </SelectGroup>
+                </SelectContent>
+            </Select>
             
           </div>
-          <div className={`${styles.filter} ${styles.filter1} text-primaryLight`}>
+          <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
             <h5 className="font-bold text-primarymedium">Brand</h5>
             
           </div>

@@ -35,7 +35,7 @@ const ProductHeader = ({category, handlePriceChange}:Props) => {
             </SelectContent>
         </Select>
         </div>
-        <div className={`${styles.openFilter} font-semibold text-sm`}>open Filters: <div className={`${styles.filterIcon} bg-primarymedium`}><Icon icon="line-md:check-list-3-filled" /></div></div>
+        <div className={`${styles.openFilter} font-semibold text-sm`}> <span>open Filters:</span> <div className={`${styles.filterIcon} bg-primarymedium`}><Icon icon="line-md:check-list-3-filled" /></div></div>
     </div>
   )
 }

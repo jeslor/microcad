@@ -76,7 +76,7 @@
   background-color: #fff;
   display: flex;
   align-items: flex-start;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding-bottom: 1rem;
   margin-top: 1rem;
   box-shadow:
@@ -108,7 +108,7 @@
 
 .cartListItem h4 {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .quantityPrice {
@@ -123,7 +123,7 @@
   font-weight: 700;
 }
 .quantityPrice p:nth-of-type(1) {
-  font-size: 1.01rem;
+  font-size: 0.7rem;
 }
 
 .navCartPriceTogglers {

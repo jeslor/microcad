@@ -12,21 +12,21 @@ const Bottombar = () => {
         <div className={styles.customer}>
           <h3 className="text-light-3">Customer Service</h3>
           <ul className="text-gray-400 text-sm">
-            <li><a href="/about">About Us</a></li>
+            <li><a href="/company/careers">Careers</a></li>
   
-            <li><a href="/feedback">feedback</a></li>
-            <li><a href="/shipping">Shipping & Returns</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href="/contact">feedback</a></li>
+            <li><a href="/policies/return-policy">Shipping & Returns</a></li>
+            <li><a href="/company/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/company/testimonials">Testimonials</a></li>
           </ul>
         </div>
         <div className={styles.customer}>
           <h3 className="text-light-3">My Account</h3>
           <ul className="text-gray-400 text-sm">
-            <li><a href="/account">account profile</a></li>
-            <li><a href="/account">Order History</a></li>
-            <li><a href="/account">Shopping cart</a></li>
-            <li><a href="/account">peel login</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/cart">Shopping cart</a></li>
+            <li><a href="/reset-password"></a>Forgot Password</li>
           </ul>
         </div> 
         <div className={styles.customer}>
@@ -43,11 +43,11 @@ const Bottombar = () => {
         <div className={styles.services}>
           <h3 className="text-light-3">Services</h3>
           <ul className="text-gray-400 text-sm">
-            <li><a href="/services">managed print service</a></li>
-            <li><a href="/services">reseller program </a></li>
-            <li><a href="/services">web hosting</a></li>
-            <li><a href="/services">digital signange</a></li>
-            <li><a href="/services">onsite service contracts</a></li>
+            <li><a href="/services/managed-services-onsite">Managed onsite service</a></li>
+            <li><a href="/services/reseller-program">Reseller program </a></li>
+            <li><a href="/services/computer-repair">Computer repair</a></li>
+            <li><a href="/services/digital-signage">Digital signange</a></li>
+            <li><a href="/services/refurbrishing">Refurbrishing</a></li>
           </ul>
         </div>
       </div>

@@ -36,7 +36,12 @@ export default function page() {
     }
     useEffect(() => {
       setFinalProducts(products[category]);
-    },  [category,filter] )
+    },  [category,filter] );
+
+
+    const brands = [];
+    console.log(finalProducts);
+
 
 
     

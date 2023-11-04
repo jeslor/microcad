@@ -4,6 +4,7 @@ import { StateContext } from '@/components/providers/stateProvider';
 
 import styles from "@/styles/products.module.css";
 import { Icon } from '@iconify/react/dist/iconify.js';
+import Image from 'next/image';
 
 
 const ProductListItem = ({product}) => {
@@ -16,7 +17,7 @@ const ProductListItem = ({product}) => {
       setCartHandler(product)
   }
 
- const marking = product.isNew ? "New" : <Icon icon="fa6-solid:recycle" />;
+ const marking = product.isNew ? "New" : <Image className="text-slate-50" src="/static/media/icons/recycle.svg" width={18} height={18} />;
  const coloring = product.isNew ? styles.productListItemNew : `${styles.productListItemNew} ${styles.productListItemRefurb}`;
 
 

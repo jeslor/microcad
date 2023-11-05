@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 
 
 import { useParams } from "next/navigation";
@@ -12,9 +12,11 @@ import ProductHeader from '@/components/single/headers/productHeader';
 
 
 export default function page() {
-  let { parentCategory, category } = useParams();
+  let { category } = useParams();
   let [finalProducts, setFinalProducts] = useState([]);
-  let [filter, setFilter] = useState('');
+  const [productsToShow, setProductsToShow] = useState([]); 
+  let [priceFilter, setPriceFilter] = useState('');
+  let [brandFilters, setBrandFilter] = useState([]);
 
 
 
@@ -28,19 +30,36 @@ export default function page() {
     });
 
     const handlePriceChange = (value) =>{
-      setFilter(value);
-      let filteredProducts = finalProducts = finalProducts.sort((a,b) => {
-        return value === 'low to high' ? a.price - b.price : b.price - a.price;
-      });
-      setFinalProducts(filteredProducts);
+      setPriceFilter(value);
+      if (value === 'low to high') {
+        setProductsToShow(finalProducts.sort((a,b)=> a.price - b.price));
+      }
+      if (value === 'high to low') {
+        setProductsToShow(finalProducts.sort((a,b)=> b.price - a.price));
+        
+      }
     }
+
     useEffect(() => {
-      setFinalProducts(products[category]);
-    },  [category,filter] );
+      if (brandFilters.length > 0) {
+        let filteredProducts = products[category].filter(product => brandFilters.includes(product.brand));
+        setFinalProducts(filteredProducts);
+      }
+      else{
+        setFinalProducts(products[category]);
+      }
+      setProductsToShow(finalProducts);
+    },  [category, brandFilters, ] );
 
 
-    const brands = [];
-    console.log(finalProducts);
+    const productBrands = [...new Set(products[category].map(product=>product.brand))].sort();
+
+    const handleFilters = (selectedBrands)=>{
+      setBrandFilter(prevFilters=>[ ...selectedBrands]);
+    }
+
+  
+
 
 
 
@@ -54,7 +73,7 @@ export default function page() {
       <Script src="/static/js/selectOption.js" />
       <ProductHeader category={category} handlePriceChange={handlePriceChange} />
       <div className={styles.productsContainer}>
-        <FilterContainer handlePriceChange={handlePriceChange}/>
+        <FilterContainer handlePriceChange={handlePriceChange} brands={productBrands} brandFilters={brandFilters} handleFilters={handleFilters}/>
         <ProductList products={finalProducts} />
       </div>
 

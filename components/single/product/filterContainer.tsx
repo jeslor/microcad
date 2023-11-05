@@ -10,15 +10,18 @@ import {
   } from "@/components/ui/select";
   import styles from "@/styles/products.module.css";
   import { StateContext } from '@/components/providers/stateProvider';
+import BrandInput from './brandInput';
 
 interface Props {
-    handlePriceChange: ()=> void
+    handlePriceChange: ()=> void,
+    brands:[]
+    brandFilters:[]
+    handleFilters:()=>void
 }
 
-const FilterContainer = ({handlePriceChange}:Props) => {
+const FilterContainer = ({handlePriceChange, brands, brandFilters, handleFilters}:Props) => {
     const {openFilter, handleOpenFilter} = useContext(StateContext);
-
-
+    
     const filterContainerClasses = openFilter ? `${styles.filterContainer} ${styles.filterContainerOpen}` : `${styles.filterContainer}`;
 
   return (
@@ -28,7 +31,7 @@ const FilterContainer = ({handlePriceChange}:Props) => {
             <h5 className="font-bold text-primarymedium">price</h5>
             <form action="" className='flex pt-3 items-end'>
             <div className='flex-col inline-flex'>
-                <label htmlFor="min">Min</label>
+                <label className="text-xs font-bold pl-3" htmlFor="min">Min</label>
                 <div className={styles.inner}>
                 $
                 <input type="number" />
@@ -36,7 +39,7 @@ const FilterContainer = ({handlePriceChange}:Props) => {
             </div>
             -
             <div className='ml-3 inline-flex flex-col'>
-                <label htmlFor="max">Max</label>
+                <label className="text-xs font-bold pl-3" htmlFor="max">Max</label>
                 <div className={styles.inner}>
                 $
                 <input type="number" />
@@ -60,8 +63,12 @@ const FilterContainer = ({handlePriceChange}:Props) => {
             
         </div>
         <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
-            <h5 className="font-bold text-primarymedium">Brand</h5>
-            
+            <h5 className="font-bold text-primarymedium mb-3">Brand</h5>
+            <div className={styles.brands}>
+                {brands.map(br=>
+                    <BrandInput name={br} brandFilters={brandFilters} handleFilters={handleFilters} />
+                )}
+            </div>
         </div>
         </div> 
     </div>

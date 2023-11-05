@@ -28,6 +28,7 @@ export default function page() {
         }
        }
     });
+    const CategoryProducts = products[category];
 
     const handlePriceChange = (value) =>{
       setPriceFilter(value);
@@ -42,30 +43,36 @@ export default function page() {
 
     useEffect(() => {
       if (brandFilters.length > 0) {
-        let filteredProducts = products[category].filter(product => brandFilters.includes(product.brand));
+        let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
         setFinalProducts(filteredProducts);
       }
       else{
-        setFinalProducts(products[category]);
+        setFinalProducts(CategoryProducts);
       }
       setProductsToShow(finalProducts);
     },  [category, brandFilters, ] );
 
 
-    const productBrands = [...new Set(products[category].map(product=>product.brand))].sort();
+    const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
+    const productSpecifications = CategoryProducts.reduce((acc, product)=>{
+      const productSpecs = product.specifications;
+
+      for (const key in productSpecs) {
+        if (acc[key]) {
+          acc[key].push(productSpecs[key]);
+          acc[key] = [...new Set(acc[key])];
+        }
+        else{
+          acc[key] = [productSpecs[key]];
+        } 
+      }
+      return acc;
+    }, {});
+
 
     const handleFilters = (selectedBrands)=>{
       setBrandFilter(prevFilters=>[ ...selectedBrands]);
     }
-
-  
-
-
-
-
-    
-
-
 
  
   return (
@@ -73,7 +80,13 @@ export default function page() {
       <Script src="/static/js/selectOption.js" />
       <ProductHeader category={category} handlePriceChange={handlePriceChange} />
       <div className={styles.productsContainer}>
-        <FilterContainer handlePriceChange={handlePriceChange} brands={productBrands} brandFilters={brandFilters} handleFilters={handleFilters}/>
+        <FilterContainer 
+          handlePriceChange={handlePriceChange} 
+          brands={productBrands} 
+          brandFilters={brandFilters} 
+          handleFilters={handleFilters} 
+          productSpecifications={productSpecifications}
+        />
         <ProductList products={finalProducts} />
       </div>
 

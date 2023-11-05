@@ -162,11 +162,13 @@
 
 .filter input {
   border: 1px solid #ccc;
-  width: 100px;
   background-color: #f1f5f9;
   border-radius: 5px;
   margin-right: 0.5rem;
   padding: 0.1rem 0.3rem;
+}
+.filter1 input {
+  width: 100px;
 }
 .filter button {
   border-width: 2px;
@@ -330,6 +332,8 @@
 
   .filter input {
     border: 1px solid #ccc;
+  }
+  .filter1 input {
     width: 90px;
   }
   .brands input {

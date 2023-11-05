@@ -9,6 +9,7 @@ import ProductList from '@/components/single/product/productList';
 import FilterContainer from '@/components/single/product/filterContainer';
 import Script from 'next/script';
 import ProductHeader from '@/components/single/headers/productHeader';
+import { set } from 'mongoose';
 
 
 export default function page() {
@@ -17,6 +18,7 @@ export default function page() {
   const [productsToShow, setProductsToShow] = useState([]); 
   let [priceFilter, setPriceFilter] = useState('');
   let [brandFilters, setBrandFilter] = useState([]);
+  let [specificationFilters, setSpecificationFilters] = useState([]);
 
 
 
@@ -45,12 +47,24 @@ export default function page() {
       if (brandFilters.length > 0) {
         let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
         setFinalProducts(filteredProducts);
+      }else if (specificationFilters.length > 0) {
+       let  filteredProducts = CategoryProducts.reduce((acc, product)=>{
+          const productSpecs = product.specifications;
+          for (const key in productSpecs) {
+            if (specificationFilters.includes(productSpecs[key])) {
+              acc.push(product);
+              break;
+            }
+          }
+          return acc;
+        }, []);
+        console.log(filteredProducts);
       }
       else{
         setFinalProducts(CategoryProducts);
       }
       setProductsToShow(finalProducts);
-    },  [category, brandFilters, ] );
+    },  [category, brandFilters, specificationFilters ] );
 
 
     const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
@@ -69,9 +83,13 @@ export default function page() {
       return acc;
     }, {});
     productSpecifications = Object.entries(productSpecifications)
-console.log(productSpecifications);
+
     const handleFilters = (selectedBrands)=>{
       setBrandFilter(prevFilters=>[ ...selectedBrands]);
+    }
+
+    const handleSpecificationFilters = (selectedSpecifications)=>{
+      setSpecificationFilters(prevFilters=>[ ...selectedSpecifications]);
     }
 
  
@@ -86,6 +104,8 @@ console.log(productSpecifications);
           brandFilters={brandFilters} 
           handleFilters={handleFilters} 
           productSpecifications={productSpecifications}
+          specificationFilters={specificationFilters}
+          handleSpecificationFilters={handleSpecificationFilters}
         />
         <ProductList products={finalProducts} />
       </div>

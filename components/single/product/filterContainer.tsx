@@ -20,9 +20,19 @@ interface Props {
     brandFilters:[]
     productSpecifications: []
     handleFilters:()=>void
+    specificationFilters: []
+    handleSpecificationFilters: (specificationFilters:[])=>void,
 }
 
-const FilterContainer = ({handlePriceChange, brands, brandFilters, handleFilters, productSpecifications}:Props) => {
+const FilterContainer = ({
+    handlePriceChange, 
+    brands, 
+    brandFilters, 
+    handleFilters, 
+    productSpecifications,
+    specificationFilters,
+    handleSpecificationFilters
+}:Props) => {
     const {openFilter, handleOpenFilter} = useContext(StateContext);
     const filterContainerClasses = openFilter ? `${styles.filterContainer} ${styles.filterContainerOpen}` : `${styles.filterContainer}`;
     
@@ -77,7 +87,12 @@ const FilterContainer = ({handlePriceChange, brands, brandFilters, handleFilters
                 <h5 className="font-bold text-primarymedium mb-3">Advanced Filter</h5>
                 {
                     productSpecifications.map((spec:[], index)=>(
-                        <AdvancedFilter specification={spec} />
+                        <AdvancedFilter
+                         specification={spec}
+                         specificationFilters={specificationFilters}
+                        handleSpecificationFilters={handleSpecificationFilters} 
+                         
+                        />
                     ))
                 }  
             </div>

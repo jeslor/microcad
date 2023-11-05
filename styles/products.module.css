@@ -96,8 +96,12 @@
   height: 300px;
 }
 
+.products {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .productsHeader {
-  left: 0;
   position: fixed;
   display: flex;
   align-items: flex-end;

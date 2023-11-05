@@ -1,18 +1,17 @@
 
 interface Props {
-    title: string,
-    options: []
+    specification: any[]
 }
 
 const AdvancedFilter = ({
-    title,
-    options
+    specification
 }:Props) => {
+    
   return (
     <div>
-        <h6 className="text-xs font-bold py-2">{title}</h6>
+        <h6 className="text-xs font-bold py-2">{specification[0]}</h6>
         <ul>
-            {options.map((item, index) => {
+            {specification[1].map((item:string, index:number) => {
                 return (
                     <li key={index} className="text-xs">
                         <input type="checkbox" className="mr-2" />

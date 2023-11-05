@@ -18,7 +18,7 @@ interface Props {
     handlePriceChange: ()=> void,
     brands:[]
     brandFilters:[]
-    productSpecifications: {}
+    productSpecifications: []
     handleFilters:()=>void
 }
 
@@ -75,17 +75,11 @@ const FilterContainer = ({handlePriceChange, brands, brandFilters, handleFilters
             </div>
             <div className={`${styles.filter} ${styles.filter3} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Advanced Filter</h5>
-                <>
-                {Object.keys(productSpecifications).map((key:{}, index) => {  
-                    console.log('**************');
-                    
-                    console.log(productSpecifications[key]);   
-                    return (
-                        <AdvancedFilter key={index}  title={key}     options ={productSpecifications[key]}/>
-                    )
-                })}
-                </>
-               
+                {
+                    productSpecifications.map((spec:[], index)=>(
+                        <AdvancedFilter specification={spec} />
+                    ))
+                }  
             </div>
         </div> 
     </div>

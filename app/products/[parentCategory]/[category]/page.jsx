@@ -54,7 +54,7 @@ export default function page() {
 
 
     const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
-    const productSpecifications = CategoryProducts.reduce((acc, product)=>{
+    let productSpecifications = CategoryProducts.reduce((acc, product)=>{
       const productSpecs = product.specifications;
 
       for (const key in productSpecs) {
@@ -68,8 +68,8 @@ export default function page() {
       }
       return acc;
     }, {});
-
-
+    productSpecifications = Object.entries(productSpecifications)
+console.log(productSpecifications);
     const handleFilters = (selectedBrands)=>{
       setBrandFilter(prevFilters=>[ ...selectedBrands]);
     }

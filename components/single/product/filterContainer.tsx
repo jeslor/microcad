@@ -76,7 +76,7 @@ const FilterContainer = ({handlePriceChange, brands, brandFilters, handleFilters
             <div className={`${styles.filter} ${styles.filter3} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Advanced Filter</h5>
                 <>
-                {Object.keys(productSpecifications).map((key:any, index) => {  
+                {Object.keys(productSpecifications).map((key:{}, index) => {  
                     console.log('**************');
                     
                     console.log(productSpecifications[key]);   

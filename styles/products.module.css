@@ -155,7 +155,7 @@
   min-width: 350px;
   padding: 1rem;
   padding-bottom: 3rem;
-  height: calc(100vh - 200px);
+  height: 80vh;
   overflow-y: scroll;
   /* background-color: #fff; */
 }

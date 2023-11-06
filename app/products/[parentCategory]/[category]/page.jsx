@@ -10,6 +10,7 @@ import FilterContainer from '@/components/single/product/filterContainer';
 import Script from 'next/script';
 import ProductHeader from '@/components/single/headers/productHeader';
 import { set } from 'mongoose';
+import { type } from 'os';
 
 
 export default function page() {
@@ -46,31 +47,38 @@ export default function page() {
     useEffect(() => {
       if (brandFilters.length > 0) {
         let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
-        setFinalProducts(filteredProducts);
-      }
-      if (specificationFilters.length > 0) {
-        let filteredProducts =[]
-        // CategoryProducts.forEach(product=>{
-        //   let specs =[]
-        //   for (const key in product.specifications) {
-        //     specs.push(product.specifications[key]);
-        //   }
-        //   if (specificationFilters.some(filter=> specs.includes(filter))) {
-        //     filteredProducts.push(product);
-        //   }
-        // })
-        console.log(filteredProducts);
-      }
-      else{
+        return setFinalProducts(filteredProducts);
+      }else if (specificationFilters.length > 0) {
+        let filteredProducts = []
+        CategoryProducts.forEach(product => {
+          const specifications = product.specifications;
+          const results = [];
+          for (const key in specifications) {
+           let currSpec = key;
+           let currSpecValue = specifications[key];
+          let specFilter = specificationFilters.find(fil=>fil.title === currSpec);
+           if(typeof specFilter !== 'undefined'){
+            if(specFilter.filters.includes(currSpecValue)){
+              results.push(true);
+            }else{
+              results.push(false);
+            }
+          }
+        }
+        results.includes(false)? null : filteredProducts.push(product);  
+        });
+        filteredProducts = [...new Set(filteredProducts)];
+        return setFinalProducts(filteredProducts); 
+      }else{
         setFinalProducts(CategoryProducts);
       }
-      setProductsToShow(finalProducts);
+      return setProductsToShow(finalProducts);
     },  [category, brandFilters, specificationFilters ] );
 
 
     const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
-    let productsToChooseFrom =finalProducts.length? finalProducts : CategoryProducts;
-    let productSpecifications = productsToChooseFrom.reduce((acc, product)=>{
+    // let productsToChooseFrom =finalProducts.length?  CategoryProducts :finalProducts;
+    let productSpecifications = CategoryProducts.reduce((acc, product)=>{
       const productSpecs = product.specifications;
 
       for (const key in productSpecs) {
@@ -91,7 +99,6 @@ export default function page() {
     }
 
     const handleSpecificationFilters = (selectedSpecifications)=>{
-      console.log(selectedSpecifications);
       setSpecificationFilters(prevFilters=>[...selectedSpecifications]);
     }
 

@@ -45,10 +45,10 @@ export default function page() {
     }
 
     useEffect(() => {
-      if (brandFilters.length > 0) {
+      if (brandFilters.length > 0 && specificationFilters.length === 0) {
         let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
         return setFinalProducts(filteredProducts);
-      }else if (specificationFilters.length > 0) {
+      }else if (specificationFilters.length > 0 && brandFilters.length === 0) {
         let filteredProducts = []
         CategoryProducts.forEach(product => {
           const specifications = product.specifications;
@@ -69,6 +69,29 @@ export default function page() {
         });
         filteredProducts = [...new Set(filteredProducts)];
         return setFinalProducts(filteredProducts); 
+      }else if(brandFilters.length > 0 && specificationFilters.length > 0){
+        let filteredProducts = []
+        CategoryProducts.forEach(product => {
+          const specifications = product.specifications;
+          const results = [];
+          for (const key in specifications) {
+           let currSpec = key;
+           let currSpecValue = specifications[key];
+          let specFilter = specificationFilters.find(fil=>fil.title === currSpec);
+           if(typeof specFilter !== 'undefined'){
+            if(specFilter.filters.includes(currSpecValue)){
+              results.push(true);
+            }else{
+              results.push(false);
+            }
+          }
+        }
+        results.includes(false)? null : filteredProducts.push(product);  
+        });
+        filteredProducts = [...new Set(filteredProducts)];
+        filteredProducts = filteredProducts.filter(product => brandFilters.includes(product.brand));
+        return setFinalProducts(filteredProducts);
+
       }else{
         setFinalProducts(CategoryProducts);
       }
@@ -77,7 +100,6 @@ export default function page() {
 
 
     const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
-    // let productsToChooseFrom =finalProducts.length?  CategoryProducts :finalProducts;
     let productSpecifications = CategoryProducts.reduce((acc, product)=>{
       const productSpecs = product.specifications;
 

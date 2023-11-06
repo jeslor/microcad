@@ -9088,7 +9088,11 @@ export const data = [
             "quantity": 50,
             "isNew": false,
             "isPopular": true,
-            "specifications": "1200 dpi, USB 2.0, Film scanning capability",
+            "specifications": {
+              "DPI":1200,
+              "USB" : "2.0", 
+              "Film": "scanning capability",
+              "Energy": "efficient"},
             "description": "High-quality flatbed scanner for photos and documents with film scanning capabilities."
           },
           {
@@ -9104,7 +9108,12 @@ export const data = [
             "quantity": 30,
             "isNew": true,
             "isPopular": true,
-            "specifications": "4800 dpi, USB 2.0, Auto document fix",
+            "specifications": {
+              "DPI":4800, 
+              "USB" : "3.0",
+              "scanning": "true", 
+              "Energy-efficient":"true"
+             },
             "description": "Compact and stylish flatbed scanner with high-resolution scanning capabilities."
           },
           {
@@ -9120,7 +9129,10 @@ export const data = [
             "quantity": 20,
             "isNew": false,
             "isPopular": true,
-            "specifications": "1200 dpi, Automatic document feeder, Network connectivity",
+            "specifications": {
+            "DPI":1200, 
+            "document feeder":"Automatic", 
+            "connectivity": "Network"},
             "description": "Professional-grade sheet-fed scanner with network connectivity and high-speed scanning."
           },
           {
@@ -9131,11 +9143,16 @@ export const data = [
             "model": "ADS-2700W",
             "isSpecialOffer": false,
             "imageURL": "https://www.brother-usa.com/-/media/brother/product-catalog-media/images/2022/07/18/06/18/ads2700w_front.png",
+            "brand": "Brother",
             "type": "Sheet-fed",
             "quantity": 25,
             "isNew": true,
             "isPopular": false,
-            "specifications": "600 dpi, Wireless connectivity, Duplex scanning",
+            "specifications":{
+            "DPI":600, 
+             "connectivity":"Network", 
+           
+            },
             "description": "Wireless sheet-fed scanner with duplex scanning capability for efficient document processing."
           },
           {
@@ -9151,7 +9168,10 @@ export const data = [
             "quantity": 40,
             "isNew": false,
             "isPopular": true,
-            "specifications": "600 dpi, Wi-Fi, Document management software",
+            "specifications": {
+              "DPI":600,
+             "connectivity":"Wireless", 
+            },
             "description": "High-speed sheet-fed scanner with wireless connectivity and powerful document management features."
           },
           {
@@ -9167,7 +9187,10 @@ export const data = [
             "quantity": 35,
             "isNew": true,
             "isPopular": false,
-            "specifications": "1200 dpi, One-touch scanning, Energy-efficient",
+            "specifications": {
+              "DPI":1200, 
+              "Energy-efficient":"true"
+             },
             "description": "Compact flatbed scanner with energy-efficient design and one-touch scanning functionality."
           },
           {
@@ -9183,7 +9206,12 @@ export const data = [
             "quantity": 15,
             "isNew": false,
             "isPopular": false,
-            "specifications": "600 dpi, Duplex scanning, OneTouch software",
+            "specifications": {
+              "DPI":600, 
+              "One-touch": "true",
+              "scanning": "true", 
+              "Energy-efficient":"true"
+             },
             "description": "Sheet-fed scanner with duplex scanning and OneTouch software for efficient document scanning."
           },
           {
@@ -9199,7 +9227,13 @@ export const data = [
             "quantity": 20,
             "isNew": true,
             "isPopular": true,
-            "specifications": "600 dpi, Fast scanning speed, OCR software",
+            "specifications": {
+              "DPI":1200, 
+              "scanning speed": "fast",
+              "scanning": "true", 
+              "ORC software":"true",
+              "Energy-efficient":"true"
+             },
             "description": "High-speed sheet-fed scanner with OCR software for efficient document management."
           },
           {
@@ -9215,7 +9249,10 @@ export const data = [
             "quantity": 10,
             "isNew": false,
             "isPopular": false,
-            "specifications": "600 dpi, Wireless connectivity, Barcode recognition",
+            "specifications": {
+              "DPI":600, 
+              "connectivity":"Wireless",
+             },
             "description": "High-quality sheet-fed scanner with wireless connectivity and advanced barcode recognition."
           },
           {
@@ -9231,7 +9268,11 @@ export const data = [
             "quantity": 25,
             "isNew": false,
             "isPopular": false,
-            "specifications": "600 dpi, Auto-rescan, TWAIN support",
+            "specifications": {
+              "DPI":600, 
+              "One-touch": "true",
+              "scanning": "true", 
+             },
             "description": "Reliable sheet-fed scanner with auto-rescan and TWAIN support for professional document scanning."
           }
         ]

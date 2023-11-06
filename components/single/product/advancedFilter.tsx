@@ -3,7 +3,7 @@ import AdvancedFilterInput from "./advancedFilterInput"
 interface Props {
     specification: any[]
     specificationFilters: []
-    handleSpecificationFilters: (specificationFilters:[])=>void,
+    handleSpecificationFilters: (specificationFilters:string[])=>void,
 }
 
 const AdvancedFilter = ({
@@ -11,6 +11,7 @@ const AdvancedFilter = ({
     specificationFilters,
     handleSpecificationFilters
 }:Props) => {
+    
     
   return (
     <div>

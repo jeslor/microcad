@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { string } from 'zod';
 
 interface AdvancedFilterInputProps {
     filter: string,
-    specificationFilters: [],
-    handleSpecificationFilters: (specificationFilters:[])=>void,
+    specificationFilters: string[],
+    handleSpecificationFilters: (specificationFilters:string[])=>void,
 }
 
 const AdvancedFilterInput = ({filter, specificationFilters, handleSpecificationFilters}:AdvancedFilterInputProps) => {

@@ -21,7 +21,7 @@ interface Props {
     productSpecifications: []
     handleFilters:()=>void
     specificationFilters: []
-    handleSpecificationFilters: (specificationFilters:[])=>void,
+    handleSpecificationFilters: (specificationFilters:string[])=>void,
 }
 
 const FilterContainer = ({

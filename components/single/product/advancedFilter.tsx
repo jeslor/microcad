@@ -22,6 +22,7 @@ const AdvancedFilter = ({
                     <AdvancedFilterInput
                         filter={item}
                         key={index} 
+                        parentFilter={specification[0]}
                         specificationFilters={specificationFilters}
                         handleSpecificationFilters={handleSpecificationFilters}
                     />

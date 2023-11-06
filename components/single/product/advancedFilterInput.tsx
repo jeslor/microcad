@@ -2,23 +2,47 @@ import { useState } from 'react'
 
 interface AdvancedFilterInputProps {
     filter: string,
-    specificationFilters: string[],
+    specificationFilters: any[],
+    parentFilter: [],
     handleSpecificationFilters: (specificationFilters:string[])=>void,
 }
 
-const AdvancedFilterInput = ({filter, specificationFilters, handleSpecificationFilters}:AdvancedFilterInputProps) => {
+const AdvancedFilterInput = ({filter, specificationFilters,parentFilter, handleSpecificationFilters}:AdvancedFilterInputProps) => {
     const [checked, setChecked] = useState(false);
 
 
     const handleCheckBoxChange = ()=>{
         setChecked(prevChecked=>!prevChecked);
        if(checked === false){
-           specificationFilters.push(filter);
+            if (specificationFilters.map((specFil)=>specFil.title).includes(parentFilter)) {
+               specificationFilters.forEach((specFil)=>{
+                   if(specFil.title === parentFilter){
+                       specFil.filters.push(filter)
+                   }
+               })
+            }else{
+                specificationFilters.push({
+                    title: parentFilter,
+                    filters: [filter]
+                })
+            }
+     
         }else{
-            const index = specificationFilters.indexOf(filter);
-            if (index > -1) {
-                specificationFilters.splice(index, 1);
-              }
+            specificationFilters.forEach((specFil)=>{
+                if(specFil.title === parentFilter){
+                    const index = specFil.filters.indexOf(filter);
+                    if (index > -1) {
+                        specFil.filters.splice(index, 1);
+                      }
+                }
+                if (specFil.filters.length === 0) {
+                    const index = specificationFilters.indexOf(specFil);
+                    if (index > -1) {
+                        specificationFilters.splice(index, 1);
+                      }
+                    
+                }
+            })
         }       
         handleSpecificationFilters(specificationFilters)
     }

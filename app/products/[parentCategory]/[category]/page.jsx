@@ -47,17 +47,18 @@ export default function page() {
       if (brandFilters.length > 0) {
         let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
         setFinalProducts(filteredProducts);
-      }else if (specificationFilters.length > 0) {
-       let  filteredProducts = CategoryProducts.reduce((acc, product)=>{
-          const productSpecs = product.specifications;
-          for (const key in productSpecs) {
-            if (specificationFilters.includes(productSpecs[key])) {
-              acc.push(product);
-              break;
-            }
-          }
-          return acc;
-        }, []);
+      }
+      if (specificationFilters.length > 0) {
+        let filteredProducts =[]
+        // CategoryProducts.forEach(product=>{
+        //   let specs =[]
+        //   for (const key in product.specifications) {
+        //     specs.push(product.specifications[key]);
+        //   }
+        //   if (specificationFilters.some(filter=> specs.includes(filter))) {
+        //     filteredProducts.push(product);
+        //   }
+        // })
         console.log(filteredProducts);
       }
       else{
@@ -91,7 +92,7 @@ export default function page() {
 
     const handleSpecificationFilters = (selectedSpecifications)=>{
       console.log(selectedSpecifications);
-      setSpecificationFilters(prevFilters=>selectedSpecifications);
+      setSpecificationFilters(prevFilters=>[...selectedSpecifications]);
     }
 
  

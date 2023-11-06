@@ -1,6 +1,6 @@
 .cartContent {
   position: absolute;
-  height: calc(100vh - 115px);
+  height: calc(100vh - 109px);
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   width: 100%;
   background-color: rgb(0 0 0 / 93%);
@@ -154,7 +154,10 @@
   font-size: 1.1rem;
   font-weight: 700;
   height: 5rem;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  padding: 0rem 1.5rem;
+  background-color: inherit;
 }
 .cartContentFooter::before {
   content: "";

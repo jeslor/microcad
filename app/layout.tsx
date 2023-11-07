@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import {StateProvider} from '@/components/providers/stateProvider'
 import { Inter } from 'next/font/google'
 import Bottmbar from '@/components/shared/Bottombar'
+import styles from '@/styles/main.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StateProvider>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${styles.main}`}>
           <Navbar />
           {children}
         </body>

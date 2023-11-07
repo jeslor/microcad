@@ -302,6 +302,7 @@
 @media (max-width: 991.98px) {
   .productsHeader {
     margin-top: -7px;
+    left: 0;
   }
   .productsContainer {
     padding-top: 5rem;
@@ -310,7 +311,7 @@
   .filterContainer {
     top: 209px;
     position: absolute;
-    left: -100%;
+    left: -200%;
     width: 100%;
     z-index: 2;
     background-color: #0b0b0ba9;
@@ -409,9 +410,6 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  .productsHeader {
-    margin-top: 0px;
-  }
   .filterContainerOpen {
     top: 151px;
     height: calc(100vh - 151px);
@@ -420,6 +418,8 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .productsHeader {
+    margin-top: 0px;
+    left: 0;
     position: fixed;
     display: flex;
     align-items: center;

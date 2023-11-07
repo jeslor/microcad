@@ -156,7 +156,7 @@
   font-weight: 700;
   height: 5rem;
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
   padding: 0rem 1.5rem;
   background-color: inherit;
 }
@@ -170,7 +170,7 @@
     rgba(255, 255, 255, 0) 0%,
     rgb(248 250 252) 100%
   );
-  top: -100%;
+  bottom: 5rem;
   left: 0;
 }
 

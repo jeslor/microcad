@@ -7,6 +7,21 @@
   padding: 0.5rem 0.3rem;
 } */
 
+body::-webkit-scrollbar-width {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122, 153, 217)),
+    color-stop(0.72, rgb(73, 125, 189)),
+    color-stop(0.86, rgb(28, 58, 148))
+  );
+}
+
 .slider {
   height: 75vh;
 }

@@ -68,8 +68,18 @@
 }
 
 .leftMenuInner.activeLeftInner button svg {
-  margin-left: 0.5rem;
-  transform: rotate(180deg);
+  animation: spinOpener 0.3s ease-in-out forwards;
+}
+
+@keyframes spinOpener {
+  0% {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    margin-left: 0.5rem;
+  }
 }
 
 .leftMenu {

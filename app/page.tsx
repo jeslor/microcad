@@ -14,10 +14,10 @@ export default function Home() {
           Unlock the full potential of your business, and education with office 365
         </p>
         <p className='text-primaryLight'>Play the next-gen and classic games you want, at the graphics setting you want, and with the peripherals you want on a Windows 11 PC.</p>
-          <button className='microcadBtn'>
+          <a href='/services/microsoft-office-365' className='microcadBtn w-fit '>
             level up now
             <Icon icon="la:angle-right" />
-          </button>
+          </a>
       </div>
       <div className={styles.rightContent}>
         <ul className={`${styles.leveUpIcons} text-primayColor`}>

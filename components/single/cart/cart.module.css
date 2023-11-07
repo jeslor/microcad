@@ -65,10 +65,10 @@
 }
 
 .cartContentBody {
-  height: 80%;
+  height: 85%;
   overflow-y: scroll;
   padding-right: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 10rem;
 }
 
 .cartListItem {
@@ -151,14 +151,14 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  padding-right: 1.8rem;
   font-size: 1.1rem;
   font-weight: 700;
   height: 5rem;
-  position: fixed;
+  position: absolute;
   bottom: 1rem;
   padding: 0rem 1.5rem;
   background-color: inherit;
+  box-shadow: 0px -15px 30px -3px rgba(248 250 252, 0.3);
 }
 .cartContentFooter::before {
   content: "";

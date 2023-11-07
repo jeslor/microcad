@@ -27,17 +27,17 @@
   line-height: 1.5;
   margin-bottom: 1rem;
 }
-.leftContent button {
+.leftContent a {
   margin-top: 1rem;
   display: inline-flex;
   align-items: center;
   width: fit-content;
 }
-.leftContent button svg {
+.leftContent a svg {
   margin-left: 0.3rem;
   transition: all 0.3s ease-in-out;
 }
-.leftContent button:hover svg {
+.leftContent a:hover svg {
   margin-left: 0.7rem;
 }
 

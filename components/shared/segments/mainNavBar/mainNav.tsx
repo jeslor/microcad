@@ -138,8 +138,8 @@ function MainNav() {
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="refurbrished" && styles.mainNavLinksActive} text-secondaryColor`}>
                         <a className={styles.innerMainNavLink} href="/products/refurbrished">refurbrished </a>
                     </li>
-                    <li className={`${styles.mainNavLinks} ${parentCategory ==="special" && styles.mainNavLinksActive} text-secondaryColor`}>
-                        <a className={styles.innerMainNavLink} href="/products/special">special </a>
+                    <li className={`${styles.mainNavLinks} ${parentCategory ==="specialOffer" && styles.mainNavLinksActive} text-secondaryColor`}>
+                        <a className={styles.innerMainNavLink} href="/products/specialOffer">special </a>
                     </li>  
                     <li className={`${styles.mainNavLinks} ${parentCategory ==="more" && styles.mainNavLinksActive} openNavLinkMenu`}>
                     <a className={styles.innerMainNavLink} href="#">More <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
@@ -167,8 +167,8 @@ function MainNav() {
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="refurbrished" && styles.mainNavLinksActive} text-secondaryColor`}>
                     <a className={styles.innerMainNavLink} href="/products/refurbrished">refurbrished </a>
                 </li>
-                <li className={`${styles.mainNavLinks} ${parentCategory ==="special" && styles.mainNavLinksActive} text-secondaryColor`}>
-                    <a className={styles.innerMainNavLink} href="/products/special">special </a>
+                <li className={`${styles.mainNavLinks} ${parentCategory ==="specialOffer" && styles.mainNavLinksActive} text-secondaryColor`}>
+                    <a className={styles.innerMainNavLink} href="/products/specialOffer">special </a>
                 </li>
                 <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}><div >
                     <Icon icon="mdi:cart-outline"  />

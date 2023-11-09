@@ -4,10 +4,10 @@ import {useState} from 'react'
 interface Props {
     name:string,
     brandFilters: string[],
-    handleFilters: ({})=>void
+    handleBrandFilters: ({})=>void
 }
 
-const BrandInput = ({name, handleFilters, brandFilters}:Props) => {
+const BrandInput = ({name, handleBrandFilters, brandFilters}:Props) => {
     const [brandState, setBrandChange] = useState(false)
 
 
@@ -23,7 +23,8 @@ const BrandInput = ({name, handleFilters, brandFilters}:Props) => {
                 brandFilters.splice(index, 1);
               }
         }
-        handleFilters(brandFilters)
+        handleBrandFilters(brandFilters)
+        window.scrollTo(0, 0);
         
     }
     

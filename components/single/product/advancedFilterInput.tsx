@@ -45,6 +45,7 @@ const AdvancedFilterInput = ({filter, specificationFilters,parentFilter, handleS
             })
         }       
         handleSpecificationFilters(specificationFilters)
+        window.scrollTo(0, 0);
     }
 
   return (

@@ -9,8 +9,6 @@ import ProductList from '@/components/single/product/productList';
 import FilterContainer from '@/components/single/product/filterContainer';
 import Script from 'next/script';
 import ProductHeader from '@/components/single/headers/productHeader';
-import { set } from 'mongoose';
-import { type } from 'os';
 
 
 export default function page() {
@@ -116,7 +114,8 @@ export default function page() {
     }, {});
     productSpecifications = Object.entries(productSpecifications)
 
-    const handleFilters = (selectedBrands)=>{
+
+    const handleBrandFilters = (selectedBrands)=>{
       setBrandFilter(prevFilters=>[ ...selectedBrands]);
     }
 
@@ -134,7 +133,7 @@ export default function page() {
           handlePriceChange={handlePriceChange} 
           brands={productBrands} 
           brandFilters={brandFilters} 
-          handleFilters={handleFilters} 
+          handleBrandFilters={handleBrandFilters} 
           productSpecifications={productSpecifications}
           specificationFilters={specificationFilters}
           handleSpecificationFilters={handleSpecificationFilters}

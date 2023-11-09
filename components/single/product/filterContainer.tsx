@@ -13,23 +13,32 @@ import {
 import BrandInput from './brandInput';
 import AdvancedFilter from './advancedFilter';
 import { Key } from 'lucide-react';
+import ProductTypeInput from './productTypeInput';
 
 interface Props {
-    handlePriceChange: ()=> void,
+    handlePriceChange: (vaue:string)=> void,
     brands:[]
-    brandFilters:[]
-    productSpecifications: []
-    handleFilters:()=>void
-    specificationFilters: []
-    handleSpecificationFilters: (specificationFilters:string[])=>void,
+    brandOrType?:string
+    productTypes?:[]
+    brandFilters?:[]
+    typeFilters?:string[]
+    handleTypeFilters?: (typeFilters:string[])=>void
+    productSpecifications?: []
+    handleBrandFilters?:(selectedFilter:any)=>void
+    specificationFilters?: []
+    handleSpecificationFilters?: (specificationFilters:string[])=>void,
 }
 
 const FilterContainer = ({
     handlePriceChange, 
     brands, 
     brandFilters, 
-    handleFilters, 
+    handleBrandFilters, 
+    productTypes,
+    typeFilters,
+    handleTypeFilters,
     productSpecifications,
+    brandOrType,
     specificationFilters,
     handleSpecificationFilters
 }:Props) => {
@@ -75,27 +84,43 @@ const FilterContainer = ({
                 </Select>
                 
             </div>
+            {(brandOrType ==="refurbrished" ||brandOrType === "specialOffer") &&(
+            <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
+                <h5 className="font-bold text-primarymedium mb-3">Type</h5>
+                <div className={styles.brands}>
+                    {productTypes!.map((type:string)=>(
+                        <ProductTypeInput name={type} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
+                    )
+                    )}
+                   
+                </div>
+            </div>
+             )}
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Brand</h5>
                 <div className={styles.brands}>
                     {brands.map(br=>
-                        <BrandInput name={br} brandFilters={brandFilters} handleFilters={handleFilters} />
+                        <BrandInput name={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
                     )}
                 </div>
             </div>
-            <div className={`${styles.filter} ${styles.filter3} text-primaryLight`}>
-                <h5 className="font-bold text-primarymedium mb-3">Advanced Filter</h5>
-                {
-                    productSpecifications.map((spec:[], index)=>(
-                        <AdvancedFilter
-                         specification={spec}
-                         specificationFilters={specificationFilters}
-                        handleSpecificationFilters={handleSpecificationFilters} 
-                         
-                        />
-                    ))
-                }  
-            </div>
+            {
+                   productSpecifications &&(
+                    <div className={`${styles.filter} ${styles.filter3} text-primaryLight`}>
+                        <h5 className="font-bold text-primarymedium mb-3">Advanced Filter</h5>
+                          {
+                              productSpecifications!.map((spec:[], index)=>(
+                                <AdvancedFilter
+                                specification={spec}
+                                specificationFilters={specificationFilters!}
+                                handleSpecificationFilters={handleSpecificationFilters!} 
+                                
+                                />
+                            ))
+                          }   
+                    </div>
+                )
+            }
         </div> 
     </div>
   )

@@ -103,7 +103,7 @@ function MainNav() {
                     <a className={styles.innerMainNavLink} href="#">storage <Icon className={styles.mainNavLinksIcon} icon="ep:arrow-down" /></a>
                     <ul>
                     <li><a className={`${category === 'solid state drives' && styles.activeSubMenu}`} href="/products/storage/solid_state_drives"><Icon icon="clarity:ssd-line" /> Solid State Drives </a></li>
-                    <li><a className={`${category === 'flash devices' && styles.activeSubMenu}`} href="/products/storage/flash_drives"><Icon icon="solar:flash-drive-line-duotone" /> Flash Drives </a></li>
+                    <li><a className={`${category === 'flash drives' && styles.activeSubMenu}`} href="/products/storage/flash_drives"><Icon icon="solar:flash-drive-line-duotone" /> Flash Drives </a></li>
                     <li><a className={`${category === 'hard drives' && styles.activeSubMenu}`} href="/products/storage/hard_drives"><Icon icon="mdi:harddisk" /> Hard Drives </a></li>
                     <li><a className={`${category === 'memory cards' && styles.activeSubMenu}`} href="/products/storage/memory_cards"><Icon icon="bx:memory-card" />Memory cards</a></li>
                     <li><a className={`${category === 'san devices' && styles.activeSubMenu}`} href="/products/storage/SAN_devices"><Icon icon="mdi:network-attached-storage" /> SAN Devices </a></li>

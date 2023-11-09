@@ -2075,6 +2075,7 @@ export const data = [
       {
         "motherboards": [
           {
+            "name": "ASUS ROG Strix Z590-E",
             "model": "ASUS ROG Strix Z590-E",
             "brand": "ASUS",
             "type": "ATX",
@@ -2096,6 +2097,7 @@ export const data = [
             "description": "The ASUS ROG Strix Z590-E is a high-end ATX motherboard with support for the latest Intel processors. It features a sleek black design, RGB lighting, and advanced connectivity options."
           },
           {
+            "name": "GIGABYTE B450 AORUS M",
             "model": "GIGABYTE B450 AORUS M",
             "brand": "GIGABYTE",
             "type": "Micro-ATX",
@@ -2117,6 +2119,7 @@ export const data = [
             "description": "The GIGABYTE B450 AORUS M is a budget-friendly Micro-ATX motherboard designed for AMD Ryzen processors. It offers reliable performance and gaming features."
           },
           {
+            "name": "MSI MPG B550 Gaming Edge",
             "model": "MSI MPG B550 Gaming Edge",
             "brand": "MSI",
             "type": "ATX",
@@ -2138,6 +2141,7 @@ export const data = [
             "description": "The MSI MPG B550 Gaming Edge is an ATX motherboard built for AMD Ryzen processors. It boasts a sleek design, solid performance, and gaming-focused features."
           },
           {
+            "name": "ASRock H510M-ITX/ac",
             "model": "ASRock H510M-ITX/ac",
             "brand": "ASRock",
             "type": "Mini-ITX",
@@ -2159,6 +2163,7 @@ export const data = [
             "description": "The ASRock H510M-ITX/ac is a compact Mini-ITX motherboard for Intel processors. It's a great choice for small form factor builds with basic computing needs."
           },
           {
+            "name": "AUSS TUF B450-PLUS Gaming",
             "model": "ASUS TUF B450-PLUS Gaming",
             "brand": "ASUS",
             "type": "ATX",
@@ -2180,6 +2185,7 @@ export const data = [
             "description": "The ASUS TUF B450-PLUS Gaming is a reliable ATX motherboard designed for AMD Ryzen processors. It offers durability and essential gaming features."
           },
           {
+            "name": "GIGABYTE Z690 AORUS Master",
             "model": "GIGABYTE Z690 AORUS Master",
             "brand": "GIGABYTE",
             "type": "ATX",
@@ -2201,6 +2207,7 @@ export const data = [
             "description": "The GIGABYTE Z690 AORUS Master is a high-end ATX motherboard designed for 12th Gen Intel processors. It offers top-tier performance, advanced features, and RGB lighting."
           },
           {
+            "name":"ASUS PRIME B560M-A",
             "model": "ASUS PRIME B560M-A",
             "brand": "ASUS",
             "type": "Micro-ATX",
@@ -2222,6 +2229,7 @@ export const data = [
             "description": "The ASUS PRIME B560M-A is a Micro-ATX motherboard designed for 10th and 11th Gen Intel processors. It provides a balance of performance and affordability."
           },
           {
+            "name": "MSI B450 TOMAHAWK MAX",
             "model": "MSI B450 TOMAHAWK MAX",
             "brand": "MSI",
             "type": "ATX",
@@ -2243,6 +2251,7 @@ export const data = [
             "description": "The MSI B450 TOMAHAWK MAX is an ATX motherboard designed for AMD Ryzen processors. It offers solid performance and a robust feature set."
           },
           {
+            "name": "ASRock Z590 Pro4",
             "model": "ASRock Z590 Pro4",
             "brand": "ASRock",
             "type": "ATX",
@@ -2264,6 +2273,7 @@ export const data = [
             "description": "The ASRock Z590 Pro4 is an ATX motherboard designed for 10th and 11th Gen Intel processors. It offers a good balance of performance and affordability."
           },
           {
+            "name": "EVGA Z590 FTW WiFi",
             "model": "EVGA Z590 FTW WiFi",
             "brand": "EVGA",
             "type": "ATX",
@@ -5455,6 +5465,7 @@ export const data = [
     {
         "modems": [
           {
+            "name": "YooTech Wireless Fast Charger",
             "model": "Yootech Wireless Fast Charger",
             "brand": "BrandA",
             "type": "Wireless",
@@ -5476,6 +5487,7 @@ export const data = [
             "description": "A high-speed wireless modem with excellent security features and a special offer for a limited time."
           },
           {
+            "name": "Motorola MB7621 Cable Modem",
             "model": "Motorola MB7621 Cable Modem",
             "brand": "BrandB",
             "type": "Cable",
@@ -5497,6 +5509,7 @@ export const data = [
             "description": "A high-performance cable modem with advanced security features."
           },
           {
+            "name": "Arris Surfboard SB8200 DOCSIS 3.1 Gigabit",
             "model": "Arris Surfboard SB8200 DOCSIS 3.1 Gigabit",
             "brand": "BrandC",
             "type": "DSL",
@@ -5518,6 +5531,7 @@ export const data = [
             "description": "A reliable DSL modem with a special offer and solid security features."
           },
           {
+            "name": "TP-Link 16×4 AC 1750 WiFi Cable Modem Router",
             "model": "TP-Link 16×4 AC 1750 WiFi Cable Modem Router",
             "brand": "BrandA",
             "type": "Wireless",
@@ -5539,6 +5553,7 @@ export const data = [
             "description": "A high-speed wireless modem with the latest technology and strong security."
           },
           {
+            "name": "Netgear Gigabit Modem",
             "model": "Netgear Gigabit Modem",
             "brand": "BrandB",
             "type": "Cable",
@@ -5560,6 +5575,7 @@ export const data = [
             "description": "A high-performance cable modem with a special offer and extended warranty."
           },
           {
+            "name": "Linksys CM3024 High-Speed DOCSIS 3.0 24×8 Cable Modem",
             "model": "Linksys CM3024 High-Speed DOCSIS 3.0 24×8 Cable Modem",
             "brand": "BrandC",
             "type": "DSL",
@@ -5581,6 +5597,7 @@ export const data = [
             "description": "A dependable DSL modem with solid security features for your internet connection."
           },
           {
+            "name": "Asus Modem Router Combo",
             "model": "Asus Modem Router Combo",
             "brand": "BrandA",
             "type": "Wireless",
@@ -5602,6 +5619,7 @@ export const data = [
             "description": "A high-speed wireless modem with a special offer and robust security options."
           },
           {
+            "name": "ASUS AX5700 Wi-Fi 6 Gaming Router",
             "model": "ASUS AX5700 Wi-Fi 6 Gaming Router",
             "brand": "BrandB",
             "type": "Cable",
@@ -5623,6 +5641,7 @@ export const data = [
             "description": "A high-performance cable modem with reliable security features."
           },
           {
+            "name": "Linksys – Dual-Band AX5400 Wi-Fi 6 Router",
             "model": "Linksys – Dual-Band AX5400 Wi-Fi 6 Router",
             "brand": "BrandC",
             "type": "DSL",
@@ -5644,6 +5663,7 @@ export const data = [
             "description": "A cost-effective DSL modem with a special offer and basic security features."
           },
           {
+            "name": "TP-Link Archer AX11000",
             "model": "TP-Link Archer AX11000",
             "brand": "BrandA",
             "type": "Wireless",
@@ -6063,216 +6083,9 @@ export const data = [
         ]
     },
     {
-        "flash_drives": [
-          {
-            "name": "Kingston DataTraveler 64GB",
-            "price": 14.99,
-            "weight": 0.02,
-            "color": "Black",
-            "model": "DT100G3/64GB",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive1.jpg",
-            "brand": "Kingston",
-            "type": "USB 3.0",
-            "quantity": 500,
-            "isNew": false,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "64GB",
-              "interface": "USB 3.0",
-              "transferSpeed": "Up to 100MB/s",
-              "securityFeatures": "Password protection"
-            },
-            "description": "The Kingston DataTraveler 64GB is a reliable USB flash drive with fast data transfer speeds and optional password protection."
-          },
-          {
-            "name": "SanDisk Ultra 128GB",
-            "price": 24.99,
-            "weight": 0.03,
-            "color": "Red",
-            "model": "SDCZ48-128G-A46",
-            "isSpecialOffer": true,
-            "imageURL": "https://example.com/flash_drive2.jpg",
-            "brand": "SanDisk",
-            "type": "USB 3.0",
-            "quantity": 300,
-            "isNew": true,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "128GB",
-              "interface": "USB 3.0",
-              "transferSpeed": "Up to 150MB/s",
-              "securityFeatures": "SanDisk SecureAccess"
-            },
-            "description": "The SanDisk Ultra 128GB is a high-capacity USB flash drive with fast transfer speeds and included SanDisk SecureAccess software."
-          },
-          {
-            "name": "Samsung BAR Plus 32GB",
-            "price": 19.99,
-            "weight": 0.04,
-            "color": "Silver",
-            "model": "MUF-32BE3/AM",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive3.jpg",
-            "brand": "Samsung",
-            "type": "USB 3.1",
-            "quantity": 150,
-            "isNew": false,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "32GB",
-              "interface": "USB 3.1",
-              "transferSpeed": "Up to 200MB/s",
-              "securityFeatures": "Waterproof, shockproof, and temperature-proof"
-            },
-            "description": "The Samsung BAR Plus 32GB is a durable and stylish USB flash drive with fast transfer speeds and exceptional durability."
-          },
-          {
-            "name": "PNY Attache 16GB",
-            "price": 9.99,
-            "weight": 0.02,
-            "color": "Blue",
-            "model": "P-FD16GATT03-GE",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive4.jpg",
-            "brand": "PNY",
-            "type": "USB 2.0",
-            "quantity": 400,
-            "isNew": false,
-            "isPopular": false,
-            "specifications": {
-              "capacity": "16GB",
-              "interface": "USB 2.0",
-              "transferSpeed": "Up to 8MB/s"
-            },
-            "description": "The PNY Attache 16GB is an affordable USB 2.0 flash drive with basic storage capacity."
-          },
-          {
-            "name": "Transcend JetFlash 256GB",
-            "price": 34.99,
-            "weight": 0.05,
-            "color": "Gold",
-            "model": "TS256GJF790K",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive5.jpg",
-            "brand": "Transcend",
-            "type": "USB 3.1",
-            "quantity": 100,
-            "isNew": true,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "256GB",
-              "interface": "USB 3.1",
-              "transferSpeed": "Up to 90MB/s",
-              "securityFeatures": "Password protection and file encryption"
-            },
-            "description": "The Transcend JetFlash 256GB offers ample storage and security features for your data."
-          },
-          {
-            "name": "Lexar JumpDrive S75 64GB",
-            "price": 16.99,
-            "weight": 0.03,
-            "color": "Green",
-            "model": "LJDS75-64GABNL",
-            "isSpecialOffer": true,
-            "imageURL": "https://example.com/flash_drive6.jpg",
-            "brand": "Lexar",
-            "type": "USB 3.0",
-            "quantity": 250,
-            "isNew": false,
-            "isPopular": false,
-            "specifications": {
-              "capacity": "64GB",
-              "interface": "USB 3.0",
-              "transferSpeed": "Up to 150MB/s"
-            },
-            "description": "The Lexar JumpDrive S75 64GB provides high-speed data transfers in a sleek design."
-          },
-          {
-            "name": "Sony MicroVault 8GB",
-            "price": 8.49,
-            "weight": 0.02,
-            "color": "White",
-            "model": "USM8GJ/WC",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive7.jpg",
-            "brand": "Sony",
-            "type": "USB 2.0",
-            "quantity": 300,
-            "isNew": false,
-            "isPopular": false,
-            "specifications": {
-              "capacity": "8GB",
-              "interface": "USB 2.0",
-              "transferSpeed": "Up to 18MB/s"
-            },
-            "description": "The Sony MicroVault 8GB is a compact USB 2.0 flash drive for basic storage needs."
-          },
-          {
-            "name": "ADATA Superior Series 128GB",
-            "price": 22.99,
-            "weight": 0.03,
-            "color": "Black",
-            "model": "AS102P-128G-RGY",
-            "isSpecialOffer": true,
-            "imageURL": "https://example.com/flash_drive8.jpg",
-            "brand": "ADATA",
-            "type": "USB 3.1",
-            "quantity": 200,
-            "isNew": true,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "128GB",
-              "interface": "USB 3.1",
-              "transferSpeed": "Up to 100MB/s"
-            },
-            "description": "The ADATA Superior Series 128GB offers ample storage and fast data transfer rates."
-          },
-          {
-            "name": "Corsair Voyager Slider X1 32GB",
-            "price": 15.99,
-            "weight": 0.04,
-            "color": "Orange",
-            "model": "CMFSL3X1-32GB",
-            "isSpecialOffer": false,
-            "imageURL": "https://example.com/flash_drive9.jpg",
-            "brand": "Corsair",
-            "type": "USB 3.0",
-            "quantity": 150,
-            "isNew": false,
-            "isPopular": false,
-            "specifications": {
-              "capacity": "32GB",
-              "interface": "USB 3.0",
-              "transferSpeed": "Up to 80MB/s"
-            },
-            "description": "The Corsair Voyager Slider X1 32GB is a reliable USB 3.0 flash drive with a sliding design for easy use."
-          },
-          {
-            "name": "HP v150w 64GB",
-            "price": 13.49,
-            "weight": 0.02,
-            "color": "Silver",
-            "model": "P-FD64GHP150-GE",
-            "isSpecialOffer": true,
-            "imageURL": "https://example.com/flash_drive10.jpg",
-            "brand": "HP",
-            "type": "USB 2.0",
-            "quantity": 350,
-            "isNew": false,
-            "isPopular": false,
-            "specifications": {
-              "capacity": "64GB",
-              "interface": "USB 2.0",
-              "transferSpeed": "Up to 15MB/s"
-            },
-            "description": "The HP v150w 64GB is an affordable USB 2.0 flash drive with decent storage capacity."
-          }
-        ]
-    },
-    {
       "flash drives": [
         {
+          "name": "Kingston DataTraveler 64GB",
           "model": "Kingston DataTraveler 64GB",
           "price": 12.99,
           "weight": 0.02,
@@ -6292,6 +6105,7 @@ export const data = [
           "description": "A reliable 64GB flash drive by Kingston with high-speed USB 3.0 transfer rates."
         },
         {
+          "name": "SanDisk Ultra 128GB",
           "model": "SanDisk Ultra 128GB",
           "price": 24.99,
           "weight": 0.03,
@@ -6311,6 +6125,7 @@ export const data = [
           "description": "A high-capacity 128GB flash drive by SanDisk with USB 3.0 for fast data transfer."
         },
         {
+          "name": "Samsung FIT Plus 32GB",
           "model": "Samsung FIT Plus 32GB",
           "price": 9.99,
           "weight": 0.01,
@@ -6330,6 +6145,7 @@ export const data = [
           "description": "A compact and high-speed 32GB flash drive by Samsung."
         },
         {
+          "name": "PNY Turbo 256GB",
           "model": "PNY Turbo 256GB",
           "price": 39.99,
           "weight": 0.04,
@@ -6349,6 +6165,7 @@ export const data = [
           "description": "A high-capacity 256GB flash drive by PNY for storing large files."
         },
         {
+          "name": "Lexar JumpDrive S75 64GB",
           "model": "Lexar JumpDrive S75 64GB",
           "price": 14.99,
           "weight": 0.02,
@@ -6368,6 +6185,7 @@ export const data = [
           "description": "A 64GB flash drive with a sleek design and fast data transfer by Lexar."
         },
         {
+          "name": "Sony Microvault 16GB",
           "model": "Sony Microvault 16GB",
           "price": 7.99,
           "weight": 0.01,
@@ -6387,6 +6205,7 @@ export const data = [
           "description": "A budget-friendly 16GB flash drive with reliable performance by Sony."
         },
         {
+          "name": "Corsair Flash Voyager 128GB",
           "model": "Corsair Flash Voyager 128GB",
           "price": 29.99,
           "weight": 0.03,
@@ -6406,6 +6225,7 @@ export const data = [
           "description": "A rugged 128GB flash drive with USB 3.0 for durability and speed by Corsair."
         },
         {
+          "name": "Toshiba Hayabusa 8GB",
           "model": "Toshiba Hayabusa 8GB",
           "price": 5.99,
           "weight": 0.01,
@@ -6425,6 +6245,7 @@ export const data = [
           "description": "An affordable 8GB flash drive for everyday use by Toshiba."
         },
         {
+          "name": "ADATA S102 Pro 256GB",
           "model": "ADATA S102 Pro 256GB",
           "price": 34.99,
           "weight": 0.03,
@@ -6444,6 +6265,7 @@ export const data = [
           "description": "A high-capacity 256GB flash drive with a stylish gold design by ADATA."
         },
         {
+          "name": "Transcend JetFlash 32GB",
           "model": "Transcend JetFlash 32GB",
           "price": 10.99,
           "weight": 0.02,
@@ -6639,7 +6461,7 @@ export const data = [
               "capacity": "128GB",
               "speed": "UHS-I U3",
               "format": "microSDXC",
-              "shockproof": true
+              "shockproof": "true"
             },
             "description": "The Samsung EVO 128GB microSD card is ideal for 4K UHD video recording and fast data transfer. It's shockproof and built to withstand extreme conditions."
           },
@@ -6660,7 +6482,7 @@ export const data = [
               "capacity": "256GB",
               "speed": "UHS-II U3",
               "format": "SDXC",
-              "reliable performance": true
+              "reliable performance": "true"
             },
             "description": "The Lexar Professional 256GB SD card delivers high-speed performance for professional photographers and videographers. It offers reliable and consistent data storage."
           },
@@ -6681,7 +6503,7 @@ export const data = [
               "capacity": "32GB",
               "speed": "UHS-II U3",
               "format": "SDHC",
-              "high-speed writing": true
+              "high-speed writing": "true"
             },
             "description": "The Sony SF-G 32GB SD card is known for its high-speed writing performance, making it an excellent choice for burst shooting and 4K video recording."
           },
@@ -6702,7 +6524,7 @@ export const data = [
               "capacity": "64GB",
               "speed": "Class 10",
               "format": "SDXC",
-              "vibration-proof": true
+              "vibration-proof": "vibration-proo"
             },
             "description": "The Kingston Canvas Select 64GB SD card is designed to withstand vibration and extreme temperatures, making it reliable for outdoor use."
           },
@@ -6723,7 +6545,7 @@ export const data = [
               "capacity": "256GB",
               "speed": "UHS-I U3",
               "format": "SDXC",
-              "high-speed transfer": true
+              "high-speed transfer": "true"
             },
             "description": "The PNY Elite-X 256GB SD card offers high-speed data transfer, making it perfect for action cameras and other high-performance devices."
           },
@@ -6744,7 +6566,7 @@ export const data = [
               "capacity": "64GB",
               "speed": "UHS-I U3",
               "format": "microSDXC",
-              "temperature-resistant": true
+              "temperature-resistant": "true"
             },
             "description": "The Transcend 64GB MicroSDXC card is designed to resist extreme temperatures, ensuring reliable performance in various environments."
           },
@@ -6765,7 +6587,7 @@ export const data = [
               "capacity": "128GB",
               "speed": "Class 10",
               "format": "SDXC",
-              "error-correcting code": true
+              "error-correcting code": "true"
             },
             "description": "The ADATA Premier 128GB SD card features error-correcting code (ECC) for data accuracy, making it a reliable choice for critical data storage."
           },
@@ -6786,7 +6608,7 @@ export const data = [
               "capacity": "64GB",
               "speed": "UHS-II U3",
               "format": "SDXC",
-              "tough and durable": true
+              "tough and durable": "true"
             },
             "description": "The Sony TOUGH-G 64GB SD card is incredibly durable and resistant to bending and rough handling, making it perfect for outdoor adventures."
           },
@@ -6807,7 +6629,7 @@ export const data = [
               "capacity": "128GB",
               "speed": "Class 10",
               "format": "microSDXC",
-              "endurance recording": true
+              "endurance recording": "true"
             },
             "description": "The Samsung PRO Endurance 128GB microSD card is designed for continuous recording, making it ideal for security cameras and dashcams."
           }
@@ -6822,7 +6644,7 @@ export const data = [
             "color": "Black",
             "model": "SA5000",
             "isSpecialOffer": false,
-            "imageURL": "https://www.storagereview.com/wp-content/uploads/2022/09/HPE-Alletra-5000.png",
+            "imageURL": "https://petastor.com/wp-content/uploads/AN-812iA-icon.png",
             "brand": "XYZ Tech",
             "type": "Fibre Channel SAN",
             "quantity": 100,

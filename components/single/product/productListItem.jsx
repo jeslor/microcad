@@ -1,14 +1,12 @@
 "use client";
 import {useContext } from 'react'
 import { StateContext } from '@/components/providers/stateProvider';
-
 import styles from "@/styles/products.module.css";
-import { Icon } from '@iconify/react/dist/iconify.js';
 import Image from 'next/image';
 
 
 const ProductListItem = ({product}) => {
-  const { setCartHandler } = useContext(StateContext);
+  const { setCartHandler, handleproductToOpen } = useContext(StateContext);
 
 
   const addCartHandler = (event,product) => {
@@ -17,17 +15,26 @@ const ProductListItem = ({product}) => {
       setCartHandler(product)
   }
 
+const handleOpenProductButton = (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  handleproductToOpen(product);
+}
+
+
  const marking = product.isNew ? "New" : <Image className="text-slate-50" src="/static/media/icons/recycle.svg" width={18} height={18} />;
  const coloring = product.isNew ? styles.productListItemNew : `${styles.productListItemNew} ${styles.productListItemRefurb}`;
 
 
+
+
+
   return (
-    <a href=""  className={styles.ProductListItem} key={product.description}>
+    <a href={`/products/product/${product.name}`} className={styles.ProductListItem} key={product.description}>
     <div className={coloring}>{marking}</div>
+    <button onClick={handleOpenProductButton} className={styles.ProductListItemViewProduct}>view product</button>
     <div className={styles.productImage}>
       <img
-      // height={200}
-      // width={200}
         src={product.imageURL}
         alt={product.name}
       />

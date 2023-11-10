@@ -6,6 +6,8 @@ import { revalidatePath } from "next/cache";
 export const StateContext = createContext({
     state: {},
     showMenu: false,
+    openProduct: false,
+    productToOpen : {},
     showCartDrawer: false,
     handleToggleCartDrawer: () => { },
     cart : [],
@@ -13,6 +15,8 @@ export const StateContext = createContext({
     handleRemoveCartProduct: (product) => { },
     handleIncreaseCartProduct: (product) => { },
     showMenuHandler: () => {},
+    handleproductToOpen: (product) => { },
+    handleCloseProduct: () => { },
     setState: (state) => { },
     openFilter:false,
     handleOpenFilter: () => { },
@@ -26,6 +30,22 @@ export const StateProvider = ({ children }) => {
     const [cart, setCart] = useState(currentCart);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openFilter, setOpenFilter] = useState(false);
+    const [productToOpen, setProductToOpen] = useState({});
+    const [openProduct, setOpenProduct] = useState(false);
+
+
+  const handleproductToOpen = (product) => {
+    setProductToOpen(product);
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    setOpenProduct(true);
+  }
+
+  const handleCloseProduct = () => {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    setOpenProduct(false);
+  }
 
 
     const [showMenu, setShowMenu] = useState(false);
@@ -123,7 +143,7 @@ export const StateProvider = ({ children }) => {
 
 
     return (
-        <StateContext.Provider value={{openFilter, handleOpenFilter, showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
+        <StateContext.Provider value={{openProduct, productToOpen, handleCloseProduct, handleproductToOpen, openFilter, handleOpenFilter, showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
             {children}
         </StateContext.Provider>
     );

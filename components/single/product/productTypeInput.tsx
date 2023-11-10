@@ -3,26 +3,23 @@ import { type } from "os";
 import {useState} from 'react'
 
 interface Props {
-    name:string,
+    productType:any,
     typeFilters: string[],
-    handleTypeFilters: (typeFilters:string[])=>void
+    handleTypeFilters: (typeFilters:any[])=>void
 }
 
-const ProductTypeInput = ({name, handleTypeFilters, typeFilters}:Props) => {
-    const [typeState, setTypeSate] = useState(false)
+const ProductTypeInput = ({productType, handleTypeFilters, typeFilters}:Props) => {
 
 
     const hadlebrandClick = ()=>{
-        setTypeSate(prevBrandState=>!prevBrandState);
        
-        if(!typeState){
-          typeFilters.push(name);
+        if(!productType.isTypeChecked){
+            productType.isTypeChecked = true
+          typeFilters.push(productType);
         }
         else{
-            const index = typeFilters.indexOf(name);
-            if (index > -1) {
-              typeFilters.splice(index, 1);
-              }
+            productType.isTypeChecked = false
+            typeFilters = typeFilters.filter((typeFilter:any)=>typeFilter.isTypeChecked === true)
         }
         handleTypeFilters(typeFilters)
         window.scrollTo(0, 0);
@@ -31,8 +28,8 @@ const ProductTypeInput = ({name, handleTypeFilters, typeFilters}:Props) => {
     
   return (
     <div className={styles.brand}>
-    <input type='checkbox' onClick={hadlebrandClick} checked={typeState}/>
-      <span className='text-xs'>{name}</span>
+    <input type='checkbox' onClick={hadlebrandClick} checked={productType.isTypeChecked}/>
+      <span className='text-xs'>{productType.label}</span>
   </div>
   )
 }

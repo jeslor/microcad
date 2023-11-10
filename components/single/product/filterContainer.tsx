@@ -22,7 +22,7 @@ interface Props {
     productTypes?:[]
     brandFilters?:[]
     typeFilters?:string[]
-    handleTypeFilters?: (typeFilters:string[])=>void
+    handleTypeFilters?: (typeFilters:any[])=>void
     productSpecifications?: []
     handleBrandFilters?:(selectedFilter:any)=>void
     specificationFilters?: []
@@ -88,8 +88,8 @@ const FilterContainer = ({
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Type</h5>
                 <div className={styles.brands}>
-                    {productTypes!.map((type:string)=>(
-                        <ProductTypeInput name={type} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
+                    {productTypes!.map((productType:{})=>(
+                        <ProductTypeInput productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
                     )
                     )}
                    

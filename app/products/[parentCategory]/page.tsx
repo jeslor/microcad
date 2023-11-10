@@ -6,6 +6,7 @@ import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
+import { set } from 'mongoose';
 
 
 const page = () => {
@@ -13,13 +14,14 @@ const page = () => {
   let [finalProducts, setFinalProducts] = useState([]);
   let [priceFilter, setPriceFilter] = useState('');
   const [typeFilters, setTypeFilters] = useState<string[]>([]);
+  let [availableTypes, setAvailableTypes] = useState<[]>([]);
   let [availableBrands, setAvailableBrands] = useState<[]>([]);
   let [brandFilters, setBrandFilter] = useState<[]>([]);
   let { parentCategory }:{parentCategory:string} = useParams();
   
     const refurbrished:any =[]
     const specialOffer:any = []
-    const productTypes:any = []
+    let productTypes:any = []
 
 
 
@@ -44,7 +46,8 @@ const page = () => {
                           ? refurbrished.map((product:any)=> product.brand)
                           : specialOffer.map((product:any)=> product.brand);
 
-    productBrands = [...new Set<any>(productBrands)].map((brand:any)=> ({label:brand, isBrandChecked:false}));
+    productBrands = [...new Set<any>(productBrands)].map((brand:any)=> ({label:brand, isBrandChecked:false})).sort((a,b)=> a.label.localeCompare(b.label));
+    productTypes = productTypes.map((type:string)=>({label:type, isTypeChecked:false})).sort((a:any,b:any)=> a.label.localeCompare(b.label));
 
     
     useEffect(() => {
@@ -55,9 +58,13 @@ const page = () => {
       }else{
         setAvailableBrands(productBrands);
       }
-      console.log(productBrands);
-      
-      
+
+      if (typeFilters.length) {
+        productTypes = [...typeFilters, ...productTypes.filter((type:any)=> !typeFilters.some((typeFilter:any)=> typeFilter.label === type.label)).sort()]
+        setAvailableTypes(productTypes);
+      }else{
+        setAvailableTypes(productTypes);
+      }
       
       let finalProducts:any = [];
       if (brandFilters.length && !typeFilters.length) {
@@ -72,7 +79,7 @@ const page = () => {
       if (typeFilters.length && !brandFilters.length) {
         data.forEach((item: any) => { 
           for (const products in item) {  
-            if(typeFilters.some((type)=> type === products)){
+            if(typeFilters.some((type:any)=> type.label === products)){
               finalProducts = [...finalProducts, ...item[products]]
             }       
           }
@@ -89,7 +96,7 @@ const page = () => {
       if(typeFilters.length && brandFilters.length){
         data.forEach((item: any) => { 
           for (const products in item) {  
-            if(typeFilters.some((type)=> type === products)){
+            if(typeFilters.some((productType:any)=> productType.label === products)){
               finalProducts = [...finalProducts, ...item[products]]
             }       
           }
@@ -100,15 +107,12 @@ const page = () => {
           finalProducts = finalProducts.filter((product:any)=> product.isSpecialOffer);
         }
         
-        finalProducts = finalProducts.filter((product:any)=> brandFilters.some((brand:any)=> brand === product.brand));
+        finalProducts = finalProducts.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));
         return setFinalProducts(finalProducts)
       }
      
       finalProducts = parentCategory === "refurbrished" ? refurbrished :  specialOffer 
         return setFinalProducts(finalProducts);
-
-      
-    
 
     },[parentCategory, brandFilters, typeFilters]);
 
@@ -124,18 +128,14 @@ const page = () => {
         
       }
     }
-
- 
-
  
   const handleBrandFilters = (selectedBrands:[])=>{
-    console.log(selectedBrands);
-    
     setBrandFilter([...selectedBrands]);
   }
 
-  const handleTypeFilters = (selectedTypes:string[])=>{    
+  const handleTypeFilters = (selectedTypes:any[])=>{    
     setTypeFilters([...selectedTypes]);
+    
   }
 
 
@@ -149,7 +149,7 @@ const page = () => {
           brands={availableBrands} 
           brandFilters={brandFilters}
           handleBrandFilters={handleBrandFilters} 
-          productTypes={productTypes.sort()}
+          productTypes={availableTypes}
           typeFilters={typeFilters}
           handleTypeFilters={handleTypeFilters}
          

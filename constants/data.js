@@ -5889,7 +5889,7 @@ export const data = [
             "color": "Black",
             "model": "MZ-V7E500BW",
             "isSpecialOffer": true,
-            "imageURL": "https://www.storagereview.com/wp-content/uploads/2018/04/StorageReview-Samsung-970-EVO-1280x720.jpg",
+            "imageURL": "https://image-us.samsung.com/SamsungUS/home/computing/memory-and-storage/solid-state-drives/pdp/mz-v7e250bw/gallery-update-9-28-18/005_gallery_MZ-V7E250BW_09-28-18.jpg?$product-details-jpg$",
             "brand": "Samsung",
             "type": "NVMe",
             "quantity": 100,

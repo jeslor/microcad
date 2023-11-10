@@ -2,26 +2,22 @@ import styles from "@/styles/products.module.css";
 import {useState} from 'react'
 
 interface Props {
-    name:string,
-    brandFilters: string[],
+    brand:any,
+    brandFilters: {}[],
     handleBrandFilters: ({})=>void
 }
 
-const BrandInput = ({name, handleBrandFilters, brandFilters}:Props) => {
-    const [brandState, setBrandChange] = useState(false)
+const BrandInput = ({brand, handleBrandFilters, brandFilters}:Props) => {
 
 
-    const hadlebrandClick = ()=>{
-        setBrandChange(prevBrandState=>!prevBrandState);
-       
-        if(!brandState){
-            brandFilters.push(name);
+    const hadlebrandClick = ()=>{      
+        if(!brand.isBrandChecked){
+          brand.isBrandChecked = true
+            brandFilters.push(brand);
         }
         else{
-            const index = brandFilters.indexOf(name);
-            if (index > -1) {
-                brandFilters.splice(index, 1);
-              }
+          brand.isBrandChecked = false
+           brandFilters = brandFilters.filter((brandFilter:any)=>brandFilter.isBrandChecked === true)
         }
         handleBrandFilters(brandFilters)
         window.scrollTo(0, 0);
@@ -30,8 +26,8 @@ const BrandInput = ({name, handleBrandFilters, brandFilters}:Props) => {
     
   return (
     <div className={styles.brand}>
-    <input type='checkbox' onClick={hadlebrandClick} checked={brandState}/>
-      <span className='text-xs'>{name}</span>
+    <input type='checkbox' onClick={hadlebrandClick} checked={brand.isBrandChecked}/>
+      <span className='text-xs'>{brand.label}</span>
   </div>
   )
 }

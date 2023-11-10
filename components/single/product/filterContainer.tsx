@@ -100,7 +100,7 @@ const FilterContainer = ({
                 <h5 className="font-bold text-primarymedium mb-3">Brand</h5>
                 <div className={styles.brands}>
                     {brands.map(br=>
-                        <BrandInput name={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
+                        <BrandInput brand={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
                     )}
                 </div>
             </div>

@@ -6,7 +6,6 @@ import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
-import { da } from '@vidstack/react/dist/types/vidstack-react.js';
 
 
 const page = () => {
@@ -14,12 +13,15 @@ const page = () => {
   let [finalProducts, setFinalProducts] = useState([]);
   let [priceFilter, setPriceFilter] = useState('');
   const [typeFilters, setTypeFilters] = useState<string[]>([]);
+  let [availableBrands, setAvailableBrands] = useState<[]>([]);
   let [brandFilters, setBrandFilter] = useState<[]>([]);
   let { parentCategory }:{parentCategory:string} = useParams();
   
     const refurbrished:any =[]
     const specialOffer:any = []
     const productTypes:any = []
+
+
 
 
     data.forEach((item: any) => {
@@ -35,15 +37,34 @@ const page = () => {
         }) 
       }   
     });   
-    
 
+
+
+     let productBrands:any = parentCategory === "refurbrished" 
+                          ? refurbrished.map((product:any)=> product.brand)
+                          : specialOffer.map((product:any)=> product.brand);
+
+    productBrands = [...new Set<any>(productBrands)].map((brand:any)=> ({label:brand, isBrandChecked:false}));
+
+    
     useEffect(() => {
+
+      if (brandFilters.length) {
+        productBrands = [...brandFilters, ...productBrands.filter((brand:any)=> !brandFilters.some((brandFilter:any)=> brandFilter.label === brand.label)).sort()]
+        setAvailableBrands(productBrands);
+      }else{
+        setAvailableBrands(productBrands);
+      }
+      console.log(productBrands);
+      
+      
+      
       let finalProducts:any = [];
       if (brandFilters.length && !typeFilters.length) {
         if (parentCategory === "refurbrished") {
-          finalProducts = refurbrished.filter((product:any)=> brandFilters.some((brand:any)=> brand === product.brand));       
+          finalProducts = refurbrished.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));       
         }else{
-          finalProducts = specialOffer.filter((product:any)=> brandFilters.some((brand)=> brand === product.brand));
+          finalProducts = specialOffer.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));
         }
          return setFinalProducts(finalProducts)
       }
@@ -85,6 +106,8 @@ const page = () => {
      
       finalProducts = parentCategory === "refurbrished" ? refurbrished :  specialOffer 
         return setFinalProducts(finalProducts);
+
+      
     
 
     },[parentCategory, brandFilters, typeFilters]);
@@ -102,13 +125,12 @@ const page = () => {
       }
     }
 
- const productBrands:any = parentCategory === "refurbrished" 
-                          ? Array.from(new Set(refurbrished.map((product:any)=> product.brand))).sort() 
-                          : Array.from(new Set(specialOffer.map((product:any)=> product.brand))).sort();
-
+ 
 
  
   const handleBrandFilters = (selectedBrands:[])=>{
+    console.log(selectedBrands);
+    
     setBrandFilter([...selectedBrands]);
   }
 
@@ -124,7 +146,7 @@ const page = () => {
         <FilterContainer 
           brandOrType={parentCategory}
           handlePriceChange={handlePriceChange} 
-          brands={productBrands} 
+          brands={availableBrands} 
           brandFilters={brandFilters}
           handleBrandFilters={handleBrandFilters} 
           productTypes={productTypes.sort()}

@@ -77,20 +77,33 @@ export const StateProvider = ({ children }) => {
 
     const setCartHandler = (newCartProduct) => {
         let newCart = [...cart];
-        let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === newCartProduct.name);
-        
-        if (cartProductIndex === -1) {
+
+        console.log(newCartProduct);
+        console.log(newCart);
+        if(newCart.some((cartProduct) => cartProduct.name === newCartProduct.name)){
+            newCart = newCart.filter((cartProduct) => cartProduct.name !== newCartProduct.name);
+        }else{
             newCartProduct.quantity = 1;
             newCart.push(newCartProduct);
-        } else {
-            newCart[cartProductIndex].quantity = newCart[cartProductIndex].quantity + 1;
         }
+
+
+
+        // let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === newCartProduct.name);
+        
+        // if (cartProductIndex === -1) {
+        //     newCartProduct.quantity = 1;
+        //     newCart.push(newCartProduct);
+        // } else {
+        //     newCart[cartProductIndex].quantity = newCart[cartProductIndex].quantity + 1;
+        // }
         setCart(newCart);
         if(typeof window !== 'undefined'){
             localStorage.setItem('cart', JSON.stringify(newCart));
         }
 
     }
+
 
     const handleRemoveCartProduct = (product) => {
         let newCart = [...cart];

@@ -212,8 +212,9 @@
 
 .singleProductInner {
   position: relative;
-  padding: 1.5rem 1rem;
-  background-color: #c8c7d7;
+  padding: 2rem 1rem;
+  overflow: hidden;
+  background-color: #d5d1e5;
   border-radius: 15px;
   width: 98%;
   height: 98%;
@@ -222,6 +223,118 @@
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.singleProduct {
+  display: flex;
+}
+
+.singleProductImage {
+  width: 100%;
+  position: sticky;
+  background-color: #fff;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 2rem;
+  max-height: 500px;
+  top: 0rem;
+}
+.singleProductImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.productDetails {
+  overflow-y: scroll;
+  width: 600px;
+  height: 60vh;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  color: #656496;
+}
+
+.productDetails h6 {
+  margin-bottom: 0.4rem;
+}
+
+.productDetails h5 {
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #4c4987;
+  width: fit-content;
+  margin-bottom: 1.2rem;
+}
+
+.productDetails button.addToCartutton {
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: start;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background-color: #fff;
+}
+.productDetails button.addToCartutton:hover {
+  border: 2px solid #4c4987;
+  color: #f1f5f9;
+  background-color: #4c4987;
+}
+
+.productDetails h5::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 2px;
+  background-color: #4c4987;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+}
+
+.productDetails h6 span {
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+.singleProductName {
+  color: #16105e;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.singleProductModel {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f06829;
+}
+
+.singleProductPrice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4c4987;
+}
+.singleProductColor {
+  width: fit-content;
+  padding: 0.4rem 0.9rem;
+  min-width: 44px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition:
+    border-color 200ms ease-out 0s,
+    box-shadow 200ms ease-out 0s;
+  border: 1px solid rgb(136, 136, 136);
+  position: relative;
+  background-color: inherit;
+  box-shadow: rgb(136, 136, 136) 0px 0px 0px 0px;
+}
+.singleProductInStock {
+  color: green;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .singleProductViewlose {
@@ -321,7 +434,7 @@
   display: block;
 }
 
-.productListItemBottom button {
+.addToCartutton {
   border-radius: 8px;
   border-style: solid;
   border-width: 2px;
@@ -329,7 +442,8 @@
   margin-top: 0.5rem;
   transition: background-color 0.2s ease-in-out;
 }
-.productListItemBottom button:hover {
+.addToCartutton:hover,
+.addedToCart {
   background-color: #4c4987;
   color: #fff;
   border-color: #4c4987;

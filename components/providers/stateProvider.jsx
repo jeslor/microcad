@@ -31,31 +31,8 @@ export const StateProvider = ({ children }) => {
     const [cart, setCart] = useState(currentCart);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openFilter, setOpenFilter] = useState(false);
-    const [productToOpen, setProductToOpen] = useState(
-        {
-            "name": "Samsung 970 EVO",
-            "price": 129.99,
-            "weight": "0.22 lbs",
-            "color": "Black",
-            "model": "MZ-V7E500BW",
-            "isSpecialOffer": true,
-            "imageURL": "https://image-us.samsung.com/SamsungUS/home/computing/memory-and-storage/solid-state-drives/pdp/mz-v7e250bw/gallery-update-9-28-18/005_gallery_MZ-V7E250BW_09-28-18.jpg?$product-details-jpg$",
-            "brand": "Samsung",
-            "type": "NVMe",
-            "quantity": 100,
-            "isNew": false,
-            "isPopular": true,
-            "specifications": {
-              "capacity": "500GB",
-              "interface": "M.2",
-              "readSpeed": "3,400 MB/s",
-              "writeSpeed": "2,300 MB/s",
-              "formFactor": "M.2 2280"
-            },
-            "description": "The Samsung 970 EVO is a high-performance NVMe SSD with a capacity of 500GB. It offers fast read and write speeds, making it a popular choice among gamers and professionals."
-          },
-    );
-    const [openProduct, setOpenProduct] = useState(true);
+    const [productToOpen, setProductToOpen] = useState({});
+    const [openProduct, setOpenProduct] = useState(false);
     const[scrollPosition, setScrollPosition] = useState(0);
 
 

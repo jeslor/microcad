@@ -16,6 +16,7 @@ export default function page() {
   let [finalProducts, setFinalProducts] = useState([]);
   const [productsToShow, setProductsToShow] = useState([]); 
   let [priceFilter, setPriceFilter] = useState('');
+  let [availableBrands, setAvailableBrands] = useState([]);
   let [brandFilters, setBrandFilter] = useState([]);
   let [specificationFilters, setSpecificationFilters] = useState([]);
 
@@ -42,9 +43,18 @@ export default function page() {
       }
     }
 
+    let productBrands = [...new Set(CategoryProducts.map(product=>({label:product.brand, isBrandChecked:false})))].sort((a,b)=> a.label.localeCompare(b.label));
+
+
     useEffect(() => {
+      if(brandFilters.length){
+        productBrands = [...brandFilters, ...productBrands.filter(brand=>brandFilters.every(fil=>fil.label !== brand.label)).sort((a,b)=> a.label.localeCompare(b.label))];
+        setAvailableBrands(productBrands);
+      }else{
+        setAvailableBrands(productBrands);
+      }
       if (brandFilters.length > 0 && specificationFilters.length === 0) {
-        let filteredProducts = CategoryProducts.filter(product => brandFilters.includes(product.brand));
+        let filteredProducts = CategoryProducts.filter(product => brandFilters.some(brand=>brand.label === product.brand ));
         return setFinalProducts(filteredProducts);
       }else if (specificationFilters.length > 0 && brandFilters.length === 0) {
         let filteredProducts = []
@@ -97,7 +107,6 @@ export default function page() {
     },  [category, brandFilters, specificationFilters ] );
 
 
-    const productBrands = [...new Set(CategoryProducts.map(product=>product.brand))].sort();
     let productSpecifications = CategoryProducts.reduce((acc, product)=>{
       const productSpecs = product.specifications;
 
@@ -116,7 +125,7 @@ export default function page() {
 
 
     const handleBrandFilters = (selectedBrands)=>{
-      setBrandFilter(prevFilters=>[ ...selectedBrands]);
+      setBrandFilter([ ...selectedBrands]);
     }
 
     const handleSpecificationFilters = (selectedSpecifications)=>{
@@ -131,7 +140,7 @@ export default function page() {
       <div className={styles.productsContainer}>
         <FilterContainer 
           handlePriceChange={handlePriceChange} 
-          brands={productBrands} 
+          brands={availableBrands} 
           brandFilters={brandFilters} 
           handleBrandFilters={handleBrandFilters} 
           productSpecifications={productSpecifications}

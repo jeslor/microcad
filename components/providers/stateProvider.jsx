@@ -1,6 +1,7 @@
 "use client"
 import { useState, createContext } from "react";
 import { revalidatePath } from "next/cache";
+import { set } from "mongoose";
 
 
 export const StateContext = createContext({
@@ -30,20 +31,47 @@ export const StateProvider = ({ children }) => {
     const [cart, setCart] = useState(currentCart);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openFilter, setOpenFilter] = useState(false);
-    const [productToOpen, setProductToOpen] = useState({});
-    const [openProduct, setOpenProduct] = useState(false);
+    const [productToOpen, setProductToOpen] = useState(
+        {
+            "name": "Samsung 970 EVO",
+            "price": 129.99,
+            "weight": "0.22 lbs",
+            "color": "Black",
+            "model": "MZ-V7E500BW",
+            "isSpecialOffer": true,
+            "imageURL": "https://image-us.samsung.com/SamsungUS/home/computing/memory-and-storage/solid-state-drives/pdp/mz-v7e250bw/gallery-update-9-28-18/005_gallery_MZ-V7E250BW_09-28-18.jpg?$product-details-jpg$",
+            "brand": "Samsung",
+            "type": "NVMe",
+            "quantity": 100,
+            "isNew": false,
+            "isPopular": true,
+            "specifications": {
+              "capacity": "500GB",
+              "interface": "M.2",
+              "readSpeed": "3,400 MB/s",
+              "writeSpeed": "2,300 MB/s",
+              "formFactor": "M.2 2280"
+            },
+            "description": "The Samsung 970 EVO is a high-performance NVMe SSD with a capacity of 500GB. It offers fast read and write speeds, making it a popular choice among gamers and professionals."
+          },
+    );
+    const [openProduct, setOpenProduct] = useState(true);
+    const[scrollPosition, setScrollPosition] = useState(0);
 
 
   const handleproductToOpen = (product) => {
     setProductToOpen(product);
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    setScrollPosition(window.scrollY);
+    window.scrollTo(0, 0);
     setOpenProduct(true);
   }
 
   const handleCloseProduct = () => {
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+    window.scrollTo(0, scrollPosition);
     setOpenProduct(false);
   }
 
@@ -55,6 +83,7 @@ export const StateProvider = ({ children }) => {
             let div =  document.getElementsByTagName('body');
            div[0].style.overflow = 'auto';
             div[0].style.height = originalHeight;
+            window.scrollTo(0, scrollPosition);
             setShowMenu(false);
         }
         if (!showMenu) {
@@ -62,6 +91,8 @@ export const StateProvider = ({ children }) => {
             originalHeight =  `${div[0].clientHeight}px`;
             div[0].style.height = "100vh";
             div[0].style.overflow = 'hidden';
+            setScrollPosition(window.scrollY);
+            window.scrollTo(0, 0);
             setShowMenu(true);
             setShowCartDrawer(false);
          }
@@ -118,6 +149,7 @@ export const StateProvider = ({ children }) => {
             if (showCartDrawer) {
                 let div =  document.getElementsByTagName('body');
                 div[0].style.overflow = 'auto';
+                window.scrollTo(0, scrollPosition);
                 div[0].style.height = originalHeight;
                 
             }else{
@@ -125,6 +157,8 @@ export const StateProvider = ({ children }) => {
                 originalHeight =  `${div[0].clientHeight}px`;
                 div[0].style.height = "100vh";
                 div[0].style.overflow = 'hidden';
+                setScrollPosition(window.scrollY);
+                window.scrollTo(0, 0);
                 setShowMenu(false);
             }
     }
@@ -134,10 +168,14 @@ export const StateProvider = ({ children }) => {
         if (openFilter) {
             document.body.style.overflow = 'auto';
             document.body.style.height = 'auto';
+            window.scrollTo(0, scrollPosition);
+            window.scrollTo(0, scrollPosition);
         }
         if (!openFilter) {
             document.body.style.overflow = 'hidden';
-            document.body.style.height = '100vh';    
+            document.body.style.height = '100vh';   
+            setScrollPosition(window.scrollY);
+            window.scrollTo(0, 0);
         }
     }
 

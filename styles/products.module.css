@@ -206,7 +206,7 @@
   left: 0;
   top: 226px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 

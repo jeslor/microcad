@@ -3,6 +3,7 @@ import '@/app/globals.css'
 import { useContext } from "react";
 import { StateContext } from '@/components/providers/stateProvider';
 import styles from "@/styles/products.module.css"
+import Image from 'next/image';
 
 
 
@@ -12,8 +13,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { openProduct, productToOpen } = useContext(StateContext);
-  let product: any = productToOpen;
+  const { openProduct, productToOpen, handleCloseProduct } = useContext(StateContext);
+  let product:any = productToOpen;
     
     
 
@@ -22,8 +23,18 @@ export default function RootLayout({
         {openProduct&&(
           <div className={styles.singleProductView}>
             <div className={styles.singleProductInner}>
-              <div className={styles.singleProductViewlose}>+</div>
-            <h1>{product.name}</h1>
+              <button onClick={handleCloseProduct} className={styles.singleProductViewlose}>+</button>
+            <div >
+              <h2>{product.name}</h2>
+              <div className={styles.singleProduct}>
+                <div className={styles.singleProductImage}>
+                  <img src={product.imageURL} alt={product.name} />
+                </div>
+                <div className={styles.productDetails}>
+                  
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         )}

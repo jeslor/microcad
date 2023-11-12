@@ -110,7 +110,6 @@
   padding: 2rem 1.5rem;
   padding-left: 6rem;
   padding-top: 3rem;
-
   animation: slideOutLeft 0.3s ease-in-out forwards;
 }
 @keyframes slideOutLeft {

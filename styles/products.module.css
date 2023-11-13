@@ -231,6 +231,7 @@
 
 .singleProductImage {
   width: 100%;
+  max-width: 800px;
   position: sticky;
   background-color: #fff;
   margin-right: 1rem;
@@ -247,12 +248,16 @@
 }
 
 .productDetails {
-  overflow-y: scroll;
+  overflow-y: hidden;
+  margin-top: 2rem;
   width: 600px;
   height: 60vh;
   padding-left: 1rem;
   padding-right: 3rem;
   color: #656496;
+}
+.productDetails:hover {
+  overflow-y: scroll;
 }
 
 .productDetails h6 {
@@ -269,8 +274,9 @@
   margin-bottom: 1.2rem;
 }
 
-.productDetails button.addToCartutton {
+.productDetails button.addToCartButton {
   width: 100%;
+  max-width: 300px;
   font-weight: 700;
   font-size: 1.1rem;
   text-align: start;
@@ -278,7 +284,8 @@
   margin-top: 1.5rem;
   background-color: #fff;
 }
-.productDetails button.addToCartutton:hover {
+.productDetails button:hover,
+.productDetails button.addedToCart {
   border: 2px solid #4c4987;
   color: #f1f5f9;
   background-color: #4c4987;
@@ -337,7 +344,8 @@
   font-size: 1rem;
 }
 
-.singleProductViewlose {
+.singleProductViewClose {
+  top: 0.5rem;
   position: absolute;
   right: 1rem;
   height: 40px;
@@ -350,8 +358,9 @@
   font-size: 1.8rem;
   line-height: 2.2rem;
   transition: background-color 0.2s ease-in-out;
+  z-index: 1;
 }
-.singleProductViewlose:hover {
+.singleProductViewClose:hover {
   background-color: #4c4987;
   color: #fff;
 }
@@ -434,7 +443,7 @@
   display: block;
 }
 
-.addToCartutton {
+.addToCartButton {
   border-radius: 8px;
   border-style: solid;
   border-width: 2px;
@@ -442,7 +451,7 @@
   margin-top: 0.5rem;
   transition: background-color 0.2s ease-in-out;
 }
-.addToCartutton:hover,
+.addToCartButton:hover,
 .addedToCart {
   background-color: #4c4987;
   color: #fff;

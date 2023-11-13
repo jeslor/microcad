@@ -14,7 +14,7 @@ const AddToCartButton = ({product}:{product:any}) => {
           setCartHandler(product)
       }
     
-      const cartButtonClasses = cart.some((item:any) => item.name === product.name) ? `${styles.addToCartutton} ${styles.addedToCart}` : styles.addToCartutton;
+      const cartButtonClasses = cart.some((item:any) => item.name === product.name) ? `${styles.addToCartButton} ${styles.addedToCart}` : styles.addToCartButton;
       const cartButtonText = cart.some((item:any) => item.name === product.name) ? 'Remove from cart' : 'Add to cart';
 
   return (

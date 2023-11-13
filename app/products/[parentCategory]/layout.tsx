@@ -24,7 +24,7 @@ export default function RootLayout({
         {openProduct&&(
           <div className={styles.singleProductView}>
             <div className={styles.singleProductInner}>
-              <button onClick={handleCloseProduct} className={styles.singleProductViewlose}>+</button>
+              <button onClick={handleCloseProduct} className={styles.singleProductViewClose}>+</button>
                 <div className={styles.singleProduct}>
                   <div className={styles.singleProductImage}>
                     <img src={product.imageURL} alt={product.name} />
@@ -41,7 +41,7 @@ export default function RootLayout({
                     )}
                     <h5>Looks and Shipping</h5>
                    <h6 className={styles.singleProductColor}>{product.color}</h6>
-                    <h6 className={styles.singleProductWeight}><span>Weight:</span>{product.weight}</h6>
+                    <h6 className={styles.singleProductWeight}><span>Weight:</span>{product.weight} lbs</h6>
                       <AddToCartButton  product={product} />
                     <div className={styles.productDescription}>
                       <h5>Description</h5>

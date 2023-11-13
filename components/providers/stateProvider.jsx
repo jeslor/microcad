@@ -87,8 +87,6 @@ export const StateProvider = ({ children }) => {
             newCart.push(newCartProduct);
         }
 
-
-
         // let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === newCartProduct.name);
         
         // if (cartProductIndex === -1) {
@@ -149,6 +147,7 @@ export const StateProvider = ({ children }) => {
                 div[0].style.overflow = 'hidden';
                 setScrollPosition(window.scrollY);
                 window.scrollTo(0, 0);
+                handleCloseProduct();
                 setShowMenu(false);
             }
     }

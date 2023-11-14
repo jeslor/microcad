@@ -88,8 +88,8 @@ const FilterContainer = ({
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Type</h5>
                 <div className={styles.brands}>
-                    {productTypes!.map((productType:{})=>(
-                        <ProductTypeInput productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
+                    {productTypes!.map((productType:any)=>(
+                        <ProductTypeInput key={productType.label} productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
                     )
                     )}
                    
@@ -99,8 +99,8 @@ const FilterContainer = ({
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Brand</h5>
                 <div className={styles.brands}>
-                    {brands.map(br=>
-                        <BrandInput brand={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
+                    {brands.map((br, index)=>
+                        <BrandInput key={index} brand={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
                     )}
                 </div>
             </div>
@@ -111,6 +111,7 @@ const FilterContainer = ({
                           {
                               productSpecifications!.map((spec:[], index)=>(
                                 <AdvancedFilter
+                                key={index}
                                 specification={spec}
                                 specificationFilters={specificationFilters!}
                                 handleSpecificationFilters={handleSpecificationFilters!} 

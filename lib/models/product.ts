@@ -8,11 +8,13 @@ const productSchema = new Schema({
         required: true,
     },
     price: Number,
-
+    parentCategory: {
+        type: String,
+        required: true,
+    },
     category: {
         type: String,
         required: true,
-        enum: ['systems', 'hardware', 'network', 'storage',"display","peripherals"],
     },
     productType: {
         type: String,
@@ -24,29 +26,19 @@ const productSchema = new Schema({
     imageKey: String,
     weight: Number,
     quantity: String,
-    isNew: Boolean,
+    isNewProduct: Boolean,
     isSpecialOffer: Boolean,
     isRefurbished: Boolean,
     description: String,
     isPopular: Boolean,
-    mainDescription:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Description"
-        }
-    ],
+
     specifications:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"Description"
+            ref:"Specification"
         }
     ],
-    generalDescription:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Description"
-        }
-    ],
+
     extraDescription:[
         {
             type:mongoose.Schema.Types.ObjectId,

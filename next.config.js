@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    Images: {
-        domains: ["www.tradeindia.com"]
-      },
+  experimental: {
+    serverActions: true,
+  },
+    // Images: {
+    //     domains: ["www.tradeindia.com"]
+    //   },
    
 }
 

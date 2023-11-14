@@ -50,7 +50,7 @@ const AdvancedFilterInput = ({filter, specificationFilters,parentFilter, handleS
 
   return (
     <li className="text-xs">
-        <input type="checkbox" className="mr-2" checked={checked} onChange={handleCheckBoxChange}/>
+        <input type="checkbox" className="mr-2" defaultChecked={checked} onChange={handleCheckBoxChange}/>
         {filter}
     </li>
   )

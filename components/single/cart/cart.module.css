@@ -71,6 +71,10 @@
   padding-bottom: 10rem;
 }
 
+.cartContentBody::-webkit-scrollbar {
+  width: 0rem;
+}
+
 .cartListItem {
   padding: 1rem 0.5rem;
   background-color: #fff;

@@ -1,4 +1,5 @@
 import styles from "@/styles/products.module.css";
+import { set } from "mongoose";
 import {useState} from 'react'
 
 interface Props {
@@ -8,9 +9,11 @@ interface Props {
 }
 
 const BrandInput = ({brand, handleBrandFilters, brandFilters}:Props) => {
+  const [isnativeChecked, setIsNativeChecked] = useState(false)
 
 
-    const hadlebrandClick = ()=>{      
+    const hadlebrandClick = ()=>{    
+
         if(!brand.isBrandChecked){
           brand.isBrandChecked = true
             brandFilters.push(brand);
@@ -26,7 +29,7 @@ const BrandInput = ({brand, handleBrandFilters, brandFilters}:Props) => {
     
   return (
     <div className={styles.brand}>
-    <input type='checkbox' onClick={hadlebrandClick} checked={brand.isBrandChecked}/>
+    <input type='checkbox' onClick={hadlebrandClick} defaultChecked={brand.isBrandChecked}/>
       <span className='text-xs'>{brand.label}</span>
   </div>
   )

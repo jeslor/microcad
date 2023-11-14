@@ -1,7 +1,5 @@
 "use client"
 import { useState, createContext } from "react";
-import { revalidatePath } from "next/cache";
-import { set } from "mongoose";
 
 
 export const StateContext = createContext({

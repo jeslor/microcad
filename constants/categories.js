@@ -1,11 +1,11 @@
 export const categories = [
     {
     category:'systems',
-    subCategories:['Thin Clients','desktop computers','workstations', 'laptops', 'systems', 'servers', 'extreme series']
+    subCategories:['Thin Client','desktop computers','workstations', 'laptops', 'barebone systems', 'servers', 'extreme series']
 }, 
 {
     category:'hardware',
-    subCategories:['cables', 'sound cards', 'motherboards', 'cases', 'processors', 'video cards', 'network cards', 'power supplies', 'optical drives', 'adapters', 'accessories']
+    subCategories:['cables', 'sound cards', 'motherboards','cooling', 'cases', 'processors', 'video cards', 'network cards', 'power supplies', 'optical drives', 'adapters', 'accessories']
 },
 {
     category:'network',
@@ -13,7 +13,7 @@ export const categories = [
 },
 {
     category:'storage',
-    subCategories:['solid state drives', 'flash drives', 'hard drives', 'memory cards', 'SAN drives', 'NAS drives', 'optical drives', 'storage media', 'backup & mass storage devices', 'hard drive duplicators']
+    subCategories:['solid state drives', 'flash drives', 'hard drives', 'memory cards', 'SAN devices', 'NAS devices', 'storage media', 'backup & mass storage devices', 'hard drive duplicators']
 },
 {
     category: 'display',
@@ -21,7 +21,7 @@ export const categories = [
 },
 {
     category:'peripherals',
-    subCategories: ['keyboards', 'mice', 'scanners', 'mouse and keyboard', 'speakers', 'printers', 'webcams', 'gaming console']
+    subCategories: ['keyboards', 'mice', 'scanners', 'mouse and keyboard combo', 'printers', 'gaming consoles']
 } 
 
 ];

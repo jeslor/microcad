@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 const descriptionSchema = new Schema({
-    title: {
+    name: {
         type: String,
         required: true,
     },
-    description: String,
+    value: String,
 });
 
-export default  mongoose.models.Description|| mongoose.model('Description', descriptionSchema);
+export default   mongoose.model('Description', descriptionSchema);

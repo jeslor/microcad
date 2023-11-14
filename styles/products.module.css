@@ -202,6 +202,7 @@
   position: absolute;
   height: calc(100vh - 226px);
   width: 100%;
+
   z-index: 1;
   left: 0;
   top: 226px;
@@ -217,6 +218,7 @@
   background-color: #d5d1e5;
   border-radius: 15px;
   width: 98%;
+  max-width: 1482px;
   height: 98%;
   margin-left: auto;
   margin-right: auto;
@@ -254,7 +256,7 @@
   height: 60vh;
   padding-left: 1rem;
   padding-right: 3rem;
-  color: #656496;
+  padding-bottom: 4rem;
 }
 .productDetails:hover {
   overflow-y: scroll;
@@ -262,12 +264,13 @@
 
 .productDetails h6 {
   margin-bottom: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .productDetails h5 {
   margin-bottom: 0.4rem;
   font-size: 1.2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-weight: bold;
   color: #4c4987;
   width: fit-content;
@@ -304,6 +307,7 @@
 .productDetails h6 span {
   font-weight: bold;
   margin-right: 0.2rem;
+  text-transform: capitalize;
 }
 
 .singleProductName {
@@ -316,13 +320,12 @@
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #f06829;
 }
 
-.singleProductPrice {
+.productDetails h6.singleProductPrice {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #4c4987;
+  color: #f06829;
 }
 .singleProductColor {
   width: fit-content;
@@ -363,6 +366,16 @@
 .singleProductViewClose:hover {
   background-color: #4c4987;
   color: #fff;
+}
+
+.productDetails .singleProductSpecs li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.productDetails .singleProductSpecs li span {
+  font-weight: 600;
+  margin-right: 0.2rem;
+  text-transform: capitalize;
 }
 
 .ProductListItem {
@@ -477,6 +490,9 @@
 
 /* X-Large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
+  .productsHeader {
+    left: 0;
+  }
   .productList {
     grid-template-columns: repeat(3, 1fr);
   }

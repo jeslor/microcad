@@ -26,7 +26,7 @@ const BrandInput = ({brand, handleBrandFilters, brandFilters}:Props) => {
     
   return (
     <div className={styles.brand}>
-    <input type='checkbox' onClick={hadlebrandClick} checked={brand.isBrandChecked}/>
+    <input type='checkbox' onClick={hadlebrandClick} readOnly checked={brand.isBrandChecked}/>
       <span className='text-xs'>{brand.label}</span>
   </div>
   )

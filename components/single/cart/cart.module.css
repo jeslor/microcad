@@ -70,6 +70,9 @@
   padding-right: 2rem;
   padding-bottom: 10rem;
 }
+.cartContentBody::-webkit-scrollbar {
+  width: 0rem;
+}
 
 .cartListItem {
   padding: 1rem 0.5rem;
@@ -113,7 +116,8 @@
 
 .quantityPrice {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: start;
   align-items: center;
   padding-top: 1rem;
 }

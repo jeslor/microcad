@@ -1,3 +1,4 @@
+import { de } from '@vidstack/react/dist/types/vidstack-react.js';
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
@@ -6,20 +7,12 @@ const productSchema = new Schema({
         type: String,
         required: true,
     },
-    price: {
-        type: Number,
-        default:0,
-        required: true,
-    },
+    price: Number,
 
-    parentCategory: {
+    category: {
         type: String,
         required: true,
-       
-    },
-    category:{
-        type: String,
-        required: true,
+        enum: ['systems', 'hardware', 'network', 'storage',"display","peripherals"],
     },
     productType: {
         type: String,
@@ -28,26 +21,32 @@ const productSchema = new Schema({
     brand: String,
     color: String,
     imageURL: String,
-    model: String,
     imageKey: String,
-    weight: String,
-    quantity: {
-        type: Number,
-        default: 0,
-    },
-    isNewProduct: Boolean,
+    weight: Number,
+    quantity: String,
+    isNew: Boolean,
     isSpecialOffer: Boolean,
     isRefurbished: Boolean,
     description: String,
     isPopular: Boolean,
-    mainDescription:String,
+    mainDescription:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Description"
+        }
+    ],
     specifications:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"Specification"
+            ref:"Description"
         }
     ],
-   
+    generalDescription:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Description"
+        }
+    ],
     extraDescription:[
         {
             type:mongoose.Schema.Types.ObjectId,
@@ -57,5 +56,5 @@ const productSchema = new Schema({
 });
 
 
-export default mongoose.model('Product', productSchema);
+export default mongoose.models.Product || mongoose.model('Product', productSchema);
 

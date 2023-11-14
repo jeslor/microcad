@@ -21,9 +21,9 @@ const CartListItem = ({item}:Props) => {
 
   return (
     <li key={item.id} className={styles.cartListItem}>
-        <a href={`/products/product/${item.name}`} className={styles.cartContentItemImg}>
+        <div className={styles.cartContentItemImg}>
             <img src={item.imageURL} alt={item.name}/>
-        </a>
+        </div>
         <div className={styles.cartContentItemDetails}>
             <h4 className='text-primarymedium'>{item.name}</h4>
             <div className={styles.quantityPrice}>

@@ -1,12 +1,12 @@
 "use client"
 import {useEffect, useState} from 'react';
-import { getRefurbrishedProducts,getSpecialOfferProducts } from "@/lib/actions/product.actions";
 import { useParams} from 'next/navigation';
 import {data} from'@/constants/data';
 import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
+import { set } from 'mongoose';
 
 
 const page = () => {
@@ -30,7 +30,7 @@ const page = () => {
       for (const products in item) {
         productTypes.push(products);
         item[products].forEach((product:any) => {
-          if(!product.isNewProduct ){
+          if(!product.isNew ){
             refurbrished.push(product);
           }
           if(product.isSpecialOffer){
@@ -39,11 +39,6 @@ const page = () => {
         }) 
       }   
     });   
-    
-
-
-
-    
 
 
 
@@ -55,7 +50,7 @@ const page = () => {
     productTypes = productTypes.map((type:string)=>({label:type, isTypeChecked:false})).sort((a:any,b:any)=> a.label.localeCompare(b.label));
 
     
-    useEffect( () => {
+    useEffect(() => {
 
       if (brandFilters.length) {
         productBrands = [...brandFilters, ...productBrands.filter((brand:any)=> !brandFilters.some((brandFilter:any)=> brandFilter.label === brand.label)).sort()]

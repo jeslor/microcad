@@ -174,7 +174,7 @@ function MainNav() {
                     <Icon icon="mdi:cart-outline"  />
                     {cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}
                 </div></li>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href=""><Icon icon="clarity:search-line" /></a></li>
+                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a><Icon icon="clarity:search-line" /></a></li>
             </ul>
         </div>
         {showCartDrawer && <NavCart />

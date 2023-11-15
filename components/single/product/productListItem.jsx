@@ -18,8 +18,8 @@ const handleOpenProductButton = (event) => {
 }
 
 
- const marking = product.isNew ? "New" : <Image className="text-slate-50" src="/static/media/icons/recycle.svg" width={18} height={18} alt='refurbrish icon'/>;
- const coloring = product.isNew ? styles.productListItemNew : `${styles.productListItemNew} ${styles.productListItemRefurb}`;
+ const marking = product.isNewProduct ? "New" : <Image className="text-slate-50" src="/static/media/icons/recycle.svg" width={18} height={18} alt='refurbrish icon'/>;
+ const coloring = product.isNewProduct ? styles.productListItemNew : `${styles.productListItemNew} ${styles.productListItemRefurb}`;
 
 
 

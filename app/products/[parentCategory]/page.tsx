@@ -13,9 +13,11 @@ import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/pr
 const page = () => {
     const { parentCategory }:{parentCategory:string} = useParams();
 
-    const [finalProducts, setFinalProducts] = useState([]);
-    let [availableBrands, setAvailableBrands] = useState<[]>([]);
-    let [availableCategories, setAvailableCategories] = useState<[]>([]);
+    let [finalProducts, setFinalProducts] = useState([]);
+    let [availableBrands, setAvailableBrands] = useState<any[]>([]);
+    let [brandFilters, setBrandFilter] = useState<[]>([]);
+    let [availableCategories, setAvailableCategories] = useState<any[]>([]);
+    let [categoryFilters, setCategoriesFilters] = useState<any[]>([]);
     const [priceFilter, setPriceFilter] = useState('');
 
 
@@ -26,12 +28,13 @@ const page = () => {
     }
 
     const setCategories = (products:any) =>{
-      let productTypes:any = products.map((product:any)=> product.category);
-      productTypes = [...new Set<any>(productTypes)].map((category:any)=> ({label:category, isTypeChecked:false})).sort((a,b)=> a.label.localeCompare(b.label));
-      setAvailableCategories(productTypes);
+      let productCategories:any = products.map((product:any)=> product.category);
+      productCategories = [...new Set<any>(productCategories)].map((category:any)=> ({label:category, isCategoryChecked:false})).sort((a,b)=> a.label.localeCompare(b.label));
+      setAvailableCategories(productCategories);
     }
 
 
+    // set inital products
     useEffect(() => {
       if (parentCategory === "refurbrished") {
         getRefurbishedProducts().then((res:any)=>{    
@@ -43,15 +46,40 @@ const page = () => {
             setFinalProducts(res);
         }) 
       }
-    },[getRefurbishedProducts, getSpecialOfferProducts])
+    },[parentCategory])
 
 
+    // set initialbrands and categories
     useEffect(() => {
       if (finalProducts.length) {
         setBrands(finalProducts);
         setCategories(finalProducts);
       }
     },[finalProducts])
+
+
+    // adjust products based on filters
+    useEffect(() => {
+      if (brandFilters.length) {
+        availableBrands =  availableBrands.filter((brand:any)=> !brand.isBrandChecked)
+        availableBrands = [...new Set<any>(availableBrands)].sort((a,b)=> a.label.localeCompare(b.label));
+        availableBrands = [...brandFilters, ...availableBrands]
+        setAvailableBrands(availableBrands);
+      }else{
+        setAvailableBrands([...availableBrands.sort((a,b)=> a.label.localeCompare(b.label))]);
+      }
+
+      if (categoryFilters.length) {
+        availableCategories = availableCategories.filter((category:any)=> !category.isCategoryChecked)
+        availableCategories = [...new Set<any>(availableCategories)].sort((a,b)=> a.label.localeCompare(b.label));
+        availableCategories = [...categoryFilters, ...availableCategories]        
+        setAvailableCategories(availableCategories);
+      }else{
+        setAvailableCategories([...availableCategories.sort((a,b)=> a.label.localeCompare(b.label))]);
+      }
+
+    },[ brandFilters, categoryFilters,])
+
 
 
 
@@ -66,6 +94,16 @@ const page = () => {
         }
       }
 
+       
+  const handleBrandFilters = (selectedBrands:[])=>{
+    setBrandFilter(prevState=>[...selectedBrands]);
+  }
+
+  const handleCategoriesFilters = (selectedCategories:any[])=>{    
+    setCategoriesFilters(prevState=>[...selectedCategories]);
+    
+  }
+
     return (
         <div className={`${styles.products} customwidth mx-auto px-3`}>
             
@@ -76,13 +114,13 @@ const page = () => {
                 :<div className={styles.productsContainer}>
                    <FilterContainer 
                       brandOrType={parentCategory}
-                      handlePriceChange={handlePriceChange} 
                       brands={availableBrands} 
-                      brandFilters={[]}
-                      handleBrandFilters={()=>{}} 
                       productCategories={availableCategories}
-                      typeFilters={[]}
-                      handleTypeFilters={()=>{}}
+                      brandFilters={brandFilters}
+                      categoryFilters={categoryFilters}
+                      handlePriceChange={handlePriceChange} 
+                      handleBrandFilters={handleBrandFilters} 
+                      handleTypeFilters={handleCategoriesFilters}
                     
                     />
                     <ProductList products={finalProducts} />

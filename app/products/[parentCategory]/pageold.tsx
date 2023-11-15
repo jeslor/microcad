@@ -151,7 +151,7 @@ const page = () => {
           brandFilters={brandFilters}
           handleBrandFilters={handleBrandFilters} 
           productCategories={availableTypes}
-          typeFilters={typeFilters}
+          categoryFilters={typeFilters}
           handleTypeFilters={handleTypeFilters}
          
         />

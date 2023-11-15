@@ -13,15 +13,16 @@ import {
 import BrandInput from './brandInput';
 import AdvancedFilter from './advancedFilter';
 import { Key } from 'lucide-react';
-import ProductCategoryInput from './productTypeInput';
+import ProductCategoryInput from './productCategoryInput';
+
 
 interface Props {
     handlePriceChange?: (vaue:string)=> void,
-    brands?:[]
+    brands?:any[]
     brandOrType?:string
-    productCategories?:[]
+    productCategories?:any[]
     brandFilters?:[]
-    typeFilters?:string[]
+    categoryFilters?:string[]
     handleTypeFilters?: (typeFilters:any[])=>void
     productSpecifications?: []
     handleBrandFilters?:(selectedFilter:any)=>void
@@ -35,7 +36,7 @@ const FilterContainer = ({
     brandFilters, 
     handleBrandFilters, 
     productCategories,
-    typeFilters,
+    categoryFilters,
     handleTypeFilters,
     productSpecifications,
     brandOrType,
@@ -88,8 +89,8 @@ const FilterContainer = ({
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Categories</h5>
                 <div className={styles.brands}>
-                    {productCategories!.map((productType:any)=>(
-                        <ProductCategoryInput key={productType.label} productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
+                    {productCategories!.map((productCategory:any)=>(
+                        <ProductCategoryInput key={productCategory.label} productCategory={productCategory} categoryFilters={categoryFilters!} handleTypeFilters={handleTypeFilters!} />
                     )
                     )}
                    

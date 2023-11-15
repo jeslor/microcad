@@ -13,13 +13,13 @@ import {
 import BrandInput from './brandInput';
 import AdvancedFilter from './advancedFilter';
 import { Key } from 'lucide-react';
-import ProductTypeInput from './productTypeInput';
+import ProductCategoryInput from './productTypeInput';
 
 interface Props {
-    handlePriceChange: (vaue:string)=> void,
-    brands:[]
+    handlePriceChange?: (vaue:string)=> void,
+    brands?:[]
     brandOrType?:string
-    productTypes?:[]
+    productCategories?:[]
     brandFilters?:[]
     typeFilters?:string[]
     handleTypeFilters?: (typeFilters:any[])=>void
@@ -34,7 +34,7 @@ const FilterContainer = ({
     brands, 
     brandFilters, 
     handleBrandFilters, 
-    productTypes,
+    productCategories,
     typeFilters,
     handleTypeFilters,
     productSpecifications,
@@ -86,10 +86,10 @@ const FilterContainer = ({
             </div>
             {(brandOrType ==="refurbrished" ||brandOrType === "specialOffer") &&(
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
-                <h5 className="font-bold text-primarymedium mb-3">Type</h5>
+                <h5 className="font-bold text-primarymedium mb-3">Categories</h5>
                 <div className={styles.brands}>
-                    {productTypes!.map((productType:any)=>(
-                        <ProductTypeInput key={productType.label} productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
+                    {productCategories!.map((productType:any)=>(
+                        <ProductCategoryInput key={productType.label} productType={productType} typeFilters={typeFilters!} handleTypeFilters={handleTypeFilters!} />
                     )
                     )}
                    
@@ -99,7 +99,7 @@ const FilterContainer = ({
             <div className={`${styles.filter} ${styles.filter2} text-primaryLight`}>
                 <h5 className="font-bold text-primarymedium mb-3">Brand</h5>
                 <div className={styles.brands}>
-                    {brands.map((br, index)=>
+                    {brands!.map((br, index)=>
                         <BrandInput key={index} brand={br} brandFilters={brandFilters!} handleBrandFilters={handleBrandFilters!} />
                     )}
                 </div>

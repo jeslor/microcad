@@ -147,6 +147,7 @@
   padding-top: 5rem;
   display: flex;
   min-height: 50vh;
+  margin-right: auto;
 }
 
 .filterContainer {
@@ -498,6 +499,7 @@
   .productsContainer {
     padding-top: 5rem;
     overflow-x: hidden;
+    margin-left: auto;
   }
   .filterContainer {
     top: 209px;

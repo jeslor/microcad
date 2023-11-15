@@ -8,12 +8,14 @@ import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
 import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/product.actions';
+import { set } from 'mongoose';
 
 
 const page = () => {
     const { parentCategory }:{parentCategory:string} = useParams();
 
     let [finalProducts, setFinalProducts] = useState([]);
+    let[availableProducts, setAvailableProducts] = useState<any[]>([]);
     let [availableBrands, setAvailableBrands] = useState<any[]>([]);
     let [brandFilters, setBrandFilter] = useState<[]>([]);
     let [availableCategories, setAvailableCategories] = useState<any[]>([]);
@@ -54,6 +56,7 @@ const page = () => {
       if (finalProducts.length) {
         setBrands(finalProducts);
         setCategories(finalProducts);
+        setAvailableProducts(finalProducts);
       }
     },[finalProducts])
 
@@ -78,6 +81,15 @@ const page = () => {
         setAvailableCategories([...availableCategories.sort((a,b)=> a.label.localeCompare(b.label))]);
       }
 
+
+      let sectionFinalProducts:any = [];
+      if (brandFilters.length && !categoryFilters.length) {
+          sectionFinalProducts = finalProducts.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));       
+         return setAvailableProducts(sectionFinalProducts)
+      }
+
+
+
     },[ brandFilters, categoryFilters,])
 
 
@@ -86,10 +98,10 @@ const page = () => {
     const handlePriceChange = (value:string) =>{
         setPriceFilter(value);
         if (value === 'low to high') {
-          setFinalProducts(finalProducts.sort((a:any,b:any)=> a.price - b.price));
+          setAvailableProducts(availableProducts.sort((a:any,b:any)=> a.price - b.price));
         }
         if (value === 'high to low') {
-          setFinalProducts(finalProducts.sort((a:any,b:any)=> b.price - a.price));
+          setAvailableProducts(availableProducts.sort((a:any,b:any)=> b.price - a.price));
           
         }
       }
@@ -123,7 +135,7 @@ const page = () => {
                       handleTypeFilters={handleCategoriesFilters}
                     
                     />
-                    <ProductList products={finalProducts} />
+                    <ProductList products={availableProducts} />
                 </div>
             }   
         </div>

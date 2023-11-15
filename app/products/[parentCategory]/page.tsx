@@ -88,6 +88,20 @@ const page = () => {
          return setAvailableProducts(sectionFinalProducts)
       }
 
+      if (categoryFilters.length && !brandFilters.length) {
+        sectionFinalProducts = finalProducts.filter((product:any)=> categoryFilters.some((category:any)=> category.label === product.category));
+        return setAvailableProducts(sectionFinalProducts)
+      }
+
+      if(categoryFilters.length && brandFilters.length){
+        sectionFinalProducts = finalProducts.filter((product:any)=> categoryFilters.some((category:any)=> category.label === product.category) && brandFilters.some((brand:any)=> brand.label === product.brand));
+        return setAvailableProducts(sectionFinalProducts)
+      }
+
+      if(!categoryFilters.length && !brandFilters.length){
+        setAvailableProducts(finalProducts);
+      }
+
 
 
     },[ brandFilters, categoryFilters,])
@@ -95,16 +109,16 @@ const page = () => {
 
 
 
-    const handlePriceChange = (value:string) =>{
-        setPriceFilter(value);
-        if (value === 'low to high') {
-          setAvailableProducts(availableProducts.sort((a:any,b:any)=> a.price - b.price));
-        }
-        if (value === 'high to low') {
-          setAvailableProducts(availableProducts.sort((a:any,b:any)=> b.price - a.price));
-          
-        }
+  const handlePriceChange = (value:string) =>{
+      setPriceFilter(value);
+      if (value === 'low to high') {
+        setAvailableProducts(availableProducts.sort((a:any,b:any)=> a.price - b.price));
       }
+      if (value === 'high to low') {
+        setAvailableProducts(availableProducts.sort((a:any,b:any)=> b.price - a.price));
+        
+      }
+  }
 
        
   const handleBrandFilters = (selectedBrands:[])=>{

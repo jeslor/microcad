@@ -8,6 +8,7 @@ import FilterContainer from '@/components/single/product/filterContainer';
 import Spinner from '@/components/single/spinner/spinner';
 import ProductHeader from '@/components/single/headers/productHeader';
 import { getCategoryProducts } from '@/lib/actions/product.actions';
+import specification from '@/lib/models/specification';
 
 
 
@@ -15,7 +16,7 @@ export default function page() {
     let { category }:{category:string} = useParams();
     category = category.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
 
-    let [finalProducts, setFinalProducts] = useState([]);
+    let [finalProducts, setFinalProducts] = useState<any[]>([]);
     let[availableProducts, setAvailableProducts] = useState<any[]>([]);
     const [priceFilter, setPriceFilter] = useState('');
     let [availableBrands, setAvailableBrands] = useState<any[]>([]);
@@ -62,11 +63,78 @@ export default function page() {
 // setInitial Brands and advanced filters
     useEffect(() => {
         if (finalProducts.length) {
-            setBrands(availableProducts);         
-            setSpecifications(availableProducts);            
+            setBrands(finalProducts);         
+            setSpecifications(finalProducts);            
         }
-        
     },[finalProducts])
+
+
+ // adjust the products based on filters
+ useEffect(() => {
+    if (brandFilters.length) {
+        availableBrands =  availableBrands.filter((brand:any)=> !brand.isBrandChecked)
+        availableBrands = [...new Set<any>(availableBrands)].sort((a,b)=> a.label.localeCompare(b.label));
+        availableBrands = [...brandFilters, ...availableBrands]
+        setAvailableBrands(availableBrands);
+    }else{
+        setAvailableBrands([...availableBrands.sort((a,b)=> a.label.localeCompare(b.label))]);
+    }
+
+    let sectionFinalProducts:any = [];
+    const filterProductswithSpecificationFilters = (products:any) =>{
+        let filteredProducts:any = [];
+        finalProducts.forEach((product:any) => {
+            let productFlags:any = [];
+            let productSpecifications = product.specifications;
+            productSpecifications.forEach((specification:any) => {
+             let currentFilterName  = specification.name;
+             let currentFilterValue = specification.value;
+             specificationFilters.forEach((filter:any) => {                
+                 if (filter.title === currentFilterName ) {
+                     if (filter.filters.some((value:any)=> value === currentFilterValue)) {
+                         let productFlag = true;
+                         productFlags.push(productFlag);
+                     }else{
+                         let productFlag = false;
+                         productFlags.push(productFlag);
+                     }
+                 }
+             });
+             
+            })
+            productFlags = [...new Set<any>(productFlags)];
+             if (productFlags.length === 1 && productFlags[0] === true) {
+                 filteredProducts.push(product);
+             }
+ 
+        }); 
+        return filteredProducts;
+        
+    }
+    if (brandFilters.length && specificationFilters.length ===0) {
+        sectionFinalProducts = finalProducts.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));               
+        return setAvailableProducts(sectionFinalProducts)
+    }
+
+    if(!brandFilters.length && specificationFilters.length){
+       const filterdProducts = filterProductswithSpecificationFilters(finalProducts);
+      return setAvailableProducts(filterdProducts); 
+    }
+    if (brandFilters.length && specificationFilters.length) {
+        let filterdProducts:any = filterProductswithSpecificationFilters(finalProducts);
+
+            filterdProducts = filterdProducts.filter((product:any)=> brandFilters.some((brand:any)=> brand.label === product.brand));
+            return setAvailableProducts(filterdProducts);
+        
+    }
+
+
+    if(!specificationFilters.length && !brandFilters.length){
+        setAvailableProducts(finalProducts);
+      }
+
+ },[brandFilters, specificationFilters])
+
 
 
 
@@ -96,7 +164,7 @@ export default function page() {
     return (
         <div className={`${styles.products} customwidth mx-auto px-3`}>
             <ProductHeader category={category} handlePriceChange={handlePriceChange} />
-                {availableProducts.length === 0
+                {finalProducts.length === 0
                 ? <Spinner />
                 :<div className={styles.productsContainer}>
                     <FilterContainer 
@@ -108,7 +176,7 @@ export default function page() {
                     specificationFilters={specificationFilters}
                     handleSpecificationFilters={handleSpecificationFilters}
                     />
-                    <ProductList products={finalProducts} />
+                    <ProductList products={availableProducts} />
                 </div>
             }
     

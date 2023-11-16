@@ -24,9 +24,9 @@ interface Props {
     brandFilters?:[]
     categoryFilters?:string[]
     handleTypeFilters?: (typeFilters:any[])=>void
-    productSpecifications?: []
+    productSpecifications?: any[]
     handleBrandFilters?:(selectedFilter:any)=>void
-    specificationFilters?: []
+    specificationFilters?: any[]
     handleSpecificationFilters?: (specificationFilters:string[])=>void,
 }
 

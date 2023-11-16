@@ -1,14 +1,12 @@
 "use client"
-import {use, useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 import { useParams} from 'next/navigation';
-import {data} from'@/constants/data';
 import Spinner from '@/components/single/spinner/spinner';
 import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
 import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/product.actions';
-import { set } from 'mongoose';
 
 
 const page = () => {
@@ -101,7 +99,6 @@ const page = () => {
       if(!categoryFilters.length && !brandFilters.length){
         setAvailableProducts(finalProducts);
       }
-
 
     },[ brandFilters, categoryFilters,])
 

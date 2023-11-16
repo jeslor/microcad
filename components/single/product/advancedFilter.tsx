@@ -2,7 +2,7 @@ import AdvancedFilterInput from "./advancedFilterInput"
 
 interface Props {
     specification: any[]
-    specificationFilters: []
+    specificationFilters: any[]
     handleSpecificationFilters: (specificationFilters:string[])=>void,
 }
 

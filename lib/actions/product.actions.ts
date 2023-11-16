@@ -1,6 +1,7 @@
 "use server";
 import { connectToDatabase } from "../mongoose";
 import Product from "../models/product";
+import Specification from "../models/specification";
 
 
 export const getAllProducts = async () => {
@@ -20,7 +21,6 @@ export const addProduct = async (product: any) => {
 export async function getRefurbishedProducts  () {
     try {
         await connectToDatabase();
-        console.log("getRefurbishedProducts");
         const res = await Product.find({ isNewProduct: false });
         const products = JSON.parse(JSON.stringify(res));
         return products;
@@ -40,6 +40,22 @@ export const getSpecialOfferProducts = async () => {
         return products;
         
     } catch (error) {
+        console.log(error);
+    }
+}
+
+
+export const getCategoryProducts = async (category: string) => {
+    try {
+        await connectToDatabase();
+        const res = await Product.find({ category: category }).populate({
+            path: "specifications",
+           
+        })
+        const products = JSON.parse(JSON.stringify(res));
+        return products;
         
+    } catch (error) {
+        console.log(error);
     }
 }

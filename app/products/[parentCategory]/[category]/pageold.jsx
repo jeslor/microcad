@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react'
 
-
 import { useParams } from "next/navigation";
 import styles from "@/styles/products.module.css";
 import {data} from'@/constants/data';

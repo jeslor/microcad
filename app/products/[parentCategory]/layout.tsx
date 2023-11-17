@@ -32,7 +32,7 @@ export default function RootLayout({
                   <div className={styles.productDetails}>
                    <h2 className={styles.singleProductName}>{product.name}</h2>    
                    <h6 className={styles.singleProductModel}><span>Model:</span> {product.model}</h6>
-                    <h6 className={styles.singleProductType}><span>Type:</span> {product.type}</h6>
+                    <h6 className={styles.singleProductType}><span>Type:</span> {product.productType}</h6>
                     {product.price>0&&( <h6 className={styles.singleProductPrice}>${`${' '}${product.price.toLocaleString()}`}</h6>)}
                    {product.quantity>0?(
                       <h6 className={styles.singleProductInStock}>In Stock</h6>
@@ -46,6 +46,18 @@ export default function RootLayout({
                     <div className={styles.productDescription}>
                       <h5>Description</h5>
                       <p>{product.description}</p>
+                    </div>
+                    <div className={styles.singleProductSpecificatations}>
+                      <h5>Specifications</h5>
+                      {
+                        product.specifications&&(
+                          <ul>
+                            {product.specifications.map((spec:any, index:number)=>(
+                              <li key={spec._id}><span>{spec.name}:</span>{spec.value}</li>
+                            ))}
+                          </ul>
+                        )
+                      }
                     </div>
                   </div>
                 

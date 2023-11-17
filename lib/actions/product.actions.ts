@@ -2,6 +2,7 @@
 import { connectToDatabase } from "../mongoose";
 import Product from "../models/product";
 import Specification from "../models/specification";
+import { co } from "@vidstack/react/dist/types/vidstack.js";
 
 
 export const getAllProducts = async () => {
@@ -54,6 +55,21 @@ export const getCategoryProducts = async (category: string) => {
         })
         const products = JSON.parse(JSON.stringify(res));
         return products;
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getSingleProduct = async (id: string) => {
+    try {
+        await connectToDatabase();
+        const res = await Product.findById(id).populate({
+            path: "specifications",
+           
+        })
+        const product = JSON.parse(JSON.stringify(res));
+        return product;
         
     } catch (error) {
         console.log(error);

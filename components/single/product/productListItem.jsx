@@ -4,6 +4,7 @@ import { StateContext } from '@/components/providers/stateProvider';
 import styles from "@/styles/products.module.css";
 import Image from 'next/image';
 import AddToCartButton from '../cart/AddToCartButton';
+import Link from 'next/link';
 
 
 const ProductListItem = ({product}) => {
@@ -26,7 +27,7 @@ const handleOpenProductButton = (event) => {
 
 
   return (
-    <a href={`/products/product/${product.name}`} className={styles.ProductListItem} key={product.description}>
+    <a href={`/products/product/${product._id}`} className={styles.ProductListItem} key={product.description}>
     <div className={coloring}>{marking}</div>
     <button onClick={handleOpenProductButton} className={styles.ProductListItemViewProduct}>view product</button>
     <div className={styles.productImage}>

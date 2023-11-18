@@ -42,14 +42,14 @@
   margin-left: auto;
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 600px;
   padding: 0rem 1rem;
   padding-right: 2rem;
 }
 
 .payments {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -60,9 +60,7 @@
   height: 50px;
   width: 170px;
   border-radius: 5px;
-  margin-left: 0.5rem;
   cursor: pointer;
-  margin-right: 0.5rem;
 }
 .payments div:hover {
   opacity: 0.86;
@@ -85,4 +83,32 @@
 
 .payments .shoppay svg {
   fill: #fff;
+}
+
+.paymentsContainer h3 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.paymentsContainer h3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 45%;
+  height: 1px;
+  background-color: #e6e6e6;
+}
+
+.paymentsContainer h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 45%;
+  height: 1px;
+  background-color: #e6e6e6;
 }

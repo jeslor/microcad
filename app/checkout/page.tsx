@@ -23,6 +23,7 @@ const page = () => {
                             <Image src="/static/media/icons/googlepay.svg" alt="shoppay"  height={60} width={50}/>
                         </div>
                     </div>
+                    <h3 className="text-slate-400">OR</h3>
                 </div>
                </div>
             </div>

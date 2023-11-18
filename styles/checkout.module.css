@@ -21,18 +21,68 @@
 }
 
 .checkoutSections {
-  display: flex;
-  overflow-y: visible;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .checkoutStartPart,
 .checkoutEndPart {
-  width: 50%;
-  padding: 1rem 2rem;
+  padding: 2rem 0rem;
 }
 
 .checkoutEndPart {
-  background-color: #fff;
   position: sticky;
-  top: 10rem;
+}
+
+.checkoutStartPart {
+  background-color: #fff;
+}
+
+.checkoutStartPartInner {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  padding: 0rem 1rem;
+  padding-right: 2rem;
+}
+
+.payments {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.payments div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 170px;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.payments div:hover {
+  opacity: 0.86;
+}
+
+.payments .shoppay {
+  background-color: #3911ed;
+}
+.payments .shoppay img {
+  filter: invert(100%) sepia(0%) saturate(0) hue-rotate(321deg) brightness(119%)
+    contrast(130%);
+}
+
+.payments .paypal {
+  background-color: #e6aa19;
+}
+.payments .googlepay {
+  background-color: rgb(181 185 199);
+}
+
+.payments .shoppay svg {
+  fill: #fff;
 }

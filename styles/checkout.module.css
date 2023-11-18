@@ -1,0 +1,38 @@
+.pageHeight {
+  min-height: 50vh;
+  padding-top: 130px;
+  padding-bottom: 3rem;
+}
+
+.checkout {
+  width: 100%;
+}
+
+.checkoutHeader {
+  height: 100px;
+  padding: 1.5rem 2rem;
+  background-color: #f1f5f9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.checkoutSections {
+  display: flex;
+  overflow-y: visible;
+}
+
+.checkoutStartPart,
+.checkoutEndPart {
+  width: 50%;
+  padding: 1rem 2rem;
+}
+
+.checkoutEndPart {
+  background-color: #fff;
+  position: sticky;
+  top: 10rem;
+}

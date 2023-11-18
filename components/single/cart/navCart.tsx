@@ -30,9 +30,9 @@ const NavCart = () => {
                 </ul>
             </div>
             <div className={styles.cartContentFooter}>
-                <Link href="/cart">
-                   View Cart
-                </Link>
+                <a href="/checkout">
+                   Checkout
+                </a>
                 <p className='text-primayColor'>Total: <span className='text-secondaryColor pl-2'>${total}</span></p>
             </div>
         </div>
@@ -45,9 +45,9 @@ const NavCart = () => {
                 <p className='text-secondaryColor text-center pt-9 font-bold'>Your cart is empty</p>
             </div>
             <div className={styles.cartContentFooter}>
-                <Link className='text-primayColor' href="/cart">
-                   View Cart
-                </Link>
+                <a className='text-primayColor' href="/checkout">
+                   Checkout
+                </a>
                 <p className='text-primayColor'>Total: <span className='text-secondaryColor'>$0.00</span></p>
             </div>
         </div>

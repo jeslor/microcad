@@ -53,6 +53,8 @@ export default function page() {
     useEffect(() => {
         getCategoryProducts(category).then((res:any)=>{    
             setFinalProducts(res);
+            console.log(res);
+            
             setAvailableProducts(res);
         }) 
         

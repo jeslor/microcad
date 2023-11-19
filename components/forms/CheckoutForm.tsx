@@ -1,4 +1,5 @@
 "use client"
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/checkout.module.css"
 import * as z from 'zod';
@@ -24,6 +25,14 @@ import {
 import { checkoutUserValidationSchema } from '@/lib/validations/checkoutUserValidator';
 
 const CheckoutForm = () => {
+    const [selctedPayment, setSelctedPayment] = useState<any>("credit card")
+    const handlePaymentMethodChange = (e:any) => {
+        setSelctedPayment(e.target.value)
+    }
+
+    const creditCardPaymentClasses  = selctedPayment ==="credit card" ? styles.echaPaymentMethod :''
+    const payPalPaymentClasses  = selctedPayment ==="payPal" && styles.echaPaymentMethod
+
 
     const form = useForm({
         resolver: zodResolver(checkoutUserValidationSchema),
@@ -271,6 +280,105 @@ const CheckoutForm = () => {
             </FormItem>
             )}
             />
+            <h3>Payment</h3>
+            <div className={`${creditCardPaymentClasses}`}>
+                <div className={styles.eachPaymentMethodHeader}>
+                    <input type="radio" value="credit card" checked={selctedPayment==="credit card"?true:false} onChange={handlePaymentMethodChange}/>
+                    <label htmlFor="">Credit card</label>
+                    <div className={styles.eachPaymentMethodLogos}>
+                        <img src="/static/media/logos/1.svg" alt="" />
+                        <img src="/static/media/logos/2.svg" alt="" />
+                        <img src="/static/media/logos/3.svg" alt="" />
+                        <img src="/static/media/logos/4.svg" alt="" />
+                        <img src="/static/media/logos/5.svg" alt="" />
+                        <img src="/static/media/logos/6.svg" alt="" />
+                        <img src="/static/media/logos/7.svg" alt="" />
+                    </div>
+                </div>  
+                <div className={styles.creditCardPaymentDetails}>
+                    <FormField
+                    control={form.control}
+                    name="creditCardNumber"
+                    render={({ field }) => (
+                    <FormItem className='flex flex-col items-start  gap-1 w-full pt-3'>
+                        <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                        <Input 
+                            type='text'
+                            {...field}
+                            className='account-form no-focus'
+                            placeholder='Card number'
+                        />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                    </FormItem>
+                    )}
+                    />
+                    <div className={styles.checoutForm2Separator}>
+                        <FormField
+                        control={form.control}
+                        name="creditCardExpiration"
+                        render={({ field }) => (
+                        <FormItem className='flex flex-col items-start  gap-1 w-full pt-3'>
+                        
+                            <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                            <Input 
+                                type='text'
+                                {...field}
+                                className='account-form no-focus'
+                                placeholder='Expiration date (MM/YY)'
+                            />
+                            </FormControl>
+                            <FormMessage className="text-red-500 text-xs" />
+                        </FormItem>
+                        )}
+                        />
+                        <FormField
+                        control={form.control}
+                        name="creditCardCVV"
+                        render={({ field }) => (
+                        <FormItem className='flex flex-col items-start  gap-1 w-full pt-3'>
+                            <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                            <Input 
+                                type='text'
+                                {...field}
+                                className='account-form no-focus'
+                                placeholder='security code'
+                            />
+                            </FormControl>
+                            <FormMessage className="text-red-500 text-xs" />
+                        </FormItem>
+                        )}
+                        />
+                    </div>
+                    <FormField
+                    control={form.control}
+                    name="firstName"
+                    render={({ field }) => (
+                    <FormItem className='flex flex-col items-start  gap-1 w-full pt-3'>
+                        <FormControl className='border-transparent bg-slate-200 rounded-xl'>
+                        <Input 
+                            type='text'
+                            {...field}
+                            className='account-form no-focus'
+                            placeholder='Name on card'
+                        />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                    </FormItem>
+                    )}
+                    />
+                </div> 
+            </div>
+            <div className={styles.echaPaymentMethod}>
+                <div className={styles.eachPaymentMethodHeader}>
+                <input type="radio"value="payPal" checked={selctedPayment==='payPal'?true:false} onChange={handlePaymentMethodChange}/>
+                    <label htmlFor="">PayPal</label>
+                    <div className={styles.eachPaymentMethodLogos}>
+                        <img src="/static/media/logos/paypal.svg" alt="" />
+                    </div>
+                </div>  
+            </div>  
+
         </form>
     </Form>
   )

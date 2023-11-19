@@ -374,9 +374,7 @@ const RegisterForm = () => {
             <FormMessage className="text-red-500 text-xs" />
           </FormItem>
         )}
-    />
-
-    
+    />    
     <Button type="submit" className={`${styles.microcadBtn} microcadBtn`}>Register</Button>
     </form>
   </Form>

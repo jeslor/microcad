@@ -1,3 +1,4 @@
+import CheckoutForm from "@/components/forms/CheckoutForm"
 import styles from "@/styles/checkout.module.css"
 import Image from "next/image"
 
@@ -24,6 +25,15 @@ const page = () => {
                         </a>
                     </div>
                     <h3 className="text-slate-400">OR</h3>
+                </div>
+                <div className={styles.RegisterCheckout}>
+                    <div className={styles.RegisterCheckoutHeader}>
+                        <h3 className="">Contact</h3>
+                        <p className="text-slate-400">Have an account? <a href="/login">Login</a></p>
+                    </div>
+                    <div className={styles.CheckoutForm}>
+                    <CheckoutForm />
+                    </div>
                 </div>
                </div>
             </div>

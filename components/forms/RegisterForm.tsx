@@ -43,7 +43,7 @@ const RegisterForm = () => {
         city: '',
         province: '',
         country: '',
-        postalCode: '',
+        zipCode: '',
         phone: '',
         fax: '',
         iamHuman: `${firstRandom + secondRandom}`,
@@ -68,7 +68,7 @@ const RegisterForm = () => {
             name="accountType"
             render={({ field }) => (
             <FormItem>
-                <FormLabel>Account type</FormLabel>
+                <FormLabel className="text-slate-400">Account type</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                 <SelectTrigger className="w-full  border-transparent bg-slate-200 rounded-xl">
@@ -265,11 +265,11 @@ const RegisterForm = () => {
             name="country"
             render={({ field }) => (
             <FormItem>
-                <FormLabel>Select country</FormLabel>
+                <FormLabel className="text-slate-400">Select country</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                 <SelectTrigger className="w-full  border-transparent bg-slate-200 rounded-xl">
-                    <SelectValue placeholder="Account Type" />
+                    <SelectValue placeholder="select country" />
                 </SelectTrigger>
                 </FormControl>
                 <SelectContent className=' border-transparent bg-slate-200'>
@@ -284,11 +284,11 @@ const RegisterForm = () => {
         />
      <FormField
         control={form.control}
-        name="postalCode"
+        name="zipCode"
         render={({ field }) => (
           <FormItem className='flex flex-col items-start  gap-1 w-full'>
             <FormLabel className='text-base-semibold text-gray-400'>
-               Postal code
+               ZIP code
             </FormLabel>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
@@ -300,7 +300,7 @@ const RegisterForm = () => {
             <FormMessage className="text-red-500 text-xs" />
           </FormItem>
         )}
-    />
+      />
      <FormField
         control={form.control}
         name="phone"
@@ -343,7 +343,7 @@ const RegisterForm = () => {
         control={form.control}
         name="iamHuman"
         render={({ field }) => (
-          <FormItem className='flex flex-col items-start  gap-1 w-full hidden '>
+          <FormItem className=' flex-col items-start  gap-1 w-full hidden '>
             <FormControl className='border-transparent bg-slate-200 rounded-xl'>
               <Input 
                 type='text'

@@ -12,7 +12,7 @@ export const UserValidation = z.object({
      city: z.string().optional(),
      province: z.string().optional(),
      country: z.string({}).optional(),
-     postalCode: z.string().optional(),
+     zipCode: z.string().optional(),
      phone: z.string().min(2, {message: "phone number is required"}).max(100),
      fax: z.string().optional(),
      iamHuman:z.string().optional(),

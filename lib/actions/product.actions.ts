@@ -1,8 +1,7 @@
 "use server";
 import { connectToDatabase } from "../mongoose";
-import Product from "../models/product";
-import Specification from "../models/specification";
-import { co } from "@vidstack/react/dist/types/vidstack.js";
+import Product from "../models/product.model";
+import Specification from "../models/specification.model";
 
 
 export const getAllProducts = async () => {

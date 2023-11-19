@@ -11,6 +11,6 @@ export default function RootLayout({
     return (
         <section className={`${styles.pageHeight} bg-slate-100`}>
             {children}
-            </section>
+        </section>
     )
 }

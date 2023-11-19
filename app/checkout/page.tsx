@@ -13,15 +13,15 @@ const page = () => {
                 <div className={styles.paymentsContainer}>
                     <h4 className="text-center pb-5 text-slate-400">Express checkout</h4>
                     <div className={styles.payments}>
-                        <div className={styles.shoppay}>
-                            <Image src="/static/media/icons/shoppay.svg" alt="shoppay"  height={60} width={80}/>
-                        </div>
-                        <div className={styles.paypal}>
+                        <a className={styles.shoppay}>
+                        <Image src="/static/media/icons/shoppay.svg" alt="shoppay"  height={60} width={80}/>
+                        </a>
+                        <a className={styles.paypal}>
                             <Image src="/static/media/icons/paypal.svg" alt="shoppay"  height={60} width={80}/>
-                        </div>
-                        <div className={styles.googlepay}>
+                        </a>
+                        <a className={styles.googlepay}>
                             <Image src="/static/media/icons/googlepay.svg" alt="shoppay"  height={60} width={50}/>
-                        </div>
+                        </a>
                     </div>
                     <h3 className="text-slate-400">OR</h3>
                 </div>

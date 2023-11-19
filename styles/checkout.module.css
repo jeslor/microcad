@@ -36,6 +36,7 @@
 
 .checkoutStartPart {
   background-color: #fff;
+  border-right: 1px solid #e6e6e6;
 }
 
 .checkoutStartPartInner {
@@ -53,7 +54,7 @@
   align-items: center;
 }
 
-.payments div {
+.payments a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,8 +62,9 @@
   width: 170px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-.payments div:hover {
+.payments a:hover {
   opacity: 0.86;
 }
 

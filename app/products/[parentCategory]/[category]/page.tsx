@@ -8,7 +8,7 @@ import FilterContainer from '@/components/single/product/filterContainer';
 import Spinner from '@/components/single/spinner/spinner';
 import ProductHeader from '@/components/single/headers/productHeader';
 import { getCategoryProducts } from '@/lib/actions/product.actions';
-import specification from '@/lib/models/specification';
+import specification from '@/lib/models/specification.model';
 
 
 

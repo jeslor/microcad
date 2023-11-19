@@ -220,3 +220,41 @@
   height: auto;
   padding: 0.5rem 1rem;
 }
+
+.saveInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  /* background-color: #65649637; */
+  padding: 0.8rem;
+  border-radius: 5px;
+  color: #64748b;
+  border: 1px solid #e6e6e6;
+  font-size: 0.9rem;
+}
+.saveInfo input[type="checkbox"] {
+  margin-right: 0.5rem;
+  display: grid;
+  place-content: center;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+.saveInfo input[type="checkbox"]:checked:before {
+  content: "✓";
+  color: #3911ed;
+  font-size: 1rem;
+  transform: scale(1);
+}
+
+.saveInfo label {
+  margin-left: 0.5rem;
+}

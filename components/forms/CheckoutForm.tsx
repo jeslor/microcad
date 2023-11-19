@@ -26,6 +26,7 @@ import { checkoutUserValidationSchema } from '@/lib/validations/checkoutUserVali
 
 const CheckoutForm = () => {
     const [selctedPayment, setSelctedPayment] = useState<any>("credit card")
+    const[saveInfo, setSaveInfo] = useState<boolean>(false)
     const handlePaymentMethodChange = (e:any) => {
         setSelctedPayment(e.target.value)
     }
@@ -59,7 +60,6 @@ const CheckoutForm = () => {
             billingProvince: '',
             billingZipCode: '',
             billingPhone: '',
-            saveInformation:false
 
         },
         shouldFocusError: true,
@@ -378,6 +378,13 @@ const CheckoutForm = () => {
                     </div>
                 </div>  
             </div>  
+            <h3>Remember me</h3>
+            <div className={styles.saveInfo}>
+               <input id='rememberInfo' type="checkbox" checked={saveInfo} onChange={()=>setSaveInfo(!saveInfo)}/>
+               <label className="text-slate-400" htmlFor="rememberInfo">Save my information for a faster checkout</label>
+            </div>
+
+            <Button type="submit" className={`${styles.microcadBtn} microcadBtn`}>Pay now</Button>
 
         </form>
     </Form>

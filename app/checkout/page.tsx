@@ -44,6 +44,9 @@ const page = () => {
                </div>
             </div>
             <div className={styles.checkoutEndPart}>
+                <div className={styles.checkoutEndPartHeader}>
+                    <h3 className="pb-4">Order Summary</h3>
+                </div>
                 <div className={styles.checkoutEndPartInner}>
                     <div className={styles.checkOutCartItems}>
                         {

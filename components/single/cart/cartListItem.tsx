@@ -28,7 +28,7 @@ const CartListItem = ({item}:Props) => {
             <h4 className='text-primarymedium'>{item.name}</h4>
             <div className={styles.quantityPrice}>
                 <p className='text-slate-500'><span onClick={()=> handleRemoveCartProduct(item)} className={`${styles.navCartPriceTogglers} mr-3`}>-</span>Qty: {item.quantity} <span onClick={()=>handleIncreaseCartProduct(item)} className={`${styles.navCartPriceTogglers} ml-3 mr-5`}>+</span></p>
-                <p className='text-secondaryColor'>${item.price *item.quantity}</p>
+                <p className='text-secondaryColor'>${(item.price *item.quantity).toFixed(2)}</p>
             </div>
         </div>
     </li>

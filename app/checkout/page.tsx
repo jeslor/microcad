@@ -1,8 +1,14 @@
+"use client"
+import { useContext } from "react"
+import { StateContext } from "@/components/providers/stateProvider"
 import CheckoutForm from "@/components/forms/CheckoutForm"
 import styles from "@/styles/checkout.module.css"
 import Image from "next/image"
 
 const page = () => {
+    const {cart} =useContext(StateContext)
+   
+    
   return (
     <div className={`${styles.checkout} mx-auto`}>
         <div className={styles.checkoutHeader}>
@@ -37,7 +43,39 @@ const page = () => {
                 </div>
                </div>
             </div>
-            <div className={styles.checkoutEndPart}></div>
+            <div className={styles.checkoutEndPart}>
+                <div className={styles.checkoutEndPartInner}>
+                    <div className={styles.checkOutCartItems}>
+                        {
+                            cart.map((item:any)=>(
+                                <div key={item.id} className={styles.checkOutCartItem}>
+                                    <div className={styles.checkOutCartItemImg}>
+                                        <div className={styles.checkOutCartItemQuantity}>
+                                            <p>{item.quantity}</p>
+                                        </div>
+                                        <img src={item.imageURL} alt={item.title} />
+                                    </div>
+                                    <div className={styles.checkOutCartItemDetails}>
+                                        <h4>{item.name}</h4>
+                                    </div>
+                                    <p className={styles.checkOutCartItemPrice}>{item.price.toFixed(2)}</p>
+                                </div>
+                            )
+                            )
+                        }
+                    </div>
+                    <div className={styles.total}>
+                        <h6>Total</h6>
+                        <h6>
+                            {
+                                cart.reduce((acc:any, item:any)=>(
+                                    acc + item.price * item.quantity
+                                ),0).toFixed(2)
+                            }
+                            </h6>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   )

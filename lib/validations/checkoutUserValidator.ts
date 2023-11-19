@@ -21,5 +21,4 @@ export const checkoutUserValidationSchema = z.object({
     billingProvince: z.string().min(2, {message: "billing province is required"}).max(100),
     billingZipCode: z.string().min(2, {message: "billing zip code is required"}).max(100),
     billingPhone: z.string().min(2, {message: "billing phone number is required"}).max(100),
-    saveInformation: z.boolean().default(false).optional(),
 });

@@ -61,7 +61,7 @@ const page = () => {
                                     <div className={styles.checkOutCartItemDetails}>
                                         <h4>{item.name}</h4>
                                     </div>
-                                    <p className={styles.checkOutCartItemPrice}>{item.price.toFixed(2)}</p>
+                                    <p className={styles.checkOutCartItemPrice}>{item.price.toLocaleString()}</p>
                                 </div>
                             )
                             )
@@ -69,11 +69,11 @@ const page = () => {
                     </div>
                     <div className={styles.total}>
                         <h6>Total</h6>
-                        <h6>
+                        <h6>$
                             {
                                 cart.reduce((acc:any, item:any)=>(
                                     acc + item.price * item.quantity
-                                ),0).toFixed(2)
+                                ),0).toLocaleString()
                             }
                             </h6>
                     </div>

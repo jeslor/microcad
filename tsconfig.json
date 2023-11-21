@@ -30,7 +30,8 @@
     "**/*.jsx",
     ".next/types/**/*.ts",
     "components/shared/segments/NavigationMenu.jsx",
-    "constants/slider.js"
+    "constants/slider.js",
+    "lib/adapters/mongoDB.js"
   ],
   "exclude": ["node_modules"]
 }

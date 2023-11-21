@@ -1,22 +1,18 @@
 'use client';
-import {useState} from 'react';
+import {use, useEffect, useState} from 'react';
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
+export default  function Navbar() {
 
-export default function Navbar() {
-    const [isLinkOpen, setIsLinkOpen] = useState(false);
-    const toggleLink = () => {
-        setIsLinkOpen(!isLinkOpen);
-    }
+
 
     return (
         <div className="navbar fixed w-full z-50">
             <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
-                    <Link  className="navbarLinks" href="/register"><Icon className="text-lg pe-1" icon="mdi:account" />register</Link>
-
+                        <Link  className="navbarLinks" href="/register"><Icon className="text-lg pe-1" icon="mdi:account" />register</Link>
                         <Link className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</Link>
                         <Link className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</Link>
                         <Link className="navbarLinks" href="/services">services</Link>

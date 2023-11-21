@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^2.0.5",
     "@dotlottie/react-player": "^1.6.3",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/colors": "^3.0.0",
@@ -25,7 +26,7 @@
     "clsx": "^2.0.0",
     "jquery": "^3.7.1",
     "lucide-react": "^0.284.0",
-    "mongodb": "^6.2.0",
+    "mongodb": "^6.3.0",
     "mongoose": "^7.6.4",
     "next": "13.5.4",
     "next-auth": "^4.24.5",

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import User from "@/lib/models/user.model";
 import bcrypt from "bcrypt";
 import { connectToDatabase } from "@/lib/mongoose";
+import { signIn } from "next-auth/react";
 
  export const POST = async(request:Request)=>{
     try {
@@ -24,9 +25,17 @@ import { connectToDatabase } from "@/lib/mongoose";
             fax: userData.fax,
         });
         await connectToDatabase();
-        const registeredUser = await userToRegister.save();
-        console.log({registeredUser});
+        let registeredUser = await userToRegister.save();
+        console.log(registeredUser);
         
+
+        if (registeredUser) {
+            await signIn("credentials", {
+                email: registeredUser.email,
+                password: registeredUser.password,
+                callbackUrl: "/",
+            });
+        }
     } catch (error) {
         console.log({error});
         

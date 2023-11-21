@@ -2,6 +2,8 @@
 import { connectToDatabase } from "../mongoose";
 import Product from "../models/product.model";
 import Specification from "../models/specification.model";
+import { model } from "mongoose";
+import path from "path";
 
 
 export const getAllProducts = async () => {
@@ -21,7 +23,11 @@ export const addProduct = async (product: any) => {
 export async function getRefurbishedProducts  () {
     try {
         await connectToDatabase();
-        const res = await Product.find({ isNewProduct: false }).populate("specifications");
+        const res = await Product.find({ isNewProduct: false }).populate(
+           { path: "specifications",
+                model: Specification
+            }
+        );
         const products = JSON.parse(JSON.stringify(res));
         return products;
        
@@ -35,7 +41,11 @@ export async function getRefurbishedProducts  () {
 export const getSpecialOfferProducts = async () => {
     try {
         await connectToDatabase();
-        const res = await Product.find({ isSpecialOffer: true }).populate("specifications");
+        const res = await Product.find({ isSpecialOffer: true }).populate(
+            { path: "specifications",
+            model: Specification
+        }
+        );
         const products = JSON.parse(JSON.stringify(res));
         return products;
         
@@ -49,7 +59,11 @@ export const getCategoryProducts = async (category: string) => {
     try {
         await connectToDatabase();
         
-        const res = await Product.find({ category: category }).populate("specifications");        
+        const res = await Product.find({ category: category }).populate(
+            { path: "specifications",
+            model: Specification
+        }
+        );        
         const products = JSON.parse(JSON.stringify(res));
         return products;
         
@@ -61,7 +75,11 @@ export const getCategoryProducts = async (category: string) => {
 export const getSingleProduct = async (id: string) => {
     try {
         await connectToDatabase();
-        const res = await Product.findById(id).populate("specifications");
+        const res = await Product.findById(id).populate(
+            { path: "specifications",
+            model: Specification
+        }
+        );
         const product = JSON.parse(JSON.stringify(res));
         return product;
         

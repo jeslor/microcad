@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import {signIn} from 'next-auth/react'
 
 
 const Page = () => {
@@ -30,9 +31,12 @@ const Page = () => {
         password:""
       }
     })
+      
 
-    const onSubmit = (values:z.infer<typeof loginSchema >) => {
-      console.log(values)
+    const onSubmit = async( values:z.infer<typeof loginSchema >) => {
+      const response = await signIn('credentials', {email:values.email,password:values.password, redirect: false})
+      console.log(response);
+      
     }
   
 

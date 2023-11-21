@@ -7,6 +7,7 @@ import {StateProvider} from '@/components/providers/stateProvider'
 import { Inter } from 'next/font/google'
 import Bottmbar from '@/components/shared/Bottombar'
 import styles from '@/styles/main.module.css'
+import UserProvider from '@/components/providers/userProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <UserProvider>
       <StateProvider>
       <body className={`${inter.className} ${styles.main}`}>
           <Navbar />
@@ -33,6 +35,7 @@ export default function RootLayout({
         </body>
         <Bottmbar />
     </StateProvider>
+    </UserProvider>
     </html>
   )
 }

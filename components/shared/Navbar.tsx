@@ -1,10 +1,13 @@
-'use client';
-import {use, useEffect, useState} from 'react';
+"use client"
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
-export default  function Navbar() {
+import { signIn, signOut, useSession } from "next-auth/react";
+export default   function Navbar() {
 
+    const {data:session} = useSession();
+    const user:any = session?.user;
+    
 
 
     return (
@@ -12,9 +15,23 @@ export default  function Navbar() {
             <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
-                        <Link  className="navbarLinks" href="/register"><Icon className="text-lg pe-1" icon="mdi:account" />register</Link>
-                        <Link className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</Link>
-                        <Link className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</Link>
+                        {
+                            session?.user ? 
+                            (
+                                <>
+                                    <Link className="navbarLinks" href="/account"><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</Link>
+                                    <Link onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</Link>
+                                </>
+                            )
+                            :(
+                                <>
+                                    <Link  className="navbarLinks" href="/register"><Icon className="text-lg pe-1" icon="mdi:account" />register</Link>
+                                    <Link className="navbarLinks" href="/login"><Icon className="text-lg pe-1" icon="mdi:login" />Login</Link>
+                                    <Link className="navbarLinks" href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" />Forgot password</Link>
+
+                                </>
+                            )
+                        }
                         <Link className="navbarLinks" href="/services">services</Link>
                         <Link className="navbarLinks" href="/partners">partners</Link>
                         <Link className="navbarLinks" href="/policies">policies</Link>

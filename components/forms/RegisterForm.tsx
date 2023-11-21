@@ -1,5 +1,4 @@
 "use client"
-import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/auth.module.css"
 import * as z from 'zod';
@@ -23,13 +22,14 @@ import {
   import { Button } from "@/components/ui/button";
   import { zodResolver} from '@hookform/resolvers/zod';
 import { UserValidation } from '@/lib/validations/userValidation';
+import { useRouter } from "next/navigation";
 
 
 const firstRandom :number = Math.round(Math.random() * 12) + 1;
 const secondRandom:number = Math.round(Math.random() * 12) + 1;
 
 const RegisterForm = () => {
-
+  const router = useRouter();
     
  const form = useForm({
     resolver:zodResolver(UserValidation),
@@ -65,7 +65,10 @@ const RegisterForm = () => {
         'Content-Type': 'application/json',
       },
     })
-    console.log(response);
+    
+    if (response.ok) {
+     router.push('/login')
+    }
     
  }
 

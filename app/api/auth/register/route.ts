@@ -3,6 +3,7 @@ import User from "@/lib/models/user.model";
 import bcrypt from "bcrypt";
 import { connectToDatabase } from "@/lib/mongoose";
 import { signIn } from "next-auth/react";
+import { N } from "@vidstack/react/dist/types/vidstack.js";
 
  export const POST = async(request:Request)=>{
     try {
@@ -30,11 +31,7 @@ import { signIn } from "next-auth/react";
         
 
         if (registeredUser) {
-            await signIn("credentials", {
-                email: registeredUser.email,
-                password: registeredUser.password,
-                callbackUrl: "/",
-            });
+            return NextResponse.redirect(new URL('/login', request.url))
         }
     } catch (error) {
         console.log({error});

@@ -1,3 +1,4 @@
+
 import NextAuth from "next-auth"
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -7,7 +8,6 @@ import User from "@/lib/models/user.model"
 import { connectToDatabase } from "@/lib/mongoose";
 import { signIn } from "next-auth/react";
 import { NextResponse } from "next/server";
-import { url } from "inspector";
 
 
 
@@ -30,26 +30,35 @@ const handler = NextAuth({
                  const { email, password } = credentials;
                 connectToDatabase();
                 const foundUser = await User.findOne({email});
-                console.log(foundUser);
                 
                 if (foundUser) {
                     const isMatch = await bcrypt.compare(password, foundUser.hashPassword);
-                    console.log("is match", isMatch);
                     
                     if (isMatch) {
-                        signIn("credentials", {
-                            email: foundUser.email,
-                            password: foundUser.password,
-                            url: "http://localhost:3000/products/refurbrished",
-                        });
+                        return foundUser;
                   
+                    }
+
+                    if (!isMatch) {
+                        console.log("password is not match");
+                        
                     }
                 }
 
                 return null
             }
           })
-    ]
+    ],
+    callbacks: {
+        async session({ session }) {
+
+            const userInfos = await User.findOne({email:session.user?.email});
+            session.user = userInfos;
+                
+        
+            return session;
+        },
+    },
 });
 
 

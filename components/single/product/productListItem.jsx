@@ -24,10 +24,21 @@ const handleOpenProductButton = (event) => {
 
 
 
+ 
+//  export default function ReadMore() {
+//    const router = useRouter()
+  
+//    return (
+//      <button onClick={() => router.push('/about')}>
+//        Click here to read more
+//      </button>
+//    )
+//  }
+
 
 
   return (
-    <a href={`/products/product/${product._id}`} className={styles.ProductListItem} key={product.description}>
+    <Link href={`/products/product/${product._id}`} className={styles.ProductListItem} key={product.description}>
     <div className={coloring}>{marking}</div>
     <button onClick={handleOpenProductButton} className={styles.ProductListItemViewProduct}>view product</button>
     <div className={styles.productImage}>
@@ -48,7 +59,7 @@ const handleOpenProductButton = (event) => {
       </div>
     </div>
   </div>
-  </a>
+  </Link>
   )
 }
 

@@ -1,4 +1,5 @@
 "use client"
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/auth.module.css"
 import * as z from 'zod';
@@ -28,9 +29,12 @@ const firstRandom :number = Math.round(Math.random() * 12) + 1;
 const secondRandom:number = Math.round(Math.random() * 12) + 1;
 
 const RegisterForm = () => {
+
     
  const form = useForm({
     resolver:zodResolver(UserValidation),
+    // mode: 'onBlur',
+    // reValidateMode: 'onChange',
     defaultValues: {
       accountType: 'retail',
         email: '',
@@ -49,10 +53,20 @@ const RegisterForm = () => {
         iamHuman: `${firstRandom + secondRandom}`,
         iamHumanConfirm: '',
     },
+    shouldFocusError: true,
+    shouldUnregister: true,
  });
 
  const onSubmit = async (values: z.infer<typeof UserValidation>)=>{
-    console.log(values)
+    const response = await fetch('/api/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    console.log(response);
+    
  }
 
    

@@ -2,7 +2,7 @@ import * as z from 'zod';
 
 export const checkoutUserValidationSchema = z.object({
     email: z.string().email({message: "Invalid email"}).min(2, {message: "email is required"}),
-    country: z.string({}).min(3, {message: "country is required"}),
+    billingCountry: z.string({}).min(3, {message: "country is required"}),
     firstName: z.string().min(2, {message: "first name is required"}),
     lastName: z.string().min(2, {message: "last name is required"}),
     accountType: z.string().optional(),

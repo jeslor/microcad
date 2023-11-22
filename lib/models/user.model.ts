@@ -100,6 +100,12 @@ const userSchema = new Schema({
             ref: "Order",
         },
     ],
+    giftCard: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "GiftCard",
+        },
+    ],
 }, {
     timestamps: true,
 });

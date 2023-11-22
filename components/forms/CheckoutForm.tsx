@@ -77,7 +77,7 @@ const CheckoutForm = ({user}:any) => {
         console.log(data)
     }
 
-  return user?  (
+  return (
     
     <Form {...form}>
         <form
@@ -397,8 +397,7 @@ const CheckoutForm = ({user}:any) => {
 
         </form>
     </Form>
-  ):
-  <Spinner />
+  )
   
 }
 

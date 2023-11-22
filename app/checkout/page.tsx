@@ -1,5 +1,5 @@
 "use client"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { StateContext } from "@/components/providers/stateProvider"
 import CheckoutForm from "@/components/forms/CheckoutForm"
 import styles from "@/styles/checkout.module.css"
@@ -11,9 +11,15 @@ import Spinner from "@/components/single/spinner/spinner"
 
 
 const page = () => {
+    const [user, setUser] = useState<any>({})
     const {cart} =useContext(StateContext)
-    const { data, status } = useSession();    
-   
+    const { data, status } = useSession();  
+    
+    useEffect(() => {
+        if(data?.user){
+            setUser(data.user)
+        }
+    },[data?.user])    
     
   return  <div className={`${styles.checkout} mx-auto`}>
     <div className={styles.checkoutHeader}>
@@ -43,7 +49,11 @@ const page = () => {
                     <p className="text-slate-400">Have an account? <a href="/login">Login</a></p>
                 </div>
                 <div className={styles.CheckoutForm}>
-                    {status==="loading"?
+
+                  {status === "unauthenticated" && <CheckoutForm user={null} />}
+
+                    {
+                    status==="loading"?
                     <Spinner />
                     :<CheckoutForm user={data?.user} />
                     }

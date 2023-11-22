@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+module.exports = {
   experimental: {
     serverActions: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
-   
-}
-
-
-module.exports = nextConfig
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};

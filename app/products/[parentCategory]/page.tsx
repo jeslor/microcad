@@ -14,12 +14,12 @@ const page = () => {
     const { parentCategory }:{parentCategory:string} = useParams();
     const { handhleCurrentProducts} = useContext(StateContext);
 
-    let [finalProducts, setFinalProducts] = useState([]);
-    let[availableProducts, setAvailableProducts] = useState<any[]>([]);
+    const [finalProducts, setFinalProducts] = useState([]);
+    const[availableProducts, setAvailableProducts] = useState<any[]>([]);
     let [availableBrands, setAvailableBrands] = useState<any[]>([]);
-    let [brandFilters, setBrandFilter] = useState<[]>([]);
+    const [brandFilters, setBrandFilter] = useState<[]>([]);
     let [availableCategories, setAvailableCategories] = useState<any[]>([]);
-    let [categoryFilters, setCategoriesFilters] = useState<any[]>([]);
+    const [categoryFilters, setCategoriesFilters] = useState<any[]>([]);
     const [priceFilter, setPriceFilter] = useState('');
 
 

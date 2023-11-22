@@ -6,6 +6,8 @@ import Spinner from "@/components/single/spinner/spinner";
 import PersonalInformation from "@/components/account/personalInformation";
 import Link from "next/link";
 import BillingInformation from "@/components/account/billingInformation";
+import GiftcardInformation from "@/components/account/giftcardInfrmation";
+import OrderHistory from "@/components/account/orderHistoryInformation";
 
 
 const page = () => {
@@ -93,7 +95,12 @@ const page = () => {
         }
         {
           sections.billingInformation && <BillingInformation user={user} />
-        
+        }
+        {
+          sections.orderHistory && <OrderHistory user={user} />
+        }
+        {
+          sections.giftCards && <GiftcardInformation user={user} />
         }
       </div>
     </div>

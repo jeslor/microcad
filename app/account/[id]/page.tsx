@@ -9,6 +9,12 @@ import BillingInformation from "@/components/account/billingInformation";
 
 
 const page = () => {
+  const [sections, setSections] = useState<any>({
+    personalInformation: true,
+    billingInformation: false,
+    orderHistory: false,
+    giftCards: false,
+  });
     const [user, setUser] = useState<any>(null);
     const session = useSession();
 
@@ -20,6 +26,23 @@ const page = () => {
 
     console.log(user);
     
+
+    const handleSwitchSection = (section: string) => {
+      const newSections = {...sections};
+      Object.keys(newSections).forEach(key => {
+        if(key === section){
+          newSections[key] = true;
+        }else{
+          newSections[key] = false;
+        }
+      })
+      setSections(newSections);
+    }
+
+
+    const sectionClasses = (section: string) => {
+      return sections[section] ? styles.activeSection : "";
+    }
     
     
     
@@ -46,16 +69,16 @@ const page = () => {
 
         <div className={styles.accountDetails}>
             <ul>
-              <li className={styles.active}>
+              <li className={`${sectionClasses('personalInformation')}`}  onClick={()=>handleSwitchSection("personalInformation")}>
                 Persional Information
               </li>
-              <li>
+              <li className={`${sectionClasses('billingInformation')}`}  onClick={()=>handleSwitchSection("billingInformation")}>
                 Billing & Payments
               </li>
-              <li>
+              <li className={`${sectionClasses('orderHistory')}`}  onClick={()=>handleSwitchSection("orderHistory")}>
                 Oreder history
-              </li>
-              <li>
+              </li >
+              <li className={`${sectionClasses('giftCards')}`}  onClick={()=>handleSwitchSection("giftCards")}>
                 Gift Cards
               </li>
               
@@ -65,8 +88,13 @@ const page = () => {
 
       </div>
       <div className={styles.accountRight}>
-        <PersonalInformation user={user} />
-        <BillingInformation user={user} />
+        {
+          sections.personalInformation && <PersonalInformation user={user} />
+        }
+        {
+          sections.billingInformation && <BillingInformation user={user} />
+        
+        }
       </div>
     </div>
 

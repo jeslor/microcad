@@ -80,7 +80,7 @@
   transition: all 0.3s ease;
 }
 
-.accountLeft li.active,
+.accountLeft li.activeSection,
 .accountLeft li:hover {
   color: #f06829;
 }

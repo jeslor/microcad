@@ -111,6 +111,7 @@
 }
 
 .accountRight .info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -118,6 +119,17 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.infoIcon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.infoIcon svg {
+  font-size: 1.5rem;
+  color: #f06829;
+  cursor: pointer;
 }
 .accountRight .info ol {
   padding-top: 0.7rem;

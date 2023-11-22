@@ -1,5 +1,6 @@
 
 import styles from "@/styles/account.module.css"
+import { Icon } from "@iconify/react/dist/iconify.js"
 const BillingInformation = ({user}:any) => {
   return <div className={styles.billingInformation}>
         <h4>Billing information</h4>
@@ -8,12 +9,18 @@ const BillingInformation = ({user}:any) => {
         <div className={styles.informationDetails}>
             {user?.paymentMethod && (
                     <div className={styles.info}>
+                    <div className={styles.infoIcon}>
+                    <Icon icon="fluent:payment-16-regular" />
+                    </div>
                     <label htmlFor="">Preffered paymentMethod</label>
                     {user.paymentMethod}
                 </div>
             )}
            {(user?.billingStreet || user?.billingCity ||user?.billingProvince ||user?.billingZipCode || user.billingPhone )&& (
              <div className={styles.info}>
+               <div className={styles.infoIcon}>
+               <Icon icon="solar:bill-outline" />
+              </div>
              <label htmlFor="">Adress</label>
               <ol>
                 {user?.billingStreet && <li><span>Street:</span> {user?.billingStreet}</li>}

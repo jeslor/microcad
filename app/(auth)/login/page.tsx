@@ -1,4 +1,5 @@
 "use client"
+import {useState} from 'react'
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/auth.module.css"
 import * as z from 'zod';
@@ -15,9 +16,11 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import {signIn} from 'next-auth/react'
+import Spinner from "@/components/single/spinner/spinner";
 
 
 const Page = () => {
+  const [isLoading, setLoading] = useState(false)
 
   const loginSchema = z.object({
     email: z.string().email(),
@@ -34,13 +37,14 @@ const Page = () => {
       
 
     const onSubmit = async( values:z.infer<typeof loginSchema >) => {
+      setLoading(true)
       const response = await signIn('credentials', {email:values.email,password:values.password, redirect: true, callbackUrl: '/'})
-      console.log(response);
+      setLoading(false)
       
     }
   
 
-  return (
+  return isLoading?<Spinner />:(
     <div className={`${styles.login} customwidth mx-aut`}>
     <h2 className="text-primayColor">Login</h2>
     <div className={styles.loginWrapper}>
@@ -126,7 +130,7 @@ const Page = () => {
         </div>
       </div>
     </div>
-</div>
+    </div>
   )
 }
 

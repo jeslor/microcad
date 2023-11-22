@@ -1,5 +1,122 @@
 .pageHeight {
-  min-height: 50vh;
+  min-height: 70vh;
   padding-top: 130px;
   padding-bottom: 3rem;
+}
+
+.account {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.accountHeader {
+  display: flex;
+  /* height: 30px; */
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.accountHeader h1 {
+  font-weight: 700;
+}
+
+.accountContent {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.accountLeft {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profilePhoto {
+  height: 100px;
+  width: 100px;
+  background-color: #dde4e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  margin-bottom: 0.8rem;
+}
+
+.profilePhoto img {
+  height: 60%;
+  width: 60%;
+  object-fit: cover;
+}
+
+.accountLeft li,
+.accountLeft p {
+  margin-bottom: 0.9rem;
+}
+
+.accountLeft h2 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #16105e;
+}
+
+.accountLeft p {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #94a3b8;
+  margin-bottom: 1.2rem;
+}
+
+.accountLeft li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 0.8rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accountLeft li.active,
+.accountLeft li:hover {
+  color: #f06829;
+}
+
+.accountRight {
+  font-size: 0.8rem;
+  color: #64748b;
+  width: 100%;
+}
+
+.accountRight h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #16105e;
+  margin-bottom: 0.7rem;
+}
+
+.accountRight .iformationDetails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 1rem;
+}
+
+.accountRight .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.accountRight .info label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4c4987;
+  text-transform: capitalize;
 }

@@ -6,13 +6,9 @@ import clientPromise from "@/lib/adapters/mongoDB"
 import bcrypt from "bcrypt"
 import User from "@/lib/models/user.model"
 import { connectToDatabase } from "@/lib/mongoose";
-import { signIn } from "next-auth/react";
-import { NextResponse } from "next/server";
 
 
-
-
-const handler = NextAuth({
+export const authOptions:any =     {
     adapter: MongoDBAdapter(clientPromise),
     session: {
         strategy: "jwt",
@@ -26,7 +22,7 @@ const handler = NextAuth({
               username: { },
               password: {}
             },
-            async authorize(credentials:any, req) {
+            async authorize(credentials:any) {
                  const { email, password } = credentials;
                 connectToDatabase();
                 const foundUser = await User.findOne({email});
@@ -50,7 +46,7 @@ const handler = NextAuth({
           })
     ],
     callbacks: {
-        async session({ session }) {
+        async session({ session }:any) {
 
             const userInfos = await User.findOne({email:session.user?.email});
             session.user = userInfos;
@@ -59,7 +55,11 @@ const handler = NextAuth({
             return session;
         },
     },
-});
+}
+
+const handler = NextAuth(
+ authOptions
+);
 
 
 export { handler as GET, handler as POST };

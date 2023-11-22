@@ -64,8 +64,41 @@ const userSchema = new Schema({
         type:String,
         default:"user"
     },
+    creditCardNumber: {
+        type: String,
+    },
+    creditCardExpiration: {
+        type: String,
+    },
+    creditCardCVV: {
+        type: String,
+    },
+    creditCardName: {
+        type: String,
+    },
+    billingStreet: {
+        type: String,
+    },
+    billingCity: {
+        type: String,
+    },
+    billingProvince: {
+        type: String,
+    },
+    billingZipCode: {
+        type: String,
+    },
+    billingPhone: {
+        type: String,
+    },
+    oderHistory: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Order",
+        },
+    ],
 }, {
     timestamps: true,
 });
 
-export default mongoose.models.User || mongoose.model('User', userSchema);
+export default  mongoose.models.User || mongoose.model('User', userSchema);

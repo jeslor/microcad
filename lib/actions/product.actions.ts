@@ -2,8 +2,6 @@
 import { connectToDatabase } from "../mongoose";
 import Product from "../models/product.model";
 import Specification from "../models/specification.model";
-import { model } from "mongoose";
-import path from "path";
 
 
 export const getAllProducts = async () => {

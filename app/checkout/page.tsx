@@ -1,5 +1,5 @@
 "use client"
-import { useContext, useEffect,useState } from "react"
+import { useContext } from "react"
 import { StateContext } from "@/components/providers/stateProvider"
 import CheckoutForm from "@/components/forms/CheckoutForm"
 import styles from "@/styles/checkout.module.css"

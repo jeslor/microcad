@@ -1,5 +1,5 @@
 "use client"
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/checkout.module.css"
 import Spinner  from '@/components/single/spinner/spinner';
@@ -25,14 +25,10 @@ import { checkoutUserValidationSchema } from '@/lib/validations/checkoutUserVali
 
 
 
-const CheckoutForm = ({user}:any) => {
-
-    console.log(user);
-    
+const CheckoutForm = ({user}:any) => {    
   
-    let slectedPaymentMethod = user?.selctedPayment? user.selctedPayment : "credit card"
+    const slectedPaymentMethod = user?.selctedPayment? user.selctedPayment : "credit card"
     const [selctedPayment, setSelctedPayment] = useState<any>(slectedPaymentMethod)
-    console.log(selctedPayment);
     
     const[saveInfo, setSaveInfo] = useState<boolean>(false)
     const handlePaymentMethodChange = (e:any) => {
@@ -40,7 +36,6 @@ const CheckoutForm = ({user}:any) => {
         
     }
     const creditCardPaymentClasses  = selctedPayment ==="credit card" ? styles.echaPaymentMethod :''
-    const payPalPaymentClasses  = selctedPayment ==="payPal" && styles.echaPaymentMethod
 
   
 
@@ -81,7 +76,7 @@ const CheckoutForm = ({user}:any) => {
         console.log(data)
     }
 
-  return true?  (
+  return user?  (
     
     <Form {...form}>
         <form

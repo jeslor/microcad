@@ -1,5 +1,6 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { StateContext } from "@/components/providers/stateProvider";
 import { useParams } from "next/navigation"
 import { getSingleProduct } from "@/lib/actions/product.actions"
 import styles from "@/styles/products.module.css"
@@ -7,12 +8,14 @@ import Spinner from "@/components/single/spinner/spinner";
 import AddToCartButton from "@/components/single/cart/AddToCartButton";
 
 const page = () => {
+  const {currentProducts} = useContext(StateContext)
   const [product, setProduct] = useState<any>({})
   const { id } = useParams()
   const ProductId:string = id.toString()
 
   const fetchProduct = async () => {
-    const product = await getSingleProduct(ProductId)
+    // const product = await getSingleProduct(ProductId)
+    const product = currentProducts.products.find((product:any)=> product._id === ProductId)
     setProduct(product)
   }
 

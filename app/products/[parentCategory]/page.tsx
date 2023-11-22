@@ -1,5 +1,6 @@
 "use client"
-import { useEffect, useState} from 'react';
+import { useEffect, useState, useContext} from 'react';
+import { StateContext } from '@/components/providers/stateProvider';
 import { useParams} from 'next/navigation';
 import Spinner from '@/components/single/spinner/spinner';
 import ProductList from '@/components/single/product/productList';
@@ -11,6 +12,7 @@ import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/pr
 
 const page = () => {
     const { parentCategory }:{parentCategory:string} = useParams();
+    const { handhleCurrentProducts} = useContext(StateContext);
 
     let [finalProducts, setFinalProducts] = useState([]);
     let[availableProducts, setAvailableProducts] = useState<any[]>([]);
@@ -39,11 +41,14 @@ const page = () => {
       if (parentCategory === "refurbrished") {
         getRefurbishedProducts().then((res:any)=>{    
           setFinalProducts(res);
+          handhleCurrentProducts({products:res, productsLabel:parentCategory});
+
         }) 
       }
       if (parentCategory === "specialOffer") {
         getSpecialOfferProducts().then((res:any)=>{    
             setFinalProducts(res);
+            handhleCurrentProducts({products:res, productsLabel:parentCategory});
         }) 
       }
     },[parentCategory])

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { signIn, signOut, useSession } from "next-auth/react";
 export default   function Navbar() {
 
-    const {data:session} = useSession();
+    const {data:session, status} = useSession();
     const user:any = session?.user;
     
 
@@ -16,10 +16,11 @@ export default   function Navbar() {
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         {
+                          status !== "loading" &&(
                             session?.user ? 
                             (
                                 <>
-                                    <Link className="navbarLinks" href="/account"><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</Link>
+                                    <Link className="navbarLinks" href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</Link>
                                     <Link onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</Link>
                                 </>
                             )
@@ -31,6 +32,7 @@ export default   function Navbar() {
 
                                 </>
                             )
+                          )
                         }
                         <Link className="navbarLinks" href="/services">services</Link>
                         <Link className="navbarLinks" href="/partners">partners</Link>

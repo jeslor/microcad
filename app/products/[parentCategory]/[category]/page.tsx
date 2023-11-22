@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect , useContext} from 'react'
+import { StateContext } from '@/components/providers/stateProvider';
 import { useParams } from "next/navigation";
 import styles from "@/styles/products.module.css";
 import ProductList from '@/components/single/product/productList';
@@ -8,15 +8,16 @@ import FilterContainer from '@/components/single/product/filterContainer';
 import Spinner from '@/components/single/spinner/spinner';
 import ProductHeader from '@/components/single/headers/productHeader';
 import { getCategoryProducts } from '@/lib/actions/product.actions';
-import specification from '@/lib/models/specification.model';
 
 
 
 export default function page() {
     let { category }:{category:string} = useParams();
+    const {currentProducts, handhleCurrentProducts} = useContext(StateContext);
+
     category = category.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
 
-    let [finalProducts, setFinalProducts] = useState<any[]>([]);
+    let [finalProducts, setFinalProducts] = useState<any[]>(currentProducts.products);
     let[availableProducts, setAvailableProducts] = useState<any[]>([]);
     const [priceFilter, setPriceFilter] = useState('');
     let [availableBrands, setAvailableBrands] = useState<any[]>([]);
@@ -51,12 +52,20 @@ export default function page() {
    
 //    get initial category products
     useEffect(() => {
-        getCategoryProducts(category).then((res:any)=>{    
-            setFinalProducts(res);
-            setAvailableProducts(res);
-        }) 
+        if (currentProducts.products.length && currentProducts.productsLabel === category) {
+            setFinalProducts(currentProducts.products);
+            setAvailableProducts(currentProducts.products);   
+        }else{
+            getCategoryProducts(category).then((res:any)=>{    
+                handhleCurrentProducts({products:res, productsLabel:category});
+                setFinalProducts(res);
+                setAvailableProducts(res);
+            }) 
+        }
         
-    },[category])
+       
+        
+    },[category, currentProducts])
 
 
 

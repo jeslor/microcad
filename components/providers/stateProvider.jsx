@@ -1,10 +1,16 @@
 "use client"
+import { set } from "mongoose";
 import { useState, createContext } from "react";
 
 
 export const StateContext = createContext({
     state: {},
     showMenu: false,
+    currentProducts: {
+        productsLabel: '',
+        products: []
+    },
+    handhleCurrentProducts: (categoryProducts) => { },
     openProduct: false,
     productToOpen : {},
     showCartDrawer: false,
@@ -27,6 +33,10 @@ export const StateProvider = ({ children }) => {
     }
     const [state, setState] = useState({});
     const [cart, setCart] = useState(currentCart);
+    const [currentProducts, setCurrentProducts] = useState({
+        productsLabel: '',
+        products: []
+    });
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openFilter, setOpenFilter] = useState(false);
     const [productToOpen, setProductToOpen] = useState({});
@@ -166,9 +176,30 @@ export const StateProvider = ({ children }) => {
         }
     }
 
+    const handhleCurrentProducts = (categoryProducts) => {
+
+        setCurrentProducts({...categoryProducts, products:categoryProducts.products, productsLabel:categoryProducts.productsLabel});
+    }
+
 
     return (
-        <StateContext.Provider value={{openProduct, productToOpen, handleCloseProduct, handleproductToOpen, openFilter, handleOpenFilter, showCartDrawer, handleToggleCartDrawer,handleIncreaseCartProduct, handleRemoveCartProduct, cart,setCartHandler, state,showMenu, showMenuHandler, setState }}>
+        <StateContext.Provider value={
+            {openProduct,
+             productToOpen, 
+             handleCloseProduct, 
+             handleproductToOpen, 
+             openFilter, 
+             handleOpenFilter, 
+             showCartDrawer, 
+             handleToggleCartDrawer,
+             handleIncreaseCartProduct, 
+             handleRemoveCartProduct, 
+             cart,setCartHandler, 
+             state,showMenu, 
+             showMenuHandler, 
+             setState, 
+             currentProducts,
+             handhleCurrentProducts}}>
             {children}
         </StateContext.Provider>
     );

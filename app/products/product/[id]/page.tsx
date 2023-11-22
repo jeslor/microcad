@@ -13,7 +13,7 @@ const page = () => {
   const { id } = useParams()
   const ProductId:string = id.toString()
 
-  const fetchProduct = async () => {
+  const fetchProduct =  () => {
     // const product = await getSingleProduct(ProductId)
     const product = currentProducts.products.find((product:any)=> product._id === ProductId)
     setProduct(product)

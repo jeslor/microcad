@@ -4,7 +4,6 @@ import styles from "@/styles/account.module.css"
 import { useSession } from "next-auth/react";
 import Spinner from "@/components/single/spinner/spinner";
 import PersonalInformation from "@/components/account/personalInformation";
-import Link from "next/link";
 import BillingInformation from "@/components/account/billingInformation";
 import GiftcardInformation from "@/components/account/giftcardInfrmation";
 import OrderHistory from "@/components/account/orderHistoryInformation";
@@ -25,8 +24,6 @@ const page = () => {
             setUser(session?.data?.user)
         }
     }, [session.status])
-
-    console.log(user);
     
 
     const handleSwitchSection = (section: string) => {
@@ -51,14 +48,7 @@ const page = () => {
   return  user === null?(
       <Spinner />
     ):(
-    <div className={`${styles.account} customwidth mx-auto`}>
-    <div className={styles.accountHeader}>
-      <h1>Account</h1>
-      <Link href={`/account/edit/${user._id}`} className="microcadBtn flex">
-        edit
-        <img className="pl-2" src="/static/media/icons/edit.svg" alt="edit icon" />
-        </Link>
-    </div>
+
     <div className={styles.accountContent}>
       <div className={styles.accountLeft}>
         <div className={styles.profilePhoto}>
@@ -103,8 +93,6 @@ const page = () => {
           sections.giftCards && <GiftcardInformation user={user} />
         }
       </div>
-    </div>
-
     </div>
   )
 }

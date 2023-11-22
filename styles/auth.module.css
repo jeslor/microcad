@@ -49,6 +49,10 @@
   padding-left: 2rem;
 }
 
+.loginWrapperEdit .userInputs {
+  width: 100%;
+}
+
 .userInputs button.microcadBtn {
   width: fit-content;
 }
@@ -121,6 +125,17 @@
   margin-right: 0.5rem;
   font-size: 1rem;
 }
+.separate2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  align-items: baseline;
+}
+.separate3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
   .login {
@@ -147,6 +162,7 @@
   .loginWrapper {
     flex-direction: column-reverse;
   }
+
   .login h2 {
     margin-bottom: 1rem;
   }
@@ -165,6 +181,16 @@
     width: 65%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .separate2 {
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+  .separate3 {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
   }
 }
 /* X-Small devices (portrait phones, less than 576px) */

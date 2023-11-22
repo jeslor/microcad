@@ -91,6 +91,11 @@
   width: 100%;
 }
 
+.personalInformation,
+.billingInformation {
+  margin-bottom: 3rem;
+}
+
 .accountRight h4 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -98,7 +103,7 @@
   margin-bottom: 0.7rem;
 }
 
-.accountRight .iformationDetails {
+.accountRight .informationDetails {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
@@ -114,9 +119,25 @@
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
+.accountRight .info ol {
+  padding-top: 0.7rem;
+}
+
+.accountRight .info ol li {
+  margin-bottom: 0.3rem;
+}
+
+.accountRight .info ol li span {
+  font-weight: 600;
+  padding-right: 0.2rem;
+}
 .accountRight .info label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #4c4987;
   text-transform: capitalize;
+}
+
+.billingInformation .informationDetails {
+  grid-template-columns: repeat(2, 1fr);
 }

@@ -54,6 +54,7 @@ const CheckoutForm = ({user}:any) => {
                 province: user? user.province : "",
                 zipCode: user? user.zipCode : "",
                 phone: user? user.phone : "",
+                paymentMethod: user? user.paymentMethod : "",
                 creditCardNumber: user? user.creditCardNumber : "",
                 creditCardExpiration: user? user.creditCardExpiration : "",
                 creditCardCVV: user? user.creditCardCVV : "",

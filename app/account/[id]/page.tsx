@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import Spinner from "@/components/single/spinner/spinner";
 import PersonalInformation from "@/components/account/personalInformation";
 import Link from "next/link";
+import BillingInformation from "@/components/account/billingInformation";
 
 
 const page = () => {
@@ -65,6 +66,7 @@ const page = () => {
       </div>
       <div className={styles.accountRight}>
         <PersonalInformation user={user} />
+        <BillingInformation user={user} />
       </div>
     </div>
 

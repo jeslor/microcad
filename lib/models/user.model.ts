@@ -64,6 +64,9 @@ const userSchema = new Schema({
         type:String,
         default:"user"
     },
+    paymentMethod: {
+        type: String,
+    },
     creditCardNumber: {
         type: String,
     },

@@ -181,4 +181,38 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .account {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .accountContent {
+    margin-top: 0rem;
+    flex-direction: column;
+  }
+  .accountLeft {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .accountLeft li {
+    position: relative;
+  }
+  .accountLeft li.activeSection::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 30%;
+    height: 3px;
+    background-color: #f06829;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .accountRight {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

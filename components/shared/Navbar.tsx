@@ -45,7 +45,7 @@ export default   function Navbar() {
                 
             </div>
             <div className="subNav">
-                <MainNav />
+                <MainNav user={user} status={status}/>
 
            
                 {/* <div className="navContent justify-between items-end">

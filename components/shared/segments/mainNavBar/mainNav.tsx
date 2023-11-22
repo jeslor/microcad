@@ -1,4 +1,4 @@
-
+"use client"
 import {useContext } from 'react';
 import {usePathname, useParams} from 'next/navigation'
 import styles from './mainNavBar.module.css'
@@ -8,9 +8,10 @@ import Script from 'next/script'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import NavCart from '@/components/single/cart/navCart'
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 
-function MainNav() {
+function MainNav({user, status}:{user:any, status:any}) {
     let { parentCategory, category } = useParams();
     if (category) { 
         category =  category.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase(); 
@@ -239,9 +240,24 @@ function MainNav() {
                     </ul>
                 </li> 
                 <li className={styles.iconsMobileMenu}>
-                    <a className={styles.innerMainNavLink} href="/login"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-xs font-light'>Login</span> </a>
-                    <a className={styles.innerMainNavLink} href="/register"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-xs font-light'>Register</span> </a>
-                    <a className={styles.innerMainNavLink} href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-xs font-light'>forgot password</span> </a>
+
+                {status !== "loading" &&(
+
+                            user ? 
+                            (
+                                <>
+                                    <a className={styles.innerMainNavLink} href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" /><span className='text-xs font-light'>{user!.firstName}</span></a>
+                                    <a onClick={()=>signOut} className={styles.innerMainNavLink} href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" /><span className='text-xs font-light'>Logout</span></a>
+                                </>
+                            ):(<>
+                                <a className={styles.innerMainNavLink} href="/login"> <Icon className="text-lg pe-1" icon="mdi:login" /><span className='text-xs font-light'>Login</span> </a>
+                                <a className={styles.innerMainNavLink} href="/register"><Icon className="text-lg pe-1" icon="mdi:account" /> <span className='text-xs font-light'>Register</span> </a>
+                                <a className={styles.innerMainNavLink} href="/reset-password"><Icon className="text-lg pe-1" icon="mdi:lock-reset" /><span className='text-xs font-light'>forgot password</span> </a>
+                                </>
+                            )
+                            
+                    )
+                }
 
 
                 </li>

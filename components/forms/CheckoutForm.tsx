@@ -1,8 +1,8 @@
 "use client"
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/checkout.module.css"
-import * as z from 'zod';
+import Spinner  from '@/components/single/spinner/spinner';
 import {
     Form,
     FormControl,
@@ -18,60 +18,71 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select";
-  import { Checkbox } from "@/components/ui/checkbox";
   import { Input } from "@/components/ui/input"
   import { Button } from "@/components/ui/button";
   import { zodResolver} from '@hookform/resolvers/zod';
 import { checkoutUserValidationSchema } from '@/lib/validations/checkoutUserValidator';
 
-const CheckoutForm = () => {
-    const [selctedPayment, setSelctedPayment] = useState<any>("credit card")
+
+
+const CheckoutForm = ({user}:any) => {
+
+    console.log(user);
+    
+  
+    let slectedPaymentMethod = user?.selctedPayment? user.selctedPayment : "credit card"
+    const [selctedPayment, setSelctedPayment] = useState<any>(slectedPaymentMethod)
+    console.log(selctedPayment);
+    
     const[saveInfo, setSaveInfo] = useState<boolean>(false)
     const handlePaymentMethodChange = (e:any) => {
         setSelctedPayment(e.target.value)
+        
     }
-
     const creditCardPaymentClasses  = selctedPayment ==="credit card" ? styles.echaPaymentMethod :''
     const payPalPaymentClasses  = selctedPayment ==="payPal" && styles.echaPaymentMethod
 
+  
 
-    const form = useForm({
-        resolver: zodResolver(checkoutUserValidationSchema),
-        mode: 'onBlur',
-        reValidateMode: 'onChange',
-        defaultValues: {
-            email: '',
-            country: '',
-            firstName: '',
-            lastName: '',
-            accountType: '',
-            street: '',
-            city: '',
-            province: '',
-            zipCode: '',
-            phone: '',
-            preferedPaymentMethod: '',
-            creditCardNumber: '',
-            creditCardExpiration: '',
-            creditCardCVV: '',
-            creditCardName: '',
-            billingStreet: '',
-            billingCity: '',
-            billingProvince: '',
-            billingZipCode: '',
-            billingPhone: '',
+      const form = useForm({
+            resolver: zodResolver(checkoutUserValidationSchema),
+            mode: 'onBlur',
+            reValidateMode: 'onChange',
+            defaultValues: {
+                email: user? user.email : "",
+                country: user? user.country : "",
+                firstName: user? user.firstName : "",
+                lastName: user? user.lastName : "",
+                accountType: user? user.accountType : "",
+                street: user? user.street : "",
+                city: user? user.city : "",
+                province: user? user.province : "",
+                zipCode: user? user.zipCode : "",
+                phone: user? user.phone : "",
+                creditCardNumber: user? user.creditCardNumber : "",
+                creditCardExpiration: user? user.creditCardExpiration : "",
+                creditCardCVV: user? user.creditCardCVV : "",
+                creditCardName: user? user.creditCardName : "",
+                billingStreet: user? user.billingStreet : "",
+                billingCity: user? user.billingCity : "",
+                billingProvince: user? user.billingProvince : "",
+                billingZipCode: user? user.billingZipCode : "",
+                billingPhone: user? user.billingPhone : "",
+    
+            },
+            // shouldFocusError: true,
+            // shouldUnregister: true,
+          });
+          
 
-        },
-        shouldFocusError: true,
-        shouldUnregister: true,
-      });
 
 
     const onSubmit = (data:any) => {
         console.log(data)
     }
 
-  return (
+  return true?  (
+    
     <Form {...form}>
         <form
         onSubmit={form.handleSubmit(onSubmit)} 
@@ -89,6 +100,7 @@ const CheckoutForm = () => {
                     type='email'
                     {...field}
                     className='account-form no-focus'
+                   
                 />
                 </FormControl>
                 <FormMessage className="text-red-500 text-xs" />
@@ -102,7 +114,7 @@ const CheckoutForm = () => {
                 render={({ field }) => (
                 <FormItem>
                     <FormLabel className="text-slate-400">Select country</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select  onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                     <SelectTrigger className="w-full  border-transparent bg-slate-200 rounded-xl">
                         <SelectValue placeholder="select country" />
@@ -129,6 +141,7 @@ const CheckoutForm = () => {
                 </FormLabel>
                 <FormControl className='border-transparent bg-slate-200 rounded-xl'>
                 <Input 
+                 
                     type='text'
                     {...field}
                     className='account-form no-focus'
@@ -388,7 +401,9 @@ const CheckoutForm = () => {
 
         </form>
     </Form>
-  )
+  ):
+  <Spinner />
+  
 }
 
 export default CheckoutForm

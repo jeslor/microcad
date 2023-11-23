@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { headers } from 'next/headers';
 import HeaderLink from "@/components/account/headerLink";
+import { getUserByEmail } from "@/lib/actions/user.actions";
 
 export default async function RootLayout({
 
@@ -14,9 +15,9 @@ export default async function RootLayout({
     const data:any = await getServerSession(authOptions); 
     const user = data?.user;
 
+    const currentUser  = await getUserByEmail(user?.email);
     const _headers = headers();
     const currentUrl = _headers.get("x-url");
-    const currUser = await JSON.stringify(user)
 
     
     
@@ -25,7 +26,7 @@ export default async function RootLayout({
             <div className={`${styles.account} customwidth mx-auto`}>
             <div className={styles.accountHeader}>
               <h1>Account</h1>
-              <HeaderLink user={currUser} />
+              <HeaderLink user={currentUser} />
             </div>
           {children}
           </div>

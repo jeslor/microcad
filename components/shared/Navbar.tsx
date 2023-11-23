@@ -1,18 +1,28 @@
 "use client"
+import {useState, useEffect} from 'react'
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from 'next/navigation';
+import { getUserByEmail } from '@/lib/actions/user.actions';
 export default   function Navbar() {
+    const [loggedInUser, setLOggedInUser] = useState<any>(null);
 
     const {data:session, status} = useSession();
-    const user:any = session?.user;
-    console.log(user);
+
+    const setUserState = async() => {
+        if(session?.user){
+            const userEmail:any = session.user.email;
+            const user = await getUserByEmail(userEmail as string);
+            setLOggedInUser(user);
+            
+        }
+    }
+
+    useEffect(()=>{
+        setUserState();
+    }, [session])
     
-
-
-   
 
     return (
         <div className="navbar fixed w-full z-50">
@@ -20,11 +30,11 @@ export default   function Navbar() {
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         {
-                          status !== "loading" &&(
-                            session?.user ? 
+                          status === "loading"? <span>loading ...</span>:(
+                            loggedInUser !==null ? 
                             (
                                 <>
-                                    <Link  className="navbarLinks cursor-pointer" href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</Link>
+                                    <Link  className="navbarLinks cursor-pointer" href={`/account/${loggedInUser._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{`${loggedInUser.firstName}`}</Link>
                                     <Link className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</Link>
                                 </>
                             )
@@ -49,7 +59,7 @@ export default   function Navbar() {
                 
             </div>
             <div className="subNav">
-                <MainNav user={user} status={status}/>
+                <MainNav user={session?.user} status={status}/>
 
            
                 {/* <div className="navContent justify-between items-end">

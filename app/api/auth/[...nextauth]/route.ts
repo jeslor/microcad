@@ -46,12 +46,7 @@ export const authOptions:any =     {
           })
     ],
     callbacks: {
-        async session({ session }:any) {
-
-            const userInfos = await User.findOne({email:session.user?.email});
-            session.user = userInfos;
-                
-        
+        async session({ session,token, user }:any) {
             return session;
         },
     },

@@ -19,7 +19,7 @@ const page = () => {
 
   useEffect(()=>{
     getUser();
-  }, [session])
+  }, [status])
 
 
   return status ==="loading"?<Spinner />: (
@@ -29,7 +29,7 @@ const page = () => {
   <div className={styles.userInputs}>
   <h6 className='font-bold text-primarymedium pb-3'>Account Information</h6>
   {
-    currentUser&&(
+    currentUser !== null&&(
       <UserEditForm userData ={currentUser} />
     )
   }

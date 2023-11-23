@@ -6,20 +6,31 @@ import styles from "@/styles/checkout.module.css"
 import Image from "next/image"
 import { useSession } from 'next-auth/react';
 import Spinner from "@/components/single/spinner/spinner"
+import { getUserByEmail } from "@/lib/actions/user.actions"
 
 
 
 
 const page = () => {
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const [user, setUser] = useState<any>({})
     const {cart} =useContext(StateContext)
-    const { data, status } = useSession();  
+   const {data:session, status} = useSession();
+
     
-    useEffect(() => {
-        if(data?.user){
-            setUser(data.user)
-        }
-    },[data?.user])    
+     const getUser = async() => {
+        setIsLoading(true);
+    if(session?.user){
+      const userEmail:any = session.user.email;
+      const user = await getUserByEmail(userEmail as string);
+      setUser(user);
+    }
+  }  
+
+    useEffect(()=>{
+        getUser();
+        setIsLoading(false);
+    }, [status])
     
   return  <div className={`${styles.checkout} mx-auto`}>
     <div className={styles.checkoutHeader}>
@@ -53,9 +64,9 @@ const page = () => {
                   {status === "unauthenticated" && <CheckoutForm user={null} />}
 
                     {
-                    status==="loading"?
+                    isLoading?
                     <Spinner />
-                    :<CheckoutForm user={data?.user} />
+                    :<CheckoutForm user={user} />
                     }
                 </div>
             </div>

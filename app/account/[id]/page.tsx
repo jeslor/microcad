@@ -12,6 +12,7 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 
 
 const page = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [sections, setSections] = useState<any>({
     personalInformation: true,
     billingInformation: false,
@@ -19,19 +20,18 @@ const page = () => {
     giftCards: false,
   });
     const [user, setUser] = useState<any>(null);
-    const session = useSession();
-
+    const {data:sesstion, status} = useSession();
     const {id} = useParams();
     const getUser = async () => {
-      console.log('reached');
-      
+      setIsLoading(true);
       const res = await getLoggedInUser(id as string);
       setUser(res);
     }
 
     useEffect(()=>{
       getUser();
-    }, [id])
+      setIsLoading(false);
+    }, [status])
     
 
     const handleSwitchSection = (section: string) => {
@@ -53,7 +53,7 @@ const page = () => {
     
     
     
-  return  user === null?(
+  return  isLoading?(
       <Spinner />
     ):(
 

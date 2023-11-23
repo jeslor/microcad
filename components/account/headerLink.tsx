@@ -1,12 +1,11 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import {redirect } from "next/navigation"
 import { usePathname } from "next/navigation";
 const HeaderLink = ({user}:{user:any}) => {
 
   const {data: session, status} = useSession();
-  let link
   
 
   useEffect(()=>{

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
-import { signIn, signOut, useSession } from "next-auth/react";
+import {  useSession } from "next-auth/react";
 import { getUserByEmail } from '@/lib/actions/user.actions';
 export default   function Navbar() {
     const [loggedInUser, setLOggedInUser] = useState<any>(null);

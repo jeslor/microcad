@@ -34,7 +34,7 @@ const PersonalInformation = ({user}:any) => {
              {user?.accountType}
             </div>
            )}
-           {(user?.country || user?.city ||user?.street ||user?.pronvice || user.zipCode )&& (
+           {(user?.country !=="" || user?.city!=="" ||user?.street!=="" ||user?.pronvice!==""||user?.zipCode!=="" )&& (
              <div className={styles.info}>
               <div className={styles.infoIcon}>
               <Icon icon="ep:location" />

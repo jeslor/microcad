@@ -1,5 +1,4 @@
 import styles from "@/styles/account.module.css"
-import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { headers } from 'next/headers';
@@ -19,7 +18,6 @@ export default async function RootLayout({
     const _headers = headers();
     const currentUrl = _headers.get("x-url");
 
-    
     
     return (
         <section className={`${styles.pageHeight} bg-slate-100`}>

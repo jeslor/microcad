@@ -1,13 +1,24 @@
 "use client";
-
+import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
+import {redirect } from "next/navigation"
 import { usePathname } from "next/navigation";
 const HeaderLink = ({user}:{user:any}) => {
-  // const currUser = JSON.parse(user)
 
-  console.log(user);
+  const {data: session, status} = useSession();
+  let link
   
 
-const path = usePathname();   
+  useEffect(()=>{
+    if(status === "unauthenticated"){
+      redirect('/login');
+    }
+  },[status])
+
+
+
+  if (status === "authenticated") {
+    const path = usePathname();   
     const link = path?.includes('/edit')?(
         <a href={`/account/${user._id}`} className="microcadBtn flex">
           {user?.firstName}
@@ -19,7 +30,10 @@ const path = usePathname();
         <img className="pl-2" src="/static/media/icons/edit.svg" alt="edit icon" />
         </a>
       )
-  return link
+
+      return link
+    
+  }
 }
 
 export default HeaderLink

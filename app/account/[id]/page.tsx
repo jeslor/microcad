@@ -12,48 +12,48 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 
 
 const page = () => {
-  const [sections, setSections] = useState<any>({
-    personalInformation: true,
-    billingInformation: false,
-    orderHistory: false,
-    giftCards: false,
-  });
-    const [user, setUser] = useState<any>(null);
-    const session = useSession();
+  // const [sections, setSections] = useState<any>({
+  //   personalInformation: true,
+  //   billingInformation: false,
+  //   orderHistory: false,
+  //   giftCards: false,
+  // });
+  //   const [user, setUser] = useState<any>(null);
+  //   const session = useSession();
 
-    const {id} = useParams();
-    const getUser = async () => {
-      console.log('reached');
+  //   const {id} = useParams();
+  //   const getUser = async () => {
+  //     console.log('reached');
       
-      const res = await getLoggedInUser(id as string);
-      setUser(res);
-    }
+  //     const res = await getLoggedInUser(id as string);
+  //     setUser(res);
+  //   }
 
-    useEffect(()=>{
-      getUser();
-    }, [id])
+  //   useEffect(()=>{
+  //     getUser();
+  //   }, [id])
     
 
-    const handleSwitchSection = (section: string) => {
-      const newSections = {...sections};
-      Object.keys(newSections).forEach(key => {
-        if(key === section){
-          newSections[key] = true;
-        }else{
-          newSections[key] = false;
-        }
-      })
-      setSections(newSections);
-    }
+  //   const handleSwitchSection = (section: string) => {
+  //     const newSections = {...sections};
+  //     Object.keys(newSections).forEach(key => {
+  //       if(key === section){
+  //         newSections[key] = true;
+  //       }else{
+  //         newSections[key] = false;
+  //       }
+  //     })
+  //     setSections(newSections);
+  //   }
 
 
-    const sectionClasses = (section: string) => {
-      return sections[section] ? styles.activeSection : "";
-    }
+  //   const sectionClasses = (section: string) => {
+  //     return sections[section] ? styles.activeSection : "";
+  //   }
     
     
     
-  return  <h1>{user.firstName}</h1>
+  return  <h1>Userrrrr</h1>
 }
 
 export default page

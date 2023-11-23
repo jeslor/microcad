@@ -28,7 +28,7 @@ export default   function Navbar() {
                             session?.user ? 
                             (
                                 <>
-                                    <a onClick={handletoAccount} className="navbarLinks" href=''><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
+                                    <a onClick={handletoAccount} className="navbarLinks" href='null'><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
                                     <a onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</a>
                                 </>
                             )

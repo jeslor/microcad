@@ -1,14 +1,22 @@
 "use client"
+import { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from 'next/navigation';
 export default   function Navbar() {
 
     const {data:session, status} = useSession();
     const user:any = session?.user;
-    
 
+    const router = useRouter();
+
+    const handletoAccount = () => {
+        if(session?.user){
+            router.push(`/account/${user._id}`)  
+        }
+    }
 
     return (
         <div className="navbar fixed w-full z-50">
@@ -20,7 +28,7 @@ export default   function Navbar() {
                             session?.user ? 
                             (
                                 <>
-                                    <a className="navbarLinks" href="/"><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
+                                    <a onClick={handletoAccount} className="navbarLinks"><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
                                     <a onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</a>
                                 </>
                             )

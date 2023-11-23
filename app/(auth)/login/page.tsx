@@ -39,7 +39,6 @@ const Page = () => {
     const onSubmit = async( values:z.infer<typeof loginSchema >) => {
       setLoading(true)
       await signIn('credentials', {email:values.email,password:values.password, redirect: true, callbackUrl: '/'})
-      // setLoading(false)
       
     }
   

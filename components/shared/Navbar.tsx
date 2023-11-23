@@ -8,21 +8,11 @@ export default   function Navbar() {
 
     const {data:session, status} = useSession();
     const user:any = session?.user;
-    console.log(session);
+    console.log(user);
     
 
-    const router = useRouter();
 
-    const handletoAccount = () => {
-        alert('reached')
-        console.log('session not here yet');
-        
-        if(session?.user){
-            console.log('session here');
-            
-            router.push(`/account/${user?._id}`)  
-        }
-    }
+   
 
     return (
         <div className="navbar fixed w-full z-50">
@@ -34,8 +24,8 @@ export default   function Navbar() {
                             session?.user ? 
                             (
                                 <>
-                                    <span onClick={handletoAccount} className="navbarLinks cursor-pointer" ><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</span>
-                                    <a onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</a>
+                                    <Link  className="navbarLinks cursor-pointer" href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</Link>
+                                    <Link className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</Link>
                                 </>
                             )
                             :(

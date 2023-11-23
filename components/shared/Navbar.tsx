@@ -13,7 +13,7 @@ export default   function Navbar() {
     const router = useRouter();
 
     const handletoAccount = () => {
-        al(user)
+        alert('clicked')
         if(session?.user){
             router.push(`/account/${user?._id}`)  
         }

@@ -1,5 +1,4 @@
 "use client"
-import { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
@@ -13,6 +12,7 @@ export default   function Navbar() {
     const router = useRouter();
 
     const handletoAccount = () => {
+        alert('reached')
         if(session?.user){
             router.push(`/account/${user?._id}`)  
         }

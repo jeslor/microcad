@@ -1,12 +1,14 @@
 "use client"
 import {useEffect, useState} from "react";
 import styles from "@/styles/account.module.css"
+import { useParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Spinner from "@/components/single/spinner/spinner";
 import PersonalInformation from "@/components/account/personalInformation";
 import BillingInformation from "@/components/account/billingInformation";
 import GiftcardInformation from "@/components/account/giftcardInfrmation";
 import OrderHistory from "@/components/account/orderHistoryInformation";
+import { getLoggedInUser } from "@/lib/actions/user.actions";
 
 
 const page = () => {
@@ -19,11 +21,17 @@ const page = () => {
     const [user, setUser] = useState<any>(null);
     const session = useSession();
 
+    const {id} = useParams();
+    const getUser = async () => {
+      console.log('reached');
+      
+      const res = await getLoggedInUser(id as string);
+      setUser(res);
+    }
+
     useEffect(()=>{
-        if(session?.status === "authenticated"){
-            setUser(session?.data?.user)
-        }
-    }, [session.status])
+      getUser();
+    }, [id])
     
 
     const handleSwitchSection = (section: string) => {

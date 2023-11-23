@@ -20,7 +20,7 @@ export default   function Navbar() {
                             session?.user ? 
                             (
                                 <>
-                                    <a className="navbarLinks" href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
+                                    <a className="navbarLinks" href="/"><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
                                     <a onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</a>
                                 </>
                             )

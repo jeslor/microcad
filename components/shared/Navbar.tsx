@@ -13,6 +13,7 @@ export default   function Navbar() {
     const router = useRouter();
 
     const handletoAccount = () => {
+        al(user)
         if(session?.user){
             router.push(`/account/${user?._id}`)  
         }
@@ -28,7 +29,7 @@ export default   function Navbar() {
                             session?.user ? 
                             (
                                 <>
-                                    <a onClick={handletoAccount} className="navbarLinks" href='null'><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</a>
+                                    <span onClick={handletoAccount} className="navbarLinks" ><Icon className="text-lg pe-1" icon="mdi:account" />{user!.firstName}</span>
                                     <a onClick={()=>signOut} className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</a>
                                 </>
                             )

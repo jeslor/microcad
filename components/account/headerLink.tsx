@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 import {useEffect } from "react";
 import {redirect } from "next/navigation"
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 const HeaderLink = ({user}:{user:any}) => {
 
   const {data: session, status} = useSession();
@@ -19,15 +20,15 @@ const HeaderLink = ({user}:{user:any}) => {
   if (status === "authenticated") {
     const path = usePathname();   
     const link = path?.includes('/edit')?(
-        <a href={`/account/${user._id}`} className="microcadBtn flex">
+        <Link href={`/account/${user._id}`} className="microcadBtn flex">
           {user?.firstName}
         <img className="pl-2" src="/static/media/icons/user.svg" alt="edit icon" />
-        </a>
+        </Link>
       ):(
-        <a href={`/account/edit/${user._id}`} className="microcadBtn flex">
+        <Link href={`/account/edit/${user._id}`} className="microcadBtn flex">
         edit
         <img className="pl-2" src="/static/media/icons/edit.svg" alt="edit icon" />
-        </a>
+        </Link>
       )
 
       return link

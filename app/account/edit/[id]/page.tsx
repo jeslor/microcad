@@ -18,7 +18,7 @@ const page = () => {
   }
 
   useEffect(()=>{
-    getUser();
+    getUser();    
   }, [status])
 
 

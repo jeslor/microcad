@@ -1,6 +1,7 @@
 "use client"
 import { useForm } from 'react-hook-form';
 import {useState} from 'react';
+import {redirect} from "next/navigation"
 import styles from "@/styles/auth.module.css"
 import * as z from 'zod';
 import {
@@ -70,7 +71,9 @@ const UserEditForm = ({userData, }:UserEditFormProps) => {
   setisLoading(true);
     const response:any  = await updateUserData(currentData._id, values);
     const data =  JSON.parse(response);
-    setcurrentData(data);
+    if(data?.success){
+      redirect(`/account/${currentData._id}`);
+    }
     setisLoading(false);
  }
 

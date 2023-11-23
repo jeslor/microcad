@@ -8,12 +8,18 @@ export default   function Navbar() {
 
     const {data:session, status} = useSession();
     const user:any = session?.user;
+    console.log(session);
+    
 
     const router = useRouter();
 
     const handletoAccount = () => {
         alert('reached')
+        console.log('session not here yet');
+        
         if(session?.user){
+            console.log('session here');
+            
             router.push(`/account/${user?._id}`)  
         }
     }

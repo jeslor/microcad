@@ -28,15 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en">
 
+      <NextAuthProvider>
       <StateProvider>
-        <NextAuthProvider>
       <body className={`${inter.className} ${styles.main}`}>
           <Navbar />
           {children}
         </body>
         <Bottmbar />
-        </NextAuthProvider>
     </StateProvider>
+    </NextAuthProvider>
 
     </html>
   )

@@ -71,8 +71,8 @@ const UserEditForm = ({userData, }:UserEditFormProps) => {
   setisLoading(true);
     const response:any  = await updateUserData(currentData._id, values);
     const data =  JSON.parse(response);
-    if(data?.success){
-      redirect(`/account/${currentData._id}`);
+    if(data){
+      setcurrentData(data);
     }
     setisLoading(false);
  }

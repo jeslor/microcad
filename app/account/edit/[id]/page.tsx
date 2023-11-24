@@ -8,8 +8,10 @@ import { getUserByEmail } from "@/lib/actions/user.actions";
 const page = () => {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const {data: session, status} = useSession();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getUser = async() => {
+
     if(session?.user){
       const userEmail:any = session.user.email;
       const user = await getUserByEmail(userEmail as string);
@@ -18,11 +20,13 @@ const page = () => {
   }
 
   useEffect(()=>{
-    getUser();    
+    setIsLoading(true);
+    getUser();   
+    setIsLoading(false); 
   }, [status])
 
 
-  return status ==="loading"?<Spinner />: (
+  return isLoading?<Spinner />: (
     <div className={`${styles.login} customwidth mx-aut`}>
     <h2 className="text-primayColor">Edit account</h2>
   <div className={`${styles.loginWrapper} ${styles.loginWrapperEdit}`}>

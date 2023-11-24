@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from "@/styles/checkout.module.css"
 import Spinner  from '@/components/single/spinner/spinner';
@@ -20,36 +20,39 @@ import {
   } from "@/components/ui/select";
   import { Input } from "@/components/ui/input"
   import { Button } from "@/components/ui/button";
+  import { useSession } from 'next-auth/react';
   import { zodResolver} from '@hookform/resolvers/zod';
 import { checkoutUserValidationSchema } from '@/lib/validations/checkoutUserValidator';
+import { getUserByEmail } from '@/lib/actions/user.actions';
 
 
 
 const CheckoutForm = ({user}:any) => {    
-  
     const slectedPaymentMethod = user?.selctedPayment? user.selctedPayment : "credit card"
     const [selctedPayment, setSelctedPayment] = useState<any>(slectedPaymentMethod)
-    
     const[saveInfo, setSaveInfo] = useState<boolean>(false)
+
+
+
+    
     const handlePaymentMethodChange = (e:any) => {
         setSelctedPayment(e.target.value)
         
     }
     const creditCardPaymentClasses  = selctedPayment ==="credit card" ? styles.echaPaymentMethod :''
-
-  
+   
 
       const form = useForm({
             resolver: zodResolver(checkoutUserValidationSchema),
             mode: 'onBlur',
             reValidateMode: 'onChange',
             defaultValues: {
-                email: user? user.email : "",
-                country: user? user.country : "",
-                firstName: user? user.firstName : "",
-                lastName: user? user.lastName : "",
-                accountType: user? user.accountType : "",
-                street: user? user.street : "",
+                email: user?user.email:"",
+                country: user?user.country:"",
+                firstName: user?user.firstName:"",
+                lastName: user?user.lastName:"",
+                accountType: user?user.accountType:"",
+                street: user?user.street:"",
                 city: user? user.city : "",
                 province: user? user.province : "",
                 zipCode: user? user.zipCode : "",
@@ -77,7 +80,8 @@ const CheckoutForm = ({user}:any) => {
         console.log(data)
     }
 
-  return (
+  return(
+
     
     <Form {...form}>
         <form
@@ -137,7 +141,6 @@ const CheckoutForm = ({user}:any) => {
                 </FormLabel>
                 <FormControl className='border-transparent bg-slate-200 rounded-xl'>
                 <Input 
-                 
                     type='text'
                     {...field}
                     className='account-form no-focus'

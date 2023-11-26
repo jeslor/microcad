@@ -22,7 +22,7 @@ function MainNav({user}:{user:any}) {
         path = path.toLocaleString().replaceAll('_', ' ').replace('%26', '&').toLowerCase();
     
 
-    const {showCartDrawer, handleToggleCartDrawer,cart,showMenu, showMenuHandler} = useContext(StateContext);
+    const {handleOpenSearch,showCartDrawer, handleToggleCartDrawer,cart,showMenu, showMenuHandler} = useContext(StateContext);
     
     const cartCount = cart!==null && cart.reduce((acc, item:any) => acc + item.quantity, 0)
     
@@ -263,11 +263,13 @@ function MainNav({user}:{user:any}) {
                 <li className={`${styles.mainNavLinks} ${parentCategory ==="specialOffer" && styles.mainNavLinksActive} text-secondaryColor`}>
                     <Link className={styles.innerMainNavLink} href="/products/specialOffer">special </Link>
                 </li>
-                <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}><div >
-                    <Icon icon="mdi:cart-outline"  />
-                    {cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}
-                </div></li>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a><Icon icon="clarity:search-line" /></a></li>
+                <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}>
+                    <div >
+                        <Icon icon="mdi:cart-outline"  />
+                        {cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}
+                    </div>
+                </li>
+                <li onClick={handleOpenSearch} className={`pb-1 text-primayColor ${styles.navbarCart}`}><a><Icon icon="clarity:search-line" /></a></li>
             </ul>
         </div>
         {showCartDrawer && <NavCart />

@@ -43,7 +43,7 @@ export default async function RootLayout({
       <StateProvider>
           <body className={`${inter.className} ${styles.main}`}>
             <Navbar user ={loggedInUser}/>
-            {/* <SearchComponent /> */}
+            <SearchComponent />
               {children}
             <Bottombar />
           </body>

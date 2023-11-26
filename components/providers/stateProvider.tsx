@@ -3,6 +3,8 @@ import { useState, createContext } from "react";
 
 
 export const StateContext = createContext({
+    openSearch: false,
+    handleOpenSearch: () => { },
     state: {},
     showMenu: false,
     currentProducts: {
@@ -41,6 +43,7 @@ export const StateProvider = ({ children }:{children:any}) => {
     const [productToOpen, setProductToOpen] = useState({});
     const [openProduct, setOpenProduct] = useState(false);
     const[scrollPosition, setScrollPosition] = useState(0);
+    const [openSearch, setOpenSearch] = useState(false);
 
 
   const handleproductToOpen = (product:any) => {
@@ -179,10 +182,29 @@ export const StateProvider = ({ children }:{children:any}) => {
         setCurrentProducts({...currentProducts, products:categoryProducts.products, productsLabel:categoryProducts.productsLabel});
     }
 
+    const handleOpenSearch = () => {
+        setOpenSearch(!openSearch);
+        if (openSearch) {
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto';
+            window.scrollTo(0, scrollPosition);
+            window.scrollTo(0, scrollPosition);
+        }
+        if (!openSearch) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';   
+            setScrollPosition(window.scrollY);
+            window.scrollTo(0, 0);
+        }
+    }
+
 
     return (
         <StateContext.Provider value={
-            {openProduct,
+            {
+             openSearch,
+             handleOpenSearch,
+             openProduct,
              productToOpen, 
              handleCloseProduct, 
              handleproductToOpen, 

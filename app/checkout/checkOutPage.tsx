@@ -9,7 +9,12 @@ import Image from "next/image"
 
 
 const CheckoutPage = ({user}:{user:{}}) => {
-    const {cart} =useContext(StateContext)
+    const [cartItems, setCartItems] = useState<any>([])
+    const {cart} = useContext(StateContext)
+
+    useEffect(() => {
+        setCartItems(cart)
+    }, [cart])
 
     
   return  <div className={`${styles.checkout} mx-auto`}>
@@ -73,7 +78,7 @@ const CheckoutPage = ({user}:{user:{}}) => {
                     <h6>Total</h6>
                     <h6>$
                         {
-                            cart.reduce((acc:any, item:any)=>(
+                            cartItems.reduce((acc:any, item:any)=>(
                                 acc + item.price * item.quantity
                             ),0).toLocaleString()
                         }

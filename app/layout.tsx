@@ -9,6 +9,7 @@ import styles from '@/styles/main.module.css'
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getUserByEmail } from '@/lib/actions/user.actions';
+import SearchComponent from '@/components/single/search/searchComponent';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -42,6 +43,7 @@ export default async function RootLayout({
       <StateProvider>
           <body className={`${inter.className} ${styles.main}`}>
             <Navbar user ={loggedInUser}/>
+            {/* <SearchComponent /> */}
               {children}
             <Bottombar />
           </body>

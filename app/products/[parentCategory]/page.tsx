@@ -56,9 +56,6 @@ const page = () => {
     }
     }, [currentProducts.products])
 
-    console.log('rendered');
-    
-
 
     // set initialbrands and categories
     useEffect(() => {

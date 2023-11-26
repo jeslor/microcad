@@ -11,10 +11,7 @@ const CheckOutSessionWrapper = async() => {
     if (session) {
          currUser = await getUserByEmail(session?.user.email)
     }
-    
-
-    
-    
+  
   return (
     <CheckoutPage user={currUser} />
   )

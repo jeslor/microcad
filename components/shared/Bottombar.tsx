@@ -25,7 +25,7 @@ const Bottombar = () => {
           <ul className="text-gray-400 text-sm">
             <li><a href="/login">Login</a></li>
             <li><a href="/register">Register</a></li>
-            <li><a href="/cart">Shopping cart</a></li>
+            <li><a href="/checkout">checkout</a></li>
             <li><a href="/reset-password"></a>Forgot Password</li>
           </ul>
         </div> 

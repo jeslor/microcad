@@ -176,8 +176,7 @@ export const StateProvider = ({ children }:{children:any}) => {
     }
 
     const handhleCurrentProducts = (categoryProducts:any) => {
-
-        setCurrentProducts({...categoryProducts, products:categoryProducts.products, productsLabel:categoryProducts.productsLabel});
+        setCurrentProducts({...currentProducts, products:categoryProducts.products, productsLabel:categoryProducts.productsLabel});
     }
 
 

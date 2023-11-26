@@ -12,7 +12,7 @@ import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/pr
 
 const page = () => {
     const { parentCategory }:{parentCategory:string} = useParams();
-    const { handhleCurrentProducts} = useContext(StateContext);
+    const {currentProducts, handhleCurrentProducts} = useContext(StateContext);
 
     const [finalProducts, setFinalProducts] = useState([]);
     const[availableProducts, setAvailableProducts] = useState<any[]>([]);
@@ -35,23 +35,29 @@ const page = () => {
       setAvailableCategories(productCategories);
     }
 
-
     // set inital products
     useEffect(() => {
-      if (parentCategory === "refurbrished") {
-        getRefurbishedProducts().then((res:any)=>{    
-          setFinalProducts(res);
-          handhleCurrentProducts({products:res, productsLabel:parentCategory});
-
-        }) 
-      }
-      if (parentCategory === "specialOffer") {
-        getSpecialOfferProducts().then((res:any)=>{    
-            setFinalProducts(res);
+      if (parentCategory === "refurbrished") {  
+          getRefurbishedProducts().then((res:any)=>{    
             handhleCurrentProducts({products:res, productsLabel:parentCategory});
+          }) 
+        }
+      if (parentCategory === "specialOffer") {        
+        getSpecialOfferProducts().then((res:any)=>{    
+          handhleCurrentProducts({products:res, productsLabel:parentCategory}); 
         }) 
       }
-    },[parentCategory])
+  },[parentCategory])
+
+  // set the finalproducts
+  useEffect(() => {
+    if (currentProducts.productsLabel.length) {
+      setFinalProducts(currentProducts.products);
+    }
+    }, [currentProducts.products])
+
+    console.log('rendered');
+    
 
 
     // set initialbrands and categories
@@ -62,6 +68,8 @@ const page = () => {
         setAvailableProducts(finalProducts);
       }
     },[finalProducts])
+
+    
 
 
     // adjust products based on filters

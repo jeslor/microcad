@@ -1,7 +1,7 @@
 "use client";
 import '@/app/globals.css'
 import { useContext } from "react";
-import { StateContext } from '@/components/providers/stateProvider';
+import { StateContext } from "@/components/providers/stateProvider";
 import styles from "@/styles/products.module.css"
 import Image from 'next/image';
 import AddToCartButton from '@/components/single/cart/AddToCartButton';

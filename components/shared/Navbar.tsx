@@ -1,40 +1,19 @@
 "use client"
-import {useState, useEffect} from 'react'
 import { Icon } from '@iconify/react';
 import MainNav from './segments/mainNavBar/mainNav';
 import Link from 'next/link';
-import {  useSession } from "next-auth/react";
-import { getUserByEmail } from '@/lib/actions/user.actions';
-export default   function Navbar() {
-    const [loggedInUser, setLOggedInUser] = useState<any>(null);
-
-    const {data:session, status} = useSession();
-
-    const setUserState = async() => {
-        if(session?.user){
-            const userEmail:any = session.user.email;
-            const user = await getUserByEmail(userEmail as string);
-            setLOggedInUser(user);
-            
-        }
-    }
-
-    useEffect(()=>{
-        setUserState();
-    }, [session])
-    
-
+export default   function NavBarComponent({user}:{user:any}) {
+      
     return (
         <div className="navbar fixed w-full z-50">
             <div className="mainNav bg-primaryColor hidden md:block">  
                 <div className=" mx-auto flex justify-end">
                     <div className="links flex">
                         {
-                          status === "loading"? <span>loading ...</span>:(
-                            loggedInUser !==null ? 
+                            user !==null ? 
                             (
                                 <>
-                                    <Link  className="navbarLinks cursor-pointer" href={`/account/${loggedInUser._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{`${loggedInUser.firstName}`}</Link>
+                                    <Link  className="navbarLinks cursor-pointer" href={`/account/${user._id}`}><Icon className="text-lg pe-1" icon="mdi:account" />{`${user.firstName}`}</Link>
                                     <Link className="navbarLinks" href="/api/auth/signout"><Icon className="text-lg pe-1" icon="mdi:logout" />Logout</Link>
                                 </>
                             )
@@ -46,7 +25,7 @@ export default   function Navbar() {
 
                                 </>
                             )
-                          )
+            
                         }
                         <Link className="navbarLinks" href="/services">services</Link>
                         <Link className="navbarLinks" href="/partners">partners</Link>
@@ -59,7 +38,7 @@ export default   function Navbar() {
                 
             </div>
             <div className="subNav">
-                <MainNav user={session?.user} status={status}/>
+                <MainNav user={user}/>
 
            
                 {/* <div className="navContent justify-between items-end">

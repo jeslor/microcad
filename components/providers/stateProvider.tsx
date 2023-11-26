@@ -9,26 +9,26 @@ export const StateContext = createContext({
         productsLabel: '',
         products: []
     },
-    handhleCurrentProducts: (categoryProducts) => { },
+    handhleCurrentProducts: (categoryProducts:any) => { },
     openProduct: false,
     productToOpen : {},
     showCartDrawer: false,
     handleToggleCartDrawer: () => { },
     cart : [],
-    setCartHandler: (newCartProduct) => { },
-    handleRemoveCartProduct: (product) => { },
-    handleIncreaseCartProduct: (product) => { },
+    setCartHandler: (newCartProduct:any) => { },
+    handleRemoveCartProduct: (product:any) => { },
+    handleIncreaseCartProduct: (product:any) => { },
     showMenuHandler: () => {},
-    handleproductToOpen: (product) => { },
+    handleproductToOpen: (product:{}) => { },
     handleCloseProduct: () => { },
-    setState: (state) => { },
+    setState: (state:any) => { },
     openFilter:false,
     handleOpenFilter: () => { },
 });
-export const StateProvider = ({ children }) => {
+export const StateProvider = ({ children }:{children:any}) => {
     let currentCart = [];
     if(typeof window !== 'undefined') {
-        currentCart  = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+        currentCart  = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : [];
     }
     const [state, setState] = useState({});
     const [cart, setCart] = useState(currentCart);
@@ -43,7 +43,7 @@ export const StateProvider = ({ children }) => {
     const[scrollPosition, setScrollPosition] = useState(0);
 
 
-  const handleproductToOpen = (product) => {
+  const handleproductToOpen = (product:any) => {
     setProductToOpen(product);
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
@@ -82,7 +82,7 @@ export const StateProvider = ({ children }) => {
          }
     }
 
-    const setCartHandler = (newCartProduct) => {
+    const setCartHandler = (newCartProduct:any) => {
         let newCart = [...cart];
 
         console.log(newCartProduct);
@@ -110,7 +110,7 @@ export const StateProvider = ({ children }) => {
     }
 
 
-    const handleRemoveCartProduct = (product) => {
+    const handleRemoveCartProduct = (product:any) => {
         let newCart = [...cart];
         let clickedProduct  = newCart.find((cartProduct) => cartProduct.name === product.name);
 
@@ -125,7 +125,7 @@ export const StateProvider = ({ children }) => {
         }
     }
 
-    const handleIncreaseCartProduct = (product) => {
+    const handleIncreaseCartProduct = (product:any) => {
         let newCart = [...cart];
         let cartProductIndex = newCart.findIndex((cartProduct) => cartProduct.name === product.name);
         if (cartProductIndex !== -1) {
@@ -175,7 +175,7 @@ export const StateProvider = ({ children }) => {
         }
     }
 
-    const handhleCurrentProducts = (categoryProducts) => {
+    const handhleCurrentProducts = (categoryProducts:any) => {
 
         setCurrentProducts({...categoryProducts, products:categoryProducts.products, productsLabel:categoryProducts.productsLabel});
     }

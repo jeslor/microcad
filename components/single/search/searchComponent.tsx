@@ -4,9 +4,10 @@ import { StateContext } from "@/components/providers/stateProvider";
 import styles from "@/styles/search.module.css"
 import { searchProducts } from "@/lib/actions/product.actions";
 import SmallSpinner from "@/components/single/spinner/smallSpinner";
-import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 const SearchComponent = () => {
+  const router = useRouter()
   const { openSearch, handleOpenSearch } = useContext(StateContext);
   const [search, setSearch] = useState("")
   const [suggestions, setSuggestions] = useState<any[]>([])
@@ -30,8 +31,8 @@ const SearchComponent = () => {
   const handleSearchFormSubmit = (e:any) => {
     e.preventDefault();
     e.stopPropagation();
-    alert(`searching for, ${search}`);
-    
+    router.push(`/products/search/${search}`)
+    handleOpenSearch()
   }
 
 

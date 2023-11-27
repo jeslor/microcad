@@ -95,7 +95,7 @@ export const searchProducts = async (search: string) => {
             { path: "specifications",
             model: Specification
         }
-        );
+        ).limit(10);
         const products = JSON.parse(JSON.stringify(res));
         return products;
         

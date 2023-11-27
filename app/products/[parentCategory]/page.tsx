@@ -7,11 +7,14 @@ import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
 import ProductHeader from '@/components/single/headers/productHeader';
 import FilterContainer from '@/components/single/product/filterContainer';
-import { getRefurbishedProducts,getSpecialOfferProducts } from '@/lib/actions/product.actions';
+import { getRefurbishedProducts,getSpecialOfferProducts, searchProducts } from '@/lib/actions/product.actions';
 
 
 const page = () => {
-    const { parentCategory }:{parentCategory:string} = useParams();
+    let { parentCategory }:{parentCategory:string} = useParams();
+    parentCategory.toLocaleString().replaceAll("%20", " ");
+    console.log(parentCategory);
+    
     const {currentProducts, handhleCurrentProducts} = useContext(StateContext);
 
     const [finalProducts, setFinalProducts] = useState([]);
@@ -41,12 +44,16 @@ const page = () => {
           getRefurbishedProducts().then((res:any)=>{    
             handhleCurrentProducts({products:res, productsLabel:parentCategory});
           }) 
-        }
-      if (parentCategory === "specialOffer") {        
+      }else if (parentCategory === "specialOffer") {        
         getSpecialOfferProducts().then((res:any)=>{    
           handhleCurrentProducts({products:res, productsLabel:parentCategory}); 
         }) 
+      } else{
+        searchProducts(parentCategory).then((res:any)=>{
+          handhleCurrentProducts({products:res, productsLabel:parentCategory});
+        })
       }
+      
   },[parentCategory])
 
   // set the finalproducts

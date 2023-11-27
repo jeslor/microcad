@@ -89,8 +89,7 @@ export const getSingleProduct = async (id: string) => {
 
 export const searchProducts = async (search: string) => {
     try {
-        await connectToDatabase();
-        
+        await connectToDatabase();        
         const res = await Product.find({ $text: { $search: search } }).populate(
             { path: "specifications",
             model: Specification

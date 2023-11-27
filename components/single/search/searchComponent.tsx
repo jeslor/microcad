@@ -31,7 +31,7 @@ const SearchComponent = () => {
   const handleSearchFormSubmit = (e:any) => {
     e.preventDefault();
     e.stopPropagation();
-    router.push(`/products/search/${search}`)
+    router.push(`/products/${search}`)
     handleOpenSearch()
   }
 

@@ -22,3 +22,10 @@
     transform: rotate(360deg);
   }
 }
+
+.spinnerContainerSmall {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+}

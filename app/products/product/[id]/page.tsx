@@ -12,16 +12,23 @@ const page = () => {
   const [product, setProduct] = useState<any>({})
   const { id } = useParams()
   const ProductId:string = id.toString()
+  
 
-  const fetchProduct =  () => {
-    // const product = await getSingleProduct(ProductId)
-    const product = currentProducts.products.find((product:any)=> product._id === ProductId)
+  const fetchProduct =  async() => {
+    let product:any = {}
+    if(currentProducts.products.length){
+       product = currentProducts.products.find((product:any)=> product._id === ProductId)
+    }else{
+     product = await getSingleProduct(ProductId)
+    }
     setProduct(product)
   }
 
 useEffect(() => {
   fetchProduct()
 }, [ProductId]);
+
+
     
   return <>
   {product.name !==undefined

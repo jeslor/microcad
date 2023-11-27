@@ -85,3 +85,21 @@ export const getSingleProduct = async (id: string) => {
         console.log(error);
     }
 }
+
+
+export const searchProducts = async (search: string) => {
+    try {
+        await connectToDatabase();
+        
+        const res = await Product.find({ $text: { $search: search } }).populate(
+            { path: "specifications",
+            model: Specification
+        }
+        );
+        const products = JSON.parse(JSON.stringify(res));
+        return products;
+        
+    } catch (error) {
+        console.log(error);
+    }
+}

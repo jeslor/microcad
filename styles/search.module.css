@@ -121,3 +121,60 @@
   color: #16105e;
   margin-bottom: 0.5rem;
 }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .searchisOpen {
+    padding-top: 100px;
+  }
+  .innerSearch {
+    padding-top: 0rem;
+  }
+  .searchResults {
+    height: 64vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .closeSearch {
+    position: absolute;
+    right: 1rem;
+  }
+  .searchResultInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searchResultInfo h3 {
+    margin-bottom: 2px;
+  }
+  .searchResultInfo p {
+    font-size: 0.8rem;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .innerSearch h2 {
+    font-size: 1.4rem;
+    top: 90px;
+  }
+
+  .closeSearch {
+    right: 0.5rem;
+  }
+  .searchResult {
+    grid-template-columns: 60px 1fr 60px;
+  }
+  .searchImageHolder {
+    width: 55px;
+    height: 55px;
+    margin-right: 0.4rem;
+  }
+  .searchResultInfo h3 {
+    font-size: 0.9rem;
+  }
+  .Prices p {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}

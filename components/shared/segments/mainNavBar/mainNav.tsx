@@ -51,7 +51,7 @@ function MainNav({user}:{user:any}) {
             <div className={`${styles.mobileCart}`}>
                 <ul>
                 <li onClick={handleToggleCartDrawer} className={`pb-1 text-primayColor ${styles.navbarCart}`}><div><Icon icon="mdi:cart-outline"  />{cart.length >0 && <span className={styles.cartCount}>{cartCount}</span>}</div></li>
-                <li className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
+                <li onClick={handleOpenSearch} className={`pb-1 text-primayColor ${styles.navbarCart}`}><a href="#"><Icon icon="clarity:search-line" /></a></li>
                 </ul>
 
             </div>

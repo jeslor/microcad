@@ -14,6 +14,15 @@ const SearchComponent = () => {
   const [isSearching, setIsSearching] = useState(false)
 
 
+
+  useEffect(() => {
+    if(!openSearch){
+      setSearch("")
+      setSuggestions([])
+    }
+  }, [openSearch])
+
+
   
   const serchClasses = openSearch? styles.searchisOpen : styles.searchClosed
 

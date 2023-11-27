@@ -2,6 +2,7 @@
 import { useEffect, useState, useContext} from 'react';
 import { StateContext } from '@/components/providers/stateProvider';
 import { useParams} from 'next/navigation';
+import { useSearchParams } from 'next/navigation'
 import Spinner from '@/components/single/spinner/spinner';
 import ProductList from '@/components/single/product/productList';
 import styles from "@/styles/products.module.css";
@@ -11,9 +12,16 @@ import { getRefurbishedProducts,getSpecialOfferProducts, searchProducts } from '
 
 
 const page = () => {
+    const searchParams = useSearchParams()
     let { parentCategory }:{parentCategory:string} = useParams();
-    parentCategory.toLocaleString().replaceAll("%20", " ");
-    console.log(parentCategory);
+    const search = searchParams.get('search')
+    if(search){
+        parentCategory = search.replaceAll('_', ' ');
+    }
+    
+
+
+    
     
     const {currentProducts, handhleCurrentProducts} = useContext(StateContext);
 

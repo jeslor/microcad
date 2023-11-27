@@ -31,7 +31,8 @@ const SearchComponent = () => {
   const handleSearchFormSubmit = (e:any) => {
     e.preventDefault();
     e.stopPropagation();
-    router.push(`/products/${search}`)
+    let nameSearch = search.toLocaleLowerCase().replaceAll(' ', '_');
+    router.push(`/products/${search}?search=${nameSearch}`, )
     handleOpenSearch()
   }
 

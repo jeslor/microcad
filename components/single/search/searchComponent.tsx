@@ -1,5 +1,5 @@
 "use client";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { StateContext } from "@/components/providers/stateProvider";
 import styles from "@/styles/search.module.css"
 import { searchProducts } from "@/lib/actions/product.actions";
@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 
 const SearchComponent = () => {
   const router = useRouter()
+  const searchNow = useRef<any>(null)
   const { openSearch, handleOpenSearch } = useContext(StateContext);
   const [search, setSearch] = useState("")
   const [suggestions, setSuggestions] = useState<any[]>([])
@@ -16,6 +17,9 @@ const SearchComponent = () => {
 
 
   useEffect(() => {
+    if(openSearch){
+      searchNow.current.focus()
+    }
     if(!openSearch){
       setSearch("")
       setSuggestions([])
@@ -38,6 +42,7 @@ const SearchComponent = () => {
   }
 
   const handleSearchFormSubmit = (e:any) => {
+    setIsSearching(true)
     e.preventDefault();
     e.stopPropagation();
     let nameSearch = search.toLocaleLowerCase().replaceAll(' ', '_');
@@ -54,7 +59,7 @@ const SearchComponent = () => {
         <div className={styles.innerSearch}>
           <h2>Search for a product</h2>
           <form onSubmit={handleSearchFormSubmit}>
-              <input onChange={handleSearch} value={search} type="text" placeholder="Search for a product" />
+              <input ref={searchNow} onChange={handleSearch} value={search} type="text" placeholder="Search for a product" />
               <button type="submit">
                <img src="/static/media/icons/search.svg" alt="search" />
               </button>

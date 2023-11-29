@@ -82,6 +82,7 @@ export const StateProvider = ({ children }:{children:any}) => {
             window.scrollTo(0, 0);
             setShowMenu(true);
             setShowCartDrawer(false);
+            setOpenSearch(false);
          }
     }
 
@@ -159,6 +160,7 @@ export const StateProvider = ({ children }:{children:any}) => {
                 window.scrollTo(0, 0);
                 handleCloseProduct();
                 setShowMenu(false);
+                setOpenSearch(false);
             }
     }
 
@@ -195,6 +197,8 @@ export const StateProvider = ({ children }:{children:any}) => {
             document.body.style.height = '100vh';   
             setScrollPosition(window.scrollY);
             window.scrollTo(0, 0);
+            setShowMenu(false);
+            setShowCartDrawer(false);
         }
     }
 

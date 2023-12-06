@@ -5,6 +5,7 @@ import {StateProvider} from '@/components/providers/stateProvider'
 import {NextAuthProvider} from '@/components/providers/sessionProvider';
 import { Inter } from 'next/font/google'
 import Bottombar from '@/components/shared/Bottombar'
+import Script from 'next/script';
 import styles from '@/styles/main.module.css'
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';

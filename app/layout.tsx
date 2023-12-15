@@ -1,4 +1,5 @@
 import Navbar from '@/components/shared/Navbar'
+import Head from 'next/head'
 import './globals.css'
 import type { Metadata } from 'next'
 import {StateProvider} from '@/components/providers/stateProvider'
@@ -20,7 +21,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: `Microcad Computer Corp`,
-  viewport: 'width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
   description: 'Microcad Computer Corp is a nationwide distributor of computer products. Established since 1991, we have the experience and the means to provide you with the latest products and technologies to cater to all of your home/business applications.',
   keywords: "refurbished london computer managed.services repair computer.repair london.ontario.computer.repair london.ontario.computers refurbished.computers.london"
 }
@@ -39,7 +39,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-
+      <Head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+      </Head>
       <NextAuthProvider>
       <StateProvider>
           <body className={`${inter.className} ${styles.main}`}>

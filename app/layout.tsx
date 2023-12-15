@@ -9,9 +9,10 @@ import Bottombar from '@/components/shared/Bottombar'
 import Script from 'next/script';
 import styles from '@/styles/main.module.css'
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+
 import { getUserByEmail } from '@/lib/actions/user.actions';
 import SearchComponent from '@/components/single/search/searchComponent';
+import authOptions from '@/lib/configs/authOptions'
 
 
 const inter = Inter({ subsets: ['latin'] })

@@ -1,8 +1,8 @@
 "use server"
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import CheckoutPage from "./checkOutPage";
 import { getUserByEmail } from "@/lib/actions/user.actions"
+import authOptions from "@/lib/configs/authOptions";
 
 const CheckOutSessionWrapper = async() => {
     let currUser = null

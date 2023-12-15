@@ -2,8 +2,8 @@
 import styles from "@/styles/account.module.css"
 import HeaderLink from "@/components/account/headerLink";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getUserByEmail } from "@/lib/actions/user.actions";
+import authOptions from "@/lib/configs/authOptions";
 export default async function RootLayout({
 
     children

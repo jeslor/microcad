@@ -1,8 +1,8 @@
 "use server"
 import { getServerSession } from 'next-auth';
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getUserByEmail } from "@/lib/actions/user.actions";
 import UserAccountComponent from "@/components/account/userAccountComponent";
+import authOptions from '@/lib/configs/authOptions';
 
 const page = async() => {
   let currentUser = null;

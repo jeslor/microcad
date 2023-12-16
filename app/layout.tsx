@@ -1,12 +1,10 @@
 import Navbar from '@/components/shared/Navbar'
-import Head from 'next/head'
 import './globals.css'
 import type { Metadata } from 'next'
 import {StateProvider} from '@/components/providers/stateProvider'
 import {NextAuthProvider} from '@/components/providers/sessionProvider';
 import { Inter } from 'next/font/google'
 import Bottombar from '@/components/shared/Bottombar'
-import Script from 'next/script';
 import styles from '@/styles/main.module.css'
 import { getServerSession } from 'next-auth';
 
@@ -41,9 +39,6 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-      </Head>
       <NextAuthProvider>
       <StateProvider>
           <body className={`${inter.className} ${styles.main}`}>

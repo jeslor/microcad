@@ -28,6 +28,12 @@
   border: 0px solid transparent;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 16px !important;
+}
+
 .slider {
   height: 75vh;
 }

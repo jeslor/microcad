@@ -392,7 +392,7 @@ const RegisterForm = () => {
           </FormItem>
         )}
     />    
-    <Button type="submit" className={`${styles.microcadBtn} microcadBtn`}>Register</Button>
+    <Button  type="submit" className={`${styles.microcadBtn} microcadBtn`}>Register</Button>
     </form>
   </Form>
   )

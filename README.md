@@ -1,6 +1,6 @@
 # Microcad Inc – Digital Solutions Website
 
-This is the official website of **Microcad Inc**, a forward-thinking software and IT solutions company. The site showcases our services, team, and technology-driven approach to solving real-world business challenges.
+This is a prototype website of **Microcad Inc**, a forward-thinking software and IT solutions company. The site showcases our services, team, and technology-driven approach to solving real-world business challenges.
 
 [🌐 Live Website](https://microcad-53g8.vercel.app)
 
